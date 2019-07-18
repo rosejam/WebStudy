@@ -1,0 +1,28 @@
+package array1;
+
+import java.util.Scanner;
+import java.io.FileInputStream;
+
+class Solution_D3_1289_원재의메모리복구하기_서울9반_김동주{ 
+	public static void main(String args[]) throws Exception
+	{
+		System.setIn(new FileInputStream("res/input_D3_1289.txt")); 
+		Scanner sc = new Scanner(System.in);
+		int T=sc.nextInt();
+
+		for(int tc = 1; tc <= T; tc++)
+		{
+		
+			/////////////////////////이 부분에 여러분의 알고리즘 구현이 들어갑니다.///////////////////////////////////
+			String X=sc.next();
+			if (X[0]){
+				
+			}else {
+				
+			}
+			System.out.println("#" + tc + " " + X);
+			/////////////////////////////////////////////////////////////////////////////////////////////
+
+		}
+	}
+}

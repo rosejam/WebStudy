@@ -1,0 +1,22 @@
+package array1;
+
+import java.util.Arrays;
+
+public class Bubble {
+
+	public static void main(String[] args) { //메서드에 더블클릭후 F3하면 소스코드를 볼수 있다
+		//컨트롤+D하면 한줄삭제
+		int [] a = {10,4,6,7,2,9,3,1,8,5};
+		System.out.println(Arrays.toString(a)); //루프문돌리지않고 배열을 출력할때 사용!
+		//Arrays.sort(a);
+		//버블소트
+		n=a.length;
+		for(int i=n-1; i>=0; i--) {
+			System.out.println("i="+i);
+		}
+		
+		
+		
+		System.out.println(Arrays.toString(a)); //알트키+아래화살표 하면 줄이 아래로 "이동"
+	}
+}

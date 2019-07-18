@@ -1,0 +1,30 @@
+package com.basic;
+
+public class DataTypeTest {
+
+	public static void main(String[] args) {
+		//논리형 : 참, 거짓
+		boolean flag = true; //숫자는 안됨 ~~
+		
+		//정수형
+		byte b = 12; //1 : -128 ~ 127
+		short s = 300; //2
+		int i =12345; //4
+		long l =67890; //8
+		char c = 98; //2 : 글자 1개를 저장하기 위한 타입 -- '글자1개' 또는 숫자
+		
+		//실수형
+		//float f =2.1;
+		double d =3.14;
+		
+		System.out.println(flag);
+		System.out.println(b);
+		System.out.println(s);
+		System.out.println(i);
+		System.out.println(l);
+		System.out.println(c);
+		System.out.println(d);//컨트롤+알트+아래방향키로 자동복사
+
+	}
+
+}

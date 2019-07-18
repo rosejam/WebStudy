@@ -1,0 +1,19 @@
+package com.basic;
+
+import java.util.Scanner; //Scanner메서드를 사용하기 위해 import
+
+public class Test {
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("입력하세요:");
+		int a= s.nextInt();
+		
+		System.out.println("입력하세요:");
+		int a= s.nextInt();
+		
+		System.out.println(a);
+		System.out.println(b);
+	}
+
+}

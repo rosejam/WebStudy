@@ -1,0 +1,14 @@
+package array1;
+
+import java.util.Arrays;
+
+public class Bubble {
+
+	public static void main(String[] args) { //
+//		int[] a=new int[10];
+//		a[0]=10;
+		int [] a = {10,4,6,7,2,9,3,1,8,5};
+		System.out.println(Arrays.toString(a)); //루프문돌리지않고 배열을 출력할때 사용!
+		Arrays.sort(a);
+	}
+}

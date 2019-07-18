@@ -1,0 +1,24 @@
+package com.basic;
+
+public class ArrayTest {
+
+	public static void main(String[] args) {
+		int[] a;
+		a = new int[3]; 
+		int[] b = new int[3]; //선언+생성
+		a[0] = 100; //사용
+		a[1] = 200;
+		a[2] = 300;
+		
+		//배열안의 값 처리
+		for(int i = 0; i < a.length; i++) { //a.length는 a배열이 몇칸(3)짜리인지
+			System.out.println(a[i]);
+		}
+		
+		//배열의 선언, 초기화를 한번에
+		boolean[] flag = {true, false, false};
+		for
+
+	}
+
+}

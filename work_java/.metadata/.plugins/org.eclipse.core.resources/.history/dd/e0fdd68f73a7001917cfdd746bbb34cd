@@ -1,0 +1,11 @@
+package com.basic;
+
+public class MethodTest {
+
+	public static void main(String[] args) {
+		// 사용자 정의 메소드 사용하는 부분
+		
+
+	}
+
+}

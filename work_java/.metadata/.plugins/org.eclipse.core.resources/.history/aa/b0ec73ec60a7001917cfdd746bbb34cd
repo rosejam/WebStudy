@@ -1,0 +1,16 @@
+package com.basic;
+
+public class LoopTest {
+
+	public static void main(String[] args) {
+		// for
+		for(int i = 0; i < 5; ++i) { //조건식에서 i++ 나 ++i나 동일하게 작동
+				System.out.println(i + ". hello");
+		}
+		System.out.println("-----------------------------");
+		
+		//while
+		
+	}
+
+}

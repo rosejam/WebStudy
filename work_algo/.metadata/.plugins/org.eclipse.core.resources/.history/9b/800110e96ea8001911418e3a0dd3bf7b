@@ -1,0 +1,18 @@
+package array1; //제출할때는 패키지명 삭제!!!
+
+import java.util.Scanner;
+
+class Solution_D1_2063_중간값찾기_서울9반_김동주{ //제출할 때 클래스명은 솔루션으로 바꿔야함!!! F2키로 파일이름 바꿀수 있음
+	public static void main(String args[]) throws Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		int N=sc.nextInt();
+		int[] X = new int[N];
+		for(int i=0; i<N; i++) { 
+			X[i]=sc.nextInt();
+		} //수열A에 다 넣기
+		Arrays.sort(X);
+
+	}
+
+}

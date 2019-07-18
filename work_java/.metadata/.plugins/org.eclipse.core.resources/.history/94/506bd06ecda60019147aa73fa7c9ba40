@@ -1,0 +1,18 @@
+package com.basic;
+
+public class OperatorTest2 { //소스코드에 복사+붙여넣기하면 소스코드2 생성
+
+	public static void main(String[] args) {
+		//논리연산자(논리형 대이터 대상)
+		boolean a = true, b = false, c= false;
+		System.out.println(a & b); //&& and
+		System.out.println(b==false & c==false);
+		System.out.println(a | b); //|| or
+		System.out.println(a ^ b); //xor(다르면 참)
+		
+		boolean f = true;
+		System.out.println(!f); //not
+
+	}
+
+}

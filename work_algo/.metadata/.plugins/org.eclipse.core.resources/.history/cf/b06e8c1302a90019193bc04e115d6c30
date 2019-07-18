@@ -1,0 +1,30 @@
+package array1; //제출할때는 패키지명 삭제!!!
+
+import java.util.Scanner;
+import java.io.FileInputStream;
+
+class Gravity_서울9반_김동주{ //제출할 때 클래스명은 솔루션으로 바꿔야함!!! F2키로 파일이름 바꿀수 있음
+	public static void main(String args[]) throws Exception
+	{
+		System.setIn(new FileInputStream("res/input_gravity.txt")); //제출할때는 입력 삭제!!!
+		Scanner sc = new Scanner(System.in);
+		int T=sc.nextInt(); //build_data(data[T]);
+		//String line = sc.nextLine();
+		int[] X = new int[T]; //길이 T의 배열 X
+		//X에서 배열의 제일큰 값을 가진 원소의 개수n를 T에서 빼기.
+		//int[] index = new int[T]; //최대값을 가진 인덱스 
+		int index = 0;
+		for(int tc = 0; tc < T; tc++)
+		{
+			X[tc] = Integer.parseInt(sc.next());
+			if( X[tc] >= X[index]) {
+				index = tc;
+			}
+		}
+		int count =0;
+		for(int tc = 0; tc < T; tc++) {
+			if(X[index] == X[tc])
+				count ++;
+		System.out.println(count);
+	}
+}

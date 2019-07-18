@@ -1,0 +1,24 @@
+package com.basic;
+
+public class DataTypeTest {
+
+	public static void main(String[] args) {
+		//논리형 : 참, 거짓
+		boolean flag = true; //숫자는 안됨 ~~
+		
+		//정수형
+		byte b = 12; //1 -128 ~ 127
+		short s = 300; //2
+		int i =12345; //4
+		long l =67890; //8
+		char c = 97; //2
+		
+		//실수형
+		//float f =2.1;
+		double d =3.14;
+		
+		
+
+	}
+
+}

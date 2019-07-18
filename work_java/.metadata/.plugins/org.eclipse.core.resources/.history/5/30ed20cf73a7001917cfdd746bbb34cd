@@ -1,0 +1,17 @@
+package com.basic;
+
+public class MethodTest {
+	//main바깥에 다른 메서드(add)
+	int add(int a, int b) { 
+		int c = a + b;
+		return c;
+	}
+	
+	public static void main(String[] args) { //public static는 메서드의 수식어
+		// 사용자 정의 메소드 사용하는 부분
+		
+
+	}
+	//main바깥
+	
+}
