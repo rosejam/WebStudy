@@ -1,0 +1,81 @@
+1. Zulu(오픈소스) 또는 Oralcle.com의 "JDK" Java SE 8u211 / Java SE 8u212 (java8.0=JDK1.8버전임)
+	프로그래밍할 때 사용할 수 있는 객체(부품)들의 모음	
+
+2. eclipse : eclipse.org의 통합개발툴(IDE) 
+	Eclipse IDE for Java EE Developers Photon버전-July 2018
+
+3. doc file : 설명서 Oracle의 Java SE 8 Documentation
+	JDK에 무슨 부품이 들어있는지(이클립스에들어있는 설명은 부족)
+
+4. notepad: 메모장(옵션임)
+	
+객체(부품)=object=class 지향 언어 : Java, C++, C#
+	필요한 부품 가져다쓰고 없는 부품만 만듬 -> 부품들을 조립해서 완성
+	부품이 재활용 가능
+
+<이클립스> 오른쪽상단-open perspective로 자바 버전을 바꿀수 있음
+	1. ws(워크스페이스) : eclipse를 사용해서 작업한 file이 모두 저장되는 ec"작업 folder" 이름:work_java
+		file-swith workspace-other
+
+	2. project : 작업 단위(ex.인터넷뱅킹)로 관련 파일들을 넣어두는 워크스페이스의 하위 "folder"	
+		bin, src, Library(.jar파일 부품들), 기타 등등(bin에는 .class파일, src에는 .java파일)
+
+	3. package : project의 src폴더의 하위 "folder" -작업의 기능 단위(ex.팀원1은 이자계산, 팀원2는 대출)
+		이름에 .으로 여러 단계의 폴더 만들어서 프로젝트를 설계할 수 있다~~
+
+	4. class=부품, 작업단위 (.java파일=소스코드): 패키지안의 소스코드 파일
+
+<Java>
+	SE(Standard) : Application
+	EE(Enterprise) : Web(브라우저를 통해 공유가능), Servlet/JSP
+	ME(Micro) : IoT -> 일부는 Android로 대체됨
+1.개발환경=실행환경(환경=플랫폼=OS들)여야 실행가능한 기존의 C언어와 다르게 
+	"JVM"만 설치되면 달라도 실행가능한 "플랫폼 독립적" Java
+2."객체지향"
+3.EE에서 분산프로그래밍 지원(실제 프로그램은 서버에있는데 웹으로 실행가능)
+4.멀티 스레드 : 프로그램 1개를 실행시키는 일꾼이 여러명, 자원도 서로 공유
+5.간단 : C에서 포인터, 메모리관리 부분 제외 -->garbage collection : 알아서 앞으로 안쓰이는 메모리 해지
+
+<컴파일>
+1. .java 소스코드 문법체크
+Compile
+2. .class bytecode 실행파일 (컴파일 후 생성됨, binary code는 아직 아님, 바로 실행 불가) : 플랫폼이 아닌 JVM위에서 돈다. C는 OS에 맞춰서 실행파일이 생성됨.
+Execute
+3. "JVM"(실행파일을 다양한 플랫폼에 맞게 해줌) : Java Virtual Machine - JDK에 들어있음
+	+실행환경(Any OS)
+		(작동방식 : 플랫폼에 맞는 자바 .class파일을 JVM통해서 처음에 만들어 사용)
+
+<식별자>
+클래스, 메서드, 변수, 상수 등의 이름 
+키워드는 안됨(자주색 특별한 글자)
+시작글자는 _ 또는 $ 말고는 문자만 가능
+클래스명은 대문자로 시작
+
+<키워드(예약어)>
+goto (많이쓰면 안좋은 스파게티 코드가 됨)
+const는 final로 교체됨 
+true, false, null(안정해진 상태)은 키워드는 아니지만 찜해둔 단어
+
+<Data type>
+1. "Primitive type(기본형)" 7가지
+	1)논리형 : boolean(참 or 거짓) 숫자는 안됨!
+	2)숫자형 	a. 정수형 : byte(1), short(2), int(4-주로 사용), long(8 Byte), char(2)의 5종류
+				char은 글자 1개 저장
+		b. 실수형 : float(4), double(8-주로 사용)의 2종류
+형변환 크기 : byte < short < int < long(8)  <  float(4) < double(8) 
+		  "정수형  <  실수형" 
+
+2. "Reference type(참조형)" - 기본형 아닌것들
+	class : 클래스도 하나의 데이터 타입으로 활용할 수 있다.??   ex) HelloWorld x;
+	interface
+	array
+
+
+
+알고리즘 빠르게 답만 나오기
+코딩 로직도 깔끔히
+
+
+
+
+
