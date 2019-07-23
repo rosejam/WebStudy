@@ -1,0 +1,16 @@
+해외:어드쁠+언어+HW
+
+삼성 SDS, LG CNS
+
+싸피알고시험:소스코드 주관식
+IM시험때는 가이드코드가 있지만 어드는 비어있음
+B형시험은 최적화도 해야한다.(자바 API사용하지않고 스택트리그래프 직접구현하는 것이 좋음)
+
+이클립스 세팅 : workspace마다 Preference에서 encod검색한후 UTF-8로 바꿔줘야 한다. + JavaEE + src를 zulu-8안에
+
+SWEA: D3어드 D4어드쁠 정도의 난이도
+주석의 &apos;는 '로 &quot;는 "로 바꿔야한다 
+
+나중에 C언어로 Java설명
+Pass by reference
+new = malloc / 객체 생성 = 메모리 할당

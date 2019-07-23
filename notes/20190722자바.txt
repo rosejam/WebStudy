@@ -1,0 +1,102 @@
+class = data(기본형/참조형) + method(함수)
+<class=붕어빵틀=부품-설계-JDK에 이미 여러가지 제공되어 있음> 가 구체화되어서 만들어 진것이 <object(객체)=붕어빵=instance-생성>
+	class는 원하는 모양으로 한번만 잘 설계해놓으면 object는 원하는 만큼 생성할 수 있다.
+	object를 만들지 않으면(생성을 빼먹으면) NullPointerException발생
+	
+1. class설계(만들거나 이미 있는거 쓰거나)
+	class Member{ //<패키지이름.클래스이름>
+	//1. <data=(member)field> 선언
+	//2. <method> 작성
+	}
+2. Object생성
+	Member m = new Member(); //member클래스의 이름이 m = m은 멤버type인 <변수=레퍼런스>
+				 //"클래스도 참조형데이터"이기 때문에 
+				 //"어떤 꼴"로 생성할지 모를 때, 1.에서 "생성자의 모습"을 본다!!(API문서등을 참고한다.)
+3. 생성된 object 사용 (레퍼런스 m으로)
+	m.메소드이름(); //메소드 실행
+	m.데이터이름 //m의 데이터에 접근(사용할 수 있도록)
+
+참고)API문서는 docs/api/index.html
+
+<html 문서화>
+/** */ 안의 내용은 Project아래 doc폴더에 정리되어 저장된다. Project - Generate Javadoc
+	
+<Class Area>	|	<Stack>
+1. 클래스 설계 	|	LIFO(last in first out)   (배열과 큐는 FIFO구조)
+		|	한 메소드에서 사용되는 변수가 저장되는 곳
+		|	Heap에 생성된 오브젝트를 가리키는 레퍼런스(변수)가 저장되는 곳
+  		|ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ	
+		|	<Heap>
+		|	Class Area의 설계를 참조해서 "new로 생성된 오브젝트===>this변수로 부름!!!!"이 저장되는 곳 
+		
+<Constructor 생성자 메소드>
+	객체 생성"(new)"시 "자동으로 호출(실행)"되는 메소드
+	주로 초기화 작업(준비)등을 수행함 ->빵을 만들면서 동시에 내용도 다 넣어둔다.
+	작성 안했을 경우 default생성자가 생성됨.
+조건1. "클래스와 이름"이 같아야함
+조건2. 리턴타입이 없어야 함
+class Test{ //default
+	Test(){ //생성자 (앞에 수식어는 올 수 있다. 리턴타입은 안됨.)
+	}
+Test t = new Test(); //Test생성자가 실행
+Test t2 = new Test(); //Test생성자가 실행
+
+생성자는 Source-Generate Constructor By Fields 로 간단하게 만들 수 있다~~
+
+
+참고)this는 생성자의 첫문장에서만 사용
+    Generate toString 으로 클래스의 필드를 모두 출력하는 메서드를 만들어줌!
+참고)배열도 참조형 데이터이므로 default값이 존재한다.
+
+참고)java.lang의 Math클래스는 생성자가 없는 클래스. 생성하지 않고 사용한다.
+
+<this()메서드> (생성자 안에서 제일 첫줄에 와야함)
+생성자 내부에서 다른 생성자를 호출할 때 사용- 파라메터 전달 전달~해서 생성자끼리 중복 코드를 줄이는데 사용한다!
+	ex) car(){} > car(int num){} > car(int num, String owner){} > ...
+(super은 바로위 부모)
+
+참고)클래스에 커서 +F3하면 클래스 설명이나옴 .class파일
+
+-메서드 오버로딩(오버라이딩과 다르다~)
+	메서드명 같아도 파라메터를 다르게 해서 비슷한 역할의 메서드를 하나의 이름으로 다룸.
+
+<객체지향의 특징>
+	<1.Inheritance(상속)> : 물려받는 쪽은 소스가 간단해짐(기존클래스를 바탕으로 새로운 클래스를 간단히 생성)
+(부모Parent=Super=Base=상위 클래스) : Fruit
+^
+^ extends : 부모클래스는 자식클래스에 data+method를 물려줌 (클래스간 단일 상속(단일 부모)임)
+^ 
+(자식Child=Sub=Derived=하위 클래스) : Apple, Orange 등
+	: class Apple extends Fruit{} , Apple(자식) is a Fruit(부모)
+	
+	P{	}C
+		}C  //위아래층 전체가 C, 따라서 항상 "부모가 먼저 생성된 후에" 자식이 생성됨 
+
+	X{	}Y        }Z 
+	  {	}Y        }Z
+	  {	           }Z //Z가 손자(생성순서 X->Y->Z)
+	
+	Z z = new Z();
+	Y y = z;
+	X x = z; //x,y,z모두 같은 주소값을 가짐(모두 같은 곳을 가리킴) ->오버라이딩되면 무조건 아래것 호출
+
+참고)맨밑 클래스안의 내용만 주로 쓰더라도 상위클래스들이 모두 생성되고 하위클래스가 생성됨  -> 메모리가 좀 낭비되는 경향 -> 수평구조를 추천		
+
+"자식(Apple)<부모(Fruit)" : 상속관계에서 부모가 타입이 더 크다!!
+	(상속관계가 없으면 클래스간 크기비교 불가~)
+	Child c = new Parent(); X불가능
+	Parent p = new Child(); O가능
+	Object o = new SomeClass(); ->항상가능  
+	// "Object"는 "모든 클래스의 가장 상위 클래스(root)" : clone()등 몇개의 메소드가 포함되어 있다.
+<메서드 오버라이딩(Source - Override Method) = 재정의>
+	부모에게 물려받은 메서드를 자식클래스에 맞게 수정하는 일
+1.메소드이름, 2.리턴타입, 3.파라메터를 수정하면 안되고 같아야함(수식어나 내용만 고칠 수 있음!)
+접근지정자는 수정할 수 있음! 부모의 범위보다 자식의 접근지정자가 같거나 넓어지면 괜찮다.
+
+ex)java.lang.Object
+   java.awt.Component
+   java.awt.Button //는 3층짜리 상속관계
+	Method Summary에 원하는 기능이 없다면 부모 클래스에서 받은 부분을 찾아보면 있기도함 ex)color바꾸기
+	
+	2.Polymorphism(다형성)
+	3.Encapsulation(캡슐화 = 정보 은폐)
