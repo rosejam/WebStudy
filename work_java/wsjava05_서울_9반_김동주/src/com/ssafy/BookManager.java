@@ -1,4 +1,5 @@
 package com.ssafy;
+import java.lang.StringBuilder;
 
 public class BookManager implements IBookManager {
 	private Book[] list;
@@ -31,7 +32,8 @@ public class BookManager implements IBookManager {
 		Book[] t_list = new Book[0];
 		for(int i=0; i<5; i++) {
 			if (title.equals(list[i].getTitle()))
-				t_list[i] = list[i];
+				//t_list[i] = list[i];
+				t_list.append(list[i]);
 		}
 		return t_list;
 	}
