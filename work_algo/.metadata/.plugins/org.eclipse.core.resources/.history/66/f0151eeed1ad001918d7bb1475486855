@@ -1,0 +1,13 @@
+package array2;
+//중복순열 nPr = 5P3
+public class Product {
+	public static int n, r, cnt, a[];
+	
+	public static void product(int count) {
+		
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+	}
+
+}
