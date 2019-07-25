@@ -13,6 +13,23 @@ public class FileTest {
 		TextFile f1 = new TextFile();
 		MP3File f2 = new MP3File();
 		
+		// 3. 객체 사용
+		f1.name = "이력서.txt";
+		f1.date = "2018/08/22";
+		f1.size = 245;
+		f1.type = "txt";
+		f1.writer = "tommy lee";
+		
+		f1.info();
+		
+		f2.name = "아무거나";
+		f2.date = "2019/01/30";
+		f2.size = 120;
+		f2.type = "mp3";
+		f2.singer = "Kim";
+		
+		f2.info();
+		
 		//jdk에서 제공하는 객체 생성. 외부에 있는 클래스들을 사용하기 위해 import해주어야 한다.
 		Date d = new Date();
 		Button b1 = new Button("ok");
@@ -30,22 +47,7 @@ public class FileTest {
 		f.setSize(300, 300); //창 크기지정
 		f.setVisible(true); //창을 보이게 
 		
-		// 3. 객체 사용
-		f1.name = "이력서.txt";
-		f1.date = "2018/08/22";
-		f1.size = 245;
-		f1.type = "txt";
-		f1.writer = "tommy lee";
-		
-		f1.info();
-		
-		f2.name = "아무거나";
-		f2.date = "2019/01/30";
-		f2.size = 120;
-		f2.type = "mp3";
-		f2.singer = "Kim";
-		
-		f2.info();
+
 
 	}
 
