@@ -38,9 +38,9 @@ public class Hello {
 			System.out.println("#"+(tc+1)+" ");
 		}
 		int n=123;
-		System.out.println(Integer.toBinaryString(n)); //2진수표현
+		/*System.out.println(Integer.toBinaryString(n)); //2진수표현
 		String s ="10";
-		System.out.println(Integer.parseInt(s,10)); 
+		System.out.println(Integer.parseInt(s,10)); */
 		System.out.println("---------------");
 		System.out.println(1<<0);
 		System.out.println(1<<1);
@@ -90,7 +90,19 @@ public class Hello {
 		System.out.println(-128>>6);
 		System.out.println(-128>>7);
 		System.out.println(-128>>8); //>>는 부호 유지, >>>는 부호를 없앤다 ...
-
+		
+		String s = "ABCDEFGHIJ";
+		String t = "";
+		
+		for(int i=s.length()-1; i>=0; i--) {
+			t=t+s.charAt(i);
+			System.out.println(t);
+		}
+		
+		StringBuilder sb = new StringBuilder(s); //StringBuffer에서 바뀜
+		sb.append("ABC").replace(0, 3, "XYZ");
+		System.out.println(sb.reverse());
+		String st=sb.toString(); //다시 스트링으로 환원
 		
 	}
 }

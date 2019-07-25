@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 //조합 nCr =nPr/r!,  5C3 = 5P3/3! = 5*4*3/3*2*1
-public class Combination2 {
+public class Combination2 { //재귀로 표현
 	public static int n, r, cnt, a[];
 	
 	public static void combination(int start, int flag, int count) {

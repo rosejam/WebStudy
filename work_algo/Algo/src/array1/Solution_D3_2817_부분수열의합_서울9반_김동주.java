@@ -44,7 +44,7 @@ public class Solution_D3_2817_부분수열의합_서울9반_김동주 {
 				}
 				if(sum == K) count++;
 			}
-			System.out.println("#" + tc + " "+ count); //합이 k가 되는 경우의 수
+			System.out.println("#" + tc + " "+ count); //합이 K가 되는 경우의 수
 		}
 	}
 }

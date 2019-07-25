@@ -1,0 +1,19 @@
+big-endian 0x1234
+little-endian 0x3412
+
+String str ="abc";하면 heap의 리터럴부분에 들어가서 new사용한것처럼 매번 생성되지 않는다.
+
+s.length();//3
+s.replace()는 s를 바꾸지는 않는다. 
+s.contains("ab");//true
+s.substring(0,2);//"ab"
+s.charAt(1);//'b'
+
+()가 뒤에있으면 메소드, ()가 없으면 변수(값이 대입이 안되면 상수)
+
+기본데이터 타입에 해당하는 wrapper class가 존재한다.
+
+최상위 object 클래스의 equals는 주소값비교임(따라서 SB끼리 equals사용하면 값비교불가)
+
+Integer.parseInt(String, 진수); //parse 메서드는 숫자타입마다 있다.
+toString(); //둘이 서로 역함수(메소드) 관계

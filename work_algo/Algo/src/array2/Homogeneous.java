@@ -13,7 +13,7 @@ public class Homogeneous {
 			System.out.println(Arrays.toString(a));
 			return;
 		}
-		for(int i=start; i<=n; i++) { //start 부터 시작
+		for(int i=start; i<=n; i++) { //조합은 1이 아닌 start부터 시작
 			a[count]=i;
 			homogeneous(i, count+1);
 		}

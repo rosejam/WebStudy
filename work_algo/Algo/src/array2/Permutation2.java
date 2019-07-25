@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 //순열 nPr =n*(n-1)*...*(n-r),  5PI3
-public class Permutation2 {
+public class Permutation2 { //재귀로 표현
 	public static int n, r, cnt, a[];
 	
 	public static void permutation(int start, int flag, int count) {
