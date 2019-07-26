@@ -11,6 +11,8 @@ public class FileTest {
 	public static void main(String[] args) {
 		// 2. 객체 생성
 		TextFile f1 = new TextFile();
+		TextFile f3 = new TextFile("java test", 250, "2019/07/25", "java", "tom");
+		f3.info(); //값 대입 없이 생성자로 초기화했기 때문에 바로 사용가능
 		MP3File f2 = new MP3File();
 		
 		// 3. 객체 사용
