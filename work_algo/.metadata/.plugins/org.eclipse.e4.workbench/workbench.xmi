@@ -1068,7 +1068,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_aTbUza63EemV460V4zITvg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_mMLvsK--Eem7_Y5W_qSHQw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_aTclt663EemV460V4zITvg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_i9NAUK_AEemkTKBEZEqYBw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_aTclt663EemV460V4zITvg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_aTbU2q63EemV460V4zITvg" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -1121,7 +1121,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_aTbVaq63EemV460V4zITvg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_mMNk4K--Eem7_Y5W_qSHQw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_aTclWK63EemV460V4zITvg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_i9O1g6_AEemkTKBEZEqYBw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_aTclWK63EemV460V4zITvg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_aTbVda63EemV460V4zITvg" elementId="org.eclipse.ui.DefaultTextEditor" visible="false">
         <tags>Draggable</tags>
@@ -1620,7 +1620,7 @@
       <parameters xmi:id="_oC0_nK6-Eem32a7JEVZ7qg" elementId="org.eclipse.ui.views.showView.viewId" name="org.eclipse.ui.views.showView.viewId" value="org.eclipse.ui.console.ConsoleView"/>
     </bindings>
     <bindings xmi:id="_oC0_na6-Eem32a7JEVZ7qg" keySequence="COMMAND+BREAK" command="_aTci0K63EemV460V4zITvg"/>
-    <bindings xmi:id="_l3WIIa--Eem7_Y5W_qSHQw" keySequence="COMMAND+CTRL+F" command="_aTcnLK63EemV460V4zITvg"/>
+    <bindings xmi:id="_itS8Ea_AEemkTKBEZEqYBw" keySequence="COMMAND+CTRL+F" command="_aTcnLK63EemV460V4zITvg"/>
   </bindingTables>
   <bindingTables xmi:id="_aTbWnq63EemV460V4zITvg" elementId="org.eclipse.ant.ui.AntEditorScope" bindingContext="_aTbXx663EemV460V4zITvg">
     <bindings xmi:id="_aTbWn663EemV460V4zITvg" keySequence="F3" command="_aTcAdq63EemV460V4zITvg"/>
@@ -2019,7 +2019,7 @@
   <bindingTables xmi:id="_aTbXp663EemV460V4zITvg" bindingContext="_aTbYHa63EemV460V4zITvg"/>
   <bindingTables xmi:id="_aTbXqK63EemV460V4zITvg" bindingContext="_aTbYHq63EemV460V4zITvg"/>
   <bindingTables xmi:id="_aTbXqa63EemV460V4zITvg" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" bindingContext="_aTbX4q63EemV460V4zITvg">
-    <bindings xmi:id="_l3WvMK--Eem7_Y5W_qSHQw" keySequence="M1+W" command="_aTcnLq63EemV460V4zITvg"/>
+    <bindings xmi:id="_itS8Eq_AEemkTKBEZEqYBw" keySequence="M1+W" command="_aTcnLq63EemV460V4zITvg"/>
   </bindingTables>
   <rootContext xmi:id="_aTbXqq63EemV460V4zITvg" elementId="org.eclipse.ui.contexts.dialogAndWindow" contributorURI="platform:/plugin/org.eclipse.platform" name="In Dialogs and Windows" description="Either a dialog or a window is open">
     <children xmi:id="_aTbXq663EemV460V4zITvg" elementId="org.eclipse.ui.contexts.window" contributorURI="platform:/plugin/org.eclipse.platform" name="In Windows" description="A window is open">
