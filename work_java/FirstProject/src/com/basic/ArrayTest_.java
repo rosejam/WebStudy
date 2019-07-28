@@ -1,6 +1,6 @@
 package com.basic;
 
-public class ArrayTest {
+public class ArrayTest_ {
 
 	public static void main(String[] args) {
 		//int[] a; //¼±¾ð

@@ -1,6 +1,6 @@
 package com.basic;
 
-public class DataTypeTest {
+public class DataTypeTest_ {
 
 	public static void main(String[] args) {
 		//논리형 : 참, 거짓 

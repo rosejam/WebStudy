@@ -1,6 +1,6 @@
 package com.basic;
 
-public class OperatorTest2 { //소스코드에 복사+붙여넣기하면 소스코드2 생성
+public class OperatorTest2_ { //소스코드에 복사+붙여넣기하면 소스코드2 생성
 
 	public static void main(String[] args) {
 		//논리연산자(정수형 데이터 대상)  --> 정수형은 비트단위로 논리연산
@@ -23,7 +23,8 @@ public class OperatorTest2 { //소스코드에 복사+붙여넣기하면 소스코드2 생성
 		if(A++>4 && ++B>2) {
 		}
 		//A = 4, B = 5 앞이 false여서 뒤는 실행X(만약 &&아니고 &이면 뒤부분의 코드가 실행되어서 B = 6이된다~)
-		
+		System.out.println(A);
+		System.out.println(B);
 		
 		boolean g = true;
 		System.out.println(!g); //not

@@ -1,6 +1,6 @@
 package com.basic;
 
-public class OperatorTest {
+public class OperatorTest_ {
 
 	public static void main(String[] args) {
 		int a = 3, b = 5, y = 7;
@@ -11,7 +11,8 @@ public class OperatorTest {
 	
 		int c = ++a; 
 		int d = b--;
-
+		System.out.println(c); //6
+		System.out.println(d); //7
 	}
 
 }

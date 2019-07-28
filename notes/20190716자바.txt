@@ -1,9 +1,4 @@
 
-반복문>
-for ~each문 : 
-
-
-
 참고)Run Configuration 
 main : 프로젝트/클래스 맞게 하고 설정하고 런해야
 Program arguments : ${string_prompt}으로 설정한다면 args 스트링 배열에 input 변수들(띄어쓰기로 구분)을 넣어줌

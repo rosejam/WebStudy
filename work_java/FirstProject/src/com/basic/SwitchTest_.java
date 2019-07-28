@@ -1,6 +1,6 @@
 package com.basic;
 
-public class SwitchTest {
+public class SwitchTest_ {
 
 	public static void main(String[] args) {
 		char code = 'Y';
