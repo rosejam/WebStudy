@@ -11,10 +11,10 @@ public class Circle {
 	}
 	
 	//method
-	double getArea() {
+	public double getArea() {
 		return 3.14*radius*radius;
 	}
-	double getCircum() {
+	public double getCircum() {
 		return 3.14*2*radius;
 	}
 	public static void main(String[] args) { //메인함수에서 객체생성 및 사용

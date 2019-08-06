@@ -1,50 +1,51 @@
-¿À¹ö·ÎµùÀº 1.¸Þ¼­µå ÀÌ¸§ÀÌ °°°í 2."ÆÄ¶ó¸ÞÅÍ¸¸ ´Ù¸¥" ¸Þ¼­µå¸¦ ¿©·¯°³ ¸¸µå´Â °Í
-	¸®ÅÏÅ¸ÀÔÀÌ³ª ¼ö½Ä¾î´Â »ó°ü¾ø´Ù!!
 
-"¹°·Á¹ÞÀº ¸Þ¼­µå¸¦ ÀçÁ¤ÀÇ" ÇÏ´Â ¿À¹ö¶óÀÌµùÀº ¸Þ¼ÒµåÀÌ¸§, ÆÄ¶ó¸ÞÅÍ, ¸®ÅÏÅ¸ÀÔµî "{}¹ÛÀº ÀüºÎ °°¾Æ¾ßÇÑ´Ù!!!!	"
-	¼ö½Ä¾î("Á¢±ÙÁöÁ¤ÀÚ)´Â ´Þ¶óµµ µÇ´Âµ¥" ºÎ¸ðÀÇ ¹üÀ§¿Í °°°Å³ª ³Ð¾îÁö´Â°Ç ±¦Âú´Ù.(¹üÀ§°¡ Á¼¾ÆÁö¸é ¾ÈµÈ´Ù!!!!)
+ì˜¤ë²„ë¡œë”© ì€ 1.ë©”ì„œë“œ ì´ë¦„ì´ ê°™ê³  2."íŒŒë¼ë©”í„°ë§Œ ë‹¤ë¥¸" ë©”ì„œë“œë¥¼ ì—¬ëŸ¬ê°œ ë§Œë“œëŠ” ê²ƒ
+	ë¦¬í„´íƒ€ìž…ì´ë‚˜ ìˆ˜ì‹ì–´ëŠ” ìƒê´€ì—†ë‹¤!!
 
-»ý¼ºÀÚ ³»ºÎ¿¡¼­¸¸ »ç¿ëµÇ´Â this()¸Þ¼­µå. ±× ÆÄ¶ó¸ÞÅÍ¿Í ¸Â´Â ´Ù¸¥ »ý¼ºÀÚ¸¦ ºÎ¸£´Â ¸Þ¼­µå.
-<Ä¸½¶È­> = Á¤º¸ÀºÆó=Encapsulation
-privateÀÌ¿ë 
-	ex. µ¥ÀÌÅÍ´Â private·Î ÇØ³õ°í °ÔÅÍ¿Í ¼¼ÅÍ ¸Þ¼­µå¸¦ publicÀ¸·Î ³õ¾Æ Á¢±Ù ÇÒ ¼ö ÀÖ°Ô ÇØµÐ´Ù.
+"ë¬¼ë ¤ë°›ì€ ë©”ì„œë“œë¥¼ ìž¬ì •ì˜" í•˜ëŠ” ì˜¤ë²„ë¼ì´ë”©ì€ ë©”ì†Œë“œì´ë¦„, íŒŒë¼ë©”í„°, ë¦¬í„´íƒ€ìž…ë“± "{}ë°–ì€ ì „ë¶€ ê°™ì•„ì•¼í•œë‹¤!!!!" {ì•ˆ}ì€ ìƒê´€ì—†ìŒ
+	ìˆ˜ì‹ì–´("ì ‘ê·¼ì§€ì •ìž)ëŠ” ë‹¬ë¼ë„ ë˜ëŠ”ë°" ë¶€ëª¨ì˜ ë²”ìœ„ì™€ ê°™ê±°ë‚˜ ë„“ì–´ì§€ëŠ”ê±´ ê´œì°®ë‹¤.(ë²”ìœ„ê°€ ì¢ì•„ì§€ë©´ ì•ˆëœë‹¤!!!!)
 
-ÀÚ½ÄÅ¬·¡½º´Â ºÎ¸ðÅ¬·¡½º+Ãß°¡/º¯°æ»çÇ×~
+ìƒì„±ìž ë‚´ë¶€ì—ì„œë§Œ ì‚¬ìš©ë˜ëŠ” this()ë©”ì„œë“œ. ê·¸ íŒŒë¼ë©”í„°ì™€ ë§žëŠ” ë‹¤ë¥¸ ìƒì„±ìžë¥¼ ë¶€ë¥´ëŠ” ë©”ì„œë“œ.
+<ìº¡ìŠí™”> = ì •ë³´ì€í=Encapsulation
+privateì´ìš© 
+	ex. ë°ì´í„°ëŠ” privateë¡œ í•´ë†“ê³  ê²Œí„°ì™€ ì„¸í„° ë©”ì„œë“œë¥¼ publicìœ¼ë¡œ ë†“ì•„ ì ‘ê·¼ í•  ìˆ˜ ìžˆê²Œ í•´ë‘”ë‹¤.
 
-super.´Â ºÎ¸ð Å¬·¡½º¸¦ ÀÇ¹Ì
-	Child c = new Child(); //go¸¦ ¿À¹ö¶óÀÌµù ÇÑ °æ¿ì
-		c.go()ÇÏ¸é Childe¿¡¼­ ¿À¹ö¶óÀÌµùµÈ go()¸¦ ÀÇ¹Ì
-		super.go()ÇÏ¸é ¿À¹ö¶óÀÌµù Àü ¿ø·¡ ÀÖ´ø ParentÀÇ go()¸¦ ÀÇ¹Ì(µû¶ó¼­ ºÎ¸ðÀÇ go¿Í ³»°¡ ¾´ go µÑ´Ù °¡Áö°í ÀÖÀ½!!)
+ìžì‹í´ëž˜ìŠ¤ëŠ” ë¶€ëª¨í´ëž˜ìŠ¤+ì¶”ê°€/ë³€ê²½ì‚¬í•­~
 
-»ý¼ºÀ» ¸·¾Æ³õ±â À§ÇØ abstract Å¬·¡½º·Î ÁöÁ¤ÇÒ ¼ö ÀÖ´Ù. 
+super.ëŠ” ë¶€ëª¨ í´ëž˜ìŠ¤ë¥¼ ì˜ë¯¸
+	Child c = new Child(); //goë¥¼ ì˜¤ë²„ë¼ì´ë”© í•œ ê²½ìš°
+		c.go()í•˜ë©´ Childeì—ì„œ ì˜¤ë²„ë¼ì´ë”©ëœ go()ë¥¼ ì˜ë¯¸
+		super.go()í•˜ë©´ ì˜¤ë²„ë¼ì´ë”© ì „ ì›ëž˜ ìžˆë˜ Parentì˜ go()ë¥¼ ì˜ë¯¸(ë”°ë¼ì„œ ë¶€ëª¨ì˜ goì™€ ë‚´ê°€ ì“´ go ë‘˜ë‹¤ ê°€ì§€ê³  ìžˆìŒ!!)
 
-Ãß°¡ -Other -AmatersUML-class diagram
+ìƒì„±ì„ ë§‰ì•„ë†“ê¸° ìœ„í•´ abstract í´ëž˜ìŠ¤ë¡œ ì§€ì •í•  ìˆ˜ ìžˆë‹¤. 
 
-Generalization(½Ç¼±È­»ìÇ¥) ParentClass·Î ¿¬°á <is-a °ü°è>
-Realization(Á¡¼±È­»ìÇ¥) Interface·Î ¿¬°á
-Aggregation(ÇÏ¾á¸¶¸§¸ðÈ­»ìÇ¥) ¾î¶² ´Ù¸¥ Å¬·¡½º¸¦ ¸â¹öÇÊµå¿¡ °¡Áö°í ÀÖ´ÂÁö È®ÀÎ <has-a°ü°è>
-Dependency(Á¡¼±È­»ìÇ¥) ¾î¶²°Í¿¡ ÀÇÁ¸ÀûÀÎÁö È®ÀÎ°¡´É(¸ÞÀÎÀÌ ¾î¶² Å¬·¡½º¿¡ ÀÇÁ¸Àû, ¾î¶²Å¬·¡½º¸¦ »ý¼ºÇÑ´Ù)
-»ö±òÀº ÃÊ³ëÆÄ»¡ ¼ø¼­
+ì¶”ê°€ -Other -AmatersUML-class diagram
 
-Parent s = new Child(); 	////s´Â Æä·±Æ® Å¸ÀÔÀÌÁö¸¸ Â÷ÀÏµå¿¡¼­ ¿À¹ö¶óÀÌµùµÈ ÇÔ¼ö°¡ È£ÃâµÊ!!!! 
-			////¿À¹ö¶óÀÌµùµÇÁö¾Ê°í ¿ø·¡ ºÎ¸ðÅ¸ÀÔ¿¡ ¾ø°í ÀÚ½Ä¿¡¸¸ ÀÖ´Â ÇÔ¼ö¸¦ È£ÃâÇÏ¸é ¿¡·¯°¡ »ý±è!!!!
-			////ÇÊµå´Â ÀÌ¸§ÀÌ °°Àº ÇÊµå°¡ ÀÚ½Ä¿¡ ÀÖ¾îµµ ParentÀÇ ÇÊµå°¡ »ç¿ëµÊ!!!!
-			////s instance of Child -> Âü!!!(³»¿ë¹°ÀÌ Â÷ÀÏµåÀÌ´Ï±î)
-Child p = (Child)s; //ÀÌ°Ç ÃæºÐÈ÷ °¡´ÉÇÑ Çüº¯È¯ µ¥ÀÌÅÍ ¼Õ½Çx
+Generalization(ì‹¤ì„ í™”ì‚´í‘œ) extends  <is-a ê´€ê³„>
+Realization(ì ì„ í™”ì‚´í‘œ) implements 
+Aggregation(í•˜ì–€ë§ˆë¦„ëª¨í™”ì‚´í‘œ) ì–´ë–¤ ë‹¤ë¥¸ í´ëž˜ìŠ¤ë¥¼ ë©¤ë²„í•„ë“œì— ê°€ì§€ê³  ìžˆëŠ”ì§€ í™•ì¸ <has-aê´€ê³„>
+Dependency(ì ì„ í™”ì‚´í‘œ) ì–´ë–¤ê²ƒì— ì˜ì¡´ì ì¸ì§€ í™•ì¸ê°€ëŠ¥(ë©”ì¸ì´ ì–´ë–¤ í´ëž˜ìŠ¤ì— ì˜ì¡´ì , ì–´ë–¤í´ëž˜ìŠ¤ë¥¼ ìƒì„±í•œë‹¤)
+ìƒ‰ê¹”ì€ ì´ˆë…¸íŒŒë¹¨ ìˆœì„œ
+
+Parent s = new Child(); 	////sëŠ” íŽ˜ëŸ°íŠ¸ íƒ€ìž…ì´ì§€ë§Œ ì°¨ì¼ë“œì—ì„œ ì˜¤ë²„ë¼ì´ë”©ëœ í•¨ìˆ˜ê°€ í˜¸ì¶œë¨!!!! 
+			////ì˜¤ë²„ë¼ì´ë”©ë˜ì§€ì•Šê³  ì›ëž˜ ë¶€ëª¨íƒ€ìž…ì— ì—†ê³  ìžì‹ì—ë§Œ ìžˆëŠ” í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ë©´ ì—ëŸ¬ê°€ ìƒê¹€!!!!
+			////í•„ë“œëŠ” ì´ë¦„ì´ ê°™ì€ í•„ë“œê°€ ìžì‹ì— ìžˆì–´ë„ Parentì˜ í•„ë“œê°€ ì‚¬ìš©ë¨!!!!(=í•„ë“œëŠ” ì˜¤ë²„ë¼ì´ë”© ëŒ€ìƒì´ ì•„ë‹ˆë‹¤)
+			////s instance of Child -> ì°¸!!!(ë‚´ìš©ë¬¼ì´ ì°¨ì¼ë“œì´ë‹ˆê¹Œ)
+Child p = (Child)s; //ì´ê±´ ì¶©ë¶„ížˆ ê°€ëŠ¥í•œ í˜•ë³€í™˜ ë°ì´í„° ì†ì‹¤x
 
 Parent s = new Parent();
-Child x = (Child)s; //»óÀ§¸¦ ÇÏÀ§Å¸ÀÔÀ¸·Î Çüº¯È¯½ÃÅ´. ÄÄÆÄÀÏÀº µÇÁö¸¸, 
-		//¿À¹ö¶óÀÌµùµÈ ÇÔ¼öÀÇ Á¤º¸°¡ ¾øÀ¸¹Ç·Î ¿¡·¯°¡ »ý±æ°ÍÀÓ
+Child x = (Child)s; //ìƒìœ„ë¥¼ í•˜ìœ„íƒ€ìž…ìœ¼ë¡œ í˜•ë³€í™˜ì‹œí‚´. ì»´íŒŒì¼ì€ ë˜ì§€ë§Œ, 
+		//ì˜¤ë²„ë¼ì´ë”©ëœ í•¨ìˆ˜ì˜ ì •ë³´ê°€ ì—†ìœ¼ë¯€ë¡œ ì—ëŸ¬ê°€ ìƒê¸¸ê²ƒìž„
 
-Âü°í)floatÅ¸ÀÔ¼ýÀÚ µÚ¿¡ fºÙ¿©¾ßÇÔ. charÅ¸ÀÔÀÎµ¥ ''¸é ¿¡·¯³²(char´Â ³»¿ëÀÌ Ç×»ó1°³¿©¾ßÇÔ)
+ìžì‹ì€ ë¶€ëª¨ì˜ ê²ƒì— ì ‘ê·¼ê°€ëŠ¥, ë¶€ëª¨ëŠ” ìžì‹ ë©”ì„œë“œ ë“±ì— ì ‘ê·¼ ë¶ˆê°€ëŠ¥.
 
-)Å¬·¡½ºÀÌ¸§¸¸(·¹ÆÛ·±½º¸¸) sysout¿¡ ÂïÀ¸¸é µÚ¿¡ ÀÚµ¿À¸·Î .toString()¸Þ¼Òµå°¡ È£ÃâµÈ´Ù~~
+ì°¸ê³ )floatíƒ€ìž…ìˆ«ìž ë’¤ì— fë¶™ì—¬ì•¼í•¨. charíƒ€ìž…ì¸ë° ''ë©´ ì—ëŸ¬ë‚¨(charëŠ” ë‚´ìš©ì´ í•­ìƒ1ê°œì—¬ì•¼í•¨)
 
-)Áö¿ªº¯¼ö´Â ÃÊ±âÈ­ÇÏÁö ¾ÊÀ¸¸é »ç¿ëÇÒ¶§ ÄÄÆÄÀÏ¿¡·¯°¡ ¹ß»ýÇÑ´Ù!
+)í´ëž˜ìŠ¤ì´ë¦„ë§Œ(ë ˆí¼ëŸ°ìŠ¤ë§Œ) sysoutì— ì°ìœ¼ë©´ ë’¤ì— ìžë™ìœ¼ë¡œ .toString()ë©”ì†Œë“œê°€ í˜¸ì¶œëœë‹¤~~
 
-)if(z++>0 && ºí¶óºí¶ó)ÀÏ‹š ¿ÞÂÊÀÌ °ÅÁþÀÌ¸é z¿¡´Ù 1¸¸´õÇØÁö°í ºí¶óºí¶ó´Â º¸Áöµµ¾ÊÀ½.
+)ì§€ì—­ë³€ìˆ˜ëŠ” ì´ˆê¸°í™”í•˜ì§€ ì•Šìœ¼ë©´ ì‚¬ìš©í• ë•Œ ì»´íŒŒì¼ì—ëŸ¬ê°€ ë°œìƒí•œë‹¤!
 
-)ºÎ¸ð¿¡ default»ý¼ºÀÚ°¡ ¾øÀ¸¸é ÀÚ½ÄÀ» »ý¼ºÇÒ ¶§ ºÎ¸ð°¡ ÀÚµ¿À¸·Î »ý¼ºµÇÁö ¾Ê´Â´Ù!!!!
-	->ÀÚ½ÄÀÇ »ý¼ºÀÚ¸¦ ¸¸µé¸é¼­ ºÎ¸ð»ý¼ºÀÚÀÇ ÆÄ¶ó¸ÞÅÍ¿¡ super·Î Àü´ÞÇØÁÖ¾î¾ß ºÎ¸ð°¡ »ý¼º°¡´ÉÇÏ´Ù!!!!
+)if(z++>0 && ë¸”ë¼ë¸”ë¼)ì¼ ì™¼ìª½ì´ ê±°ì§“ì´ë©´ zì—ë‹¤ 1ë§Œë”í•´ì§€ê³  ë¸”ë¼ë¸”ë¼ëŠ” ë³´ì§€ë„ì•ŠìŒ.
 
-¾÷·Îµå ¸ñ·Ï : Second Project,java 06, wsjava05, hwjava05, ¿À´Ã ÇÊ±â, java.zip
+)ë¶€ëª¨ì— defaultìƒì„±ìžê°€ ì—†ìœ¼ë©´ ìžì‹ì„ ìƒì„±í•  ë•Œ ë¶€ëª¨ê°€ ìžë™ìœ¼ë¡œ ìƒì„±ë˜ì§€ ì•ŠëŠ”ë‹¤!!!!!!!!!!! ->ì»´íŒŒì¼ ì˜¤ë¥˜ ë°œìƒ
+	->ìžì‹ì˜ ìƒì„±ìžë¥¼ ë§Œë“¤ë©´ì„œ ë¶€ëª¨ìƒì„±ìžì˜ íŒŒë¼ë©”í„°ì— superë¡œ ì „ë‹¬í•´ì£¼ì–´ì•¼ ë¶€ëª¨ê°€ ìƒì„±ê°€ëŠ¥í•˜ë‹¤!!!!!!!!!!!!

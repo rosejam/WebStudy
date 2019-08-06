@@ -1,0 +1,49 @@
+	<Top-level Class> 포함하는 바깥쪽 클래스 (클래스에 붙는 수식어들 : final/abstract/public또는 default)
+	<Inner Class = Nested Class> 포함되는 안쪽 클래스 (private또는 static 수식어가 붙을 수 있다.
+탑레벨 클래스에서 위주로 사용하기 위해서 그 내부에 작성함.
+종류	1. static class (알고에서 주로 사용)
+	2.*member class
+	3. local class
+	4.*Anonymous class : 클래스 정의+객체 생성을 한문장으로 한꺼번에 표기하는 1회생성용 (이름없는)클래스, 1회용 객체
+
+	<XML> "확장가능(=사용자정의 태그 생성 가능)"한 Markup Language 
+		=>data를 text형식으로 표현함. (확장자는 .xml) 프로그램 필요X
+XML은 portable data (java가 portable code인 것 처럼)
+	Element =<시작tag> body(내용) </끝tag>
+	빈 tag = <태그이름/>
+data와 design파일이 분리 되어있음. (서식이아니라 구조와 의미를 설명)
+
+//GML > SGML > XML - data 저장용//mysql, oracle같은 db또는 file에 데이터 저장할때 사용 가능
+	        > HTML5 - presentation(=design)용
+
+-Well-formed 문서 조건(브라우저는 xml문서 parser 프로그램이 있어서 문서가 well formed 인지 확인할수 있다. )		
+	대소문자구분
+	여는 tag 닫는 tag쌍이 맞아야함
+	tag쌍이 겹치면 안됨.(포함은 가능) <1><2></1></2>안됨
+	전체를 포함하는 제일 큰 tag ="Root" Element는 1개여야 한다.
+	<태그이름 속성1이름="값" 속성2이름="값">이런식으로 속성 표기 가능
+		속성=attribute	
+
+-Valid 문서 조건
+Well-formed문서이면서 + DTD나 Schema에 맞게 되어있는지 검사		
+--
+맨위에 표기 : <?xml version = "1.0" encoding="utf-8"?>
+주석 : <!-- 내용 -->
+<![CDATA[내용]]> 은 내용그대로 처리
+--
+	Namespace	
+<root태그 xmlns:네임스페이스이름1="아무uri" xmlns:네임스페이스이름2="아무uri">
+	<ns1:태그이름>
+	</ns1:태그이름>
+
+	Parser(SAX & DOM)
+DOM : 태그 하나하나를 Object로 생각
+	돔트리 : 태그들의 포함여부를 그린 것, 위로 갈수록(포함할 수록) 부모 태그
+		body는 태그의 자식~(아래), 속성은 옆으로 그림(자식X)
+		root태그위의 /(document)는 아래를 전부 가리키는 레퍼런스(변수명)
+		구성요소 각각을 Node라고 부름: 이름/값/타입(텍스트/엘리먼트/속성 노드)을 가짐
+DocumentBuilderFactory
+^
+DocumentBuilder : DOM parser
+^ parse(xml파일이나 url)
+Document(/ 즉, parsing이 된 .xml문서)

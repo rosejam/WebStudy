@@ -1,0 +1,52 @@
+	<시험>
+Object Stream(객체 직렬화 스트림)
+ArrayList(Map?)
+notfound
+exception
+singleton
+IO(아마 내용오브젝트 하나씩 for문으로 읽고쓰기할 듯)
+
+테스트에서 try catch로 받음
+예외처리는 화면에 결과 뿌리고 계속 진행
+
+1. Retreive(Search=Select=Find) throws NotFoundExc
+2. Create(Insert=Add) throws Duplicate Exc
+0. Load()
+3. SelectAll()
+0. Save()
+4. Update & Delete - Dupl
+익셉션관리는 test에서 관리
+
+Car implements Serializable , Comparable 추가/오버라이딩 해서 Collections.Sort할수잇도록
+
+참고)Diagram에서 화살표로 가르키는 방향을 먼저 작성
+sysout보다 디버그를 사용해서 한줄 한줄 확인해야함
+
+익셉션 잘모르겠으면 호출자로 thows하기 -> 계속 던졌을 때 main에서는 try catch받아야함 
+	(알고리즘에서는 그냥 귀찮으니 main에서 throws)
+
+System.setIn(); 은 표준입력장치로 만들어주는 것. 
+	<Stack>스택은 push는 인덱스올리고 넣기, pop은 빼고 인덱스 내리기, 인덱스가 -1일 때 비어있다고 봄
+함수호출 == 새 스택 푸쉬
+함수끝남 또는 함수 중간에서 익셉션을 throws할 때 == 스택 팝
+"재귀호출은 스택을 사용하는 구조이다"
+Stack은 벡터를 상속한 하위 클래스
+	
+<DP>시간을 줄일 수 있음 - 최적화 - 작은 부분부터 계산(해결) -> 반복
+재귀에서 발생하는 시스템 호출 스택을 사용하지 않아도됨
+	
+	<깊이우선탐색 DFS> 재귀호출("스택")을 사용
+갈림길마다 지금상태를 스택에 푸쉬하면서 한갈래로 지나간다. 끝까지 간후 스택에서 pop하면서 그 이전 깊이로 돌아가서 거기서 안간 선택(이전의 푸쉬)로 간다. 
+따라서 가장 깊은 곳에서는 2번pop해서 돌아옴
+결국 모든 정점을 순회
+
+인접행렬, visited, 스택 3가지가 필요
+v
+w
+
+	<BFS> FIFO구조인 "큐"를 사용
+지금 상태에서 거리가 같은 같은 단계를 모두 큐에 넣으면서 탐색
+
+
+
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<members>		
+	<member>
+		<num>100</num>
+		<name>jean</name>		
+		<address>seoul</address>
+	</member>
+	<member>
+		<num>200</num>
+		<name>gilbert</name>
+		<address>singapore</address>
+	</member>
+	<member>
+		<num>300</num>
+		<name>juile</name>
+		<address>paris</address>
+	</member>
+	<member>
+		<num>400</num>
+		<name>tommy</name>
+		<address>london</address>
+	</member>
+	<member>
+		<num>500</num>
+		<name>billy</name>
+		<address>seoul</address>
+	</member>
+
+</members>

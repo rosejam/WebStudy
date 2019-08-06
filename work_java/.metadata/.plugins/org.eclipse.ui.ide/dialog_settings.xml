@@ -8,7 +8,11 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\ssafy\work_java\wsjava08_서울_9반_김동주"/>
+			<item value="C:\ssafy\work_java\hwjava08_서울_9반_김동주"/>
+			<item value="C:\ssafy\work_java"/>
 			<item value="/Users/dj_kim/ssafy/work_java"/>
+			<item value="C:\ssafy\work_java"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
@@ -19,6 +23,11 @@
 			<item value="org.eclipse.ui.preferences"/>
 			<item value=""/>
 			<item value=""/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 		</list>
 	</section>
 	<section name="ChooseWorkspaceDialogSettings">

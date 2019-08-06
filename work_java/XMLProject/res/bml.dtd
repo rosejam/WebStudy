@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="euc-kr"?>
+
+<!-- 엘리먼트 선언 -->
+<!ELEMENT booklist (book*)><!--내부에 book을 0개이상(*)가질 수 있다.-->
+	<!ELEMENT book (isbn, title, author+, publisher, price)><!--내부에 author을 1개이상(+)가질 수 있다.-->
+		<!ELEMENT isbn (#PCDATA)><!--내부에 PCDATA(=텍스트)를 가질 수 있다.-->
+		<!ELEMENT title (#PCDATA)>
+		<!ELEMENT author (#PCDATA)>
+    	<!ELEMENT publisher (#PCDATA)>
+		<!ELEMENT price (#PCDATA)>
+
+<!-- 속성 선언 -->
+<!ATTLIST book 		
+		kind CDATA #REQUIRED><!--속성이름 타입(텍스트) 속성이필수임-->
+

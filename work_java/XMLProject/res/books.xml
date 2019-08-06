@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<horror:booklist xmlns:history="http://www.history.com"
+		  xmlns:horror="http://www.horror.com"><!-- root tag -->
+	<horror:book isbn = "a123">
+		<title>hello,xml</title>
+		<publisher>green house</publisher>
+		<author>tommy lee</author>
+	</horror:book>
+	<history:book isbn = "a456">
+		<title>hello,world</title>
+		<publisher>white house</publisher>
+		<author>dj kim</author>
+	</history:book>
+	<book isbn = "a789">
+		<title>algo,java</title>
+		<publisher>blue house</publisher>
+		<author>eclipse kwak</author>
+	</book>
+</horror:booklist>
