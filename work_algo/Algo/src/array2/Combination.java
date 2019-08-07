@@ -13,7 +13,7 @@ public class Combination {
 				for(int j=i+1; j<r; j++) {
 					if(a[i]==a[j]) return;
 				}
-			} // 이 부분을 중복되지 않도록 추가해준다!!
+			} // 이 부분을 중복되지 않도록 추가해준다!!(중복조합이 아닌 조합)
 			cnt++;
 			System.out.println(Arrays.toString(a));
 			return;

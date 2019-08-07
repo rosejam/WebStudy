@@ -39,18 +39,22 @@ public class NewsDAODOMImpl implements INewsDAO {
 		
 		for(int i=0; i< items.getLength();i++) {
 			Node data = items.item(i); 
-			NodeList datachild = data.getChildNodes(); //member�� ��� �ڽ� ��� �˾Ƴ�
+			NodeList datachild = data.getChildNodes();
 			
 			for(int j=0; j< datachild.getLength(); j++) {
-				Node child = datachild.item(j); //����� �ڽ��� �ϳ��� �˾Ƴ�
-				String name = child.getNodeName(); //��� �̸�(tag) �˾Ƴ���
+				Node child = datachild.item(j); 
+				String name = child.getNodeName(); 
 				if(name.equals("title")) { 
 					title = child.getFirstChild().getNodeValue();
 					continue;
 				}
+				if(name.equals("desc")) { 
+					desc = child.getFirstChild().getNodeValue();
+					continue;
+				}
 
 			}
-			News w = new News(title,null,null);
+			News w = new News(title,desc,null);
 			list.add(w);
 		}
 		
@@ -69,7 +73,6 @@ public class NewsDAODOMImpl implements INewsDAO {
 
 	@Override
 	public News search(int index) {
-		// TODO Auto-generated method stub
-		return null;
+		return list.get(index);
 	}
 }

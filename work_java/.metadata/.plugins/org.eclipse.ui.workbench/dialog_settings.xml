@@ -43,6 +43,7 @@
 		<item value="true" key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID"/>
 		<item value="false" key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID"/>
 		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\git\JavaHW\hwjava11_서울_9반_김동주.zip"/>
 			<item value="C:\git\JavaHW\hwjava10_서울_9반_김동주.zip"/>
 			<item value="C:\ssafy\git\JavaHW\hwjava07_서울_9반_김동주.zip"/>
 			<item value="C:\ssafy\git\JavaWS\wsjava07_서울_9반_김동주.zip"/>

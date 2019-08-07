@@ -36,15 +36,15 @@ public class StackTest {
 		System.out.println(pop());
 		System.out.println();
 		
-		Stack<Character> stack = new Stack<>(); //A형이면 그냥 이걸 쓰면 된다.
-		stack.push('A');
-		System.out.println(stack.empty());
-		stack.push('B');
-		stack.push('C');
-		System.out.println(stack.pop());
-		System.out.println(stack.peek());
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
+		Stack<Character> st = new Stack<>(); //A형이면 그냥 이걸 쓰면 된다.
+		st.push('A');
+		System.out.println(st.empty());
+		st.push('B');
+		st.push('C');
+		System.out.println(st.pop());
+		System.out.println(st.peek());
+		System.out.println(st.pop());
+		System.out.println(st.pop());
 		//System.out.println(stack.pop()); //한번 더빼면 익셉션 발생
 		
 	}

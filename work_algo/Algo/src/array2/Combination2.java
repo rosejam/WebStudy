@@ -16,9 +16,8 @@ public class Combination2 { //재귀로 표현
 		for(int i=start; i<=n; i++) { //조합은 1이 아닌 start부터 시작
 			if((flag&(1<<i))==0) {
 				a[count]=i;
-				combination(i+1, flag|(1<<i), count+1); //i 추가
+				combination(i, flag|(1<<i), count+1); //i 추가
 			}
-			
 		}
 		
 	} //count 0,1,2자리에 DFS?로 입력 

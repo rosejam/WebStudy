@@ -23,12 +23,12 @@ public class MazeDfs2 { //visit 사용, 원본을 건드리지 않음
 	
 	public static void main(String[] args) throws Exception {
 		stack = new Stack<int[]>();
-		visit = new int[N][N];
+		visit = new int[N][N]; //maze가 아닌 visit을 건들겠다.
 		//visit[0][0]=-1;
 		
 		//MazeDfs2 m =new MazeDfs2(); //메서드에 스태틱을 뺐을 경우 생성해주어야 함!! //객체지향에서는 static은 목적을 가지고 사용
-		dfsr(0,0,0);//m.dfsr(0,0,0);
-		//m.dfs(0,0,0);
+		//dfsr(0,0,0);//m.dfsr(0,0,0);
+		dfs(0,0,0);
 		
 		System.out.println();
 		for(int[] a:maze) System.out.println(Arrays.toString(a));
@@ -45,12 +45,12 @@ public class MazeDfs2 { //visit 사용, 원본을 건드리지 않음
 		for (int d=0; d<di.length; d++) { 
 			int ni = i+di[d];
 			int nj = j+dj[d];
-			if(0<=ni && ni<N && 0<=nj && nj<N && maze[ni][nj]==0 && visit[ni][nj]==0) {
+			if(0<=ni && ni<N && 0<=nj && nj<N && maze[ni][nj]==0 && visit[ni][nj]==0) { //범위안에 있고, 인접하고, 방문안했을 경우
 				//visit[ni][nj] = visit[i][j]-1; MD1과같다.
 				dfsr(ni,nj,cnt+1); //재귀호출의 횟수를 세는 용도의 cnt(시작점까지 카운트해서 1부터 시작하면 19)
 			}
 		}
-		//visit[i][j]=0; //방문 표시를 없애면서 지나감, 길이 여러개일때 최소경로를 찾을수 있게 해줌
+		////visit[i][j]=0; //방문 표시를 없애면서 돌아옴, 길이 여러개일때 최소경로를 찾을수 있게 해줌 //한번 간길을 다시 가도 될때?
 	}
 
 	public static void dfs(int i, int j, int cnt) { //Stack대신에 Queue로 바꾸면 Bfs와 같은 코드로 작성!!
@@ -67,11 +67,11 @@ public class MazeDfs2 { //visit 사용, 원본을 건드리지 않음
 					System.out.println("i=" +i+ ", j="+j+ ", cnt="+cnt);
 					return; //멈추는게 아니고 계속 올라감
 				}
-				for (int d=0; d<di.length; d++) { //0 1 3 5 4 2 6
+				for (int d=0; d<di.length; d++) { 
 					int ni = i+di[d];
 					int nj = j+dj[d];
 					if(0<=ni && ni<N && 0<=nj && nj<N && maze[ni][nj]==0 && visit[ni][nj]==0) {
-						visit[ni][nj] = visit[i][j]-1; //돌아갈때 지우면서 감?
+						//visit[ni][nj] = visit[i][j]-1; //돌아갈때 지우면서 감?
 						stack.push(new int[] {ni,nj,cnt+1});
 					}
 				}

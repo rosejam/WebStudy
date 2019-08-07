@@ -1,7 +1,7 @@
 Collections.sort(어레이리스트); 로 정렬
 
 우선 아래의 정렬 클래스 들을 import한다.
-java.lang.Comparable<클래스이름>			| java.util.Comparator<클래스이름>
+*java.lang.Comparable<클래스이름>			| *java.util.Comparator<클래스이름>
 객체 정렬시 "기본 정렬기준"을 삼아서 정렬		| 기본 정렬 기준 "이외의 기준"으로 정렬시
 compareTo() 오버라이딩				| compare( , ) 오버라이딩
 
