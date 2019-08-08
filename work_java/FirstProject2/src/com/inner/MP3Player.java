@@ -35,12 +35,13 @@ public class MP3Player {
 			}
 		});
 		
-		player.play(new Video() {
+		player.play(new Video() { //Video인터페이스를 구현하는 무명의 클래스를 정의 및 생성
 			@Override 
 			public void play() {
 				System.out.println(this.getClass().getName()); //com.inner.MP3Player$3
 			} 
 		});
+		
 	}
 
 }

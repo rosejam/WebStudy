@@ -1,9 +1,9 @@
 package array2;
-
-public class SubSet2 {
-	public static int[] a = {1,2,3,4}; //i는 0~15까지 4자리 2진수(들어가는지 안들어가는지 모든 경우 표현)
+//외우기!
+public class _SubSet2 { 
+	public static int[] a = {1,2,3,4}; 
 	public static void main(String[] args) {
-		for(int i=0; i<(1<<a.length); i++) {
+		for(int i=0; i<(1<<a.length); i++) {//i는 0~15까지 4자리 2진수(들어가는지 안들어가는지 모든 경우 표현)
 			//System.out.println("i=" +i+" "+ Integer.toBinaryString(i));
 			int sum =0;
 			for(int j=0; j<a.length; j++) {
@@ -14,7 +14,5 @@ public class SubSet2 {
 			}
 			System.out.println(" sum="+sum);
 		}
-		
 	}
-
 }

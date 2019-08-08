@@ -15,6 +15,7 @@ class Solution2{
 		int T = Integer.parseInt(sa[0]);*/
 		
 		StringTokenizer st = new StringTokenizer(line);
+		
 		int T = Integer.parseInt(st.nextToken());
 		
 		for(int tc = 1; tc <= T; tc++){

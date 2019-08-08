@@ -9,21 +9,14 @@ import java.util.Queue;
 class StringComparator implements Comparator<String>{ 
 	@Override
 	public int compare(String o1, String o2) {
-		return -o1.compareTo(o2); 	//기본형 데이터타입말고는 모두 이렇게 비교(객체 정렬 등) //오름차순 //내꺼 (비교하고자 하는것)
-									//앞에 -를 붙이면 내림차순
+		return -o1.compareTo(o2); 	//기본형 데이터타입말고는 모두 이렇게 비교(객체 정렬 등) //오름차순 //내꺼 그 다음 비교하고자 하는것
+									//"앞에 -를 붙이면 내림차순"
 									//기본형 데이터  : Integer.compare(o1, o2);
 	}
 }
 
 public class QueuePriority {
 	public static void main(String[] args) {
-/*		Queue<String> q = new LinkedList<>(); 
-		q.offer("홍길동");
-		q.offer("강호동");
-		q.offer("사오정");
-		System.out.println(q);
-		while(!q.isEmpty()) System.out.println(q.poll());*/
-		
 		PriorityQueue<String> pq = new PriorityQueue<>(new StringComparator()); //Priority큐에 위에 작성한 Comparator객체를 인자로 전달
 		PriorityQueue<int[]> pq2 = new PriorityQueue<>(new Comparator<int[]>(){ //Anonymous nested class
 			@Override

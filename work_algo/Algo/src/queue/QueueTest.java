@@ -35,7 +35,7 @@ public class QueueTest {
 	public static int qpeek() {
 		if(isEmpty()) {
 			System.out.println("Queue Empty");
-			return -1; //이렇게 밖에 표현못하나.
+			return -1; //
 		}
 		return queue[front+1]; //front는 그대로 둠
 	}
@@ -45,6 +45,7 @@ public class QueueTest {
 		enqueue(2);
 		enqueue(3);
 		System.out.println(qpeek());
+		System.out.println(dequeue());
 		System.out.println(dequeue());
 		System.out.println(dequeue());
 		System.out.println(dequeue());

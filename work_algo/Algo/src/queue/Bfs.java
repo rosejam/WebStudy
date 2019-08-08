@@ -33,14 +33,14 @@ public class Bfs {
 	//재귀는사용X
 
 	public static void bfs2(int node) { //Dfs와 겹치는 코드!!
-		int cnt=0;
+		int cnt=0; //
 		visit = new boolean[V];
 		visit[node]=true; //미리 방문처리를 하고 넣는다!(큐중복방지)
 		queue.offer(node);
 		while(!queue.isEmpty()) { 
 			int size = queue.size();
-			for(int i=0; i<size; i++) {
-				int curr = queue.poll();
+			for(int i=0; i<size; i++) { //cnt용
+				int curr = queue.poll(); 
 				System.out.print(curr + " ");
 				
 				for (int next=0; next<V; next++) { //0 1 2 3 4 5 6 

@@ -7,17 +7,23 @@ public class StackTest {
 	public static int top = -1;
 	
 	public static boolean push(int value) {
-		if(top >= stack.length) return false;
+		if(top >= stack.length) return false; //full
 		stack[++top] = value;
 		return true;
 	}
 	public static int pop() {
-		if(top == -1) return -1;
+		if(isEmpty()) {
+			System.out.println("Stack Empty");
+			return -1; 
+		}
 		return stack[top--];
 	}
 	
 	public static int peek() {
-		if(top == -1) return -1;
+		if(isEmpty()) {
+			System.out.println("Stack Empty");
+			return -1; 
+		}
 		return stack[top];
 	}
 	
