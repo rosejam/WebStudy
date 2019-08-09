@@ -28,8 +28,8 @@ throw 익셉션 == (특정 상황이 될 경우)예외를 발생시킨다!!
 DB					DB
 
 pipe
-I/O: 입력용(읽기용) InputStream/Reader     
-     출력용(쓰기용) OutputStream/Writer      - 그 이름의 파일이 없으면 생성하고 씀
+I/O: 입력용(읽기용) InputStream또는Reader     
+     출력용(쓰기용) OutputStream또는Writer      - 그 이름의 파일이 없으면 생성하고 씀
 데이터 전송 단위 : 	byte스트림(1byte) - 영문, 숫자, 특수 <한글쓰면 깨짐>		InputStream/OutputStream
 		character스트림(2byte) - 한글, 중국어 <한글 처리할 때 사용> 	Reader/Writer
 처리작업:	node 스트림 - source나 destination하고 직접 연결되어서 "읽고 쓰는" 파이프

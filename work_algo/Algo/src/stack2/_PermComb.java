@@ -2,6 +2,7 @@ package stack2;
 //외우기!
 import java.util.Arrays;
 import java.util.Scanner;
+
 //순열 nPr =n*(n-1)*...*(n-r),  5PI3 :125
 //중복순열 nPIr =n^r,  5PI3 :60
 //조합 nCr =nPr/r!,  5C3 = 5P3/3! = 5*4*3/3*2*1 :10
@@ -17,13 +18,13 @@ public class _PermComb {
 			return;
 		}
 		////////////////
-		for(int i=0; i<n; i++) { //start부터 조합. 0부터는 순열!!!!
-			//if(v[i]==0) { //방문안했을 경우
-				//v[i]=1; //방문처리
+		for(int i=start; i<n; i++) { //start부터 조합. 0부터는 순열!!!!
+			if(v[i]==0) { //방문안했을 경우
+				v[i]=1; //방문처리
 				a[count]=d[i];        ////
 				permcomb(i, count+1); ////이 두줄은 항상 유지(중복O/중복X)
-				//v[i]=0; //방문후 방문해제
-			//}//v확인 및 사용은 중복부분을 없애는 부분!!!!
+				v[i]=0; //방문후 방문해제
+			}//v확인 및 사용은 중복되지 않도록 하는 부분!!!!
 		}
 		////////////////
 	} 
@@ -37,5 +38,4 @@ public class _PermComb {
 		System.out.println(cnt); //
 		//sc.close();
 	}
-
 }

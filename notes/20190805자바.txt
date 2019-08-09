@@ -80,5 +80,5 @@ java.net패키지에서 TCP방식의 네트워크 지원
 1. ServerSocket(포트 번호)					 	2. Socket(서버 IP주소, 서버의 포트 번호) 접속요청
 3. Server.accept() 접속허가 : 클라이언트2.를 기다렸다 받는 역할  
 4. Socket	이 받아짐 클라이언트와 1:1통신을 담당
-						5. Stream파이프
+						5. Stream파이프(socket으로 만듬)
 다끝나면 4,5를 close한다.

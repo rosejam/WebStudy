@@ -1,1 +1,59 @@
-	<사건처리>
+	<GUI>자바 api
+java.AWT : C같은 native코드 포함. 더 빠름
+javax.SWING : Java로만 되어있음. 어떤 실행환경에서도 동일
+
+	Window
+	^
+	<JFrame> :	타이틀 바
+			(메뉴 바)
+			Content Pane(버튼 등을 붙인다.)  
+	
+	JLabel 로 글씨 표시(String아님)
+	
+Layout Manager : 화면에 어디에 뭐를 붙일지 (여러 레이아웃을 같이 사용)- 컨테이너에 지정할 수 있다.
+	FlowLayout : 화면 상단 부터 중앙 정렬. 화면 크기가 변하면 배치가 달라짐(가로가 늘어가면 아래줄이 올라옴)
+	BorderLayout(Default) : 화면을 5개로 나눈다.(사용하는 부분만 보임) 화면 크기에 따라 배치가 달라지지 않음. 
+			어느 부분에 붙일지 지정해주지 않으면 중앙에 붙음. 같은 곳에 여러개 붙이면 마지막 것만 보임
+	GridLayout : 화면이 행렬 방식의 격자로 나뉘어있음. 화면 크기에 따라 배치가 달라지지 않음. 
+
+Layout을 겹쳐서 사용할 때 중간사이즈Container 즉, JPanel을 만들어서 다른 레이아웃에 붙임.
+
+	<사건처리>=Event Handling
+화면을 구성하고 있는 컴포넌트들에 대해 발생하는 이벤트(ex.마우스 움직임, 클릭 등) 처리
+Event Handler(감시자들) : 	"인터페이스"(추상메소드에 무슨 일을 할지 적어 완성)
+			이름이 "~Listener"이다.( java.awt.event, javax.swing.event)
+
+ 컴포넌트			~Event(사건이름)		~Listener(감시자이름)
+JButton, JTextField		Action			Action			(버튼클릭 또는 한줄글 입력후 엔터)
+JList			ListSelection		ListSelection		(리스트중 선택)
+Window			Window			Window			(마우스가 창에 들어오는/나가는 경우, 타이틀 바를 클릭)
+
+사건처리 순서
+	1. 이벤트 처리 클래스 정의(implements Listener하기)
+	2. Event발생 컴포넌트에 Listner 등록
+	3. Listener의 추상메소드 구현(사건이 발생했을 때 뭘하고 싶은지 작성)
+
+WindowAdapter : WindowListener를 대신 implements해놓았다. (직접 Listener를 implements하지 않고 Adapter를 extends해서 필요한 것만 오버라이딩)
+		2개 extends 할 수 없을때 무명클래스 활용
+WindowListener(인터페이스)
+^
+^ implements
+^
+WindowAdapter(메서드는 "비어있는 상태{}로" 이미 완성되었지만 추상클래스여서 생성불가능->상속은 필수, "필요한 부분만" 오버라이딩 해야함)
+^
+^ 무명클래스 or extends
+^
+ChatTest
+
+	<채팅서버>
+1클라이언트당 1쓰레드에 맡긴다. 
+클라이언트가 접속했을 때 "accept는 main에서 하고 받은 소켓"은 쓰레드를 만들어서 "스레드에 전달" -> "스레드에서 스트림생성"
+main에서 만들어진 스레드가 쓰레드List에 저장됨
+클라이언트가 Closing했을때 소켓클로즈, 연결 끊김-> 담당 쓰레드에서 IO익셉션 발생 ->
+
+
+
+
+
+
+11559 17135/6

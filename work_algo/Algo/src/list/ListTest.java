@@ -61,5 +61,4 @@ public class ListTest {
 		ll.delete(1);
 		ll.print();
 	}
-
 }

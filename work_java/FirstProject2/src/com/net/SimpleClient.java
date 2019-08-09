@@ -47,7 +47,7 @@ public class SimpleClient {
 		////
 //		dos.writeUTF(msg2); //출력
 		
-		//4.마무리
+		//4.마무리(WindowClosing에서 해줌)
 		dis.close();
 		s1in.close();
 		dos.close();

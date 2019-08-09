@@ -55,10 +55,10 @@ public class SimpleServer {
 			t.start();
 			t.join(); //메인아 기다려 //join을 쓰기 위해 t로 받음
 			////
-//			msg = dis.readUTF(); //입력 (block됨) //입출력순서를 맞춰주어야함
+//			msg = dis.readUTF(); //입력 (block됨!) //입출력순서를 맞춰주어야함
 //			System.out.println(msg);
 			
-			//5.마무리
+			//5.마무리(WindowClosing에서 해줌)
 			dos.close();
 			s1out.close();
 			dis.close();
