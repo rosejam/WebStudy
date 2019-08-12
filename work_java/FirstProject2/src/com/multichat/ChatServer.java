@@ -27,6 +27,7 @@ public class ChatServer {
 		for(int i=0; i<handlers.size(); i++) {
 			//try {
 				handlers.get(i).println(message);
+				//handlers.get(i).o.println(message); 와 동일 (o의 범위를 열어놓을 경우)
 			//} catch (Exception ex) {
 			//}
 		}
@@ -42,12 +43,13 @@ public class ChatServer {
 		try {
 			//서버소켓 만들기
 			ServerSocket server = new ServerSocket(port);
+			System.out.println("ChatServer is ready.");
 			while(true) {
 				//기다렸다 받기
 				Socket client = server.accept();
 				//받은 후 담당 스레드 만들기
-				ChatHandler handler = new ChatHandler(client, this); //소켓을 파라메터로 전달,
-																		//this는 ChatServer클래스 -> 쓰레드가 여기의 메서드를 쓸 수 있게 됨
+				ChatHandler handler = new ChatHandler(client, this); //소켓을 파라메터로 전달, 메인은 계속 받기만
+																		//this는 ChatServer클래스 -> 쓰레드가 서버의 메서드를 쓸 수 있게 됨
 				//register(handler);//여기서 하거나 ChatHandler에서 하거나 1번만 등록!
 				//스레드 스타트
 				handler.start();
@@ -62,7 +64,7 @@ public class ChatServer {
 		server.network();
 	}
 	
-	//참고용으로 추가
+	//참고용으로 추가함 이 콘솔에 핸들러의 내용을 출력하려고
 	public void println(String msg) {
 		System.out.println(msg);
 	}

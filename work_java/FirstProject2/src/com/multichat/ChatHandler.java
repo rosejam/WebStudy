@@ -38,8 +38,10 @@ public class ChatHandler extends Thread { //쓰레드(클라이언트 1대1담�
 	public void run() { //클라이언트에서 입력 받음
 		String name ="";
 		try {
-			server.register(this); //서버에 나(쓰레드)를 등록해주세요
 			name = i.readLine(); //처음엔 이름을 받아넣음
+			//System.out.println(s.getInetAddress() + "::" + name); 
+			server.println(s.getInetAddress() + "::" + name); //금방접속한 클라이언트의 IP주소 ::이름
+			server.register(this); //서버에 나(쓰레드)를 등록해주세요
 			server.broadcast(name + "님이 입장하셨습니다");
 			server.println(name + "님이 입장하셨습니다");//
 			
@@ -52,7 +54,7 @@ public class ChatHandler extends Thread { //쓰레드(클라이언트 1대1담�
 			server.println("연결끊김");
 		} 
 		//연결이 끊김
-		server.unregister(this); 
+		server.unregister(this); //먼저 unregister후 퇴장출력
 		server.broadcast(name + "님이 퇴장하셨습니다");
 		server.println(name + "님이 퇴장하셨습니다");//
 		//close
@@ -66,7 +68,7 @@ public class ChatHandler extends Thread { //쓰레드(클라이언트 1대1담�
 			server.println(e.toString());
 		}
 	}
-	public void println(String msg) {
+	public void println(String msg) { //서버에서 사용
 		o.println(msg); //서버의 broadcast()에서 쓰레드의 private한 출력파이프를 통해 출력 할 수 있음!!
 	}
 }
