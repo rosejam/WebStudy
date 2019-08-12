@@ -2,7 +2,7 @@ package array1;
 
 import java.util.Arrays;
 
-public class Array1Test {
+public class _Array1Test {
 	public static void main(String[] args) {
 		//1.선언
 		int[] a; //int a[];
@@ -29,22 +29,23 @@ public class Array1Test {
 		e = new int[] {10,11,12}; //2+3과정
 		
 		//4.출력
-		for(int i=0; i<e.length; i++) System.out.println(e[i] + " ");
+		for(int i=0; i<e.length; i++) System.out.print(e[i] + " ");
 		System.out.println();
-		for(int v:e) System.out.println(v + " ");
+		for(int v:e) System.out.print(v + " ");
 		System.out.println();
 		System.out.println(Arrays.toString(e));
+		System.out.println();
 		
 		//5.복제
 		int[] f= new int[e.length];
-		System.arraycopy(e,0,f,0,e.length);
-		f=Arrays.copyOf(e,  e.length);
+		//System.arraycopy(e,0,f,0,e.length); //pass by value
+		f=Arrays.copyOf(e, e.length); //위의 것과 같은 표현
 		e[0]=0;
 		System.out.println(Arrays.toString(e));
-		System.out.println(Arrays.toString(f));//패스바이밸류?
-		f = e.clone();
+		System.out.println(Arrays.toString(f));
+		f = e.clone(); //pass by reference. 사용하지x
 		e[0]=0;
 		System.out.println(Arrays.toString(e));
-		System.out.println(Arrays.toString(f));//패스바이 레퍼런스?
+		System.out.println(Arrays.toString(f));
 	}
 }

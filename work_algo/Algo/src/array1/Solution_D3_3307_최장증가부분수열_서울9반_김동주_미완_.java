@@ -52,6 +52,8 @@ class Solution_D3_3307_최장증가부분수열_서울9반_김동주_미완_{ //
 			}
 		}
 	}
+	
+
 	public static int counting(int a) {
 		stack.push(a);
 		while(!stack.empty()) {
@@ -67,5 +69,6 @@ class Solution_D3_3307_최장증가부분수열_서울9반_김동주_미완_{ //
 				}
 			}
 		}
+		return cnt;
 	}
 }

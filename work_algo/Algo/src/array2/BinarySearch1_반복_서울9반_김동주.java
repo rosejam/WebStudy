@@ -1,4 +1,4 @@
-package array1;
+package array2;
 
 import java.io.FileInputStream;
 import java.util.Arrays;
