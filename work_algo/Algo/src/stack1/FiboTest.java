@@ -15,7 +15,7 @@ public class FiboTest {
 	}
 	
 	public static int fibo2(int n) { //DP
-		for(int i=2; i<=n; i++) {
+		for(int i=2; i<=n; i++) { //memo ==0인지 확인하고 해도 좋음 
 			memo[i] = memo[i-1] + memo[i-2];
 		}
 		return memo[n];
