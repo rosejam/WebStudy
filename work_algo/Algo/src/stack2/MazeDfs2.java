@@ -72,7 +72,7 @@ public class MazeDfs2 { //visit 사용, 원본을 건드리지 않음
 					int nj = j+dj[d];
 					if(0<=ni && ni<N && 0<=nj && nj<N && maze[ni][nj]==0 && visit[ni][nj]==0) {
 						//visit[ni][nj] = visit[i][j]-1; //돌아갈때 지우면서 감?
-						stack.push(new int[] {ni,nj,cnt+1});
+						stack.push(new int[] {ni,nj,++cnt}); //cnt+1이아님
 					}
 				}
 			}

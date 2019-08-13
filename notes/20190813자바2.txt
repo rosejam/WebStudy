@@ -13,9 +13,9 @@
 	컬럼의 <제약조건>!
 NOT NULL : NULL값 입력불가
 UNIQUE : 컬럼의 값 중복되어서 들어올 수 없다. NULL은 가능(널 값은 여러개 가능)
-PRIMARY KEY=P.K : UNIQUE + NOT NULL
+PRIMARY KEY=PK : UNIQUE + NOT NULL
 	ex) EMPID
-FOREIGN KEY=외래키, 참조키 : "다른테이블의 컬럼을 참조해서 사용한다"는 뜻 (=그 테이블의 컬럼에 있는 값만 사용가능하다) 중복이나 NULL가능! - 보통 다른 table의 P.K를 참조
+FOREIGN KEY=FK=외래키, 참조키 : "다른테이블의 컬럼을 참조해서 사용한다"는 뜻 (=그 테이블의 컬럼에 있는 값만 사용가능하다) 중복이나 NULL가능! - 보통 다른 table의 P.K를 참조
 				참조되는 테이블은 부모(원래글), 참조하는 테이블은 자식(댓글) 	-> data 추가(=INSERT)시 부모테이블 먼저, 자식테이블 나중
 											-> data 삭제(=DELETE)시 자식테이블 먼저, 부모테이블 나중(부모를 삭제하면 자식도 자동삭제되게 설정할수도 있음)
 	ex) emp의 JOBID, DEPTID, MGRID
@@ -27,9 +27,25 @@ CHECK : 체크조건이 참인 경우만 값을 받음
 뷰를 access하게 되면 간접적으로 테이블을 access하게 됨(뷰에서 수정 하면 원래 테이블이 수정됨)
 선택된 칼럼 정보만 참조 가능(보안)
 
-생성 	Create[or replace] view 뷰이름
-	As (sub-query : 테이블과 동일하게 사용)
+생성 :	Create[or replace] view 뷰이름
+	As (sub-query : 테이블과 동일하게 사용); 
 
 나중에 Select 뷰이름 하면 View가 메모리에 올라와서 사용할 수 있다.
 
-	<Index> 컬럼의 빠른 검색을 위해 사용	
+	<Index=맨뒷장의 찾아보기 페이지> 컬럼의 빠른 검색을 위해 사용, BTREE형식으로
+cluster_index() : PK
+non cluster_index() : 사용자정의
+
+-인덱스 생성 기준
+	where절에서 자주 사용되는 컬럼
+	Join에 사용되는 공통 컬럼
+	자주 변경되지 않는 테이블( ex. 읽기전용)
+	데이터가 많은 테이블(행이 많음)
+	검색 결과양이 많지 않은 경우(전체의 약 15%이하)
+
+(row id즉 설정하지 않아도 기본 인덱스가 부여됨)
+생성 :	Create [unique] index [인덱스이름]
+	on 테이블이름(컬럼1, 컬럼2, , );  -> 이 컬럼 순서대로 rowid목록이 있는 인덱스 테이블이 생성된다. (메모리차지)
+
+종류 :	1.Single Index/Composite Index(여러개 복합)
+	2.Unique(인덱스컬럼의 값이 유일해야 함)/Non-Unique

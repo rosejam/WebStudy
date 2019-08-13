@@ -65,3 +65,6 @@ select e.empid, e.fname, ee.fname "mgrname"
 from emp e, emp ee -- 자기 자신을 2개 join
 where e.mgrid = ee.empid;
 select * from mgrnames;
+
+-- INDEX
+-- create

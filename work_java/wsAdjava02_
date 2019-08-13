@@ -23,6 +23,6 @@ delete from book
 where title like '%Java%' and price < 10000;
 select * from book;
 
-select publisher 출판사, count(*) "도서의 개수", sum(price) "가격의 합계", avg(price) "가격의 평균"
+select count(*) "도서의 개수", sum(price) "가격의 합계", avg(price) "가격의 평균"
 from book
 group by publisher;
