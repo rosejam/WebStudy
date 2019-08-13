@@ -18,27 +18,37 @@ DB 관리 시스템=DBMS : 관리 프로그램들의 묶음 	ex)Oracle-MySQL, MS SQL (mysql은 �
 				DB
 	--------------------------------------------------
 <SQL=DB언어> 쿼리(코드)는 대소문자 상관 X 값은 대소문자를 구분
-DDL(데이터 정의어)	
+-DDL(데이터 정의어) -- rollback/commit 불가!!!!
 	"관리자(DBA)나 설계자"가 데이터간의 관계를 정의, 구조를 변경
-DML(데이터 조작어) - 검색 등 
+	<CREATE table>
+	create table 테이블이름(칼럼이름 칼럼데이터타입(크기) 칼럼제약조건,.. ,.. );
+	<ALTER table> add, modify, drop(컬럼 삭제), 새로운 칼럼 정의 등
+	alter table 테이블이름 뭐할건지
+	<DROP table> = Table을 다 날림
+	drop table 테이블이름;
+	<TRUNCATE table> = Table은 남아있고 data는 다 날림 
+	truncate table 테이블이름;
+
+-DML(데이터 조작어) - 검색 등 -- *문장을취소=rollback(<->commit)이 가능함!!
 	"사용자"가 "응용프로그램(Java)나 질의어"로 실제 데이터를 검색,수정,삭제,변경
 	<SELECT문(검색):>
-		4*SELECT : 열
+		5*SELECT : 열
 		1*FROM : 테이블
-		2-WHERE : 가로로 자름! 조건에 따라(작업 대상 줄만 추려냄)
+		2-WHERE : 가로로 자름! "(일반)조건"에 따라(작업 대상 줄만 추려냄)
 		3-GROUP BY : 대상을 열 값에 따라 그룹지음
-		5-HAVING : 그룹의 조건
+		4-HAVING : "그룹의 조건" - 집계함수로 조건을 보통체크
 		6-ORDER BY : 정렬한다.
 		ALIAS AS : "별칭" 공백있을 경우""필수
 		연산자
 	<INSERT문(투플 삽입)>
-	<DELETE문(삭제)>
+	<DELETE문(삭제)> = Table은 남아있고 data를 삭제
+		DELETE FROM 테이블 WHERE 조건;
 	<UPDATE문(수정)>		
-		
-DCL(데이터 제어어) 
+		UPDATE 테이블 set 컬럼 WHERE 조건;
+
+-DCL(데이터 제어어) 
 	"관리자(DBA)"가 데이터의 보안,무결성,데이터복구,병행수행제어(여러개가 하나의 데이터에 접근했을 경우),사용자권한설정
-
-
+-------------------------------------------
 
 -관리자 DBA : 전체 환경구성과 운영 관련 책임자
 -설계자 : 요구사항대로 개념적/물리적 스키마의 설계
