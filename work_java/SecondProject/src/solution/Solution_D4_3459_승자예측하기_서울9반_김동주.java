@@ -46,8 +46,6 @@ public class Solution_D4_3459_승자예측하기_서울9반_김동주 { //나는 안넘게, 상대�
 			else return game(x*2, curr+1, !w);
 		}
 		
-			
-		
 /*		if(2*x > N) return !w; //2x가 N초과. 지금 사람이 진다. 
 		else if(2*x+1 > N) return w; //2x는 N초과 안하는데 2x+1이 N초과. 다음사람이 진다.
 		else return game(2*x, !w);*/
