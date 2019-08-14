@@ -1,4 +1,4 @@
-package solution;
+package solution.D1;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -11,8 +11,9 @@ public class Solution_D1_2050_알파벳을숫자로변환_서울9반_김동주 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		char[] T = br.readLine().toCharArray();
 		for(int i=0; i<T.length-1; i++) {
-			System.out.print((int)T[i]-64+ " ");
+			System.out.print((int)T[i]-64+ " "); //캐릭터는 int하면 숫자임
 		}
 		System.out.println((int)T[T.length-1]-64);
+		br.close();
 	}
 }

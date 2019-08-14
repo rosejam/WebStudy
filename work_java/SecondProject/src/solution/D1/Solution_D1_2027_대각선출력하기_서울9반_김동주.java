@@ -1,4 +1,4 @@
-package solution;
+package solution.D1;
 
 public class Solution_D1_2027_대각선출력하기_서울9반_김동주 {
 	public static char[][] X = new char[5][5];

@@ -1,4 +1,4 @@
-package solution;
+package solution.D1;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -26,6 +26,7 @@ public class Solution_D5_8278_이상한수열_서울9반_김동주_미완_시간초과 {
 			
 			System.out.println("#" + tc + " " + get_sn(N)%M);
 		}
+		sc.close();
 	}
 	public static long get_sn(long n) {
 		if(n<2) return n;

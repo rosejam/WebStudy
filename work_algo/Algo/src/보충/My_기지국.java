@@ -87,9 +87,13 @@ public class My_기지국 {
 					}*/
 				}
 			}
+			//결과테스트출력1
 			for(int m=0; m<X.length;m++) { //잘 되었는지 Arrays.toString(1차배열)로 출력하면 된다.
 				System.out.println(Arrays.toString(X[m]));
 			}
+			System.out.println();
+			//결과테스트출력2!! by 포이치 문
+			for(char[] x: X) System.out.println(Arrays.toString(x));
 			System.out.println();
 			
 			//남아있는 H를 카운팅

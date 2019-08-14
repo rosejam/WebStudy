@@ -29,7 +29,8 @@ class MyLinkedList{
 	public void delete(int data) { //하나 앞쪽에서 비교
 		if(head.link==null) return; //empty
 		
-		Node t = head; //더미를 가리킴
+		Node t = head; //더미를 가리킴 //t가 앞부터 쭉 따라간다.
+		//1개가 아닌 여러개 삭제하려면 p도 필요
 		while(t.link!=null) {
 			if(t.link.data==data) { //여기서 1번 데이터 부터 찾기 위해서 //문자열이라면 equals()이용
 				t.link = t.link.link;
