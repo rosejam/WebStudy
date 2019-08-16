@@ -42,5 +42,3 @@ public class Solution_D4_1231_중위순회_서울9반_김동주 {
 		br.close();
 	}
 }
-
-

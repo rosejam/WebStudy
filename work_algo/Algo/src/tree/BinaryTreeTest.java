@@ -1,7 +1,8 @@
 package tree;
 
 class BinaryTree{
-	static class Node{ //static 붙인 이유 : 
+	static class Node{ //static 붙인 이유 : 탑레벨클래스처럼 사용 가능(static method에서 사용가능)
+						//클래스가 로딩될때 딱하나만 만들어서 공유, 객체마다 다르지 않음
 		int data;
 		Node left;
 		Node right;
@@ -47,8 +48,8 @@ Data found!
 */
 public class BinaryTreeTest {
 	public static void main(String[] args) {
-		//BinaryTree.Node n1 = new BinaryTree().new Node(7); //Node클래스에 static안 붙인 경우
-		BinaryTree.Node n1 = new BinaryTree.Node(7); //Node클래스에 static붙인경우
+		//BinaryTree.Node n1 = new BinaryTree().new Node(7); //Node클래스에 static안 붙인 경우!!
+		BinaryTree.Node n1 = new BinaryTree.Node(7); //Node클래스에 static붙인경우!!(outer클래스를 만들지 않고도 nested클래스를 생성할 수 있다!!!)
 		System.out.println(n1.data);
 		
 		int[] a=new int[10];

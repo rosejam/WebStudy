@@ -14,6 +14,7 @@ public clast Hello {
 package array1;
 
 import java.io.FileInputStream;
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Scanner;
 //메서드에 더블클릭후 F3하면 소스코드를 볼수 있다//컨트롤+D하면 한줄삭제//알트키+아래화살표 하면 줄이 아래로 "이동"
@@ -129,7 +130,29 @@ public class Hello {
 		System.out.println(sb1==sb2); //객체안의 값 비교는 ==이렇게 하면 안됨.
 		System.out.println(sb1.equals(sb2)); //StringBuilder는 내부적으로 Buffer사용.이렇게 하면 안됨
 		System.out.println(sb1.toString().equals(sb2.toString())); //이렇게 해야함.
+		System.out.println();
 	
-		
+		//진법 변환
+		System.out.println(Integer.parseInt("101", 2)); //2진법->10진법
+		System.out.println(Integer.parseInt("101", 8)); //8진법->10진법
+		System.out.println(Integer.parseInt("101", 16)); //16진법->10진법
+		System.out.println();
+		System.out.println("0b"+Integer.toBinaryString(17)); //10진법->2진법
+		System.out.println("0b"+Integer.toString(17, 2)); //10진법->2진법 //위와 동일
+		System.out.println("0"+Integer.toOctalString(17)); //10진법->8진법
+		System.out.println("0x"+Integer.toHexString(17)); //10진법->16진법
+		System.out.println();
+		//BigInteger
+		long i = 11111111111L; //정수형 범위 밖이면 에러, long에 숫자에 L을 붙이고 대입
+		String i0 = "11111111111111111111111111111"; //long범위 밖이면 BigInteger
+		BigInteger i1 = new BigInteger(i0);
+		BigInteger i2 = i1.add(BigInteger.valueOf(3));
+		BigInteger i3 = i1.subtract(BigInteger.ONE);
+		BigInteger i4 = i1.multiply(BigInteger.TEN);
+		BigInteger i5 = i1.divide(BigInteger.valueOf(2));
+		System.out.println(i2);
+		System.out.println(i3);
+		System.out.println(i4);
+		System.out.println(i5);
 	}
 }

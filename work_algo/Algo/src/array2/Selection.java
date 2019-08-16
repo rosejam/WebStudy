@@ -13,7 +13,7 @@ public class Selection {
 				if(a[j]<a[min]) min = j;
 			}
 			int T=a[i]; a[i]=a[min]; a[min]=T;
-			System.out.println(Arrays.toString(a));
+			System.out.println(Arrays.toString(a)); //스왑될때마다 찍음
 		}
 		System.out.println("\n"+Arrays.toString(a));
 	}

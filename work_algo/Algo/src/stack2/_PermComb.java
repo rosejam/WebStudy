@@ -3,22 +3,22 @@ package stack2;
 import java.util.Arrays;
 import java.util.Scanner;
 
-//순열 nPr =n*(n-1)*...*(n-r),  5PI3 :125
-//중복순열 nPIr =n^r,  5PI3 :60
-//조합 nCr =nPr/r!,  5C3 = 5P3/3! = 5*4*3/3*2*1 :10
+//중복순열 nPIr =n^r,  5PI3 :125
+//순열 nPr =n*(n-1)*...*(n-r),  5P3 :60
 //중복조합 nHr =n+r-1Cr,  5H3 = 5+3-1C3 = 7C3 = 7P3/3! :35
+//조합 nCr =nPr/r!,  5C3 = 5P3/3! = 5*4*3/3*2*1 :10
 
 public class _PermComb {
 	public static int n, r, cnt, a[], v[], d[]={1,2,3,4,5};
 	
 	public static void permcomb(int start, int count) { //count는 레벨(깊이)를 의미한다.
 		if(count == r){ //가장 깊은 레벨에 도달하면 return
-			cnt++; //가지의 개수를 세는 용도
+			cnt++; //그냥 가지의 개수를 세는 용도
 			System.out.println(Arrays.toString(a));
 			return;
 		}
 		////////////////
-		for(int i=start; i<n; i++) { //start부터 조합. 0부터는 순열!!!!
+		for(int i=0; i<n; i++) { //start부터 조합. 0부터는 순열!!!!
 			if(v[i]==0) { //방문안했을 경우
 				v[i]=1; //방문처리
 				a[count]=d[i];        ////

@@ -1,7 +1,9 @@
 	<Top-level Class> 포함하는 바깥쪽 클래스 (클래스에 붙는 수식어들 : final/abstract/public또는 default)
 	<Inner Class = Nested Class> 포함되는 안쪽 클래스 (private또는 static 수식어가 붙을 수 있다.
 탑레벨 클래스에서 위주로 사용하기 위해서 그 내부에 작성함.
-종류	1. static class (알고에서 주로 사용)
+종류	1. static class (알고에서 주로 사용) :outer클래스를 만들지 않고도 nested클래스를 생성할 수 있다!!!!
+					+ static method에서 생성 및 사용 할 수 있다.
+					(싱글톤에서 겟인스턴스)
 	2.*member class
 	3. local class
 	4.*Anonymous class : 클래스 정의(틀만들고)+객체 생성(빵찍고)을 한문장으로 한꺼번에 표기하는 1회생성용 ("이름없는)클래스", 1회용 객체
