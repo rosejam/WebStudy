@@ -11,10 +11,27 @@ public class SSAFY2기_IM_보충 {
 	public static void main(String[] args) {
 // 1. arr 배열에  key 값이 존재하는가? 있음/없음 출력
 		int[] arr = {4,6,2,1,5,3};
-		int key = 1; // 있음
-//		int key = 10; // 없음
+//		int key = 1; // 있음
+		int key = 10; // 없음
 		// 코드작성 해주세요
-		
+		boolean check=false;
+		for(int a: arr) {
+			if(key==a) {
+				check = true;
+				break;
+			}
+		}
+/*		if(check==false) System.out.println("없음");
+		else System.out.println("있음");*/
+		System.out.println(check?"있음":"없음"); //위두줄을 한줄로
+		//
+		int x; //i를 꺼내서 중간에 break되었는지 여부를 확인할수도 있긴함 
+		for(x=0; x< arr.length; x++) {
+			if(arr[x]==key) {
+				break;
+			}
+		}
+		System.out.println(x == arr.length?"없음":"있음");
 // 2. brr 배열에 최대값을 출력하시오 6
 // 3. brr 배열에 최소값을 출력하시오 1
 		int[] brr = {4,1,6,2,1,5,6,3};
@@ -76,7 +93,8 @@ public class SSAFY2기_IM_보충 {
 		System.out.println(Arrays.toString(grr));
 		Arrays.sort(grr);
 		System.out.println(Arrays.toString(grr));
-		System.out.println(Arrays.binarySearch(grr, ke)); //이진 검색은 정렬된 배열에서만 사용할 수 있다!
+		System.out.println(Arrays.binarySearch(grr, ke+1)); //이진 검색은 정렬된 배열에서만 사용할 수 있다!
+		//인덱스가 ke인 값 출력????
 		
 	}
 }

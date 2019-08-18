@@ -6,7 +6,7 @@ class BinaryTree{
 		int data;
 		Node left;
 		Node right;
-		Node(int data){
+		Node(int data){ //생성자!!
 			this.data=data;
 		}
 	}

@@ -5,22 +5,23 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
-
+//예시답안
 public class Solution_D4_1232_사칙연산_서울9반_김동주 {
-	public static class Node{ //중첩클래스 Node는 static method에서 
+	public static class Node{ //필드클래스
 		boolean isNum;
 		double num;
 		char op; //double또는 char의 값이 트리에 들어감
 		int lidx; //
-		int ridx; //이미 인덱스는 주어짐
+		int ridx; //n까지 꽉 찬 complete트리가 아니므로 자식과 연결해주어야 함
+					//이때 index를 사용하였으므로 노드들은 노드 배열에 들어간다. 
 	}
-	public static Node[] nodes;
+	public static Node[] nodes; //노드의 배열
 	
-	public static double getNum(int idx) {
-		if(nodes[idx].isNum) return nodes[idx].num;
-		
+	public static double getNum(int idx) { //재귀호출로 아래로 내려가면서 계산//여기서 익셉션 발생하면 유효성 체크=0;
+		if(nodes[idx].isNum) return nodes[idx].num; //숫자면 그대로 숫자를 리턴(시드)
+		//숫자가 아니면 재귀호출
 		double num=-1.0;
-		switch(nodes[idx].op) { //여기서 익셉션 발생하면 유효성 체크=0;
+		switch(nodes[idx].op) {
 			case '+': num=getNum(nodes[idx].lidx) + getNum(nodes[idx].ridx); break;
 			case '-': num=getNum(nodes[idx].lidx) - getNum(nodes[idx].ridx); break;
 			case '*': num=getNum(nodes[idx].lidx) * getNum(nodes[idx].ridx); break;
@@ -32,11 +33,11 @@ public class Solution_D4_1232_사칙연산_서울9반_김동주 {
 	public static void main(String args[]) throws Exception{
 		System.setIn(new FileInputStream("res/input_D4_1232.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
+		StringBuilder sb = new StringBuilder();
 		
 		for(int tc = 1; tc <= 10; tc++){
 			int N = Integer.parseInt(br.readLine());
-			//StringBuilder sb = new StringBuilder();
-			nodes = new Node[N+1];
+			nodes = new Node[N+1]; //각 노드에 인덱스가 있다.
 			//a = new char[N+1];
 			for(int i=1; i<=N; i++) {
 				StringTokenizer st = new StringTokenizer(br.readLine());
@@ -56,8 +57,9 @@ public class Solution_D4_1232_사칙연산_서울9반_김동주 {
 					node.ridx=Integer.parseInt(st.nextToken());//
 				}
 			}
-			System.out.println("#" + tc + " "+(int)getNum(1));
+			sb.append("#" + tc + " "+(int)getNum(1)+"\n"); //재귀함수 호출, 1Node부터 시작
 		}
+		System.out.println(sb);
 		br.close();
 	}
 }

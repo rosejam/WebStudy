@@ -21,7 +21,7 @@ class Solution2{
 			sb.append("#"+tc +" "+"\n");
 			//System.out.println("#" + tc + " ");
 		}
-		System.out.println(sb);
+		System.out.print(sb);
 		br.close();
 	}
 }
