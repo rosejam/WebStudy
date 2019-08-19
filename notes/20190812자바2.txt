@@ -18,22 +18,22 @@ DB °ü¸® ½Ã½ºÅÛ=DBMS : °ü¸® ÇÁ·Î±×·¥µéÀÇ ¹­À½ 	ex)Oracle-MySQL, MS SQL (mysqlÀº µ
 				DB
 	--------------------------------------------------
 <SQL=DB¾ð¾î> Äõ¸®(ÄÚµå)´Â ´ë¼Ò¹®ÀÚ »ó°ü X °ªÀº ´ë¼Ò¹®ÀÚ¸¦ ±¸ºÐ
--DDL(µ¥ÀÌÅÍ Á¤ÀÇ¾î) -- rollback/commit ºÒ°¡!!!!
+-DDL(µ¥ÀÌÅÍ Á¤ÀÇ¾î) -- **rollback/commit ºÒ°¡!!!!
 	"°ü¸®ÀÚ(DBA)³ª ¼³°èÀÚ"°¡ µ¥ÀÌÅÍ°£ÀÇ °ü°è¸¦ Á¤ÀÇ, ±¸Á¶¸¦ º¯°æ
 	<CREATE table>
 	create table Å×ÀÌºíÀÌ¸§(Ä®·³ÀÌ¸§ Ä®·³µ¥ÀÌÅÍÅ¸ÀÔ(Å©±â) Ä®·³Á¦¾àÁ¶°Ç,.. ,.. );
 	<ALTER table> add, modify, drop(ÄÃ·³ »èÁ¦), »õ·Î¿î Ä®·³ Á¤ÀÇ µî
 	alter table Å×ÀÌºíÀÌ¸§ ¹¹ÇÒ°ÇÁö
-	<DROP table> = TableÀ» ´Ù ³¯¸²
+	<DROP table> = TableÀ» ´Ù ³¯¸²~!
 	drop table Å×ÀÌºíÀÌ¸§;
-	<TRUNCATE table> = TableÀº ³²¾ÆÀÖ°í data´Â ´Ù ³¯¸² 
+	<TRUNCATE table> = TableÀº ³²¾ÆÀÖ°í data´Â ´Ù ³¯¸²~!
 	truncate table Å×ÀÌºíÀÌ¸§;
 
--DML(µ¥ÀÌÅÍ Á¶ÀÛ¾î) - °Ë»ö µî -- *¹®ÀåÀ»Ãë¼Ò=rollback(<->commit)ÀÌ °¡´ÉÇÔ!!
+-DML(µ¥ÀÌÅÍ Á¶ÀÛ¾î) - °Ë»ö µî -- **DML¹®Àå(update/insert/delete)Àº Ãë¼Ò=rollback(<->commit=È®ÀÎ)ÀÌ °¡´ÉÇÔ!!!!
 	"»ç¿ëÀÚ"°¡ "ÀÀ¿ëÇÁ·Î±×·¥(Java)³ª ÁúÀÇ¾î"·Î ½ÇÁ¦ µ¥ÀÌÅÍ¸¦ °Ë»ö,¼öÁ¤,»èÁ¦,º¯°æ
 	<SELECT¹®(°Ë»ö):>
-		5*SELECT : ¿­
-		1*FROM : Å×ÀÌºí
+		5*[SELECT] : ¿­
+		1*[FROM] : Å×ÀÌºí
 		2-WHERE : °¡·Î·Î ÀÚ¸§! "(ÀÏ¹Ý)Á¶°Ç"¿¡ µû¶ó(ÀÛ¾÷ ´ë»ó ÁÙ¸¸ Ãß·Á³¿)
 		3-GROUP BY : ´ë»óÀ» ¿­ °ª¿¡ µû¶ó ±×·ìÁöÀ½
 		4-HAVING : "±×·ìÀÇ Á¶°Ç" - Áý°èÇÔ¼ö·Î Á¶°ÇÀ» º¸ÅëÃ¼Å©
@@ -41,13 +41,15 @@ DB °ü¸® ½Ã½ºÅÛ=DBMS : °ü¸® ÇÁ·Î±×·¥µéÀÇ ¹­À½ 	ex)Oracle-MySQL, MS SQL (mysqlÀº µ
 		ALIAS AS : "º°Äª" °ø¹éÀÖÀ» °æ¿ì""ÇÊ¼ö
 		¿¬»êÀÚ
 	<INSERT¹®(ÅõÇÃ »ðÀÔ)>
-	<DELETE¹®(»èÁ¦)> = TableÀº ³²¾ÆÀÖ°í data¸¦ »èÁ¦
+	<DELETE¹®(»èÁ¦)> = TableÀº ³²¾ÆÀÖ°í data¸¦ »èÁ¦~!
 		DELETE FROM Å×ÀÌºí WHERE Á¶°Ç;
 	<UPDATE¹®(¼öÁ¤)>		
 		UPDATE Å×ÀÌºí set ÄÃ·³ WHERE Á¶°Ç;
 
 -DCL(µ¥ÀÌÅÍ Á¦¾î¾î) 
 	"°ü¸®ÀÚ(DBA)"°¡ µ¥ÀÌÅÍÀÇ º¸¾È,¹«°á¼º,µ¥ÀÌÅÍº¹±¸,º´Çà¼öÇàÁ¦¾î(¿©·¯°³°¡ ÇÏ³ªÀÇ µ¥ÀÌÅÍ¿¡ Á¢±ÙÇßÀ» °æ¿ì),»ç¿ëÀÚ±ÇÇÑ¼³Á¤
+	
+	Ãë¼Ò=rollback(<->commit=È®ÀÎ)
 -------------------------------------------
 
 -°ü¸®ÀÚ DBA : ÀüÃ¼ È¯°æ±¸¼º°ú ¿î¿µ °ü·Ã Ã¥ÀÓÀÚ
@@ -57,13 +59,13 @@ DB °ü¸® ½Ã½ºÅÛ=DBMS : °ü¸® ÇÁ·Î±×·¥µéÀÇ ¹­À½ 	ex)Oracle-MySQL, MS SQL (mysqlÀº µ
 
 --------------------------------------------
 	<DB´ÜÀ§> : Field -> Record -> Table
-DBMS¿Í ÇÔ²² ¼³Ä¡µÈ "DB(Ã¢°í)"³»ºÎ¿¡ °ü·ÃÀÖ´Â µ¥ÀÌÅÍ³¢¸® ¸ð¾Æ³í °ÍÀº ""Table"(Ã¢°í¾ÈÀÇ ¹Ú½º)=Relation(2Â÷¿øÀÇÇ¥)=°´Ã¼ °ü°èÇü DB"(°í°´Á¤º¸ ÀüÃ¼) 
+DBMS¿Í ÇÔ²² ¼³Ä¡µÈ "DB(Ã¢°í)"³»ºÎ¿¡ °ü·ÃÀÖ´Â µ¥ÀÌÅÍ³¢¸® ¸ð¾Æ³í °ÍÀº ""Table"(Ã¢°í¾ÈÀÇ ¹Ú½º)="Relation"(2Â÷¿øÀÇÇ¥)=°´Ã¼ °ü°èÇü DB"(°í°´Á¤º¸ ÀüÃ¼) 
 Å×ÀÌºí¾ÈÀÇ "µ¥ÀÌÅÍ 1°Ç(1ÁÙ)"(°í°´ 1¸í) = "Record"(=ÅõÇÃ,Çà)
 µ¥ÀÌÅÍ 1°ÇÀÇ "³»¿ë 1Ä­"(°í°´ÀÇ id) = "Field"(=¼Ó¼º(¾ÖÆ®¸®ºäÆ®), ¿­(column), µ¥ÀÌÅÍÇ×¸ñ)
 
 	<MYSQL ¿öÅ©º¥Ä¡>		
 Developer Default·Î my sql ¼³Ä¡ -1Ã¼Å© - standalone - use legacy - PW¼³Á¤(manager) - add user(scott-tiger-¼ö¾÷¿ë, tommy-lion-°úÁ¦¿ë) - Connect to server(PWÀÔ·Â)
-ÀÚ¹Ù ÇÁ·Î±×·¥ÀÌ port3306À¸·Î ¼ÒÄÏÀ» ÅëÇØ¼­ Å¬¶óÀÌ¾ðÆ®·Î½á DB¿Í Åë½Å
+ÀÚ¹Ù ÇÁ·Î±×·¥ÀÌ port3306À¸·Î ¼ÒÄÏÀ» ÅëÇØ¼­ Å¬¶óÀÌ¾ðÆ®·Î½á DB(¼­¹ö¿ªÇÒ)¿Í Åë½Å JDBC API
 *½ºÅ°¸¶(»ç¿ëÀÚ) - ½ºÅ°¸¶ º°·Î DB»ý¼º°¡´É
 ½ºÅ°¸¶ÀÌ¸§.Å×ÀÌºíÀÌ¸§
 	
@@ -93,14 +95,4 @@ to_char(hdate, 'yyyy-mm-dd') ¿À¶óÅ¬¿¡¼­ ¹®ÀÚÇü½Ä¿¡¸ÂÃß¾î »ý¼ºÇÏ´Â ÇÔ¼ö
 
 
 
-
-
-
-
-
-
-
-
-
-
-³ëÆ®, Æú´õ, work_java¾÷·Îµå , ´ÜÁö¹øÈ£, Åä¸¶Åä
+´ÜÁö¹øÈ£, Åä¸¶Åä

@@ -18,8 +18,8 @@ class Tr22{
 			preorder(root.right);
 		}
 	}
-	public void makeTree(int d1, int d2) {
-		if(root==null) {
+	public void makeTree(int d1, int d2) { //부모, 자식 
+		if(root==null) { //루트가 없을 경우 만들어서 다음으로 보냄
 			root = new Node();
 			root.data=d1;
 		}
@@ -50,10 +50,9 @@ public class TreePreorder {
 		
 		Tr22 t=new Tr22();
 		for(int i=0; i<N-1; i++) {
-			t.makeTree(sc.nextInt(),sc.nextInt());
+			t.makeTree(sc.nextInt(),sc.nextInt()); //부모,자식
 		}
 		t.preorder(t.root);
 		sc.close();
 	}
-
 }

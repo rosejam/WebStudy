@@ -68,3 +68,24 @@ select * from mgrnames;
 
 -- INDEX
 -- create
+
+--
+-- transaction
+use scott;
+
+desc test;
+select * from test;
+delete from test;
+
+-- auto commit 기능을 켬
+set autocommit = on;
+insert into test values(1,'abc');
+insert into test values(2,'abc');
+rollback; -- 안먹음 이미 커밋됨
+
+-- transaction의 시작을 알리는 명령어
+start transaction;
+insert into test values(3,'abc');
+insert into test values(4,'abc');
+select * from test;
+rollback; -- transaction이 끝날 때, rollback;또는 commit;을 해서 끝낸다!!
