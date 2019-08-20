@@ -93,8 +93,8 @@ public class SSAFY2기_IM_보충 {
 		System.out.println(Arrays.toString(grr));
 		Arrays.sort(grr);
 		System.out.println(Arrays.toString(grr));
-		System.out.println(Arrays.binarySearch(grr, ke+1)); //이진 검색은 정렬된 배열에서만 사용할 수 있다!
-		//인덱스가 ke인 값 출력????
+		System.out.println(Arrays.binarySearch(grr,ke)); //이진 검색은 정렬된 배열에서만 사용할 수 있다!
+		//ke값의 인덱스를 출력
 		
 	}
 }

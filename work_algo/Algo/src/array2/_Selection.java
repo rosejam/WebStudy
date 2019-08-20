@@ -2,7 +2,7 @@ package array2;
 
 import java.util.Arrays;
 
-public class Selection {
+public class _Selection {
 	public static int[] a = {64,25,10,22,11};
 	
 	public static void main(String[] args) {

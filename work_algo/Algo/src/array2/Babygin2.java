@@ -3,7 +3,7 @@ package array2;
 import java.io.FileInputStream;
 import java.util.Arrays;
 import java.util.Scanner;
-
+//32쪽
 public class Babygin2 {
 	public static final int N=6;
 	public static int[] n = new int[6];

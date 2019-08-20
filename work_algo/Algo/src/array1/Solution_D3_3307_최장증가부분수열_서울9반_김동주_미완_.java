@@ -46,7 +46,7 @@ class Solution_D3_3307_최장증가부분수열_서울9반_김동주_미완_{ //
 			for(int i=0; i<N; i++) {
 				for(int j=0; j<N; j++) {
 					//System.out.print("#" + tc + " " + B[i][j]);
-					System.out.print(B[i][j]);
+					//System.out.print(B[i][j]);
 				}
 				System.out.println();
 			}

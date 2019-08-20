@@ -8,7 +8,7 @@ import java.util.Scanner;
 //중복조합 nHr =n+r-1Cr,  5H3 = 5+3-1C3 = 7C3 = 7P3/3! :35
 //조합 nCr =nPr/r!,  5C3 = 5P3/3! = 5*4*3/3*2*1 :10
 
-public class _PermComb {
+public class PermComb__ {
 	public static int n, r, cnt, a[], v[], d[]={1,2,3,4,5};
 	
 	public static void permcomb(int start, int count) { //count는 레벨(깊이)를 의미한다.

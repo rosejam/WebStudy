@@ -8,10 +8,10 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/dj_kim/ssafy/work_java"/>
 			<item value="C:\ssafy\work_java"/>
 			<item value="C:\ssafy\work_java\wsjava08_서울_9반_김동주"/>
 			<item value="C:\ssafy\work_java\hwjava08_서울_9반_김동주"/>
-			<item value="/Users/dj_kim/ssafy/work_java"/>
 			<item value="C:\ssafy\work_java"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

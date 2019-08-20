@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class _Dfs { 
+public class Dfs__ { 
 	public static int V; //점 
 	public static int E; //선
 	public static int[][] graph; //연결상황 //나중엔 linked list사용

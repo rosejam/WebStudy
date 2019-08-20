@@ -1,6 +1,6 @@
 package array2;
 
-public class Sum {
+public class _Sum {
 	private static int sum(int n) {
 		if(n==1) return 1;
 		return n+sum(n-1);
@@ -19,6 +19,8 @@ public class Sum {
 	} 
 	
 	public static void main(String[] args) {
+		System.out.println(sum(10));
+		System.out.println(fac(3));
 		System.out.println(fibo(7));
 
 	}

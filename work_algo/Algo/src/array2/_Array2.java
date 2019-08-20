@@ -2,7 +2,7 @@ package array2;
 
 import java.util.Arrays;
 
-public class Array2 {
+public class _Array2 {
 
 	public static void main(String[] args) {
 		int[][] a = {{1,2,3},
@@ -36,9 +36,10 @@ public class Array2 {
 		for(int i=0; i<a.length; i++) 
 			b[i]=Arrays.copyOf(a[i],a[i].length);
 		for(int[] v:b) System.out.println(Arrays.toString(v));
-		for(int i=0;i<b.length; i++) {
+		System.out.println();
+		for(int i=0;i<b.length; i++) { //전치행렬(행<->렬)
 			for(int j=0; j<b[i].length; j++) {
-				if(i<j) {
+				if(i<j) { //
 					int T = b[i][j];
 					b[i][j]=b[j][i];
 					b[j][i] = T;
@@ -96,7 +97,7 @@ public class Array2 {
 		
 		for(int i=0; i<a.length; i++) {
 			for(int j=0; j<a[i].length; j++) {
-				if(a[i][j]==2) { //중심부분 입력값
+				if(a[i][j]==2) { //중심부분 입력값:2
 					//여기에 있던 루프문을 꺼냈다.
 					for(int d=0; d<di[0].length; d++) {
 						int newi = i + di[0][d];

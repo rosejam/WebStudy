@@ -31,7 +31,7 @@ public class Hello {
 		String s ="10";
 		System.out.println(Integer.parseInt(s,10)); */
 /*		System.out.println("---------------");
-		System.out.println(1<<0);
+		System.out.println(1<<0); //2의 0승 
 		System.out.println(1<<1);
 		System.out.println(1<<2);
 		System.out.println(1<<3);

@@ -1,15 +1,11 @@
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
->>>>>>>=b602804a38fdbce15e3741bf513ed4579620ee5c
+>>>>>>>=213477132c55f3d65f572fad14a9bb9682696fc7
 IDE_ENCODINGS_PREFERENCE=ms949'MS949'EUC-KR'
 IMPORT_FILES_AND_FOLDERS_RELATIVE=true
 IMPORT_FILES_AND_FOLDERS_TYPE=23,1
 PROBLEMS_FILTERS_MIGRATE=true
 eclipse.preferences.version=1
-<<<<<<< HEAD
-platformState=1564323737599
-=======
-platformState=1563147339624
->>>>>>> 213477132c55f3d65f572fad14a9bb9682696fc7
+platformState=1564323737604
 quickStart=false
 tipsAndTricks=true

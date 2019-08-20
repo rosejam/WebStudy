@@ -2,7 +2,7 @@ package array1;
 
 import java.util.Arrays;
 
-public class _Counting {
+public class _Counting_ {
 	public static void main(String[] args) {
 		int[] a = {0,4,1,3,1,2,4,1};
 		int k = Arrays.stream(a).max().getAsInt(); // a배열의 최대값~~

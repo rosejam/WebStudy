@@ -2,8 +2,9 @@ package array2;
 
 import java.util.Arrays;
 //import java.util.Random;
+import java.util.Random;
 
-public class PermutationBase {
+public class _PermutationBase {
 
 	public static void main(String[] args) {
 		int[] a = {1,2,3}; //new int [3];
