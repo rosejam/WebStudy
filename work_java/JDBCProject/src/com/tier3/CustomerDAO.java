@@ -11,9 +11,9 @@ import java.util.ArrayList;
 //<DAO> : DB에 접근해서 CRUD(Create/Read/Update/Delete) 작업을 수행하는 객체
 public class CustomerDAO implements ICustomerDAO { //필드, 생성자, 오버라이딩
 	
-	//FIELD
+	//FIELD(DB작업위한 정보)
 	String driver = "com.mysql.cj.jdbc.Driver"; //패키지이름.클래스이름
-	String url = "jdbc:mysql://localhost:3306/scott?serverTimezone=UTC&characterEncoding=UTF-8";
+	String url = "jdbc:mysql://localhost:3306/scott?serverTimezone=UTC&characterEncoding=UTF-8&useUniCode=yes";
 	
 	String user = "scott";
 	String password = "tiger";
@@ -86,7 +86,7 @@ public class CustomerDAO implements ICustomerDAO { //필드, 생성자, 오버라이딩
 			//4. Query 실행
 			ResultSet rs = pstat.executeQuery();
 			//5. 결과 처리
-			if(rs.next()) { //실제 데이터 (첫번째) 레코드 가리키도록 호출함 //데이터가 있다면!!!!
+			if(rs.next()) { //데이터가 있을 경우!!!!//(실제 데이터 (첫번째) 레코드 가리키도록 호출함)
 				c = new Customer(rs.getString(1), rs.getString(2), rs.getString(3));
 			}
 			//6. 마무리 
@@ -95,7 +95,7 @@ public class CustomerDAO implements ICustomerDAO { //필드, 생성자, 오버라이딩
 			e.printStackTrace();
 		}
 
-		return c;
+		return c; //데이터가 없으면 null이 리턴된다.
 	}
 
 	@Override

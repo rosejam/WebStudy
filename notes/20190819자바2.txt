@@ -14,7 +14,7 @@ javax.sql
 
 <*JDBC 프로그래밍 순서>꼭 순서대로
 	1. Driver 로드(등록)
-		DB에 맞는 Driver를 등록
+		DB에 맞는 "Driver"를 등록
 	2. Connection 생성
 		사용하려는 DB에 Network 연결~
 	3. Statement 생성 : 2.를 가지고 3.을 생성
@@ -41,9 +41,9 @@ javax.sql
 		con.close(); //얜 필수(socket닫는것처럼)
 ------------------------------------------------------------------------------------
 )https://dev.mysql.com/ -> mysql downloads(Connector/J) ->Platform Independent ->아래꺼
-Build Path -> Add External JARs해서 드라이버를 넣기
+Build Path -> Add External JARs해서 드라이버를 넣기(매 프로젝트)
 
-)Run Config - 클래스지정 - Arguments : string prompt 
+)Run Config - 클래스지정 - Arguments : string prompt
 ------------------------------------------------------------------------------------
 Statement : DB에 갈때마다 컴파일 실행
 ^
@@ -51,11 +51,11 @@ Statement : DB에 갈때마다 컴파일 실행
 PreparedStatement : 실행할 쿼리문의 일부가 미리 담겨있는 그릇
 ^	-"DB쪽에서" 맨 처음 받았을 때 컴파일을 해서 메모리에 올려놓고, 같은 PreparedStatement가 에 쿼리가 담겨 왔을 때 또 컴파일하지 않고 값만 바꿔서 실행
 ^		-> 속도가 빨라짐, 따옴표귀찮은게 사라짐
-^	-파일의 "바이너리 데이터"를 스트림을 통해 읽어서 컬럼에 insert하는 "메서드" 등을 포함
+^	-파일의 "바이너리 데이터"를 스트림을 통해 읽어서 컬럼에 insert하는 "메서드" 등을 포함하고있다.
 CallableStatement : 실행 Query문이 이미 DB안에 내장되어 있음
 	-DB에 저장된 Query문을 호출, 파라메터만 전달
 
-			멀티 tier					2-tier(보안상의 문제)
+		-멀티 tier					   	-2-tier(보안상의 문제)
 
 		Java-main()/Browser등: client
 		|
@@ -73,5 +73,5 @@ CallableStatement : 실행 Query문이 이미 DB안에 내장되어 있음
 3. dao 
 4. client program(main 메소드를 가진 객체) : dao를 new생성
 
-						
+DAO에서 각 메서드 마다 "지역변수"로 Connection을 따로 만든 이유 : 1.서버에서 멀티스레드를 위해 2.만약 중간에 커넥션이 끊기면 여러 작업중 뒤 작업이 날아가기 때문	
 				

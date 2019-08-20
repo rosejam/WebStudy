@@ -1,0 +1,78 @@
+//driver, url은 mysql DB용 //user password등은 특정사용자정보
+//->이런 내용들은 변동되므로 환경파일(XML문서)에 저장해서 자바프로그램에서 읽어오기 한다.
+
+	<MVC Pattern>Design Pattern
+Model = Data
+View = 화면
+Controller = M-V를 컨트롤
+
+<View>				<Controller>		<Model>
+				IDAO
+Test-main()			^
+(클라이언트)			^
+Browser에서	------------------->DAO 	    ---------------->DB
+실행되는				^
+html 문서				^
+모바일등				VO
+
+	<mysql JOIN>
+2개 이상의 테이블에는 공통 컬럼이 존재해야 join가능
+주로 Primary key와 Foreign key연결
+	1.CROSS join
+		where절에 의해 공통 컬럼 결합X
+		레코드간의 "결합 가능한 모든 조합"을 만들어냄, 주로 테스트 테이블만들어볼 때 사용
+	2.*INNER JOIN
+		2개 이상 테이블이 공통컬럼에 의해 논리적으로 결합
+			select 별칭.컬럼이름, ,,
+			from 연결할 테이블들 별칭
+			where 연결;
+			-JOIN~USING문을 사용해도 됨
+	3.SELF
+		같은 테이블을 연결
+	4.*OUTER
+		inner join에서 데이터가 존재하지 않는(모자란) 쪽 테이블에 (+)기호를 정의 하면 데이터가 존재하는 쪽의 레코드가 누락되는 것이 방지된다.
+
+	<mysql SubQuery>
+여러번의 질의를 수행해야만 얻을 수 있는 결과를 한개의 질의로 해결
+select문안에 부속된 select
+위치에 따라 	1. 일반 SubQuery : Select 리스트
+		2. Inline View : From 절
+		3. *Nested Query : Where 절
+Main쿼리와 연관성	1. 없음
+		2. 있음(join)
+		1. 단일행
+		2. 복수행
+		3. 복수 컬럼
+		4. 상호관련
+
+)테이블 마다 VO가 필요하고, join했을 때도 거기에 맞는 VO가 필요하다.
+
+	<데이터 모델링>
+사용되는 데이터를 분석하여 도구를 이용해서 간결하고 이해하기 쉽게 표현 -> 의사소통을 쉽게, 
+
+     Real World 
+	|
+Mini World(DB구축 대상)    <-------------->	DB
+	|				|
+	|1.*추상화			|3.구체화
+	|				|
+Conceptual World		----->		Data Model
+		     2.데이터 모델링
+
+1.*개념적 데이터 모델
+	고수준(전체 시스템에 대한 개념적인 정보)
+	<ER 데이터 Model> = 개체(Entity)-관계(Relationship) 모델 -> 다이어그램("ERD) 한장"이 나와야 한다.
+		"Entity, Attribute, Relationship 3가지"를 이용해서 실세계를 개념적으로 표현
+			1)엔티티 : "Table로 구현됨", Diagram에서 "사각형"으로 표현, 시나리오에서 명사형이고 여러개의 데이터를 가지고 있음
+				ex)회원(이름,전화번호,주소), 상품(가격,사이즈,색깔)에서 회원, 상품
+			2)애트리뷰트 : 컬럼으로 구현됨, "엔티티의 구성요소", Diagram에서 "타원"으로 표현 ex)위에서 ()안에 있는 요소들
+				엔티티는 하나 이상의 키 애트리뷰트 갖고 있음(PK)- "밑줄"로 표현
+			3)관계 : 관계형 DB로 Mapping됨(P.K, F.K등으로 연결해서 구현), Diagram에서 "마름모"로 표현, 
+				"엔티티 간의 관계"(1:1, 1:N, M:N등 "차수"를 표시해주어야 함! - 방향에 따라서 달라짐), 시나리오에서 동사형
+						       ->Cardinality Ratio : "실선위에" 표시(M:N일경우 새 테이블이 필요함)
+
+2.*논리적 데이터 모델(관계형 데이터 모델)/객체형/NonSQL등 데이터 모델 결정
+	DB구조를 이차원의 표를 이용하여 표현
+	Table
+3.물리적 데이터 모델링
+	컴퓨터 내부에서 어떻게 저장되는가 표현(관계형 DB 중 종류 oracle 등, data type 등 결정)

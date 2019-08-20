@@ -13,9 +13,8 @@ public class Solution_D4_1232_사칙연산_서울9반_김동주 {
 		char op; //double또는 char의 값이 트리에 들어감
 		int lidx; //
 		int ridx; //n까지 꽉 찬 complete트리가 아니므로 자식과 연결해주어야 함
-					//이때 index를 사용하였으므로 노드들은 노드 배열에 들어간다. 
 	}
-	public static Node[] nodes; //노드의 배열
+	public static Node[] nodes; //노드의 배열(arraylist 사용해도 됨)
 	
 	public static double getNum(int idx) { //재귀호출로 아래로 내려가면서 계산 //여기서 익셉션 발생하면 유효성 체크=0;
 		if(nodes[idx].isNum) return nodes[idx].num; //숫자면 그대로 숫자를 리턴(시드)
@@ -29,7 +28,7 @@ public class Solution_D4_1232_사칙연산_서울9반_김동주 {
 		}
 		return num;
 	}
-	
+
 	public static void main(String args[]) throws Exception{
 		System.setIn(new FileInputStream("res/input_D4_1232.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 

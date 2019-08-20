@@ -33,7 +33,7 @@ public class InsertPre {
 		pstat.setString(3, args[2]);
 		
 		//4. Query 실행
-		int x = pstat.executeUpdate(); //여기에 query를 제거
+		int x = pstat.executeUpdate(); //pstat은 여기에 query를 제거
 		
 		//5. 결과 처리
 		System.out.println(x+"개의 레코드 추가!!!");

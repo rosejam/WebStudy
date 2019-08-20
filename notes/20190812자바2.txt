@@ -24,6 +24,7 @@ DB 관리 시스템=DBMS : 관리 프로그램들의 묶음 	ex)Oracle-MySQL, MS SQL (mysql은 �
 	create table 테이블이름(칼럼이름 칼럼데이터타입(크기) 칼럼제약조건,.. ,.. );
 	<ALTER table> add, modify, drop(컬럼 삭제), 새로운 칼럼 정의 등
 	alter table 테이블이름 뭐할건지
+		add (컬럼),  drop(컬럼 삭제) 등 
 	<DROP table> = Table을 다 날림~!
 	drop table 테이블이름;
 	<TRUNCATE table> = Table은 남아있고 data는 다 날림~!

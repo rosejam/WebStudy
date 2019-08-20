@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public interface ICustomerDAO { //메서드들
+public interface ICustomerDAO { //메서드 껍데기들
 	//db작업을 하기 위해 필요한 Connection 객체 생성해서 리턴
 	//다음 과정들 전에 먼저 필요한 과정
 	Connection getConnection();

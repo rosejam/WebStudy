@@ -30,7 +30,7 @@ public class DeletePre {
 		pstat.setString(1, args[0]); //1번째 ?자리에 args[0]담음 따옴표는 알아서함
 		
 		//4. Query 실행
-		int x = pstat.executeUpdate();
+		int x = pstat.executeUpdate();//pstat은 여기에 query를 제거
 		
 		//5. 결과 처리
 		System.out.println(x+"개의 레코드 제거!!!");

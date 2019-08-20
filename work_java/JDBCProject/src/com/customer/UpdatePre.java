@@ -31,7 +31,7 @@ public class UpdatePre {
 		pstat.setString(2, args[0]);
 		
 		//4. Query 실행
-		int x = pstat.executeUpdate();
+		int x = pstat.executeUpdate();//pstat은 여기에 query를 제거
 		
 		//5. 결과 처리
 		System.out.println(x+"개의 레코드 업뎃!!!");
