@@ -18,8 +18,34 @@ alter table book
 add (authorno int(2));
 
 alter table book
-drop(author);
+drop author;
 
 alter table book
 add constraint book_authorno_fk foreign key(authorno)
 references author(authorno);
+
+update book set authorno = 2 where title = 'Java와 놀기';
+update book set authorno = 1 where title = 'Java와 알고리즘';
+update book set authorno = 5 where title = 'IoT세상';
+update book set authorno = 3 where title = 'AI와 미래';
+update book set authorno = 4 where title = 'JAVA 기본';
+update book set authorno = 4 where title = 'JAVA 중급';
+update book set authorno = 4 where title = 'JAVA 심화';
+
+-- 
+select b.title, b.price, a.name
+from book b, author a
+where b.authorno = a.authorno;
+--
+select b.title, b.isbn, b.publisher
+from book b, author a
+where b.authorno = a.authorno
+and a.name = '김태희';
+--
+select b.title, b.publisher, b.price, a.name
+from book b, author a
+where b.authorno = a.authorno
+order by a.name;
+--
+select title, publisher
+from book;

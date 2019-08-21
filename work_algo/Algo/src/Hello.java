@@ -11,7 +11,7 @@ public clast Hello {
 
 }
 */
-package array1;
+
 
 import java.io.FileInputStream;
 import java.math.BigInteger;
@@ -24,9 +24,31 @@ public class Hello {
 	public        final int i2= 12;
 	public static       int i3= 13;
 	public              int i4= 14;
+/*	public static double nCr(int n, int r) {
+		if(r==0) return 1.0;
+		return 1.0*n/r*nCr(n-1,r-1); //정수끼리 나누기 하지 않도록(double형으로 계속 계산되도록!)
+	}*/
+	public static double nCr(int n, int r) {
+		if(n<r) return 0.0;
+		if(r==0) return 1.0;
+		return nCr(n-1,r-1)+nCr(n-1,r); //정수끼리 나누기 하지 않도록(double형으로 계속 계산되도록!)
+	}
 	
 	public static void main(String args[]) throws Exception
 	{
+		char[] d = {'a','b','c','a'};
+		System.out.println(String.valueOf(d)); //캐릭터배열을 스트링으로!!!!
+		
+		System.out.println(nCr(5,3)); 
+		System.out.println();
+		
+		double db = 1.123456789;
+		int tc = 1;
+		System.out.println(db);
+		System.out.printf("#%d %f\n",tc,db);
+		System.out.printf("#%d %.3f\n",tc,db); //소수점 이하 3자리까지만(반올림)
+		System.out.printf("#%d %.4f\n",tc,db); //소수점 이하 4자리까지만(반올림)
+		
 		/*System.out.println(Integer.toBinaryString(n)); //2진수표현
 		String s ="10";
 		System.out.println(Integer.parseInt(s,10)); */
@@ -78,9 +100,9 @@ public class Hello {
 		System.out.println(-128>>5);
 		System.out.println(-128>>6);
 		System.out.println(-128>>7);
-		System.out.println(-128>>8); //>>는 부호 유지, >>>는 부호를 없앤다 ...
-*/		
-		String s0 = "Hello";
+		System.out.println(-128>>8); //>>는 부호 유지, >>>는 부호를 없앤다 ...*/
+		
+/*		String s0 = "Hello";
 		//s.replace('H', 'h'); //이렇게 하면 s가 바뀌지는 않음
 		s0 = s0.replace("ll", "LL");
 		
@@ -153,6 +175,6 @@ public class Hello {
 		System.out.println(i2);
 		System.out.println(i3);
 		System.out.println(i4);
-		System.out.println(i5);
+		System.out.println(i5);*/
 	}
 }

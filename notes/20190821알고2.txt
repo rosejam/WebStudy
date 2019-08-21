@@ -1,0 +1,7 @@
+	<분할정복DC> Top Down
+Merge Sort : "그냥 중간" 기준으로 두부분으로 나눔, 병합O
+Quick Sort : "pivot(기준 아이템)" 기준으로 나눔(pivot은 왼쪽에도 오른쪽에도 포함X!), 병합X!
+(둘다+counting sort도 알아두기)
+ex)거듭제곱 재귀, binary search(병뚜껑맞추기)
+	<백트래킹>
+

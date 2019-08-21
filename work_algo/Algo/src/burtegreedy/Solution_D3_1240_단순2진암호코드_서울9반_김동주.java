@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-//어레이가 아니고 스트링으로 substring활용하기 
+//어레이가 아니고 스트링으로 .substring()활용하기 
 public class Solution_D3_1240_단순2진암호코드_서울9반_김동주 {
 	public static byte N, M;
 	public static byte[] arr;
@@ -38,19 +38,19 @@ public class Solution_D3_1240_단순2진암호코드_서울9반_김동주 {
 					}// 한줄 다 받음.
 					//flag가 true면 1이 있는 행이다.
 					if(flag == true) {
-						for(int m=M-1; m>=0; m--) {
+						for(int m=M-1; m>=0; m--) { // li = st.lastindexof(1)
 							if(arr[m] == 1) {
 								li = (byte) m;
 								break;
 							}
-						}//56번째의 마지막 인덱스 li 찾음
-						//li-55~li까지 56개가 암호 8자리
+						}//56번째의 마지막 인덱스 li 찾음 
+						//li-55~li까지 56개가 암호 8자리 : substring(li-55, li+1);
 						for(byte x=0; x<8; x++) {
 							int ones = 0;
 							for(byte y=0; y<7; y++) {
 								ones +=arr[li-7*x-y]*Math.pow(10, y);
 							} //1자리 암호
-							switch(ones) {
+							switch(ones) { //(st2.substring(7*i, 7*i+7))으로 스트링을 잘라 사용
 								case 1101:
 									cipher[7-x]=0;
 								break;
@@ -81,17 +81,17 @@ public class Solution_D3_1240_단순2진암호코드_서울9반_김동주 {
 								case 1011:
 									cipher[7-x]=9;
 									break;
-								default:
+								default: // -99999 입력해서 잘못되면 결과가 음수가 되도록
 									break;
 							}
 							//System.out.println(cipher[7-x]);
 						}
-						//
-						if(((cipher[0]+cipher[2]+cipher[4]+cipher[6])*3+(cipher[1]+cipher[3]+cipher[5]+cipher[7]))%10==0) {
+						//int ans = 0; 
+						if(((cipher[0]+cipher[2]+cipher[4]+cipher[6])*3+(cipher[1]+cipher[3]+cipher[5]+cipher[7]))%10==0) { //여기서 디폴트여부를 거르도록
 							int ans = cipher[0]+cipher[2]+cipher[4]+cipher[6]+cipher[1]+cipher[3]+cipher[5]+cipher[7];
 							//for each문 활용 
 							sb.append("#"+tc+" "+ans+"\n");
-						}else {
+						}else { //if위에 변수 초기화하면 else필요 없음
 							sb.append("#"+tc+" "+ 0 +"\n");
 						}
 						checked = true;

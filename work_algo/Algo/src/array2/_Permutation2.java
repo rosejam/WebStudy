@@ -15,6 +15,7 @@ public class _Permutation2 { //재귀로 표현
 		}
 		for(int i=1; i<=n; i++) {
 			if((flag&(1<<i))==0) { //반대로 비트가 0일때 찍기 해당비트가 사용되었는지 확인해서 방문안한 부분만 간다(중복처리)
+									//배열인덱스가 다르면 다른 값
 				a[count]=i;
 				permutation(i,flag|(1<<i),count+1); //사용했음을 or로 표시
 			}

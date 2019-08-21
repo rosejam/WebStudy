@@ -1,6 +1,6 @@
 package 보충;
 
-public class 에라토스테네스의체 {
+public class 에라토스테네스의체_소수 {
 	public static void main(String[] args) {
 		int N=120; //구하고자 하는 최대 수
 		boolean[] V = new boolean[N+1]; //초기값은 false //N까지 이므로 N+1크기의 배열

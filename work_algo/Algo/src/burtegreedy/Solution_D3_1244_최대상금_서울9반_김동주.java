@@ -11,6 +11,8 @@ public class Solution_D3_1244_최대상금_서울9반_김동주 { //5번 예시 
 	//					else면 끝자리 2개바꿔서 리턴 		//백트랙킹 
 	//trade가 num미만일 경우 전부 다 만들어보고 가장 큰 값을 리턴 - ㄴㄴ 15^4나 됨..
 	//					현재 index 뒤에 최댓값들의 개수를 세고 뭉텅이로 옮긴 후 뒤에를 소팅
+	
+	//시간을 많이주므로 DFS로 완전탐색을 하면 답이 나옴(순열 by swap-Perm 참고)
 	public static char[] info;
 	public static int[] info2;
 	public static int trade;

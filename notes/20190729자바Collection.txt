@@ -27,8 +27,8 @@ class C : a+b개의 모든 추상메서드를 완성해야 한다.
 
 (값)중복		O			X			X
 
-클래스		Vector * (->스택)			HashSet			Hashtable *
-		ArrayList	***					HashMap
+클래스		Vector * (->스택)		HashSet	**		Hashtable *
+		ArrayList	***					HashMap **
 		LinkedList 등	
 					SortedSet		SortedMap
 					->TreeSet(정렬된 세트)	->TreeMap(정렬된 맵)

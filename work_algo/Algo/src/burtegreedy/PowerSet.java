@@ -3,8 +3,8 @@ package burtegreedy;
 import java.util.Arrays;
 import java.util.Scanner;
 
-//부분 집합은 0과 1에서 중복순열을 구하는 것. (Binary Count)
-//중복순열 nPIr =n^r,  5PI3 :60
+//부분 집합은 0과 1에서 중복순열을 구하는 것. //(Binary Counting)
+//중복순열 nPIr =n^r,  2PIr
 
 public class PowerSet {
 	public static int r, cnt,v[], d[]={1,2,3,4};
@@ -12,7 +12,7 @@ public class PowerSet {
 	public static void powerset(int count) { //count는 레벨(깊이)를 의미한다.
 		if(count == r){ //가장 깊은 레벨에 도달하면 return
 			cnt++; //그냥 가지의 개수를 세는 용도
-			System.out.print(Arrays.toString(v)+" ");
+			System.out.print(Arrays.toString(v)+" "); //파워셋
 			for(int i=0; i<r; i++) {
 				if(v[i]==1) System.out.print(d[i]+" ");
 			}

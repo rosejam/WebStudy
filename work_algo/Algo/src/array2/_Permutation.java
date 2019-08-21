@@ -11,7 +11,7 @@ public class _Permutation {
 		if(count == r){ //가지의 끝에 다다름 
 			for(int i=0; i<r; i++) { 
 				for(int j=i+1; j<r; j++) {
-					if(a[i]==a[j]) return;
+					if(a[i]==a[j]) return; //인덱스가 달라도 값이 같으면 같은 값으로 친다.
 				}
 			} //이 부분을 중복되지 않도록 추가해준다!!(중복순열이 아닌 순열)
 			//중복되지 않는 경우만
