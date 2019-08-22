@@ -13,7 +13,7 @@ public class Bfs {
 	public static Queue<Integer> queue;
 	
 	public static void main(String[] args) throws Exception {
-		System.setIn(new FileInputStream("res/input_bfs1.txt")); //bfs,bfs1
+		System.setIn(new FileInputStream("res/input_bfs.txt")); //bfs,bfs1
 		Scanner sc = new Scanner(System.in);
 		V = sc.nextInt();
 		E = sc.nextInt();
@@ -26,7 +26,7 @@ public class Bfs {
 			graph[v1][v2] = graph[v2][v1] = 1; //왼쪽으로 한단계씩 대입(양방향이므로)
 		}
 		  //for(int[] a: graph) System.out.println(Arrays.toString(a));
-		  bfs2(0);
+		  bfs(0);
 		  System.out.println();
 	}
 
@@ -45,7 +45,7 @@ public class Bfs {
 				
 				for (int next=0; next<V; next++) { //0 1 2 3 4 5 6 
 					if(visit[next]==false && graph[curr][next]==1) { //큐에 중복되게 들어가는 것을 없앨 수 있다!!
-						visit[next]=true;
+						visit[next]=true; //여기서도 방문처리하고 넣는다.
 						queue.offer(next);
 					}
 				}

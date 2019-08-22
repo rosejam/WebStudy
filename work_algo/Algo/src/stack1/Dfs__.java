@@ -54,8 +54,8 @@ public class Dfs__ {
 				visit[curr]=true;
 				System.out.print(curr + " ");
 				
-				for (int next=0; next<V; next++) { //0 2 4 5 6 3 1 
-				//for (int next=V-1; next>=0; next--) { //0 1 3 5 4 2 6 
+				//for (int next=0; next<V; next++) { //0 2 4 5 6 3 1 
+				for (int next=V-1; next>=0; next--) { //0 1 3 5 4 2 6 
 					if(visit[next]==false && graph[curr][next]==1) { //방문하지 않았고 인접
 						stack.push(next);
 					}

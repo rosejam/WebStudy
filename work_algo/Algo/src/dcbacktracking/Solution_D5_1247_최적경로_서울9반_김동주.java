@@ -65,7 +65,7 @@ public class Solution_D5_1247_최적경로_서울9반_김동주 {
 			//모든 점 사이 이은 거리 구하기 (N+2)C2 말고 그냥 (N+2)*(N+2) - 메모이제이션
 			for (int i = 0; i < N+2; i++) {
 				for (int j = 0; j < N+2; j++) {
-					//if(i!=j)
+					//if(i<j)
 					len[i][j] = Math.abs(nx[i]-nx[j]) + Math.abs(ny[i]-ny[j]); //i와 j의 거리
 				}
 			}

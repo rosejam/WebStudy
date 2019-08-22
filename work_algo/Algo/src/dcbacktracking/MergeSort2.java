@@ -1,6 +1,6 @@
 package dcbacktracking;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MergeSort2 {
@@ -8,7 +8,7 @@ public class MergeSort2 {
 	public static int[] s = new int[a.length];
 
 	public static List<Integer> merge(List<Integer> left, List<Integer> right) {
-		List<Integer> result = new LinkedList<>(); //삽입삭제가 많으므로 링크드 리스트로 사용!
+		List<Integer> result = new ArrayList<>(); //삽입삭제가 많으므로 링크드 리스트로 사용!
 		
 		while(left.size()>0 || right.size()>0) { //데이터가 있을 경우
 			if(left.size()>0 && right.size()>0) { //양쪽에 다있을 경우
@@ -32,8 +32,8 @@ public class MergeSort2 {
 	}
 	public static List<Integer> mergesort(List<Integer> m) {
 		if(m.size()==1) return m;
-		List<Integer> left = new LinkedList<>();
-		List<Integer> right = new LinkedList<>();
+		List<Integer> left = new ArrayList<>();
+		List<Integer> right = new ArrayList<>();
 		int mid = m.size()/2; //분할
 		
 		for(int i=0; 	i<mid; 		i++) left.add(m.get(i));
@@ -45,7 +45,7 @@ public class MergeSort2 {
 		//System.out.println(Arrays.toString(a));
 	}
 	public static void main(String[] args) {
-		List<Integer> list = new LinkedList<>();
+		List<Integer> list = new ArrayList<>();
 		for(int i=0; i<a.length; i++) list.add(a[i]);
 		System.out.println(list);
 		//mergesort(0,a.length-1);

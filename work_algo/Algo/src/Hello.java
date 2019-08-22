@@ -31,7 +31,7 @@ public class Hello {
 	public static double nCr(int n, int r) {
 		if(n<r) return 0.0;
 		if(r==0) return 1.0;
-		return nCr(n-1,r-1)+nCr(n-1,r); //정수끼리 나누기 하지 않도록(double형으로 계속 계산되도록!)
+		return nCr(n-1,r-1)+nCr(n-1,r); 
 	}
 	
 	public static void main(String args[]) throws Exception
