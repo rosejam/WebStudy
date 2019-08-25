@@ -5,10 +5,10 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_백준_2493_탑_서울9반_김동주 { //탑의 번호는 인덱스+1
-
+public class Main_BJ_2493_탑_서울9반_김동주 { //탑의 번호는 인덱스+1 //원래 스택으로 푸는 문제임.
+	public static int[] tower;
 	public static void main(String[] args) throws Exception {
-		System.setIn(new FileInputStream("res/input_BJ_2493.txt"));
+/*		System.setIn(new FileInputStream("res/input_BJ_2493.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int num = Integer.parseInt(br.readLine());
 		int[] T = new int[num];
@@ -16,8 +16,6 @@ public class Main_백준_2493_탑_서울9반_김동주 { //탑의 번호는 인�
 		
 		String line = br.readLine(); 
 		StringTokenizer st = new StringTokenizer(line);
-		//String[] sa = line.split(" "); //split()은 정규편식을 StringTokenizer보다 더 잘 처리, 그러나 data가 많으면 토크나이저 사용!
-		br.close();
 		for(int i=0; i<num; i++) {
 			T[i] = Integer.parseInt(st.nextToken()); //int array로 만듬 //sa[i]
 			for(int j=i-1; j>=0; j--) {
@@ -29,6 +27,19 @@ public class Main_백준_2493_탑_서울9반_김동주 { //탑의 번호는 인�
 		}
 		for(int i=0; i<num-1; i++) System.out.print(N[i]+" ");
 		System.out.print(N[num-1]);
+		br.close();	*/
+		
+		//스택으로 다시 풀어보자
+		System.setIn(new FileInputStream("res/input_BJ_2493.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int num = Integer.parseInt(br.readLine());
+		tower = new int[num];
+		int index=0;
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		while(st.hasMoreTokens()) {
+			tower[index++] = Integer.parseInt(st.nextToken());
+		}
+		
 	}
 }
 /* 모범답안

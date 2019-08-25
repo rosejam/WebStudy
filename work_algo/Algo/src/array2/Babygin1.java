@@ -29,7 +29,7 @@ public class Babygin1 {
 		for(int i=0; i<N; i++) { 
 			if((flag&(1<<i))==0) {
 				a[count]=n[i];
-				if(permutation(flag|(1<<i),count+1)) return true; //!!!!
+				if(permutation(flag|(1<<i),count+1)) return true; //!!!!이걸로 말단의 결과를 위로위로 끌어올린다.
 			}
 		}
 		return false; //

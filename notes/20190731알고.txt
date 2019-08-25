@@ -22,13 +22,13 @@ Car implements Serializable , Comparable 추가/오버라이딩 해서 Collections.Sort할
 참고)Diagram에서 화살표로 가르키는 방향을 먼저 작성
 sysout보다 디버그를 사용해서 한줄 한줄 확인해야함
 
-익셉션 잘모르겠으면 호출자로 thows하기 -> 계속 던졌을 때 main에서는 try catch받아야함 
+익셉션 잘모르겠으면 호출자로 throws하기 -> 계속 던졌을 때 main에서는 try catch받아야함 
 	(알고리즘에서는 그냥 귀찮으니 main에서 throws)
 
 System.setIn(); 은 표준입력장치로 만들어주는 것. 
 	<Stack>스택은 push는 인덱스올리고 넣기, pop은 빼고 인덱스 내리기, 인덱스가 -1일 때 비어있다고 봄
 함수호출 == 새 스택 푸쉬
-함수끝남 또는 함수 중간에서 익셉션을 throws할 때 == 스택 팝
+함수끝남 또는 리턴 또는 함수 중간에서 익셉션을 throws할 때 == 스택 팝
 "재귀호출은 스택을 사용하는 구조이다"
 Stack은 벡터를 상속한 하위 클래스
 	
