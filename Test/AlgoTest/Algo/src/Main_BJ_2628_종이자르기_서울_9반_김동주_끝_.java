@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.StringTokenizer;
 
-public class Algo2_서울_9반_김동주 { 
+public class Main_BJ_2628_종이자르기_서울_9반_김동주_끝_ { 
 	public static int N,M;
 	public static int rc;
 	public static ArrayList<Integer> rnum;
 	public static ArrayList<Integer> cnum;
 	public static ArrayList<Integer> rlens;
 	public static ArrayList<Integer> clens;
-	public static int[][] map;
+	//public static int[][] map;
 	public static void main(String[] args) throws Exception {
 		System.setIn(new FileInputStream("res/input2.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -41,13 +41,14 @@ public class Algo2_서울_9반_김동주 {
 		rlens = new ArrayList<Integer>();
 		clens = new ArrayList<Integer>();
 		int x = 0;
-		for(int m=1; m<M; m++) {
+		for(int m=0; m<M; m++) {
 			if(rnum.size()>1) {
 				if(m==rnum.get(x)) {
 					if(x==0) { //처음 자르는 정보
 						rlens.add(rnum.get(x)-0); 
 						x++;
 					}else if(x==rnum.size()-1) { //마지막 정보
+						rlens.add(rnum.get(x)-rnum.get(x-1)); //이부분을 빼서 틀렸다.
 						rlens.add(M-rnum.get(x));
 						break;
 					}else {
@@ -63,17 +64,18 @@ public class Algo2_서울_9반_김동주 {
 			}
 		}
 		int y = 0;
-		for(int n=1; n<N; n++) {
+		for(int n=0; n<N; n++) {
 			if(cnum.size()>1) {
 				if(n==cnum.get(y)) {
 					if(y==0) {
 						clens.add(cnum.get(y)-0);
 						y++;
 					}else if(y==cnum.size()-1) { //마지막 정보
+						clens.add(cnum.get(y)-cnum.get(y-1)); //이부분을 빼서 틀렸다.
 						clens.add(N-cnum.get(y));
 						break;
 					}else {
-						clens.add(cnum.get(y)-rnum.get(y-1));
+						clens.add(cnum.get(y)-cnum.get(y-1));
 						y++;
 					}
 				}
@@ -84,17 +86,17 @@ public class Algo2_서울_9반_김동주 {
 				clens.add(N);
 			}
 		}
-		//clens와 rlens의 조합만들어서 곱하기
+		//clens와 rlens의 조합만들어서 곱하기 //그냥 최대값만 찾아서 곱하기
 		int xy =0;
-		int max =0;
+		int maxc =0;
+		int maxr =0;
 		for(int cl=0; cl<clens.size(); cl++) {
 			for(int rl=0; rl<rlens.size(); rl++) {
-				xy = (clens.get(cl)) * (rlens.get(rl));
-				if(max<xy) max=xy;
+				if(maxc<clens.get(cl)) maxc=clens.get(cl);
+				if(maxr<rlens.get(rl)) maxr=rlens.get(rl);
 			}
 		}
-		System.out.println(max); //가장 큰 영역의 넓이 출력!
+		System.out.print(maxc*maxr); //가장 큰 영역의 넓이 출력!
 		br.close();
 	}
-
 }
