@@ -41,7 +41,7 @@ Well-formed문서이면서 + DTD나 Schema에 맞게 되어있는지 검사
 	</ns1:태그이름>
 
 	Parser(SAX & DOM)
-DOM : 태그 하나하나를 Object로 생각
+-DOM : 태그 하나하나를 Object로 생각
 	돔트리 : 태그들의 포함여부를 그린 것, 위로 갈수록(포함할 수록) 부모 태그
 		body는 태그의 자식~(아래), 속성은 옆으로 그림(자식X)
 		root태그위의 /(document)는 아래를 전부 가리키는 레퍼런스(변수명)
@@ -51,3 +51,7 @@ DocumentBuilderFactory
 DocumentBuilder : DOM parser
 ^ parse(xml파일이나 url)
 Document(/ 즉, parsing이 된 .xml문서)
+
+-SAX : 이벤트(시작태그 만날 떄 , 텍스트 만날 때 , 닫는태그 만날 때) 발생시마다 처리하는 방식
+(Element =<시작tag> body(내용) </끝tag>)
+tag이름이 qname에 들어간다.
