@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="ArrayList" key="selection"/>
+		<item value="cheese" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="map"/>
 			<item value="LinkedList"/>
 			<item value="ArrayList"/>
 			<item value="ss"/>
@@ -20,6 +21,7 @@
 			<item value="Stack"/>
 		</list>
 		<list key="replacehistory">
+			<item value="cheese"/>
 			<item value="ArrayList"/>
 			<item value="LinkedList"/>
 			<item value="st"/>
@@ -29,9 +31,9 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="288" key="DIALOG_WIDTH"/>
-		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
-		<item value="391" key="DIALOG_HEIGHT"/>
+		<item value="294" key="DIALOG_WIDTH"/>
+		<item value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont" key="DIALOG_FONT_NAME"/>
+		<item value="408" key="DIALOG_HEIGHT"/>
 		<item value="688" key="DIALOG_X_ORIGIN"/>
 		<item value="268" key="DIALOG_Y_ORIGIN"/>
 	</section>

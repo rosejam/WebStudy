@@ -32,7 +32,7 @@ public class Bfs {
 
 	//재귀는사용X
 
-	public static void bfs2(int node) { //Dfs와 겹치는 코드!!
+	public static void bfs2(int node) { //!!
 		int cnt=0; //
 		visit = new boolean[V];
 		visit[node]=true; //미리 방문처리를 하고 넣는다!(큐중복방지)

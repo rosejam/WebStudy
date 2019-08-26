@@ -17,7 +17,7 @@ public class Main_정올_1695_단지번호붙이기_Bfs_서울9반_김동주 {
 	//public static boolean[][] visit; //체크여부
 	public static ArrayList<Integer> counts;
 	public static int danji;
-	public static void bfs(int i, int j, int cn) { //재귀호출 사용하는 방법
+	public static void bfs(int i, int j, int cn) { //재귀호출 아니고 BFS 외우기!!
 		//visit[i][j]=true;
 		//int cnt=1;
 		Queue<int[]> q = new LinkedList<>();
