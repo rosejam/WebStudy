@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<!-- table :
+	tr : table row 행
+	th : table header 제목(컬럼) -- 두껍고, 중앙정렬
+	td : table data 값(컬럼)
+ -->
+<body>
+	<h1>table test</h1>
+	<table border="5"> <!-- 표의 선, 두께 표시 -->
+		<caption>3-1 주소록</caption> <!-- "테이블의 제목" -->
+		<tr><!-- table header를 맨 윗row에 써보자 -->
+			<th rowspan="6">3학년 1반</th> <!-- 4열중 1열을 통째로 차지한다. -->
+			<!-- 5로 하면 노란줄이 뜨네 -->
+			<th>번호</th>
+			<th>이름</th>
+			<th>주소</th>
+		</tr>
+		<tr>
+			<td>111</td>
+			<td>김지훈</td>
+			<td>서울시 종로구</td>
+		</tr>
+		<tr>
+			<td>222</td>
+			<td>최동훈</td>
+			<td>부산시 남동구</td>
+		</tr>
+		<tr>
+			<td>333</td>
+			<td>이지연</td>
+			<td>서울시 강남구</td>
+		</tr>
+		<tr>
+			<td colspan="2">총인원</td> <!-- colspan으로 컬럼2칸만큼을 차지한다. -->
+			<td>3명</td> 
+		</tr>
+	</table>
+</body>
+</html>

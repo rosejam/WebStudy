@@ -1,84 +1,80 @@
 package com.ssafy.java;
 
-import java.util.Scanner; //Scanner¸Ş¼­µå¸¦ »ç¿ëÇÏ±â À§ÇØ import
+import java.util.Scanner; //Scannerï¿½Ş¼ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ import
 
 public class GameTest {
 
 	public static void main(String[] args) {
-		//int computer = (int)(Math.random() * 3) + 1; //1,2,3Áß ·£´ıÀ¸·Î 1°³ ¼±ÅÃ. int·Î ¼Ò¼öÁ¡ ¾Æ·¡¸¦ ³¯·È´Ù.
 		Scanner s = new Scanner(System.in);
-		System.out.println("1. 5ÆÇ 3½Â");
-		System.out.println("2. 3ÆÇ 2½Â");
-		System.out.println("3. 1ÆÇ 1½Â");
-		System.out.println("¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä. ");
-		int num = s.nextInt(); //
+		System.out.println("1. 5ï¿½ï¿½ 3ï¿½ï¿½");
+		System.out.println("2. 3ï¿½ï¿½ 2ï¿½ï¿½");
+		System.out.println("3. 1ï¿½ï¿½ 1ï¿½ï¿½");
+		System.out.println("ëª‡íŒ.");
+		int num = Integer.parseInt(s.nextLine()); //
 		int pan = 7 - 2*num;
 		int u_win = 0;
-		//System.out.println("°¡À§¹ÙÀ§º¸ Áß ÇÏ³ª ÀÔ·Â: ");
 		for(int i=1; i<pan+1; ) {
-			int computer = (int)(Math.random() * 3) + 1;
-			//System.out.println("°¡À§¹ÙÀ§º¸ Áß ÇÏ³ª ÀÔ·Â: ");
+			System.out.println("ì…ë ¥:");
 			String user = s.nextLine();
-			//¿©±â¿¡ µô·¹ÀÌ°¡ ÇÊ¿äÇÑ°Í °°´Ù;;;;;;;;;;;;;;;;;;;;;;;
+			user.trim();
+			int computer = (int)(Math.random() * 3) + 1; //1/2/3
 			switch (user) {
-				case "°¡À§":
-					if (computer==3){
+				case "ê°€ìœ„":
+					if (computer==3){//ë³´
 						u_win++;
-						System.out.println("ÀÌ°å½À´Ï´Ù!!!");
+						System.out.println("ì´ê²¼!!!");
 						i++;
-					}else if (computer==2) {
+					}else if (computer==2) {//ë°”ìœ„
 						u_win--;
-						System.out.println("Á³½À´Ï´Ù!!!");
+						System.out.println("ì¡Œ!!!");
 						i++;
-					}else { 
-						System.out.println("ºñ°å½À´Ï´Ù!!!");
+					}else {//ê°€ìœ„
+						System.out.println("ë¹„ê²¼!!!");
 					}
 					break;
 					
-				case "¹ÙÀ§":
-					if (computer==1) {
+				case "ë°”ìœ„":
+					if (computer==1) {//ê°€ìœ„
 						u_win++;
-						System.out.println("ÀÌ°å½À´Ï´Ù!!!");
+						System.out.println("ì´ê²¼!!!");
 						i++;
-					}else if (computer==3) {
+					}else if (computer==3) {//ë³´
 						u_win--;
-						System.out.println("Á³½À´Ï´Ù!!!");
+						System.out.println("ì¡Œ!!!");
 						i++;
-					}else { 
-						System.out.println("ºñ°å½À´Ï´Ù!!!");
+					}else {//ë°”ìœ„
+						System.out.println("ë¹„ê²¼!!!");
 					}
 					break;
 
-				case "º¸":
-					if (computer==2) {
+				case "ë³´":
+					if (computer==2) {//ë°”ìœ„
 						u_win++;
-						System.out.println("ÀÌ°å½À´Ï´Ù!!!");
+						System.out.println("ì´ê²¼!!!");
 						i++;
-					}else if (computer==1) {
+					}else if (computer==1) {//ê°€ìœ„
 						u_win--;
-						System.out.println("Á³½À´Ï´Ù!!!");
+						System.out.println("ì¡Œ!!!");
 						i++;
-					}else { 
-						System.out.println("ºñ°å½À´Ï´Ù!!!");
+					}else { //ë³´
+						System.out.println("ë¹„ê²¼!!!");
 					}
 					break;
 				default:
-					//System.out.println("°¡À§1, ¹ÙÀ§2, º¸3 Áß¿¡¼­ ÀÔ·ÂÇØÁÖ¼¼¿ä!!");
+					System.out.println("ê°€ìœ„ë°”ìœ„ë³´ ì¤‘!!");
 					break;
 			}
-			System.out.println("°¡À§¹ÙÀ§º¸ Áß ÇÏ³ª ÀÔ·Â: ");
+			//System.out.println("ì…ë ¥: ");
 			
-			if(Math.abs(u_win) > (pan-i) ) {
+			if(Math.abs(u_win) > (pan-i)) {
 				if (u_win>0) {
-					System.out.println("###»ç¿ëÀÚ ½Â!!!");
+					System.out.println("ã„¹ã…‡ì´ê²¼!!!");
+					break;
 				}else {
-					System.out.println("###ÄÄÇ»ÅÍ ½Â!!!");
+					System.out.println("ã„¹ã…‡ì¡Œ!!!");
 					break;
 				}
 			}
 		}
-		
 	}
-
-
 }

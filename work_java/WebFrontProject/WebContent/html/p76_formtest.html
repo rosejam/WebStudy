@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<!-- form : 입력 양식 만들기 
+form에서 입력한 값들을 서버로 전송할 때 사용(그것을 DB로 넣는것은 백엔드)
+-->
+<body>
+<h1>form test</h1>
+<form action="welcome.jsp" method="post"> <!-- get or post방식 -->
+<!-- 서버의 어떤 파일("welcome.jsp")이 주어진 값을 받아서 처리하는지 action에 걸어준다. -->
+<!-- method는 서버로 가져가는 방식 -->
+
+	<!-- 입력마다 이름을 정해두어야 나중에 사용할 수 있음 -->
+	num:<input type="text" name="num"><br> <!-- text를 입력하는 창이 나온다 -->
+	pass:<input type="password" name="pass"><br>
+	pass2:<input type="password" name="pass2" placeholder="동일한 암호를 입력해 주세요"><br> <!-- 이칸에 뭐들어가는지 설명. 칸에 값이 없을 때 나타남 -->
+	
+	<hr> <!-- "hobby라는 이름의 data"는 "선택된 value값들"을 받아간다!! -->
+	movie:<input type="checkbox" name="hobby" value="movie">
+	reading:<input type="checkbox" name="hobby" value="reading">
+	game:<input type="checkbox" name="hobby" value="game">
+	trip:<input type="checkbox" name="hobby" value="trip">
+	
+	<hr> <!-- radio는 name이 동일한 그룹에서 택1 -->
+	spring:<input type="radio" name="season" value="1">
+	summer:<input type="radio" name="season" value="2">
+	fall:<input type="radio" name="season" value="3">
+	winter:<input type="radio" name="season" value="4">
+	
+	<hr>
+	upload:<input type="file" name="file1"><br> <!-- (파일을 업로드 할 수 있게) 파일을 선택하도록 설정 -->
+	hidden value:<input type="hidden" name="code" value="123"><br> <!-- 소스에는 있지만 화면에는 나타내지 않음. 게시판 몇페이지에서 게시글을 눌러서 왔는지 등 -->
+	
+	<hr>
+	<textarea rows="5" cols="30" name="ta"></textarea> <!-- 여러줄의 글을 입력하는 칸 -->
+	
+	<hr> <!-- 실제로 서버에서 받을 때 "choice라는 이름의 data"는 "선택된 value값"을 받아간다!!!! -->
+	<select name="choice"> <!-- select는 선택문을 준다. -->
+		<option value="one">morning</option> <!-- option은 선택지 -->
+		<option value="two">avante</option>
+		<option value="three">k3</option>
+	</select>
+	
+	<input type="submit" value="전송"> <!-- 이걸 누르면 action에 걸어논 파일로 화면 이동 -->
+										<!-- 그 파일이 없으면 404 Not found가 뜬다. -->
+	<input type="reset" value="취소">
+</form>
+
+</body>
+</html>

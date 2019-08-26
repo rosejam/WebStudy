@@ -61,7 +61,29 @@ Console창에 에러가 뜨면 표시된다.
 참고)http://html5test.com 에서 브라우저가 얼마나 지원해주는지 확인
 참고)로렘 입숨 : 무작위 문서 생성해줌
 
+
 ////////
 Element(요소) =<시작tag> body(내용) </끝tag>
 빈 tag = <태그이름/>
 속성은 태그 내부 태그 이름 뒤에 적는다!!! ex) <h1 id="first" align="right">
+
+웹 표준을 잘 지키면 웹 접근성이 좋아진다. ex)caption태그 = 테이블의 제목, alt속성=설명
+
+입력양식태그 = form tag
+
+	<브라우저의 주소창>
+http://localhost:8080/WebFrontProject/html/p76_formtest.html
+http:// IP주소  :8080/  Context Root값/ html폴더(Web Content아래에 있음!!!)	/.html문서
+								/welcome.jsp?num=asdf&pass=qqq (get 방식)
+								/welcome.jsp (post 방식)
+
+block 요소- h1, hr(가로줄), list의 li, div(영역 지정)
+	:1줄에 한개의 요소가 들어가고 줄바꿈O
+inline 요소- a, img, span(영역 지정)
+	:줄바꿈X
+
+속성에서 id와 name의 차이! : id는 중복 불가, name은 중복 가능(체크 박스, 라디오 등을 그룹짓는데 이용)
+
+<link rel="stylesheet" type="text/css" href=".css파일"/> 이런식으로 head에 디자인 파일을 따로 링크할 수 있다.
+
+https://validator.w3.org/에서 웹표준에 얼마나 잘못된게 있는지 체크 할 수 있음

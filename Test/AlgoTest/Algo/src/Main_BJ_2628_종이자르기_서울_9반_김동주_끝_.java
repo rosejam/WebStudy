@@ -87,7 +87,7 @@ public class Main_BJ_2628_종이자르기_서울_9반_김동주_끝_ {
 			}
 		}
 		//clens와 rlens의 조합만들어서 곱하기 //그냥 최대값만 찾아서 곱하기
-		int xy =0;
+		//int xy =0;
 		int maxc =0;
 		int maxr =0;
 		for(int cl=0; cl<clens.size(); cl++) {
