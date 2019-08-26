@@ -1,0 +1,67 @@
+	자바 커리
+Java SE 	   -> 	<Java EE(Web)>
+		Web Front-End(=Design 또는 Presentation) : https://www.w3schools.com 참고
+			: html(content) + css(design) + javascript(간단한 logic) + Framework(웹 프론트용) + jquery, bootstrap...
+		Web Back-End
+			: Java(logic) 
+		DB (설계 + Framework 등)
+			: JDBC framework를 활용해서 DB관리
+		Framework("Spring") : java용
+			: Web Application전체 구조에 대한 F.W.
+		Vue
+			: Front F.W.(2학기 프로젝트 실습에서 자주 사용)
+		Final Project
+
+참고)프레임워크는 유틸리티(프로그램을 쉽게해주는 프로그램)
+javascript	-비밀번호 일치 비교, 체크박스 체크 여부 확인 등 간단한 로직	
+	-Backend도 커버할 수 있다. 
+
+	<Web Application>
+클라이언트-------------------	서버
+browser 			Front--Back--DB
+
+
+	<HTML5> = HTML(<태그>들 중 디자인 관련 제외 - content만!!) + CSS3(design) + Javascript(간단한 logic)
+HyperText(링크걸린 글) Markup(글에 표시) Language
+웹 문서제작을 위한 "표준기술"
+웹 표준에 맞춘 다양한 디바이스 지원
+Web App/Native App
+Interactive 지원
+
+//GML > SGML(방대한 내용) 	> XML - (db대신)data 저장용//mysql, oracle같은 db또는 file에 데이터 저장할때 사용 가능
+	         		> HTML5 - presentation(=design)용으로 text(content)를 담아놓는 용, 느슨한 문법
+
+(특징)
+1. 임베디드 오디오/비디오 지원 : 원래는 Flash 등 브라우저마다 특수 태그 사용했었다.
+2. 미디어 쿼리(Media queries) 지원 : 페이지에 사이즈, 해상도에 따라 CSS를 분기해서 특정 Style Sheet를 적용(디바이스에 따라서)
+3. CSS3(Cascading Style Sheets 3) : html은 그대로 두고 css만 바꿔서 디자인 수정할 수 있다.
+4. 위치정보(embedded geolocation) : IP주소 등으로 실제 위치 파악
+5. Canvas Drawing : 실시간 이미지 프로세싱, 다양한 것을 그릴 수 있음
+6. 오프라인 애플리캐이션(Data storage and offline access) : DB를 쓰지 않고도 브라우저안에 오프라인 저장소에 간단하게 데이터를 저장, 원래는 쿠키를 사용
+7. 파일 및 장치 제어(File and hardware access)
+8. **Semantic Tag : 태그 이름만으로 기능을 알 수 있는 태그 ex)header, article
+
+	<이클립스 서버 환경설정>
+1. 서버 프로그램 다운로드 http://tomcat.apache.org/
+-이클립스EE - 아래 Servers창
+- new - apache tomcat 8.5.38 -프로젝트를 available에서 configured로 옮겨야 실행
+서버를 더블클릭해서 Port번호를 바꿔서 충돌을 제거해 줄 수 있다.
+Console창에 에러가 뜨면 표시된다.
+
+2. New project - web- Dynamic Web Project로 프로젝트 생성
+	-("프로젝트 1개가 Context(실행환경) 1개") - "Context가 다르면 파일을 공유해서 사용할 수 없다!!" -> 같은 파일 사용하고 싶으면 복붙
+	-Java "아닌것은 모두 WebContent"에, "Java는 모두 JavaResources"에!!
+	-"web.xml" 로 프로젝트 실행 환경 설정을 바꿀 수 있다. 
+		(Web module version 3.에서는 필요 없음 : 편하게 Java 내부에서 @(Annotation)으로 대신함!!)
+		But, 수시로 바뀌는 설정은 web.xml에 쓴다!!(수정해서 저장만 하면 되고 컴파일 필요X)
+
+3. Window - web browser 크롬으로 바꿔두기 
+-Run as - Run on server로 실행! -변경사항은 (Ctr + )새로고침하면 반영된다.
+
+참고)http://html5test.com 에서 브라우저가 얼마나 지원해주는지 확인
+참고)로렘 입숨 : 무작위 문서 생성해줌
+
+////////
+Element(요소) =<시작tag> body(내용) </끝tag>
+빈 tag = <태그이름/>
+속성은 태그 내부 태그 이름 뒤에 적는다!!! ex) <h1 id="first" align="right">

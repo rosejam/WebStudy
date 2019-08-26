@@ -10,15 +10,15 @@
 				객체 생성시 new "부모!!!!클래스이름!!!!"(){정의}를 모두작성 
 					이벤트Handler등에서 사용, 안드로이드 소스코드에 활용, 람다식 이해하는데 도움이 됌
 
-	<XML> "확장가능(=사용자정의 태그 생성 가능)"한 Markup Language 
+	<XML> "확장가능(=사용자정의 태그 생성 가능)!"한 Markup Language 
 		=>data를 text형식으로 표현함. (확장자는 .xml) 프로그램 필요X
 XML은 portable data (java가 portable code인 것 처럼)
-	Element =<시작tag> body(내용) </끝tag>
+	Element =<시작tag> body(내용) </끝tag> 태그 쌍이 맞아야 한다.
 	빈 tag = <태그이름/>
 data와 design파일이 분리 되어있음. (서식이아니라 구조와 의미를 설명)
 
-//GML > SGML > XML - data 저장용//mysql, oracle같은 db또는 file에 데이터 저장할때 사용 가능
-	        > HTML5 - presentation(=design)용
+//GML > SGML  > XML - data 저장용//mysql, oracle같은 db또는 file에 데이터 저장할때 사용 가능
+	         > HTML5 - presentation(=design)용
 
 -Well-formed 문서 조건(브라우저는 xml문서 parser 프로그램이 있어서 문서가 well formed 인지 확인할수 있다. )		
 	대소문자구분
