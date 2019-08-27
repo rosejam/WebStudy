@@ -2,7 +2,6 @@ package 보충;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
@@ -68,6 +67,6 @@ public class Solution_D4_7733_치즈도둑_서울9반_김동주 { //가장 많�
 			if(ni>=0&&ni<N&&nj>=0&&nj<N&&(cheese[ni][nj]>x)&&(visited[ni][nj] == false)) { //범위안에 있고 x보다 크고 visit안한경
 				pieces(ni,nj, x);
 			}
-		
+		}
 	}
 }

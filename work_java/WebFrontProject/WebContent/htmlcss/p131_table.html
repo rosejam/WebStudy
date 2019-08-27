@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	table{
+		border-collapse:collapse;
+		width:800px; /*또는 꽉차게 100%*/
+	}
+	th,td{
+		border-bottom:1px solid gray;
+		padding: 10px;
+		text-align: center;
+	}
+	tr:hover{ /* 반응 선택자: hover 마우스를 올렸을 때 */
+		background-color: gray;
+	}
+	h1:active{ /* 반응 선택자: active 마우스로 클릭했을 때 */
+		color:blue;
+	}
+	div{
+	position:relative;
+	width: 1000px;
+	height: 1000px;
+	margin: 0px auto;
+	}
+</style>
+</head>
+<body>
+	<div>
+	<h1>table test</h1>
+	<table> <!-- 표의 선, 두께 표시 -->
+		<caption>3-1 주소록</caption> <!-- "테이블의 제목" -->
+		<tr><!-- table header를 맨 윗row에 써보자 -->
+			<th>번호</th>
+			<th>이름</th>
+			<th>주소</th>
+		</tr>
+		<tr>
+			<td>111</td>
+			<td>김지훈</td>
+			<td>서울시 종로구</td>
+		</tr>
+		<tr>
+			<td>222</td>
+			<td>최동훈</td>
+			<td>부산시 남동구</td>
+		</tr>
+		<tr>
+			<td>333</td>
+			<td>이지연</td>
+			<td>서울시 강남구</td>
+		</tr>
+	</table>
+	</div>
+</body>
+</html>

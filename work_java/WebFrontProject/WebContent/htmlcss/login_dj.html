@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+<style type="text/css">
+	body{
+		font-family: 'Nanum Myeongjo', serif;
+		font-size:20pt;
+		background-color:olive;
+	}
+	.title{
+	font-size:50pt;
+	color:purple;
+	}
+	.content{
+	color:orange;
+	}
+   	#container{
+   		text-align:center;
+  		width:300px;
+  		height:300px;
+  		padding:20px;
+  		margin:0 auto;
+  	}
+	.border{
+	border-style:dotted;
+	border-color:purple;
+	border-width:20px;
+	padding:30px;
+	margin:20px;
+	}
+	input[type=text]{
+	background-color:red;
+	}
+	input[type=password]{
+		background-color:yellow;
+	}
+</style>
+</head>
+<body>
+	<div id="container">
+	<p class="border"><img src="../img/1.png" alt="큰사과 입니다." width=300></p>
+	<h1 class="title">로그인</h1>
+	<form action="logincheck.html" method="post" class="border"> <!-- get or post방식 -->
+		<p class="content">아이디:<input type="text" name="id"></p> <!-- text를 입력하는 창이 나온다 -->
+		<p class="content">패스워드:<input type="password" name="pass"></p>
+	</form>
+	</div>
+</body>
+</html>

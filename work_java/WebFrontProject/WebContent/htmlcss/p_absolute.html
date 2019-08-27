@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	*{
+		margin:0px;
+		padding:0px;
+	}
+	body{
+		background-color:black;
+	}
+	div{
+		width:100px;
+		height:100px;
+	}
+	#div1{
+		background-color:yellow;
+		position:absolute; /*특정좌표에 자리함 */
+		top:0px;
+		left:0px;
+		z-index:200; /*큰게 위로옴*/
+	}
+	#div2{
+		background-color:blue;
+		position:absolute;
+		top:50px;
+		left:50px;
+		z-index:150;
+	}
+	#div3{
+		background-color:pink;
+		position:absolute;
+		top:100px;
+		left:100px;
+		z-index:100;
+	}
+	#div4{
+		background-color:green;
+		position:absolute;
+		top:150px;
+		left:150px;
+		z-index:50;
+	}
+</style>
+</head>
+<body>
+	<h1 style="color:white">absolute position</h1>
+	<div id="div1">div1</div>
+	<div id="div2">div2</div>
+	<div id="div3">div3</div>
+	<div id="div4">div4</div>
+</body>
+</html>

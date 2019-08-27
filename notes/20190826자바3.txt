@@ -1,17 +1,17 @@
 	자바 커리
 Java SE 	   -> 	<Java EE(Web)>
 		Web Front-End(=Design 또는 Presentation) : https://www.w3schools.com 참고
-			: html(content) + css(design) + javascript(간단한 logic) + Framework(웹 프론트용) + jquery, bootstrap...
-		Web Back-End
-			: Java(logic) 
+			: "html(content) + css(design) + javascript(간단한 logic)" + Framework(웹 프론트용) + jquery, bootstrap...
+		Web Back-End(=Biz logic)
+			: Java(logic) + JDBC framework를 활용해서 DB관리
 		DB (설계 + Framework 등)
-			: JDBC framework를 활용해서 DB관리
+			: 
 		Framework("Spring") : java용
 			: Web Application전체 구조에 대한 F.W.
 		Vue
 			: Front F.W.(2학기 프로젝트 실습에서 자주 사용)
 		Final Project
-
+			:
 참고)프레임워크는 유틸리티(프로그램을 쉽게해주는 프로그램)
 javascript	-비밀번호 일치 비교, 체크박스 체크 여부 확인 등 간단한 로직	
 	-Backend도 커버할 수 있다. 
