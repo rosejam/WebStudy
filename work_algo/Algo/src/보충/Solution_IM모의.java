@@ -48,12 +48,12 @@ class Solution_IM모의
 			wall = new int[N][M]; //명도번호 0~10
 			for (int k = 0; k < K; k++)
 			{
-				nodraw = false;
 				DRAW[k][0] = sc.nextInt(); //행1
 				DRAW[k][1] = sc.nextInt(); //열1
 				DRAW[k][2] = sc.nextInt(); //행2
 				DRAW[k][3] = sc.nextInt(); //열2
 				DRAW[k][4] = sc.nextInt(); //명도번호 0~10
+				nodraw = false;
 				for(int n=DRAW[k][0]; n<=DRAW[k][2]; n++) {
 					for(int m=DRAW[k][1]; m<=DRAW[k][3]; m++) { //칠할 범위내에
 						if(wall[n][m] > DRAW[k][4]) { //더 높은 명도 번호를 가지는 영역이 존재한다면
