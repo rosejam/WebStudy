@@ -37,7 +37,7 @@ loop:					for(int d=0; d<di.length; d++) { //사방 서치
 									continue loop; //범위 밖으로 가거나 넘어 볼수없으면 다른 방향서치로 넘어감
 								}
 								if(map[ni][nj]=='T') {
-									map[ni][nj] = 'X';
+									map[ni][nj] = 'X';////여기서　그냥　W로　바꾼다
 									continue loop; //다른 방향서치로 넘어감
 								}
 							}

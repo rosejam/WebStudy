@@ -4,20 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-//완제품이 최소 1명이라도 소수일 확률 (1-둘다 완제품이 소수개가 아닐 확률) = 1-Anot*Bnot
-//소수 : 2 3 5 7 11 13 17
-//0 1 4 6 8 9 10 12 14 15 16 18
+
+//유향 그래프 + BFS
 public class Solution_D4_1238_Contact_서울9반_김동주_미완 {
-	//public static byte A, B;
-	public static double A, B;
-	public static double Anot, Bnot;
-	public static double prob;
-	public static int[] notsosu = {0,1,4,6,8,9,10,12,14,15,16,18};
-	public static double nCr(int n, int r) {
-		if(n<r) return 0.0;
-		if(r==0) return 1.0;
-		return nCr(n-1,r-1)+nCr(n-1,r);
-	}
+
 	public static void main(String[] args) throws Exception{
 		System.setIn(new FileInputStream("res/input_D6_1266.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

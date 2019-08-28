@@ -25,6 +25,7 @@ public class Solution_D5_1247_최적경로_서울9반_김동주 {
 			ans += len[d[0]][N]; //처음회사에서 출발
 			for(byte j=0; j<N-1; j++) {
 				ans += len[d[j]][d[j+1]];
+				//if(min <= ans) break;
 			}
 			ans += len[d[N-1]][N+1]; //마지막에 집에 도착
 			///////////////////////////////////////////////

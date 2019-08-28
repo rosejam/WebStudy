@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
+import graph.DfsLinked.Node;
+
 public class BfsLinked { 
 	public static class Node{
 		int data;
@@ -77,12 +79,17 @@ public class BfsLinked {
 		for(int i=0; i<V; i++) {
 			System.out.print(i+":->");
 			if(graph[i]!=null) {
-				Node t = graph[i];
+/*				Node t = graph[i];
 				while(t.link!=null) {
 					System.out.print(t.data+"->");
 					t=t.link;
 				}
-				System.out.println(t.data);
+				System.out.println(t.data);*/
+				
+				for(Node t=graph[i]; t!=null; t=t.link) {
+					System.out.print(t.data+"->");
+				}
+				System.out.println();
 			}
 		}
 		//bfs(0);
@@ -105,7 +112,7 @@ public class BfsLinked {
 				Node curr = queue.poll(); 
 				System.out.print(curr.data + " ");
 				
-				Node t = graph[curr.data];
+/*				Node t = graph[curr.data];
 				while(t.link!=null) {
 					if(!visit[t.data]) {
 						visit[t.data]=true;
@@ -116,7 +123,14 @@ public class BfsLinked {
 				if(!visit[t.data]) {
 					visit[t.data]=true;
 					queue.offer(t);
-				}
+				}*/
+				
+				for(Node t=graph[curr.data]; t!=null; t=t.link) {
+					if(!visit[t.data]) {
+						visit[t.data]=true;
+						queue.offer(t);
+					}
+				}//코드가 더 짧아짐
 			}
 			System.out.println("level="+ cnt++); //시작거리에서 얼마만큼의 거리를 가지는지 확인
 		}
@@ -133,7 +147,7 @@ public class BfsLinked {
 				visit[curr.data]=true;
 				System.out.print(curr.data + " ");
 				
-				Node t = graph[curr.data];
+/*				Node t = graph[curr.data];
 				while(t.link!=null) {
 					if(!visit[t.data]) {
 						queue.offer(t);
@@ -142,6 +156,12 @@ public class BfsLinked {
 				}
 				if(!visit[t.data]) {
 					queue.offer(t);
+				}*/
+				
+				for(Node t=graph[curr.data]; t!=null; t=t.link) {
+					if(!visit[t.data]) {
+						queue.offer(t);
+					}
 				}
 			}
 		}

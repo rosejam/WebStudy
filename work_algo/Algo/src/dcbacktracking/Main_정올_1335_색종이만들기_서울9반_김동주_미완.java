@@ -8,7 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class Main_정올_1335_색종이만들기_서울9반_김동주_미완 {
+//Divide and Conquer의 전형적인 문제
+public class Main_정올_1335_색종이만들기_서울9반_김동주_미완 { //큰것부터 생각해야한다!
 	public static boolean[][] blue;
 	public static int ws, bs;
 	public static void main(String[] args) throws Exception {
@@ -39,10 +40,14 @@ public class Main_정올_1335_색종이만들기_서울9반_김동주_미완 {
 	}
 	public static boolean[][] dividing(boolean[][] whole, int m) { //변이 2^m을넣는다.
 		if(m==1) return whole;
-		boolean[][] quarter1 = new boolean[m/2][m/2];
+/*		boolean[][] quarter1 = new boolean[m/2][m/2];
 		boolean[][] quarter2 = new boolean[m/2][m/2];
 		boolean[][] quarter3 = new boolean[m/2][m/2];
-		boolean[][] quarter4 = new boolean[m/2][m/2];
+		boolean[][] quarter4 = new boolean[m/2][m/2];*/
+		dividing(i,j,n/2);
+		dividing(i,j+n/2,n/2);
+		dividing(i+n/2,j,n/2);
+		dividing(i+n/2,j+n/2,n/2);
 		for(int x=0; x<4; x++) {
 			dividing(half, m-1);
 		}
@@ -59,11 +64,20 @@ public class Main_정올_1335_색종이만들기_서울9반_김동주_미완 {
 		return merge(left, right); //병합
 		//System.out.println(Arrays.toString(a));
 */	}
-	public static boolean[][] merging() {
-		
-	}
-	public static boolean ifsame() {
-		
-		return false;
+	public static void paper(int i,int j, int n) { //예시답안!!
+		int sum=0;
+		for(int ni=i; ni<i+n; ni++) {
+			for(int nj=j; nj<j+n; nj++) {
+				sum+=a[ni][nj];
+			}
+		}
+		if(sum==0) cnt0 ++;
+		else if (sum == n*n) cnt1++;
+		else {
+			paper(i,j,n/2);
+			paper(i,j+n/2,n/2);
+			paper(i+n/2,j,n/2);
+			paper(i+n/2,j+n/2,n/2);
+		}
 	}
 }

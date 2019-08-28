@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Main_정올_1695_단지번호붙이기_Bfs_서울9반_김동주 {
+public class _Main_정올_1695_단지번호붙이기_Bfs_서울9반_김동주 {
 	public static int[][] map;
 	public static int N;
 	public static int cnt;

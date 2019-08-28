@@ -75,12 +75,17 @@ public class DfsLinked {
 		for(int i=0; i<V; i++) {
 			System.out.print(i+":->");
 			if(graph[i]!=null) {
-				Node t = graph[i];
+/*				Node t = graph[i];
 				while(t.link!=null) {
 					System.out.print(t.data+"->");
 					t=t.link;
 				}
-				System.out.println(t.data);
+				System.out.println(t.data);*/
+				
+				for(Node t=graph[i]; t!=null; t=t.link) {
+					System.out.print(t.data+"->");
+				}
+				System.out.println();
 			}
 		}
 		dfs(0);
@@ -93,7 +98,7 @@ public class DfsLinked {
 		visit[node]=true;
 		System.out.print(node + " ");
 		
-		Node t = graph[node];
+/*		Node t = graph[node];
 		while(t.link!=null) {
 			if(!visit[t.data]) {
 				dfsr(t.data);
@@ -102,7 +107,13 @@ public class DfsLinked {
 		}
 		if(!visit[t.data]) {
 			dfsr(t.data);
-		}
+		}*/
+		
+		for(Node t=graph[node]; t!=null; t=t.link) {
+			if(!visit[t.data]) {
+				dfsr(t.data);
+			}
+		}//코드가 더 짧아짐
 	}
 	
 	
@@ -118,7 +129,7 @@ public class DfsLinked {
 				visit[curr.data]=true;
 				System.out.print(curr.data + " ");
 				
-				Node t = graph[curr.data];
+/*				Node t = graph[curr.data];
 				while(t.link!=null) {
 					if(!visit[t.data]) {
 						stack.push(t);
@@ -127,7 +138,13 @@ public class DfsLinked {
 				}
 				if(!visit[t.data]) {
 					stack.push(t);
-				}
+				}*/
+				
+				for(Node t=graph[curr.data]; t!=null; t=t.link) {
+					if(!visit[t.data]) {
+						stack.push(t);
+					}
+				}//코드가 더 짧아짐
 			}
 		}
 	}

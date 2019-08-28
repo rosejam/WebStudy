@@ -9,14 +9,14 @@ import java.util.StringTokenizer;
    사용하는 클래스명이 Solution 이어야 하므로, 가급적 Solution.java 를 사용할 것을 권장합니다.
    이러한 상황에서도 동일하게 java Solution 명령으로 프로그램을 수행해볼 수 있습니다.
 */
-class Solution_Ad모의1 //1 ~ N/2 번째 카드는 왼쪽 (L), N/2+1 ~ N 번째 카드는 오른쪽 (R)
+class Solution_AD_0001_서울9반_김동주
 {	
 	static int Ans,T,N;
 	static int[] ccards, oans, nans,cards;
 	static int[] LL,RR,L,R;
 	static boolean bo,bn,notsameo, notsamen;
-	static int co,cn,min;
-	static int yo,yn, xx;
+	static int co,min;
+	static int xx;
 	public static void main(String args[]) throws Exception
 	{
 		/*
@@ -26,7 +26,7 @@ class Solution_Ad모의1 //1 ~ N/2 번째 카드는 왼쪽 (L), N/2+1 ~ N 번째
 		   따라서 테스트를 수행할 때에는 아래 주석을 지우고 이 메소드를 사용하셔도 좋습니다.
 		   단, 채점을 위해 코드를 제출하실 때에는 반드시 이 메소드를 지우거나 주석 처리 하셔야 합니다.
 		*/
-		System.setIn(new java.io.FileInputStream("res/input_Ad_1.txt"));
+		System.setIn(new java.io.FileInputStream("res/input_AD_1.txt"));
 
 		/*
 		   표준입력 System.in 으로부터 스캐너를 만들어 데이터를 읽어옵니다.
@@ -74,7 +74,6 @@ class Solution_Ad모의1 //1 ~ N/2 번째 카드는 왼쪽 (L), N/2+1 ~ N 번째
 			}
 			//5회 셔플이내에 오름차순or내림차순 정렬
 			//lllrrr, llrlrr, lrlrlr, rlrlrl, rrlrll, rrrlll
-			//123456, 124356, 142536, 
 			bo=false;
 			bn=false;
 			min=Integer.MAX_VALUE;
@@ -94,28 +93,20 @@ class Solution_Ad모의1 //1 ~ N/2 번째 카드는 왼쪽 (L), N/2+1 ~ N 번째
 		if(co == 6) return; //co==5 를 하면 마지막 테스트 케이스가 틀리다.
 		notsameo=false;
 		notsamen=false;
-		for(int n=0; n<N; n++) {
+		for(int n=0; n<N; n++) { //어느방향으로든 정렬되는지 체크
 			if(cards[n]!= oans[n]) notsameo=true;
 			if(cards[n]!= nans[n]) notsamen=true;
 		}
-		if(!notsameo || !notsamen) {
-			if(!notsameo && notsamen) {
-				if(co<min) min=co;
-				bo = true;
-				return;
-			}else if(!notsamen && notsameo) {
-				if(co<min) min=co;
-				//mino=co;
-				bn = true;
-				return;
-			}else {
-				//if(co<min) min=co;
-				//bn = true;
-				//bo = true;
-				return;
-			}
+		if(!notsameo) {
+			if(co<min) min=co;
+			bo = true;
+			return;
+		}else if(!notsamen) {
+			if(co<min) min=co;
+			bn = true;
+			return;
 		}
-		/////////mixing
+		/////////Shuffling
 		for(int x=0; x<N; x++) {
 			if(x<N/2) {
 				for(int n=0;n<N/2-x; n++) { //0
@@ -141,7 +132,7 @@ class Solution_Ad모의1 //1 ~ N/2 번째 카드는 왼쪽 (L), N/2+1 ~ N 번째
 					cards[n]=L[n-N/2]; //1
 				}
 			}
-			//
+			/////////
 			for(int n=0; n<N/2;n++) {
 				L[n]=cards[n];
 			}

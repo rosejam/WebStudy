@@ -21,6 +21,7 @@ public class Solution_D4_3289_서로소집합_서울9반_김동주 {
             //makeset
             int[] p = new int[n+1];
             for(int i=1; i<n+1; i++) p[i]=i;
+            
             for(int mm=0; mm<m; mm++) {
                 StringTokenizer st = new StringTokenizer(br.readLine());
                 op = Byte.parseByte(st.nextToken()); //0이면 합치고 1이면 같은집합인지 확인 //1이면 출력
@@ -41,7 +42,7 @@ public class Solution_D4_3289_서로소집합_서울9반_김동주 {
         System.out.println(sb);
     }
      
-    public static int getParent(int[] p, int x) {
+    public static int getParent(int[] p, int x) { //p는 
         if(p[x]==x) return x; //대표값까지 도달
         else return p[x]=getParent(p, p[x]); //p[x]에 대입하여서 Path compression까지 함께함
     }
@@ -50,6 +51,7 @@ public class Solution_D4_3289_서로소집합_서울9반_김동주 {
         b=getParent(p,b);
         if(a<b) p[b]=a;
         else    p[a]=b;
+        //그냥 p[b]=a; (a쪽을 부모로 해서 b의 부모에 넣는다.!)
     }
     public static boolean findParent(int[] p, int a, int b) {
         a=getParent(p,a);

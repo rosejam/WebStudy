@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 //DFS
-public class Perm { //nPn을 구할때 종소리 패턴 스왑을 이용해서 구하는 방법!
+public class Perm__ { //nPn을 구할때 종소리 패턴 스왑을 이용해서 구하는 방법!
 	public static int n, cnt, d[]={1,2,3,4};
 	public static int result;
 	

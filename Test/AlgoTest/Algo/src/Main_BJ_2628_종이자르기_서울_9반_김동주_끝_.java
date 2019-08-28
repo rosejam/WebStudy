@@ -41,7 +41,7 @@ public class Main_BJ_2628_종이자르기_서울_9반_김동주_끝_ {
 		rlens = new ArrayList<Integer>();
 		clens = new ArrayList<Integer>();
 		int x = 0;
-		for(int m=0; m<M; m++) {
+		for(int m=0; m<M; m++) { //이 부분은 for(int k=1; k<rnum.size(); k++) w=Math.max(w, rnum.get(k)-rnum.get(k-1));
 			if(rnum.size()>1) {
 				if(m==rnum.get(x)) {
 					if(x==0) { //처음 자르는 정보
@@ -64,7 +64,7 @@ public class Main_BJ_2628_종이자르기_서울_9반_김동주_끝_ {
 			}
 		}
 		int y = 0;
-		for(int n=0; n<N; n++) {
+		for(int n=0; n<N; n++) {//이 부분은 for(int k=1; k<cnum.size(); k++) w=Math.max(w, cnum.get(k)-cnum.get(k-1));
 			if(cnum.size()>1) {
 				if(n==cnum.get(y)) {
 					if(y==0) {

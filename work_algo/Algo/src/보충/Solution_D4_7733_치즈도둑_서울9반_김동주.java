@@ -67,6 +67,6 @@ public class Solution_D4_7733_치즈도둑_서울9반_김동주 { //가장 많�
 			if(ni>=0&&ni<N&&nj>=0&&nj<N&&(cheese[ni][nj]>x)&&(visited[ni][nj] == false)) { //범위안에 있고 x보다 크고 visit안한경
 				pieces(ni,nj, x);
 			}
-		}
+		}//지우면서 돌아가면 안됨. 표시하기 위한 메서드
 	}
 }
