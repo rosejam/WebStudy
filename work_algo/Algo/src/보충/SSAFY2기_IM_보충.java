@@ -96,5 +96,7 @@ public class SSAFY2기_IM_보충 {
 		System.out.println(Arrays.binarySearch(grr,ke)); //이진 검색은 정렬된 배열에서만 사용할 수 있다!
 		//ke값의 인덱스를 출력
 		
+		//String[] srr = str.split("[]");
+		//StringTokenizer st = new StringTokenizer(str, "!.?"); //더빠름 -> while(st.hasmoreTokens())
 	}
 }
