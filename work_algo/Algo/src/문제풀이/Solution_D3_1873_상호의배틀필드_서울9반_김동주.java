@@ -111,49 +111,49 @@ public class Solution_D3_1873_상호의배틀필드_서울9반_김동주 {
             case 'S'://처음마주치는 벽돌벽 없애고 사라지기 or 처음 마주치는 강철벽만나면 사라지기
                 switch(d) {
                 case '^':
-                    for(int l=1; l<=ii; l++) {
+                    for(int l=1; l<H; l++) {
                         ni = ii-l;
                         nj = jj;
-                        if(map[ni][nj] =='*') {
+                        if(ni>=0 && map[ni][nj] =='*') {
                             map[ni][nj]='.';
                             break;
-                        }else if(map[ni][nj] =='#') {
+                        }else if(ni>=0 && map[ni][nj] =='#') {
                             break;
                         }
                     }
                 break;
                 case 'v':
-                    for(int l=1; l<H-ii; l++) {
+                    for(int l=1; l<H; l++) {
                         ni = ii+l;
                         nj = jj;
-                        if(map[ni][nj] =='*') {
+                        if(ni<H && map[ni][nj] =='*') {
                             map[ni][nj]='.';
                             break;
-                        }else if(map[ni][nj] =='#') {
+                        }else if(ni<H && map[ni][nj] =='#') {
                             break;
                         }
                     }
                 break;
                 case '<':
-                    for(int l=1; l<=jj; l++) {
+                    for(int l=1; l<W; l++) {
                         ni = ii;
                         nj = jj-l;
-                        if(map[ni][nj] =='*') {
+                        if(nj>=0 && map[ni][nj] =='*') {
                             map[ni][nj]='.';
                             break;
-                        }else if(map[ni][nj] =='#') {
+                        }else if(nj>=0 && map[ni][nj] =='#') {
                             break;
                         }
                     }
                 break;
                 case '>':
-                    for(int l=1; l<W-jj; l++) {
+                    for(int l=1; l<W; l++) {
                         ni = ii;
                         nj = jj+l;
-                        if(map[ni][nj] =='*') {
+                        if(nj<W && map[ni][nj] =='*') {
                             map[ni][nj]='.';
                             break;
-                        }else if(map[ni][nj] =='#') {
+                        }else if(nj<W && map[ni][nj] =='#') {
                             break;
                         }
                     }
