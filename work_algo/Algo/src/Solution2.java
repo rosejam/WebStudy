@@ -27,4 +27,16 @@ class Solution2{
 		System.out.print(sb);
 		br.close();
 	}
+
+/*	System.setIn(new java.io.FileInputStream("res/input.txt"));
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	StringBuilder sb = new StringBuilder();
+	
+	int TC= Integer.parseInt(br.readLine());
+	for(int tc=1;tc<=TC;tc++) {
+		Ans=0;
+		sb.append("#"+tc+" "+Ans+"\n");
+	}
+	System.out.println(sb);*/
+
 }
