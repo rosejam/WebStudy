@@ -67,8 +67,9 @@ public class Solution_D4_1251_하나로_서울9반_김동주_Prim {
 			//우선 길이제곱 L2를 모두 구한다.
 			w = new long[N];
 			for (int i = 0; i < N; i++) {
-				for (int j = 0; j < N; j++) { //여기를 i부터로 해서 i<j일때만 구한다.(행렬의 위쪽 반) //취소
+				for (int j = i+1; j < N; j++) { //여기를 i부터로 해서 i<j일때만 구한다.(행렬의 위쪽 반) //취소
 					L2[i][j] = (long) (Math.pow(Xs[i]-Xs[j], 2) + Math.pow(Ys[i]-Ys[j], 2)); //i와 j의 거리제곱
+					L2[j][i] = L2[i][j];
 				}
 			}
 			//Ans=0;

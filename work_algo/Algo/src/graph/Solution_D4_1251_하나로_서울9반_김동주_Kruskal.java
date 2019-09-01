@@ -3,7 +3,6 @@ package graph;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -15,7 +14,7 @@ public class Solution_D4_1251_하나로_서울9반_김동주_Kruskal {
 	public static int N;
 	public static int[] Xs,Ys;
 	public static double E;
-	public static long[][] L2; //모든 거리의 제곱
+	//public static long[][] L2; //모든 거리의 제곱
 	
 	public static List<long[]> v;
 	public static int[] p;
@@ -68,7 +67,7 @@ public class Solution_D4_1251_하나로_서울9반_김동주_Kruskal {
 			N = Integer.parseInt(br.readLine());
 			Xs = new int[N];
 			Ys = new int[N];
-			L2 = new long[N][N];
+			//L2 = new long[N][N];
 			st = new StringTokenizer(br.readLine());
 			int x=0;
 			while(st.hasMoreTokens()) {
@@ -86,8 +85,7 @@ public class Solution_D4_1251_하나로_서울9반_김동주_Kruskal {
 			v = new ArrayList<>();
 			for (int i = 0; i < N; i++) {
 				for (int j = i+1; j < N; j++) { //여기를 i부터로 해서 i<j일때만 구한다.(행렬의 위쪽 반)
-					L2[i][j] = (long) (Math.pow(Xs[i]-Xs[j], 2) + Math.pow(Ys[i]-Ys[j], 2)); //i와 j의 거리제곱
-					v.add(new long[] {i,j,L2[i][j]});
+					v.add(new long[] {i,j,(long) (Math.pow(Xs[i]-Xs[j], 2) + Math.pow(Ys[i]-Ys[j], 2))});
 				}
 			}
 			////길이제곱 L2의 합이 최소가 되도록 모든 섬을 연결한다!
