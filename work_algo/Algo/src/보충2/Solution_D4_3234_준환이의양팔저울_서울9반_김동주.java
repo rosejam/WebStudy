@@ -67,7 +67,7 @@ public class Solution_D4_3234_준환이의양팔저울_서울9반_김동주 {
 	
 	//예시답안
 	public static int dfs(int[] weight, boolean[] check, int left, int right, int depth) {
-		if(left<right) return 0;
+		if(left<right) return 0; //백트래킹 필수
 		int r=0;
 		if(weight.length == depth) return 1;
 		for(int i=0; i<weight.length; i++) {
