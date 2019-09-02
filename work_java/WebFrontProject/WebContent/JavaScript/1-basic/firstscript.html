@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<style type="text/css">
+			h1{
+				color:blue;
+			}
+		</style>
+		<script type = "text/javascript" src="../js/myjs.js"></script> <!-- 외부 파일 형식 -->
+		<script type = "text/javascript"> <!-- 내부 파일 형식 -->
+			//comment : js주석
+			/* 주석 */
+			//var : 변수 선언 시 사용. 지역변수가 됨(여기서는 메서드 외부에 있으므로 모두 전역변수)
+			var name = "tommy";
+			var age = 12;
+			var flag = true;
+			num = 99; //전역변수
+			//int z = 9; //여기서 잘못되면 아래 js도 실행이 안된다. (콘솔에는 나타나지 않고 브라우저에서 "검사"해서 sources에서 에러 확인)
+			
+			document.write(name+"<br>"); //브라우저에 출력
+			document.write(num+"<br>");
+			document.write(age+"<br>");
+			document.write(flag+"<br>");
+			console.log(age,name); //브라우저 콘솔에 나옴
+			console.log(count);
+			
+		</script>
+	</head>
+	<body>
+		<h1>html test</h1>
+		<script type = "text/javascript">
+			document.write("hello<br>");
+		</script>	
+		
+		
+	</body>
+</html>

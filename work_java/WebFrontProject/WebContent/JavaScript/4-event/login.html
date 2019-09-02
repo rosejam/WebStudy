@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function check(){
+		//1. id, pass 입력칸의 값 알아오기
+		var id = document.getElementById("id"); //id="id"인 "element"가 var id에 대입
+		var pass = document.getElementById("pass");
+		//2. 값이 유효한지 체크해서 경고창 띄워주기
+		if(id.value == ""){
+			alert("id를 입력해 주세요");
+			return; //프로그램 실행을 멈춤
+		}
+		if(pass.value == ""){
+			alert("pass를 입력해 주세요");
+			return; //프로그램 실행을 멈춤
+		}
+		//3. 모두 유효하다면 action에서 지정한 곳으로 내용 전송
+		var form = document.getElementById("f"); //form여는태그 부터 닫는 태그 까지 모두 가져옴
+		form.action = "other.jsp"; //action을 바꿈
+		//form.method = "get"; //method를 바꿈
+		form.submit(); //form의 action에 전송한다~ //폼 전송
+	}
+</script>
+</head>
+<body>
+	<h1>로그인</h1>
+	<form action="welcome.jsp" method="post" id="f"> <!-- get or post방식 -->
+		아이디:<input type="text" name="id" id="id"> <!-- text를 입력하는 창이 나온다 -->
+		패스워드:<input type="password" name="pass" id="pass">
+		<input type="button" value="전송" onclick="check()"> <!-- submit하면 바로 form의 action으로 넘어가므로 -->
+		<!--  <button>전송</button> -->
+		<input type="reset" value="취소">
+	</form>
+</body>
+</html>

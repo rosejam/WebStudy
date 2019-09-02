@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript"> 
+	/* 선언적 함수 : 함수 이름이 있는 함수 */
+	//함수정의
+	var c = 999; //var가 붙어있지만 메소드 외부에 있으므로 "전역"
+	function go(){
+		var num = 100;
+		alert('hi' + num);
+	}
+	
+	function add(a,b){
+		return a+b;
+	}
+	
+	function hello(name){
+		document.write("hello,,,"+name);
+	}
+	//함수 사용
+	go();
+	document.write("결과:"+add(3,5)+"<br>");
+	hello("june");
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

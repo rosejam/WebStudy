@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* 내장 함수 */
+/* 	alert("hello");
+	var result = prompt("enter your name!", "harry"); //입력칸이 나오게 하는 함수(기본 "harry")
+	alert(result);
+	
+	var flag = confirm("오늘 날씨가 맑나요?"); //확인true/취소false 선택창이 나오게 하는 함수
+	if(flag){
+		alert("sunny " + flag)
+	}else{
+		alert("not sunny " + flag)
+	} */
+	
+	function showTime(){
+		var time = new Date();
+		document.write(time.toString() + "<br>");
+	}
+	
+	function stop(){
+		clearInterval(t); //반복함수 t를 멈추게 함
+	}
+	
+	//setInterval : 일정한 시간 간격으로 지정한 함수를 "반복 실행"함
+	var t = setInterval(showTime, 1000);
+	
+	//setTimeout : 일정 시간 후에 지정 함수를 "한번 실행"함
+	setTimeout(stop, 5000);
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

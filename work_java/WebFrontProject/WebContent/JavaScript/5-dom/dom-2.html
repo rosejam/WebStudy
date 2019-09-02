@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var cnt = 0; //hello가 몇번째인지 표시용
+	function del(that){ //삭제할 때는 그것의 부모의 자식을 삭제
+		//that : 삭제할 대상
+		var parent = that.parentNode; //부모를 먼저 알아냄
+		parent.removeChild(that);
+	}
+	function create(){ //생성할때는 document로 생성후 특정 부모에 자식으로 추가
+ 		//<h1 onclick="del()">hello</h1> 생성
+		var h1 = document.createElement('h1');
+		var text = document.createTextNode('hello'+ ++cnt);
+		h1.setAttribute('onclick', 'del(this)'); //클릭될 때 del 함수가 호출 되면서 자기자신(이 h1 엘레멘트 전체)이 파라메터로 전달
+		h1.appendChild(text);
+		//div의 자식으로 넣는다.
+		var result = document.getElementById('result');
+		result.appendChild(h1);
+		
+/* 		//<a href = "test.html">gogo</a><br>
+		var a = document.createElement('a');
+		var txt = document.createTextNode('gogo');
+		a.setAttribute('href', 'test.html'); //속성추가
+		a.appendChild(txt);
+		var br = document.createElement('br');
+		
+		//div의 자식으로 넣는다.
+		var result = document.getElementById('result');
+		result.appendChild(a);
+		result.appendChild(br); */
+	}
+</script>
+</head>
+<body>
+	<h1>dom create</h1>
+	<button onclick="create()">create</button>
+	<hr>
+	<div id="result" style="border:2px solid red; height:300px; width:300px; overflow:auto;"></div> <!-- 넘치면 자동으로 스크롤바가 생긴다. auto -->
+</body>
+</html>

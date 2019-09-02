@@ -43,7 +43,7 @@ Well-formed문서이면서 + DTD나 Schema에 맞게 되어있는지 검사
 	Parser(SAX & DOM)
 -DOM : 태그 하나하나를 Object로 생각
 	돔트리 : 태그들의 포함여부를 그린 것, 위로 갈수록(포함할 수록) 부모 태그
-		body는 태그의 자식~(아래), 속성은 옆으로 그림(자식X)
+		"body는 태그의 자식~(아래), 속성은 옆으로 그림(자식X)"
 		root태그위의 /(document)는 아래를 전부 가리키는 레퍼런스(변수명)
 		구성요소 각각을 Node라고 부름: 이름/값/타입(텍스트/엘리먼트/속성 노드)을 가짐
 DocumentBuilderFactory

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//(선언적)함수 정의
+ 	function max(a,b){
+		return (a>b)?a:b;
+	}
+	function printName(name){
+		document.write('hello!'+name);
+	}
+	function getArea(r){
+		return 3.14*r*r;
+	}
+	function reverse(flag){
+		return !flag;
+	}
+	function calc(a,b,op){
+		switch(op){
+		case '+':
+			alert(a+b);
+		break;
+		case '-':
+			alert(a-b);
+		break;
+		case '*':
+			alert(a*b);
+		break;
+		case '/':
+			alert(a/b);
+		break;
+		}
+	}
+ 	//사용
+ 	document.write(max(635,867)+"<br>");
+ 	printName("dongju"+"<br>");
+ 	document.write(getArea(1)+"<br>");
+ 	document.write(reverse(false)+"<br>");
+ 	calc(3,6,'/');
+ 	
+</script>
+</head>
+<body>
+	
+</body>
+</html>

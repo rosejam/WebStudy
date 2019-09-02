@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function findAddress(){
+		//popup 창 띄우기
+		open("findAddress.html", "abc", "width=400px height=400px scrollbars=true");
+	}
+	function agree2(){
+		alert("약관에 동의해야 가입할 수 있습니다");
+		var agr = document.getElementById("agree");
+		var dag = document.getElementById("disagree");
+		//if(dag.checked == true){
+		dag.checked = false;
+		agr.checked = true;
+		//}
+	}
+	function idCheck(){
+		//id칸에 입력한 값 알아와서 그 값이 tommy이면 '사용중인 아이디입니다', 아니면 '사용가능한 아이디입니다'라고 msg에 출력
+		var id = document.getElementById("id");
+		var msg = document.getElementById("msg");
+		msg.style.color = 'red'; //javascript에서 css조정할 때 'style' 속성 이용해서 지정함
+		msg.style.fontFamily = 'Nanum Myeongjo';
+		
+		if(id.value == "tommy"){ //equals 이런거 없다.
+			msg.innerHTML = "사용중인 아이디입니다";
+			id.value = '';
+		}else{
+			msg.innerHTML = "사용가능한 아이디입니다";
+		}
+	}
+	function passcheck(){
+		//pass칸에 입력한 값 알아와서 그 길이가 6이상 10이하인지 체크
+		var pass = document.getElementById("pass");
+		//맞지 않으면 경고창 띄우기('패스워드는 6글자에서 10글자 사이여야 합니다')
+		//맞으면 form 전송하기
+		if(pass.value.length >10 || pass.value.length <6){
+			alert("패스워드는 6글자에서 10글자 사이여야 합니다");
+			pass.value = '';
+			return;
+		}else{
+			var form = document.getElementById("f"); //form여는태그 부터 닫는 태그 까지 모두 가져옴
+			form.submit();
+		}
+	}
+	function moveNext(){
+		var idno1 = document.getElementById("idnum1");
+		var idno2 = document.getElementById("idnum2");
+		if(idno1.value.length >= 6){
+			idno2.focus();
+		}
+		idno2.maxLength='7';
+	}
+	function clearText(){
+		var ta = document.getElementById("ta");
+		ta.value = '';
+	}
+	function send(){
+		var form = document.getElementById("f1"); //form여는태그 부터 닫는 태그 까지 모두 가져옴
+		form.submit();
+	}
+</script>
+</head>
+<body><h2>회원 정보</h2>
+		
+		<form name="f1" id="f1" action="welcome.jsp">
+		<!-- 아얘 편집불가로 readonly -->
+		 <textarea name="ta" rows="10" cols="100" readonly="readonly">[서비스 이용약관]
+		
+		제 1장 총칙
+		
+		제 1조 목적 
+		이 약관은 (주)마이드림(이하 "회사")가 제공하는 마이드림 및 마이드림 관련 제반 서비스의 이용과 관련하여, "회사"와 "회원"의 권리, 의무 및 책임 사항, 기타 필요한 사항을 규정함을 목적으로 합니다. 
+		
+		제 2조 정의 
+		이 약관에서 사용하는 용어의 정의는 다음과 같습니다. 
+		  1. 서비스 : 구현되는 단말기(PC, TV, 휴대형 단말기 등 각종 유·무선 장치를 포함)와 관계없이 "회원"이 이용할 수 있는 마이드림 및 마이드림 관련 제반 서비스 
+		  2. 회원 : "회사"의 "서비스"에 접속하여 이 약관에 따라 "회사"와 이용 계약을 체결하고, "회사"가 제공하는 "서비스"를 이용하는 고객 
+		  3. 아이디(ID) : "회원"의 식별과 "서비스" 이용을 위하여 "회원"이 정하고 "회사"가 승인하는 문자와 숫자의 조합 
+		  4. 비밀번호 : "회원"이 부여받은 "아이디(ID)"와 일치되는 "회원"임을 확인할 목적으로, "회원" 자신이 정한 문자 또는 숫자의 조합 
+		  5. 게시물 : "회원"이 "서비스"를 이용하면서 "서비스" 상에 게시한 글, 사진, 동영상, 음성 및 각종 파일 및 링크 등(형태와 유형을 제한하지 않음) 
+		  6. 유료 서비스 : "회사"가 유료로 제공하는 각종 온라인 디지털 콘텐츠(각종 정보 콘텐츠 및 특정 "서비스"에 대한 확장·추가 기능 포함) 및 제반 서비스 
+		
+		</textarea><br/><br/>
+		<input type="radio" name="agree" id = "agree">약관에 동의 합니다 &nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="agree" id = "disagree" onclick="agree2()" >약관에 동의 하지 않습니다 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type=button name=printbutton2 value="약관인쇄" onclick="print()"><br><br>
+		
+		  아이디:<input type="text" id="id">
+		  <input type=button name=dupcheck value="중복체크" onclick="idCheck()" >
+		  <span id="msg"></span>
+		  <br><br>
+		  패스워드: 	<input type="password" name="pw" maxlegth="10" id="pass" onblur="passcheck()"> (최소 6글자이상 10글자 이내)
+		  <br/><br>
+		  주민번호: <input type=text id=idnum1 onkeyup="moveNext()">-<input type=password id=idnum2><br> <!--keyup은 한글자 입력했을때. 6글자넘으면 뒤부분으로 -->
+		  주소: <input type="text" id="addr" disabled="disabled"> <!-- disabled는 사용자만 편집불가하고 js등으로 입력할수는 있다. -->
+		  <input type="text" id="addr2" disabled="disabled">
+		  <input type="button" value="주소찾기" onclick="findAddress()"><br>
+		  <br>
+		  <textarea rows=10 cols= 80 id="ta" onfocus="clearText()">남기실 말씀...</textarea>
+		  
+		  <br>
+		
+		  <input type=button name=submitbutton value="회원가입" onclick="send()">
+		  <input type=reset name=submitbutton value="원래대로" >
+		  <br><br>		
+		</form>
+		
+		</body>
+		</html>
+
+		
+		
+		
+		
+		

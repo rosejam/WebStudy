@@ -46,6 +46,7 @@ public class Solution_D4_7733_치즈도둑_서울9반_김동주 { //가장 많�
             	if(cnt>ans) ans=cnt;
             }
             sb.append("#"+tc+" "+ans+"\n");
+            //System.out.println("#"+tc+" "+ans);
         }
         System.out.println(sb);
 	}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function test(){
+		//1. name 칸의 값 알아내기
+		var name = document.getElementById("name");
+		
+		//2. 입력할 요소 알아내기
+		var result = document.getElementById("result");
+		var result2 = document.getElementById("result2");
+		var result3 = document.getElementById("result3");
+		
+		//3. 값 넣기
+		result.value = "<h1>"+name.value+"</h1>"; //input type="text"등에는 .value로,
+		result2.innerHTML = "<h1>"+name.value+"</h1>"; //div, p, span등에는 .innerHTML로 값을 넣는다. 
+														//html이므로 tag 인식이 됨
+		result3.innerHTML = "<h2>"+name.value+"</h2>";
+		
+		//4. 입력칸 지우기
+		name.value = "";
+	}
+</script>
+</head>
+<body>
+	<h1>dom test</h1>
+	name:<input type="text" name="name" id="name">
+	<button onclick="test()">press me</button><br>
+	<hr>
+	result:<input type="text" name="result" id="result"><br>
+	<div id="result2"></div>
+	<p id="result3"></p>
+</body>
+</html>

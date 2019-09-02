@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+<style type="text/css">
+	h1{
+		color:red;
+		font-family:'궁서체';
+	}
+	h3{
+		display:inline;/* 줄바꿈안되게 */
+	}
+</style>
+<script type="text/javascript">
+	function idcheck(){
+		//id칸에 입력한 값 알아와서 그 값이 tommy이면 '사용중인 아이디입니다', 아니면 '사용가능한 아이디입니다'라고 msg에 출력
+		var id = document.getElementById("id");
+		var msg = document.getElementById("msg");
+		msg.style.color = 'red'; //javascript에서 css조정할 때 'style' 속성 이용해서 지정함
+		msg.style.fontFamily = 'Nanum Myeongjo';
+		
+		if(id.value == "tommy"){ //equals 이런거 없다.
+			msg.innerHTML = "<h3>사용중인 아이디입니다</h3>";
+			id.value = '';
+		}else{
+			msg.innerHTML = "사용가능한 아이디입니다";
+		}
+	}
+	function check(){
+		//pass칸에 입력한 값 알아와서 그 길이가 6이상 10이하인지 체크
+		var pass = document.getElementById("pass");
+		//맞지 않으면 경고창 띄우기('패스워드는 6글자에서 10글자 사이여야 합니다')
+		//맞으면 form 전송하기
+		if(pass.value.length >10 || pass.value.length <6){
+			alert("패스워드는 6글자에서 10글자 사이여야 합니다");
+			pass.value = '';
+			return;
+		}else{
+			var form = document.getElementById("f"); //form여는태그 부터 닫는 태그 까지 모두 가져옴
+			form.submit();
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>회원가입</h1>
+	<form action="welcome.jsp" method="post" id="f"> <!-- get or post방식 -->
+		아이디:<input type="text" name="id" id="id" onblur="idcheck()"><span id="msg"></span><br> <!-- blur는 커서가 떠난것을 의미. 커서가 있는 focus의 반대 -->
+		패스워드:<input type="password" name="pass" id="pass">
+		<input type="button" value="회원가입" onclick="check()"> <!-- submit하면 바로 form의 action으로 넘어가므로 -->
+		<input type="reset" value="취소">
+	</form>
+</body>
+</html>

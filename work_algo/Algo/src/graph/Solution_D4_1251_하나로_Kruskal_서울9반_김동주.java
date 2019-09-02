@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 //Kruskal
-public class Solution_D4_1251_하나로_서울9반_김동주_Kruskal {
+public class Solution_D4_1251_하나로_Kruskal_서울9반_김동주 {
 	public static double Ans;
 	public static int N;
 	public static int[] Xs,Ys;

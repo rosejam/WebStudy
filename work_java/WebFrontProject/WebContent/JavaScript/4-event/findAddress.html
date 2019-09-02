@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function process(that){
+		var id = that.id; //12345서울시 서초구
+		var part1 = id.substring(0,5); //우편번호
+		var part2 = id.substring(5); //주소
+		
+		var addr = opener.document.getElementById("addr"); //그냥 document하면 이 팝업 윈도우를 의미함 ->찾을 수 없어 undefined가 됨
+														//이 팝업을 띄운 "원래창인 opener"의 document에서 찾아야함
+		var addr2 = opener.document.getElementById("addr2");
+		
+		addr.value = part1;
+		addr2.value = part2;
+		
+		close(); //창닫기
+	}
+
+
+</script>
+
+</head>
+<body>
+<h1>주소 찾기</h1>
+<a href="#" id="12345서울시 서초구" onclick="process(this)">12345 서울시 서초구</a><br><!--  a태그전체 엘레멘트가 this로 파라메터에 전달 -->
+<a href="#" id="12367서울시 종로구" onclick="process(this)">12367 서울시 종로구</a><br>
+<a href="#" id="14560서울시 영등포구" onclick="process(this)">14560 서울시 영등포구</a><br>
+
+</body>
+</html>
+
+
+
+

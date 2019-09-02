@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 //Prim1
-public class Solution_D4_1251_하나로_서울9반_김동주_Prim1 {
+public class Solution_D4_1251_하나로_PrimPq_서울9반_김동주 {
 	public static double Ans;
 	public static int N;
 	public static int[] Xs,Ys;
