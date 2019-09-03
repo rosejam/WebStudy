@@ -21,7 +21,7 @@ class IntegerComparator implements Comparator<Integer>{ //이 클래스를 아�
 	}
 }
 
-public class QueuePriority {
+public class QueuePriority__ {
 	public static void main(String[] args) {
 		Queue<String> pq = new PriorityQueue<>(new StringComparator()); //Priority큐에 위에 작성한 Comparator객체를 인자로 전달
 		Queue<int[]> pq2 = new PriorityQueue<>(new Comparator<int[]>(){ //Anonymous nested class
