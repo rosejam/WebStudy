@@ -27,7 +27,8 @@ public class Solution_D4_3234_준환이의양팔저울_서울9반_김동주 {
         	//오른쪽 위에 올라가있는 무게의 총합이 왼쪽에 올라가 있는 무게의 총합보다 커지지 않는 경우
         	cnt=0;
         	perm(0);
-        	//dfs(weight, new boolean[N],0,0,0);
+        	//cnt=0;
+        	//dfs(choo, new boolean[N],0,0,0);
         	sb.append("#"+tc+" "+cnt+"\n");
         }
         System.out.println(sb);
@@ -45,6 +46,10 @@ public class Solution_D4_3234_준환이의양팔저울_서울9반_김동주 {
 		left+=choo[dep];
 		puton(dep+1);
 		left-=choo[dep];
+/*		if(right+choo[dep] <= left) {
+			puton(dept+1);
+		}*/
+		
 		//return;
 	}
 	public static void swap(int i, int j) {
@@ -66,17 +71,23 @@ public class Solution_D4_3234_준환이의양팔저울_서울9반_김동주 {
 	}
 	
 	//예시답안
-	public static int dfs(int[] weight, boolean[] check, int left, int right, int depth) {
-		if(left<right) return 0; //백트래킹 필수
-		int r=0;
-		if(weight.length == depth) return 1;
+	public static void dfs(int[] weight, boolean[] check, int left, int right, int depth) {
+		if(left<right) return; //백트래킹 필수
+		//int r=0;
+		if(weight.length == depth) {
+			cnt++;
+			return;
+			//return 1;
+		}
 		for(int i=0; i<weight.length; i++) {
 			if(check[i]) continue;
 			check[i]=true;
-			r=r+dfs(weight,check,left+weight[i],right,depth+1);
-			r=r+dfs(weight,check,left,right+weight[i],depth+1);
+			//r=r+dfs(weight,check,left+weight[i],right,depth+1);
+			//r=r+dfs(weight,check,left,right+weight[i],depth+1);
+			dfs(weight,check,left+weight[i],right,depth+1);
+			dfs(weight,check,left,right+weight[i],depth+1);
 			check[i]=false;
 		}
-		return r;
+		//return r;
 	}
 }
