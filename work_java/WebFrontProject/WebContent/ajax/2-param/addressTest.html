@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+var xhr = null;
+
+function getXHR(){
+	xhr = new XMLHttpRequest();
+}
+
+function sendRequest(){//tomcat서버 get방식은 한글안됨..
+	getXHR(); 
+	
+	var name = document.getElementById("name");
+	var param = "?name=" + name.value + "&address=" + address.value; //이게 서버에 데이터가 전달되는 형식
+	
+	xhr.open("get", "addressTest.jsp" + param, true); //+param여기로 붙임 //get방식
+	xhr.onreadystatechange = callback; 
+	xhr.send(null); //ajax 요청!(get방식일 때는 null이 들어간다)
+	
+	name.value = "";
+}
+
+function callback(){
+	if(xhr.readyState == 4 && xhr.status == 200){
+		var address = document.getElementById("address");
+		address.value = xhr.responseText;
+	}
+}
+</script>
+
+</head>
+<body>
+			<!-- 입력 폼의 포커스가 다른 곳으로 이동했을 때 sendRequest() 자바스크립트 함수 호출 -->
+			이름:<input type="text" id="name" name="name" size="50" onblur="sendRequest()"><br>
+			주소:<input type="text" id="address" name="address" size="50">
+
+</body>
+</html>

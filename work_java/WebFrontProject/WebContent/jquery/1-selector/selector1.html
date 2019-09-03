@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><!-- 이게 jquery -->
+<script type="text/javascript">
+//jquery를 사용하는 사용자가 작성하는 스크립트 부분
+//html이 로딩이 완료되면 jquery를 실행하겠다는 뜻
+	$(document).ready(function(){
+		//jquery로 내용 작성
+		$('h1').css('color','red');
+		$('h2').css('color','blue');
+		$('h1').css('font-size','30pt');
+		$('#green').css('color', 'green');
+		$('.orange').css('color','orange');
+		$('p').css({'background-color':'#ffffb3', 'font-size':'50pt'}); //JSON
+	});
+
+</script>
+</head>
+<body>
+	<h1>this is first h1</h1>
+	<h1>this is second h1</h1>
+	
+	<h2>tommy lee</h2>
+	<h2>jimmy lee</h2>
+	<h2>harry lee</h2>
+	
+	<p class="orange">this is orange tag</p>
+	<p id="green">this is green tag</p>
+</body>
+</html>

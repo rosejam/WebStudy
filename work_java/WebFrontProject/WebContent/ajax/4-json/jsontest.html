@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var xhr = null;
+	function getXHR(){
+		xhr = new XMLHttpRequest();
+	}
+	
+	function arrayData(){
+		getXHR(); 
+		xhr.open("get", "jsonarray.jsp", true); 
+		xhr.onreadystatechange = callback; 
+		xhr.send(null); //ajax 요청
+	}
+	function collectionData(){
+		getXHR(); 
+		xhr.open("get", "jsoncollection.jsp", true); 
+		xhr.onreadystatechange = callback2; 
+		xhr.send(null); //ajax 요청
+	}
+	function collectionData2(){
+		getXHR(); 
+		xhr.open("get", "jsoncollection2.jsp", true); 
+		xhr.onreadystatechange = callback3; 
+		xhr.send(null); //ajax 요청
+	}
+	
+	function callback(){ 
+		if(xhr.readyState == 4 && xhr.status == 200){
+			var result = document.getElementById("arrayDisplay");
+			//문자열 --> json객체로 변환
+			var json = eval(xhr.responseText); //배열형식인 경우 ()를 붙이지 않아도 됨 //json은 배열 객체
+			for(var i=0; i<json.length; i++){
+				result.innerHTML += json[i]+"<br>";
+			}
+		}
+	}
+	function callback2(){ 
+		if(xhr.readyState == 4 && xhr.status == 200){
+			var result = document.getElementById("collectionDisplay");
+			var code = document.getElementById("code"); //사용자가 입력한 코드(json key를 value로 가진다. kr, it등)
+			
+			//문자열 --> json객체로 변환
+			var json = eval("("+xhr.responseText+")"); //콜렉션 형식인 경우 ()를 붙여야 됨 //json은 콜렉션 객체
+
+			var country = json[code.value];
+			result.innerHTML = country;
+			code.value = "";
+		}
+	}
+	function callback3(){ 
+		if(xhr.readyState == 4 && xhr.status == 200){
+			var result = document.getElementById("collectionDisplay2");
+			var code2 = document.getElementById("code2"); //사용자가 입력한 코드(json key를 value로 가진다. 111, 222등)
+			
+			//문자열 --> json객체로 변환
+			var json = eval("("+xhr.responseText+")"); //콜렉션 형식인 경우 ()를 붙여야 됨 //json은 콜렉션 객체
+			
+			var jval = json[code2.value]; //꺼낸게 또 json객체!
+
+			if(jval != null){
+				result.innerHTML = jval.name +"<br>"+ jval.address +"<br>"+ jval.tel;
+			}else{
+				result.innerHTML = "no data";
+			}
+			code2.value = "";
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>json array test</h1>
+	<button onclick = "arrayData()">array data</button>
+	<br>
+	<div id="arrayDisplay"></div>
+	<hr>
+	
+	<h1>json collection test</h1>
+	code: <input type="text" id="code">
+	<button onclick = "collectionData()">collection data</button>
+	<br>
+	<div id="collectionDisplay"></div>
+	<hr>
+	
+	<h1>json collection2 test</h1>
+	code2: <input type="text" id="code2">
+	<button onclick = "collectionData2()">collection data2</button>
+	<br>
+	<div id="collectionDisplay2"></div>
+</body>
+</html>

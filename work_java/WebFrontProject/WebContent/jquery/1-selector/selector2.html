@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(':text').val('welcome!!!'); //setter(val 괄호에 값을 넣어놓음)
+		$(':password').css('border','solid 2px red');
+		$(':file').css('border','solid 3px green');
+		$('[href]').css('color','red').css('text-decoration','none'); //method chaining //none으로 밑줄삭제
+		//alert($(':text').val()); //getter(val 괄호를 비워놓음)
+		
+		$('ul li').css('color', 'pink');
+		
+		$('table#m tr:even').css('background','green').css('color','white');//짝수행
+		$('table#m tr:odd').css('background','yellow');//홀수행
+		$('table#m tr:first').css('background','gray'); //첫번째 행인 0행
+		$('table#m tr:eq(3)').css('background','pink'); //네번째 행인 3행 : eq(index)
+	});
+	
+</script>
+</head>
+<body>
+	<div>
+		<input type="text"><br> <input type="password"><br>
+		<input type="button" value="hello"><br> <input
+			type="file"><br> <a href="#">gogo</a>
+	</div>
+
+	<div>
+		<ul>
+			<li>Apple</li>
+			<li>Banana</li>
+			<li>Mango</li>
+			<li>Peach</li>
+			<li>Orange</li>
+		</ul>
+	</div>
+
+	<div>
+		<h1>표 그리기</h1>
+		<table id="m" border="5">
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>주소</th>
+			</tr>
+
+			<tr>
+				<td>100</td>
+				<!-- table data -->
+				<td>tommy jeans</td>
+				<td>seattle</td>
+			</tr>
+
+			<tr>
+				<td>200</td>
+				<td>harry potter</td>
+				<td>london</td>
+			</tr>
+
+			<tr>
+				<td>300</td>
+				<td>mary jane</td>
+				<td>tokyo</td>
+			</tr>
+
+			<tr>
+				<td>400</td>
+				<td>mary kim</td>
+				<td>tokyo</td>
+			</tr>
+
+			<tr>
+				<td>500</td>
+				<td>mimi jane</td>
+				<td>london</td>
+			</tr>
+
+			<tr>
+				<td>600</td>
+				<td>mary dayon</td>
+				<td>tokyo</td>
+			</tr>
+
+			<tr>
+				<td>총인원</td>
+				<td colspan="2">6명</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 http://www.csszengarden.com/ 에서 다양한 css디자인을 확인할수 있다.
-CSS(Cascading Style Sheet) - 하나의 컨텐츠(html)에 다양한 스타일을 부여
+CSS(Cascading Style Sheet)3 - 하나의 컨텐츠(html)에 다양한 스타일을 부여
 
 	html문서에 css 연결 방법
 1.<link>element로 외부 스타일 시트 연결

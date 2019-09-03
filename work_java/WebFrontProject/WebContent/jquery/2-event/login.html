@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(':button').click(function(){
+			//1. id, pass 입력칸의 값 알아오기
+			var id = $('#id').val(); //.value대신
+			var pass = $('#pass').val();
+			//2. 값이 유효한지 체크해서 경고창 띄워주기
+			//id가 'tommy'이고 pass가 '123'이면 alert('tommy님! 환영합니다!'');
+			//아니면 alert('id, pass를 확인해 주세요');
+			if(id == "tommy" && pass == "123"){
+				alert('tommy님! 환영합니다!');
+				//return;
+			}else{
+				alert('id, pass를 확인해 주세요');
+				//return; //프로그램 실행을 멈춤
+			}
+			//3. id, pass 입력칸의 값 지우기
+			$('#id').val("");
+			$('#pass').val("");
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>로그인</h1>
+	<form action="welcome.jsp" method="post" id="f"> <!-- get or post방식 -->
+		아이디:<input type="text" name="id" id="id"> <!-- text를 입력하는 창이 나온다 -->
+		패스워드:<input type="password" name="pass" id="pass">
+		<input type="button" value="전송"> <!-- submit하면 바로 form의 action으로 넘어가므로 -->
+		<!--  <button>전송</button> -->
+		<input type="reset" value="취소">
+	</form>
+</body>
+</html>

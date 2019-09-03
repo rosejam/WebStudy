@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var xhr = null;
+	function getXHR(){
+		xhr = new XMLHttpRequest();
+	}
+	function getData(){//tomcat서버 get방식은 한글안됨..
+		getXHR(); 
+		
+		var name = document.getElementById("name");
+		var address = document.getElementById("address");
+		var param = "?name=" + name.value + "&address=" + address.value; //이게 서버에 데이터가 전달되는 형식
+		
+		xhr.open("get", "param.jsp" + param, true); //+param여기로 붙임 //get방식
+		xhr.onreadystatechange = callback; 
+		xhr.send(null); //ajax 요청!(get방식일 때는 null이 들어간다)
+		
+		name.value = "";
+		address.value = "";
+	}
+	function postData(){
+		getXHR(); 
+		
+		var name = document.getElementById("name");
+		var address = document.getElementById("address");
+		var param = "name=" + name.value + "&address=" + address.value; //이게 서버에 데이터가 전달되는 형식
+					//?쓰지 않는다~
+		
+		xhr.open("post", "param.jsp", true); //param은 send에 적는다.
+		xhr.onreadystatechange = callback;
+		
+		//post 방식으로 데이터 보낼 때 지정해야 함!!
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+		
+		xhr.send(param); //ajax 요청!(post방식일 때는 비워둔다) //param을 전달
+		
+		name.value = "";
+		address.value = "";
+	}
+	function callback(){ 
+		if(xhr.readyState == 4 && xhr.status == 200){
+			var result = document.getElementById("result");
+			result.innerHTML += "<h3 style='color:blue;'>"+xhr.responseText+"</h3>"; //div, span, p..등은 value가 아닌 innerHTML로 내용 넣어야함
+							//+=으로 내용누적
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>ajax param test</h1>
+	name:<input type="text" id="name"><br>
+	address:<input type="text" id="address"><br>
+	
+	<button onclick="getData()">get data</button>
+	<button onclick="postData()">post data</button>
+	<hr>
+	<div id="result"></div>
+</body>
+</html>
