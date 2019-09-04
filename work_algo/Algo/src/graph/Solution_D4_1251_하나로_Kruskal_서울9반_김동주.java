@@ -16,7 +16,7 @@ public class Solution_D4_1251_하나로_Kruskal_서울9반_김동주 {
 	public static double E;
 	//public static long[][] L2; //모든 거리의 제곱
 	
-	public static List<long[]> v;
+	public static List<long[]> v; //점의 배열(하나의 클래스로 묶고 배열을 사용해도 된다)
 	public static int[] p;
 	public static int findSet(int x) { //getParent와 동일, p를 위에 선언했으므로 아규먼츠에서 삭제
 		if(p[x]==x) return x;
@@ -39,6 +39,7 @@ public class Solution_D4_1251_하나로_Kruskal_서울9반_김동주 {
 		//for(double[] e:v) System.out.println(Arrays.toString(e));
 
 		//System.out.println();
+		
 		//Make-Set
 		p = new int[N+1]; //+1
 		for(int i=0; i<N+1; i++) p[i]=i; //+1

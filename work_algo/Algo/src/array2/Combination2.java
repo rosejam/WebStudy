@@ -13,7 +13,7 @@ public class Combination2 { //재귀로 표현
 			System.out.println(Arrays.toString(a));
 			return;
 		}
-		for(int i=start; i<=n; i++) { //조합은 1이 아닌 start부터 시작
+		for(int i=start; i<n; i++) { //조합은 1이 아닌 start부터 시작
 			if((flag&(1<<i))==0) {
 				a[count]=i;
 				combination(i, flag|(1<<i), count+1); //i 추가
@@ -26,7 +26,7 @@ public class Combination2 { //재귀로 표현
 		n = 5; //sc.nextInt();
 		r = 3; //sc.nextInt();
 		a = new int[r];
-		combination(1,0,0); //1추가
+		combination(0,0,0); //1추가
 		System.out.println(cnt);
 		sc.close();
 	}

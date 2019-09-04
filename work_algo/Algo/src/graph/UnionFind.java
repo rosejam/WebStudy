@@ -31,7 +31,7 @@ public class UnionFind {
 		a=getParent(p,a);
 		b=getParent(p,b);
 		if(a<b) p[b]=a;
-		else 	p[a]=b;
+		else 	p[a]=b; //union할 때는 대소비교를 해주고 넣어야 한다!!!!
 	}
 	public static boolean findParent(int[] p, int a, int b) {
 		a=getParent(p,a);

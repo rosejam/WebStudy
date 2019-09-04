@@ -70,7 +70,7 @@ public class Solution_D4_3234_준환이의양팔저울_서울9반_김동주 {
 		}
 	}
 	
-	//예시답안?
+/*	//예시답안?
 	public static void dfs(int[] weight, boolean[] check, int left, int right, int depth) {
 		if(left<right) return; //백트래킹 필수
 		//int r=0;
@@ -89,5 +89,5 @@ public class Solution_D4_3234_준환이의양팔저울_서울9반_김동주 {
 			check[i]=false;
 		}
 		//return r;
-	}
+	}*/
 }

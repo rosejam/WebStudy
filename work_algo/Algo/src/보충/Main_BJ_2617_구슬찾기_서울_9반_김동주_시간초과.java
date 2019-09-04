@@ -1,17 +1,25 @@
+package 보충;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_BJ_2617_구슬찾기_서울_9반_김동주_시간초과 { //최적화 필요
+public class Main_BJ_2617_구슬찾기_서울_9반_김동주_시간초과 { //최적화 필요 //부모업데이트 없는 unionfind 트리 구조로 해야 할 듯!
 	public static int N,M;
 	public static int num, half;
 	public static int[][] weight;
 	public static int[] hr;
 	public static int[] lr;
 	
+	public static void union(int up, int dw) {
+		up = getParent(up);
+		dw = getParent(dw);
+		
+		if
+	}
 	public static void main(String[] args) throws Exception { 
-		System.setIn(new FileInputStream("res/input_JO_2617.txt"));
+		System.setIn(new FileInputStream("res/input_BJ_2617.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		StringTokenizer nm = new StringTokenizer(br.readLine());//

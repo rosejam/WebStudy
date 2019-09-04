@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 //Prim
-public class Solution_D4_1251_하나로_Prim_서울9반_김동주 {
+public class Solution_D4_1251_하나로_Prim_서울9반_김동주 { //이건 좀 느림
 	public static double Ans;
 	public static int N;
 	public static int[] Xs,Ys;

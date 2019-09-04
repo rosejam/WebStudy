@@ -8,7 +8,7 @@ public class Algo1_서울_9반_김동주_끝_ {
 	public static int ni,nj;
 	public static char[][] map;
 	public static int[] di = {-1,1,0,0};
-	public static int[] dj = {0,0,-1,1}; //상하좌우
+	public static int[] dj = {0,0,-1,1}; //�긽�븯醫뚯슦
 	public static void main(String[] args) throws Exception {
 		System.setIn(new FileInputStream("res/input1.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -16,29 +16,29 @@ public class Algo1_서울_9반_김동주_끝_ {
 		int TC = Integer.parseInt(br.readLine());
 		for(int tc=1; tc<=TC; tc++) {
 			StringTokenizer nm = new StringTokenizer(br.readLine());
-			N = Integer.parseInt(nm.nextToken()); //행
-			M = Integer.parseInt(nm.nextToken()); //열
+			N = Integer.parseInt(nm.nextToken()); //�뻾
+			M = Integer.parseInt(nm.nextToken()); //�뿴
 			map = new char[N][M];
-			for(int i=0; i<N; i++) { //매 행
+			for(int i=0; i<N; i++) { //留� �뻾
 				StringTokenizer st = new StringTokenizer(br.readLine());
 				for(int j=0; j<M; j++) {
 					map[i][j] = st.nextToken().charAt(0);
 				}
-			} //입력 다받음
+			} //�엯�젰 �떎諛쏆쓬
 			//System.out.println(Arrays.toString(map[1]));
 			for(int i=0; i<N; i++) {
 				for(int j=0; j<M; j++) {
-					if(map[i][j] == 'G') { //총잡이인 경우
-loop:					for(int d=0; d<di.length; d++) { //사방 서치
+					if(map[i][j] == 'G') { //珥앹옟�씠�씤 寃쎌슦
+loop:					for(int d=0; d<di.length; d++) { //�궗諛� �꽌移�
 							for(int l=1; l<20; l++) {
 								ni = i+ di[d]*l;
 								nj = j+ dj[d]*l;
-								if(ni<0||ni>=N||nj<0||nj>=M||map[ni][nj]=='G'||map[ni][nj]=='W'||map[ni][nj] =='X') { //여기서 X도 넘어 볼 수 없는 경우로 추가하여야 함!!! 없어서 틀림ㅜㅜ
-									continue loop; //범위 밖으로 가거나 넘어 볼수없으면 다른 방향서치로 넘어감
+								if(ni<0||ni>=N||nj<0||nj>=M||map[ni][nj]=='G'||map[ni][nj]=='W'||map[ni][nj] =='X') { //여기때문에 틀림 ㅜㅜ!! 맞춘 장애물도 통과가 안되게 해주어야 함!!
+									continue loop; //踰붿쐞 諛뽰쑝濡� 媛�嫄곕굹 �꽆�뼱 蹂쇱닔�뾾�쑝硫� �떎瑜� 諛⑺뼢�꽌移섎줈 �꽆�뼱媛�
 								}
 								if(map[ni][nj]=='T') {
-									map[ni][nj] = 'X';////여기서　그냥　W로　바꾼다
-									continue loop; //다른 방향서치로 넘어감
+									map[ni][nj] = 'X';////또는 여기서 'W'로 만든다.
+									continue loop; //�떎瑜� 諛⑺뼢�꽌移섎줈 �꽆�뼱媛�
 								}
 							}
 						}
@@ -53,7 +53,7 @@ loop:					for(int d=0; d<di.length; d++) { //사방 서치
 			}
 			sb.append("#"+tc+" "+cnt+"\n");
 		}
-		System.out.println(sb); //총잡이의 목표가 되는 목표물의 총 개수 T->X로 바꾸자
+		System.out.println(sb); //珥앹옟�씠�쓽 紐⑺몴媛� �릺�뒗 紐⑺몴臾쇱쓽 珥� 媛쒖닔 T->X濡� 諛붽씀�옄
 		br.close();
 	}
 }

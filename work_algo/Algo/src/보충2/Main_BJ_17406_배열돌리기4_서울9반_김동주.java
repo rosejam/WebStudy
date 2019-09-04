@@ -77,38 +77,27 @@ public class Main_BJ_17406_배열돌리기4_서울9반_김동주 {
 		getA(br);
 		//if(Ans>a) Ans = a; //3.
 	}
-	public static void turnforreal(int[][] B, int dk) {
+	public static void turnforreal(int[][] B, int dk) { //돌리기...ㅜㅜ어렵
 		int rr = r[dk];
 		int cc = c[dk];
 		int ss = s[dk];
-/*		//int[][] C = new int[2*ss+1][2*ss+1];
-		for(int i=rr-ss; i<rr+ss; i++) {
-			for(int j=cc-ss; j<cc+ss; j++) {
-				C[i][j]=A[i][j];
-			}
-		}//C에 복사해 두었다.(필요한 부분만) //돌린 A를 만드는데 사용
+
 		for(int s=1; s<=ss; s++) {
-			for(int i=rr-ss; i<rr+ss; i++) {
-				for(int j=cc-ss; j<cc+ss; j++) {
-					A[i][j]=
-				}
+			int temp = B[rr-s][cc-s]; //처음꺼 빼놓기(덮어씌워지므로)
+			int S = s*2+1; //한변의 길이 s번째에서
+			for(int i=1; i<S; i++) { //하
+				B[rr-s+i-1][cc-s] = B[rr-s+i][cc-s];
 			}
-		}*/
-		for(int s=1; s<=ss; s++) {
-			int temp = B[rr-s][cc-s];
-			for(int i=1; i<ss*2+1; i++) {
-				
+			for(int i=1; i<S; i++) { //우
+				B[rr+s][cc-s+i-1] = B[rr+s][cc-s+i];
 			}
-			for(int i=1; i<ss*2+1; i++) {
-				
+			for(int i=1; i<S; i++) { //상
+				B[rr+s-i+1][cc+s] = B[rr+s-i][cc+s];
 			}
-			for(int i=1; i<ss*2+1; i++) {
-				
+			for(int i=1; i<S-1; i++) { //좌 //S-1
+				B[rr-s][cc+s-i+1] = B[rr-s][cc+s-i];
 			}
-			for(int i=1; i<ss*2+1; i++) {
-				
-			}
-			B[rr-s][cc-s+1] = temp;
+			B[rr-s][cc-s+1] = temp; //마지막에 여기다 넣기
 		}
 	}
 	public static int[][] copy(int[][] ar){
