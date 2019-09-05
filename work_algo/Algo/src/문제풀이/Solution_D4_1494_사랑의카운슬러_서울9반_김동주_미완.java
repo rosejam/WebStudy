@@ -9,9 +9,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.StringTokenizer;
 
-public class Solution_D4_1494_사랑의카운슬러_서울9반_김동주 {
-	public static int TC, Ans, N, M, X, Y;
+public class Solution_D4_1494_사랑의카운슬러_서울9반_김동주_미완 {
+	public static int TC, N, M;
 	public static int[] half;
+	public static long Ans, X, Y;
 	public static ArrayList<Point> list;
 	public static class Point{
 		int x;  
@@ -47,12 +48,12 @@ public class Solution_D4_1494_사랑의카운슬러_서울9반_김동주 {
 			list.remove(half[m]);
 		}*/ //리스트에서 빼면 안됨!!! visited 배열 대신 쓰기!
 		for(int m=0; m<N; m++) {
-			if(!visited[half[m]]) {
+			if(!visited[m]) {
 				X += list.get(m).x;
 				Y += list.get(m).y;
 			}
 		}
-		int Size = X*X+Y*Y;
+		long Size = X*X+Y*Y;
 		if(Size<Ans) Ans = Size;
 	}
 
@@ -76,9 +77,9 @@ public class Solution_D4_1494_사랑의카운슬러_서울9반_김동주 {
 			}//point N개 모두 받음
 			X=0; Y=0;
 			half = new int[M];
-			Ans = Integer.MAX_VALUE;
+			Ans = Long.MAX_VALUE;
 			combination(0,0,0);
-			System.out.println(Ans);
+			//System.out.println(Ans);
 			sb.append("#"+tc+" "+Ans+"\n");
 		}
 		System.out.println(sb);
