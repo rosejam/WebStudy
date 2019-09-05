@@ -13,10 +13,10 @@ public class PowerSet {
 		if(count == r){ //가장 깊은 레벨에 도달하면 return
 			cnt++; //그냥 가지의 개수를 세는 용도
 			System.out.print(Arrays.toString(v)+" "); //파워셋
-			for(int i=0; i<r; i++) {
+/*			for(int i=0; i<r; i++) {
 				if(v[i]==1) System.out.print(d[i]+" ");
 			}
-			System.out.println();
+			System.out.println();*/
 			return;
 		}
 		////////////////

@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_BJ_2493_탑_서울9반_김동주_스택으로_ { //탑의 번호는 인덱스+1 //원래 스택으로 푸는 문제임.
+public class Main_BJ_2493_탑_서울9반_김동주_시간초과_ { //탑의 번호는 인덱스+1 //원래 스택으로 푸는 문제임!!!
 	public static int[] tower;
 	public static void main(String[] args) throws Exception {
 /*		System.setIn(new FileInputStream("res/input_BJ_2493.txt"));

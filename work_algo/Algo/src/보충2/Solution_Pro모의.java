@@ -1,4 +1,4 @@
-package 보충;
+package 보충2;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ interface Field
 	public final static int MEMO     = 4;
 }
 
-class Solution 
+class Solution_Pro모의 
 {
 	private final static int CMD_INIT   = 0;
 	private final static int CMD_ADD    = 1;
@@ -26,7 +26,7 @@ class Solution
 	}
 	
 	private static Scanner sc;
-	private static UserSolution userSolution = new UserSolution();
+	private static UserSolution_Pro모의 userSolution = new UserSolution_Pro모의();
 
 	private static int Score;
 	private static int ScoreIdx;

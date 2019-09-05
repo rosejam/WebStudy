@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-class Solution_IM보충기출 
+class Solution_IM기출 
 {	
 	static int Ans,T,N;
 	static boolean[] light,room;

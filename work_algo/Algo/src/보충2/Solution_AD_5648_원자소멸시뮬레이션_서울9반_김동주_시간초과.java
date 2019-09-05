@@ -1,4 +1,4 @@
-package 보충;
+package 보충2;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

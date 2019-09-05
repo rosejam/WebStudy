@@ -9,8 +9,9 @@ import java.util.Comparator;
 import java.util.StringTokenizer;
 
 public class Solution_D4_1258_행렬찾기_서울9반_김동주 {
-	public static int TC, num, N;
+	public static int TC, num, N, nn,mm;
 	public static int[][] rc;
+	public static int[] rc2;
 	public static ArrayList<int[]> rcset;
 	public static void main(String[] args) throws Exception {
 		System.setIn(new FileInputStream("res/input_D4_1258.txt"));
@@ -62,9 +63,9 @@ public class Solution_D4_1258_행렬찾기_서울9반_김동주 {
 		System.out.println(sb);
 	}
 	public static void findrc(int n, int m) { //
-		int rc2[] = new int[3];
-		int nn = n;
-		int mm = m;
+		rc2 = new int[3];
+		nn = n;
+		mm = m;
 		while(nn<N && rc[nn][mm]!=0) {
 			nn++;
 			rc2[0]++;

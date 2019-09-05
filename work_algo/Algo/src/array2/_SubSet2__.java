@@ -5,7 +5,7 @@ public class _SubSet2__ {
 	public static int[] a = {1,2,3,4}; 
 	public static void main(String[] args) {
 		int n = a.length;
-		for(int i=0; i<(1<<n); i++) {//i는 0~15까지 4자리 2진수(들어가는지 안들어가는지 모든 경우의 Subset 표현되었음)
+		for(int i=0; i<(1<<n); i++) {//i는 0~15까지 n(4)자리 2진수(들어가는지 안들어가는지 모든 경우의 Subset 표현되었음)
 											//2진수 활용
 			//System.out.println("i=" +i+" "+ Integer.toBinaryString(i));
 			int sum =0;

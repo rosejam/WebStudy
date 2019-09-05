@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 //시뮬레이션
-public class Solution_D3_7675_통역사성경이_서울9반_김동주 { //대화에서 나오는 모든 이름
+public class Solution_D3_7675_통역사성경이_서울9반_김동주_미완_ { //대화에서 나오는 모든 이름
 	public static int N;
 	public static String str;
 	public static void main(String[] args) throws Exception {

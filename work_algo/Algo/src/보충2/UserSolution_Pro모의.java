@@ -1,7 +1,7 @@
-package 보충;
+package 보충2;
 
 
-class UserSolution {
+class UserSolution_Pro모의 {
 	void InitDB()
 	{
 
@@ -22,9 +22,9 @@ class UserSolution {
 		return -1;
 	}
 
-	Solution.Result Search(int field, String str, int returnfield)
+	Solution_Pro모의.Result Search(int field, String str, int returnfield)
 	{
-		Solution.Result result = new Solution.Result();
+		Solution_Pro모의.Result result = new Solution_Pro모의.Result();
 		result.count = -1;
 
 		return result;

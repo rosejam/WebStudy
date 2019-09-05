@@ -12,6 +12,7 @@
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value=" list.get(m).x;"/>
 			<item value="long"/>
 			<item value="unionParent"/>
 			<item value="getParent"/>

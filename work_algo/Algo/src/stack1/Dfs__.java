@@ -41,6 +41,7 @@ public class Dfs__ {
 				dfsr(next); //재귀호출 //if(dfsr(next) ==1) return 1; 여기서도 리턴을 해주어야 계속 리턴이됨.
 			}
 		}
+		//visit[node] = false; //출발부터 도착까지 뒤돌아 오는 거 없이 한번에 가는 경우 필요없다.
 		//return 0; for문을 모두 돌아도 1이안될경우
 	}
 	
