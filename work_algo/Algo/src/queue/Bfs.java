@@ -38,19 +38,19 @@ public class Bfs {
 		visit[node]=true; //미리 방문처리를 하고 넣는다!(큐중복방지)
 		queue.offer(node); //(new int[]{node,1})
 		while(!queue.isEmpty()) { 
-			int size = queue.size(); //cnt+1;
-			for(int i=0; i<size; i++) { //cnt용
+			//int size = queue.size(); //cnt+1;
+			//for(int i=0; i<size; i++) { //cnt용
 				int curr = queue.poll(); 
 				System.out.print(curr + " ");
-				
+				//종료조건 
 				for (int next=0; next<V; next++) { //0 1 2 3 4 5 6 
 					if(visit[next]==false && graph[curr][next]==1) { //큐에 중복되게 들어가는 것을 없앨 수 있다!!
 						visit[next]=true; //여기서도 방문처리하고 넣는다.
 						queue.offer(next);
 					}
 				}
-			}
-			System.out.println("level="+ cnt++); //시작거리에서 얼마만큼의 거리를 가지는지 확인
+			//}
+			//System.out.println("level="+ cnt++); //시작거리에서 얼마만큼의 거리를 가지는지 확인
 		}
 	}
 	

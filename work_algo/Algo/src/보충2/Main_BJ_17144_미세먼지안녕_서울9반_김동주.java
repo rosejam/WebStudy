@@ -3,11 +3,12 @@ package 보충2;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main_BJ_17144_미세먼지안녕_서울9반_김동주 {
+public class Main_BJ_17144_미세먼지안녕_서울9반_김동주 { //배열 돌리는부분 숏코딩 확인
 	public static int R,C,T,Ans,gongi,ni,nj; //gongi는 공기청정기 아래단 행
 	public static int[][] A;
 	public static int[] di= {-1,1,0,0};
@@ -26,10 +27,9 @@ public class Main_BJ_17144_미세먼지안녕_서울9반_김동주 {
 	public static void main(String[] args) throws Exception {
 		System.setIn(new FileInputStream("res/input_BJ_17144.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st;
 		//StringBuilder sb = new StringBuilder();
 		
-		st = new StringTokenizer(br.readLine());
+		StringTokenizer st = new StringTokenizer(br.readLine());
 		R = Integer.parseInt(st.nextToken());
 		C = Integer.parseInt(st.nextToken());
 		T = Integer.parseInt(st.nextToken());
@@ -68,7 +68,7 @@ public class Main_BJ_17144_미세먼지안녕_서울9반_김동주 {
 						A[mm.x][mm.y] -= mm.m/5; 
 					}
 				}
-			}
+			} //여기까지 잘됨
 			//2.공기청정기순환
 			//A[gongi][0] = A[gongi+1][0]; //하우상좌
 			for(int i=gongi+2; i<R; i++) { //하
@@ -80,8 +80,8 @@ public class Main_BJ_17144_미세먼지안녕_서울9반_김동주 {
 			for(int i=R-2; i>=gongi; i--) { //상
 				A[i+1][C-1] = A[i][C-1];
 			}
-			for(int i=C-2; i>2; i--) { //좌
-				A[gongi][i+1] = A[gongi][i];
+			for(int i=C-1; i>=2; i--) { //좌
+				A[gongi][i] = A[gongi][i-1];
 			}
 			A[gongi][1] = 0;
 			//위에꺼 //상우하좌
@@ -91,15 +91,19 @@ public class Main_BJ_17144_미세먼지안녕_서울9반_김동주 {
 			for(int i=1; i<C; i++) { //우
 				A[0][i-1] = A[0][i];
 			}
-			for(int i=1; i<gongi-1; i++) { //하
+			for(int i=1; i<=gongi-1; i++) { //하
 				A[i-1][C-1] = A[i][C-1];
 			}
-			for(int i=C-2; i>2; i--) {  //좌
-				A[gongi-1][i+1] = A[gongi-1][i];
+			for(int i=C-1; i>=2; i--) {  //좌
+				A[gongi-1][i] = A[gongi-1][i-1];
 			}
 			//System.out.println(gongi);
 			A[gongi-1][1] = 0;
+/*			for(int i=0;i<R;i++) {
+				System.out.println(Arrays.toString(A[i]));
+			} */
 		}
+		
 		//남은거 세기
 		Ans=2;//공기청정기
 		for(int r=0; r<R; r++) {

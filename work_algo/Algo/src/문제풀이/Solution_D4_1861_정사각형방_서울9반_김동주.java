@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Solution_D4_1861_정사각형방_서울9반_김동주 {
+public class Solution_D4_1861_정사각형방_서울9반_김동주 { //dfs + bfs
 	public static int T, N, cnt,Room,Max,x,y,nx,ny,cc;
 	public static int[][] A;
 	public static Queue<int[]> q;

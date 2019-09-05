@@ -9,7 +9,7 @@ public class Solution_D4_1865_동철이의일분배_서울9반_김동주 {
 	public static double Max;
 	public static int[][] P;
 	public static void main(String[] args) throws Exception {
-		System.setIn(new java.io.FileInputStream("res/input_D4_1861.txt"));
+		System.setIn(new java.io.FileInputStream("res/input_D4_1865.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 		
