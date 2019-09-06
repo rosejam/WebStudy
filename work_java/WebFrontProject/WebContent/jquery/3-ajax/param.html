@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('button').click(function(){ //:eq() 또는 :first 등으로 특정 버튼 지정
+			var name = $('#name').val(); //getter
+			var address = $('#address').val(); //getter
+			
+			//ajax 요청(디폴트 get방식) - 필요한 정보들은 json방식으로 전달
+			$.ajax({
+				url:'param.jsp', //서버 url
+				
+				success:function(result){ //callback 메소드
+											//(xhr.readyState == 4 && xhr.status == 200)일 때 = 성공적으로 데이터를 받았을 때
+											//result는 성공적으로 받아온 데이터 = xhr.responseText
+					
+					$('#result').html('<h1>'+ result +'</h1>'); //innerHTML
+					//칸 비우기
+					$('#name').val(''); //setter
+					$('#address').val(''); //setter
+				},
+				
+				data:{ //서버로 보낼 데이터
+					name: name, //키 : 위 에서 가져온 변수
+					address: address
+				}
+			});
+			
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<h1>ajax param test</h1>
+	name:<input type="text" id="name"><br>
+	address:<input type="text" id="address"><br>
+	
+	<button>get data</button>
+	<button>post data</button>
+	<hr>
+	<div id="result"></div>
+	
+</body>
+</html>

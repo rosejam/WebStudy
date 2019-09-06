@@ -17084,10 +17084,15 @@ Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to fin
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:512) ~[na:na]
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
 	... 8 common frames omitted
+<<<<<<< Updated upstream
 2019-09-05 18:12:35,105 [Worker-5: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2019-09-05 18:16:14,959 [Worker-1: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2019-09-05 18:18:44,446 [Worker-0: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2019-09-05 18:20:25,307 [Worker-0: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+=======
+2019-09-05 15:16:52,080 [Worker-5: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2019-09-05 17:21:02,421 [Worker-81: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+>>>>>>> Stashed changes
 org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact jre:jre:zip:call:1.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
@@ -17107,7 +17112,11 @@ Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:529) ~[na:na]
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
 	... 8 common frames omitted
+<<<<<<< Updated upstream
 2019-09-05 18:20:26,526 [Worker-15: Resolving model org.eclipse.recommenders:index::zip:0.0.0] WARN  o.e.r.models.ModelRepository - Failed to download org.eclipse.recommenders:index::zip:0.0.0
+=======
+2019-09-05 17:21:05,276 [Worker-79: Resolving model org.eclipse.recommenders:index::zip:0.0.0] WARN  o.e.r.models.ModelRepository - Failed to download org.eclipse.recommenders:index::zip:0.0.0
+>>>>>>> Stashed changes
 org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact org.eclipse.recommenders:index:zip:0.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
@@ -17127,7 +17136,11 @@ Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:529) ~[na:na]
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
 	... 8 common frames omitted
+<<<<<<< Updated upstream
 2019-09-05 18:20:32,752 [Worker-16: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+=======
+2019-09-05 17:21:07,342 [Worker-79: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+>>>>>>> Stashed changes
 org.eclipse.aether.resolution.ArtifactResolutionException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
@@ -17145,6 +17158,7 @@ Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to fin
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:512) ~[na:na]
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
 	... 8 common frames omitted
+<<<<<<< Updated upstream
 2019-09-05 19:48:23,789 [Worker-31: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
 org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact jre:jre:zip:call:1.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
@@ -17166,6 +17180,9 @@ Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
 	... 8 common frames omitted
 2019-09-05 19:48:28,601 [Worker-31: Resolving model jre:jre:statics:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:statics:zip:1.0.0
+=======
+2019-09-05 17:32:19,010 [Worker-84: Resolving model jre:jre:statics:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:statics:zip:1.0.0
+>>>>>>> Stashed changes
 org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact jre:jre:zip:statics:1.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
@@ -17185,6 +17202,7 @@ Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:529) ~[na:na]
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
 	... 8 common frames omitted
+<<<<<<< Updated upstream
 2019-09-05 19:48:28,604 [Worker-45: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
 org.eclipse.aether.resolution.ArtifactResolutionException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
@@ -17334,6 +17352,9 @@ Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to fin
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
 	... 8 common frames omitted
 2019-09-05 22:59:43,392 [Worker-122: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+=======
+2019-09-05 17:32:19,012 [Worker-85: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+>>>>>>> Stashed changes
 org.eclipse.aether.resolution.ArtifactResolutionException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
@@ -17345,6 +17366,341 @@ org.eclipse.aether.resolution.ArtifactResolutionException: Failure to find jre:j
 	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
 Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.newException(DefaultUpdateCheckManager.java:240) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.checkArtifact(DefaultUpdateCheckManager.java:215) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.gatherDownloads(DefaultArtifactResolver.java:594) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:512) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 13:47:31,980 [Worker-11: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-09-06 14:15:17,370 [Worker-19: Resolving model org.eclipse.recommenders:index::zip:0.0.0] WARN  o.e.r.models.ModelRepository - Failed to download org.eclipse.recommenders:index::zip:0.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact org.eclipse.recommenders:index:zip:0.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find artifact org.eclipse.recommenders:index:zip:0.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:48) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:364) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:76) ~[na:na]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:590) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:258) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:529) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 14:45:12,058 [Worker-49: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact jre:jre:zip:call:1.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find artifact jre:jre:zip:call:1.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:48) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:364) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:76) ~[na:na]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:590) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:258) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:529) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 14:45:12,499 [Worker-42: Resolving model jre:jre:statics:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:statics:zip:1.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact jre:jre:zip:statics:1.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find artifact jre:jre:zip:statics:1.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:48) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:364) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:76) ~[na:na]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:590) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:258) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:529) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 14:52:01,266 [Worker-51: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.newException(DefaultUpdateCheckManager.java:240) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.checkArtifact(DefaultUpdateCheckManager.java:215) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.gatherDownloads(DefaultArtifactResolver.java:594) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:512) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 14:52:01,268 [Worker-52: Resolving model jre:jre:statics:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:statics:zip:1.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Failure to find jre:jre:zip:statics:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to find jre:jre:zip:statics:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.newException(DefaultUpdateCheckManager.java:240) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.checkArtifact(DefaultUpdateCheckManager.java:215) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.gatherDownloads(DefaultArtifactResolver.java:594) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:512) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 16:25:08,539 [Worker-128: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact jre:jre:zip:call:1.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find artifact jre:jre:zip:call:1.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:48) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:364) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:76) ~[na:na]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:590) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:258) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:529) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 16:28:33,985 [Worker-128: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.newException(DefaultUpdateCheckManager.java:240) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.checkArtifact(DefaultUpdateCheckManager.java:215) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.gatherDownloads(DefaultArtifactResolver.java:594) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:512) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 16:28:34,431 [Worker-132: Resolving model jre:jre:statics:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:statics:zip:1.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact jre:jre:zip:statics:1.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find artifact jre:jre:zip:statics:1.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:48) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:364) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:76) ~[na:na]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:590) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:258) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:529) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 17:12:18,484 [Worker-164: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.newException(DefaultUpdateCheckManager.java:240) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.checkArtifact(DefaultUpdateCheckManager.java:215) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.gatherDownloads(DefaultArtifactResolver.java:594) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:512) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 17:12:59,196 [Worker-167: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.newException(DefaultUpdateCheckManager.java:240) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.checkArtifact(DefaultUpdateCheckManager.java:215) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.gatherDownloads(DefaultArtifactResolver.java:594) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:512) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 17:13:14,301 [Worker-168: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.newException(DefaultUpdateCheckManager.java:240) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.checkArtifact(DefaultUpdateCheckManager.java:215) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.gatherDownloads(DefaultArtifactResolver.java:594) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:512) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 17:13:29,110 [Worker-162: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.newException(DefaultUpdateCheckManager.java:240) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.checkArtifact(DefaultUpdateCheckManager.java:215) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.gatherDownloads(DefaultArtifactResolver.java:594) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:512) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 17:13:31,125 [Worker-160: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.newException(DefaultUpdateCheckManager.java:240) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.checkArtifact(DefaultUpdateCheckManager.java:215) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.gatherDownloads(DefaultArtifactResolver.java:594) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:512) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 17:13:34,454 [Worker-167: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.newException(DefaultUpdateCheckManager.java:240) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.checkArtifact(DefaultUpdateCheckManager.java:215) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.gatherDownloads(DefaultArtifactResolver.java:594) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:512) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 17:13:40,342 [Worker-160: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.newException(DefaultUpdateCheckManager.java:240) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.checkArtifact(DefaultUpdateCheckManager.java:215) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.gatherDownloads(DefaultArtifactResolver.java:594) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:512) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 17:13:46,764 [Worker-166: Resolving model jre:jre:call:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:call:zip:1.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to find jre:jre:zip:call:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.newException(DefaultUpdateCheckManager.java:240) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.checkArtifact(DefaultUpdateCheckManager.java:215) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.gatherDownloads(DefaultArtifactResolver.java:594) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:512) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 17:13:46,764 [Worker-162: Resolving model jre:jre:statics:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:statics:zip:1.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Failure to find jre:jre:zip:statics:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to find jre:jre:zip:statics:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.newException(DefaultUpdateCheckManager.java:240) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.checkArtifact(DefaultUpdateCheckManager.java:215) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.gatherDownloads(DefaultArtifactResolver.java:594) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:512) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-09-06 17:15:20,493 [Worker-166: Resolving model jre:jre:statics:zip:1.0.0] WARN  o.e.r.models.ModelRepository - Failed to download jre:jre:statics:zip:1.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Failure to find jre:jre:zip:statics:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.3.v20180609-1554.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Failure to find jre:jre:zip:statics:1.0.0-SNAPSHOT in http://download.eclipse.org/recommenders/models/photon/ was cached in the local repository, resolution will not be reattempted until the update interval of models has elapsed or updates are forced
 	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.newException(DefaultUpdateCheckManager.java:240) ~[na:na]
 	at org.eclipse.aether.internal.impl.DefaultUpdateCheckManager.checkArtifact(DefaultUpdateCheckManager.java:215) ~[na:na]
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.gatherDownloads(DefaultArtifactResolver.java:594) ~[na:na]

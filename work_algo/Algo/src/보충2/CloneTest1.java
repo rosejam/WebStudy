@@ -16,7 +16,7 @@ public class CloneTest1 {
 		int[] d = new int[a.length]; //배열 생성해야 아래줄 사용 가능
 		System.arraycopy(a, 0, d, 0, a.length); //배열이 미리 만들어져 있다면 */
 		
-		//2차원 배열인 경우
+		//2차원 배열인 경우 //a를 b에다 카피!!!!
 		int[][] a = {{1,2,3,4},{1,2,3,4},{1,2,3,4},{1,2,3,4}};
 		int[][] b = new int[a.length][a.length];
 		for(int i=0; i<a.length; i++) {

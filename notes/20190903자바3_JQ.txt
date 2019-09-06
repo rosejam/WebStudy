@@ -18,7 +18,7 @@ Ajax의 비동기 방식 예시)네이버 검색어 자동완성(onkeyup), 구글 맵 드래그
 				                 		 (XML, JSON, HTML, CSV, Text등)
 	0. html(화면)					
 	1. 이벤트 발생						4. 처리(controller/model 실행 및 view로 응답
-	2. "Ajax통신객체(=XHR객체)" 생성
+	2. "Ajax통신객체(=XHR객체 = XMLHttpRequst !!)" 생성
 	6. 결과 받아서 화면에 반영(응답 처리 메소드 실행)
 
 xhr객체의 데이터 중 readystate>
@@ -32,7 +32,7 @@ responseXML>
 
 )jsp에서 <% //java code 적는 곳 %>
 
-	<JSON>
+	<JSON> - 자바스크립트에서 객체 표현
 텍스트 기반의 경량 데이터 변환 포멧
 1. 배열구조 [value, ,,,]
 2. 컬렉션데이터구조 {"key":value,,,,} 
@@ -51,7 +51,7 @@ https://jquery.com/download/#using-jquery-with-a-cdn
 CDN = Content Delivery Network = 중간서버(본서버보다 물리적으로 가까운데 위치하고 서버의 내용이 로딩되어있는 중간 서버)
 그냥 본서버에서 다운로드 받아서 해도 되지만 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>를 써주면 중간서버에서 적용이 된다.
 
-	$(selector).action();
+	<$(selector).action();>
 $ : jquery sign
 selector : html elements "선택자"
 action() : 선택된 element에 대해 실행할 동작
@@ -81,3 +81,5 @@ $(document).ready(
 		//jQuery 메서드는 여기 들어간다!
 	}
 );
+
+참고)브라우저에서 소스보기 했을 때 코드는 "처음 html문서가 로딩되었을 때" 코드!

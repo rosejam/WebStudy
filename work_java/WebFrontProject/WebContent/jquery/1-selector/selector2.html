@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function(){
+	$(document).ready(function(){ //:은 타입 []은 속성
 		$(':text').val('welcome!!!'); //setter(val 괄호에 값을 넣어놓음)
 		$(':password').css('border','solid 2px red');
 		$(':file').css('border','solid 3px green');
@@ -16,8 +16,8 @@
 		
 		$('table#m tr:even').css('background','green').css('color','white');//짝수행
 		$('table#m tr:odd').css('background','yellow');//홀수행
-		$('table#m tr:first').css('background','gray'); //첫번째 행인 0행
-		$('table#m tr:eq(3)').css('background','pink'); //네번째 행인 3행 : eq(index)
+		$('table#m tr:first').css('background','gray'); //tr중 처음
+		$('table#m tr:eq(3)').css('background','pink'); //3번 인덱스(네번째 행) : eq(index)
 	});
 	
 </script>

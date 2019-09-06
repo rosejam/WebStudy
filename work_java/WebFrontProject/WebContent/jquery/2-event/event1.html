@@ -12,18 +12,20 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('#hide').click(function(){
+		$('#hide').click(function(){ //.이벤트(핸들러함수)
 			$('h1').hide();
 			//$('#d1').fadeOut(3000);
 		});
+		
 		$('#show').click(function(){
 			$('h1').show();
 			//$('#d1').fadeIn(3000);
 		});
 		
 		$('h1').mouseenter(function(){
-			$(this).addClass('reverse'); //이벤트가 발생한 대상 h1이 this가 된다. //클래스를 추가
+			$(this).addClass('reverse'); //"이벤트가 발생한 대상 h1"이 this가 된다. //클래스를 추가
 		});
+		
 		$('h1').mouseleave(function(){
 			$(this).removeClass('reverse');
 		});
