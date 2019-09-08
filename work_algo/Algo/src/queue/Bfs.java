@@ -57,12 +57,12 @@ public class Bfs {
 	public static void bfs(int node) { //Dfs와 겹치는 코드!
 		visit = new boolean[V];
 		queue.offer(node);
-		while(!queue.isEmpty()) { //스택은 그냥 엠티
+		while(!queue.isEmpty()) {
 			int curr = queue.poll();
 			if(visit[curr]==false) { //이게 없으면 큐가 터짐
 				visit[curr]=true;
 				System.out.print(curr + " ");
-				
+				//
 				for (int next=0; next<V; next++) { //0 1 2 3 4 5 6 
 					if(visit[next]==false && graph[curr][next]==1) { //방문하지 않았고 인접
 						queue.offer(next);

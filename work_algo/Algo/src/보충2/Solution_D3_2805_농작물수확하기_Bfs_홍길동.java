@@ -1,5 +1,6 @@
 package 보충2;
 
+import java.io.FileInputStream;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -11,7 +12,7 @@ public class Solution_D3_2805_농작물수확하기_Bfs_홍길동 {
     public static int[][] m;
     public static boolean[][] v;
      
-    private static void bfs(int i, int j) {
+/*    private static void bfs(int i, int j) {
         Queue<int[]> q = new LinkedList<>();
         v[i][j] = true;
         sum += m[i][j];
@@ -28,10 +29,36 @@ public class Solution_D3_2805_농작물수확하기_Bfs_홍길동 {
                 }
             }
         }
-    }
-     
+    }*/
+	private static void bfs(int i, int j) {
+        Queue<int[]> q = new LinkedList<>();
+        //v[i][j] = true;
+        //sum += m[i][j];
+        q.offer(new int[] {i,j});
+        while(!q.isEmpty()) {
+            int[] curr = q.poll();
+            i = curr[0];
+            j = curr[1];
+            if(!v[i][j]) {
+            	v[i][j] = true;
+            	if(Math.abs(c-i)+Math.abs(c-j) >c) return;
+            	sum += m[i][j];
+            	for(int d = 0; d < 4; d++) {
+            		int ni = i+di[d];
+            		int nj = j+dj[d];
+            		if(0<=ni && ni<N && 0<=nj && nj<N && v[ni][nj] == false) {// && Math.abs(c-ni)+Math.abs(c-nj)<=c) {
+            			//v[ni][nj] = true;
+            			//sum += m[ni][nj];
+            			q.offer(new int[] {ni,nj});
+            		}
+            	}
+            }
+        }
+	}
     public static void main(String[] args)throws Exception{
-        Scanner sc = new Scanner(System.in);
+    	System.setIn(new FileInputStream("res/input_d3_2805.txt"));
+    	System.out.println();
+    	Scanner sc = new Scanner(System.in);
         int T = sc.nextInt();
          
         for(int t=1; t<=T; t++) {

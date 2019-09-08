@@ -12,12 +12,15 @@ public class Solution_D3_2805_농작물수확하기_Dfs_홍길동 {
      
     private static void dfs(int i, int j) {
         v[i][j] = true;
+/*      if(Math.abs(c-i)+Math.abs(c-j)>c) return;
+        sum += m[i][j];*/
+        //또는
         sum += m[i][j];
-         
+        if(Math.abs(c-i)+Math.abs(c-j) ==c) return;
         for(int d = 0; d < di.length; d++) {
             int ni = i+di[d];
             int nj = j+dj[d];
-            if(0<=ni && ni<N && 0<=nj && nj<N && v[ni][nj] == false && Math.abs(c-ni)+Math.abs(c-nj)<=c) {
+            if(0<=ni && ni<N && 0<=nj && nj<N && v[ni][nj] == false) {// && Math.abs(c-ni)+Math.abs(c-nj)<=c) {
                 dfs(ni,nj);
             }
         }
@@ -40,15 +43,11 @@ public class Solution_D3_2805_농작물수확하기_Dfs_홍길동 {
                     m[i][j] = s.charAt(j)-'0';
                 }
             }
-             
+            
             sum = 0;
             dfs(c,c);
             System.out.println("#" + t + " " + sum);
         }
-         
-         
         sc.close();
- 
     }
- 
 }

@@ -1,8 +1,6 @@
 package stack2;
 
-import java.io.FileInputStream;
 import java.util.Arrays;
-import java.util.Scanner;
 import java.util.Stack;
 
 public class MazeDfs { 
@@ -19,7 +17,7 @@ public class MazeDfs {
 	public static int[] di = { 0,0,-1,1};
 	public static int[] dj = {-1,1, 0,0};//좌우상하
 	
-	public static int N = maze.length;; //8
+	public static int N = maze.length; //8
 	//public static boolean[][] visit;
 	public static Stack<Integer> stack;
 	
