@@ -9,7 +9,9 @@ jQuery = "js"를 이용한 라이브러리. 함수들이 많다
 	그리드>화면을 12개로 나누어 구분, 옵션은 픽셀기준
 	툴바>고정형(화면을 드래그로 내려도 툴바가 따라옴 fixed-top)/일반형
 
-https://startbootstrap.com/https://bootswatch.com/https://layoutit.com/
+https://startbootstrap.com/
+https://bootswatch.com/
+https://layoutit.com/
 
 
 
