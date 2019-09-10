@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 //io하나 util하나
 
-class Solution2{
+class _Solution2{
 	public static void main(String args[]) throws Exception{
 		System.setIn(new FileInputStream("res/input.txt"));
 		//Scanner sc = new Scanner(System.in); //constructor Chaining //System.in = new inputStream과 같은 뜻

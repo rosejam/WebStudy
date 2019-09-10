@@ -1,0 +1,20 @@
+jQuery = "js"를 이용한 라이브러리. 함수들이 많다
+
+<BootStrap> = 클래스/아이디를 많이 만들어 놓은 Framework("css"를 쉽게 사용하도록)
+		반응형 웹페이지를 만들 수 있다(다운로드 or CDN 방식)
+	jQuery를 가져다 쓰므로 script 순서는 jquery먼저 그후 bootstrap을 써야한다.
+
+	https://getbootstrap.com - Docs에서 컴포넌트들을 보고 사용할 수 있다
+	레이아웃>fixed/fluid
+	그리드>화면을 12개로 나누어 구분, 옵션은 픽셀기준
+	툴바>고정형(화면을 드래그로 내려도 툴바가 따라옴 fixed-top)/일반형
+
+https://startbootstrap.com/https://bootswatch.com/https://layoutit.com/
+
+
+
+
+
+
+라이브러리<프레임워크
+

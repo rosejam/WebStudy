@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style type="text/css">
+	body{
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+</style>
+</head>
+<body>
+	<!-- 여기가 툴바(네비게이션 바) -->
+	<div class="container">
+		<!-- nav: 네비게이션 시작을 알리는 태그. navbar navbar-default: 배경색상과 테두리 지정해 주는 역할
+		 navbar-fixed-top: 화면 상단에 고정 -->
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation"><!-- navbar-inverse는 흑백반전  role은 그냥 스크린 리더용 -->
+			<div class="container">
+				<div class="navbar-header">
+				<!-- navbar-toggle: 화면 사이즈가 크면 안보임 -->
+					<a class="navbar-brand" href="#">로고</a>
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-ex1-collapse">
+						<span class="sr-only">toggle navigation</span><!-- sr-only : 그냥 스크린 리더용=화면이랑 상관X -->
+						<span class="icon-bar"></span>	
+						<span class="icon-bar"></span>	
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div><!-- class="navbar-header" -->
+				
+				<!-- navbar-collapse: 화면 사이즈가 작으면 안보임 -->
+				<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#">메뉴-1</a></li>
+						<li><a href="#">메뉴-2</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">메뉴-3<b class="caret"></b></a>
+							<ul class="dropdown-menu dropdown-menu-left">
+								<li><a href="#">서브메뉴-1</a></li>
+								<li><a href="#">서브메뉴-2</a></li>
+								<li><a href="#">서브메뉴-3</a></li>
+							</ul>
+						</li>					
+					</ul>		
+					<form action="find.html" class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="검색">
+						</div>	
+						<button type="submit" class="btn btn-danger">검색</button><!-- 빨강으로 변경됨 -->
+					</form>
+				</div>		
+			</div>		
+		</nav>
+	
+	
+	
+	</div>
+
+
+
+
+	<!-- 여기서부터 본문 -->
+	<div class="container">
+	<p>카카오가 카풀 서비스를 재개한다. 택시업계와의 대타협을 기점으로 사업 다각화에 나선다. 승차공유업계에서 카카오와
+		쏘카 계열 서비스인 타다, 풀러스 사이 경쟁 구도가 본격화할 것으로 보인다. 10일 업계에 따르면 카카오모빌리티는 1월에
+		중단한 카풀 서비스의 시작 시점을 조율하고 있다. 이에 앞서 카카오모빌리티가 참여한 '카풀과 플랫폼 상생을 위한 대타협
+		기구'는 오전과 오후 특정 시간대(오전 7~8시, 오후 6~8시) 유상카풀 서비스에 합의했다. 정주환 카카오모빌리티 대표는
+		“사회적 대타협기구에서 큰 틀의 합의가 이뤄진 만큼 카풀 서비스 재개를 논의해 보겠다”고 말했다. 카카오 카풀 서비스는 국회
+		입법을 전후해 다시 시작될 것으로 보인다. 당정은 합의 사항 이행을 위해 3월 임시국회에서 계류돼 있는 법안의 통과를
+		추진한다. 계류된 여객운송법 개정안 가운데 문진국 자유한국당 의원이 2018년 1월에 제출한 안이 합의문의 제한적 카풀 허용과
+		일치한다. 문 의원은 전국택시노동조합연맹 위원장 출신이다. 택시업계의 선택지 가운데 하나인 만큼 통과에는 별다른 변수가 없을
+		것으로 보인다. 정 대표는 택시업계와의 모빌리티 발전 협조를 강조했다. 정 대표는 “대타협 기구 일을 마친 뒤 택시를 타고
+		회사로 복귀했다”면서 “모빌리티 발전을 위해 택시업계와 협력하겠다”고 밝혔다. 정 대표는 합의문 1번이 명시한 '플랫폼 기술을
+		자가용이 아닌 택시와 결합해 국민에게 편리한 서비스를 제공한다'에 대해 “각 합의문 항목이 종속적인 것은 아니다”라면서
+		“허용된 시간에는 어떤 형태로든 자율적으로 카풀을 할 수 있다”고 설명했다. 카카오 관계자는 “카카오가 준비하고 있는 카풀
+		서비스는 이미 테스트까지 진행한 상태로, '제로베이스'가 아니다”라고 말했다. 여건이 충족되면 정식 서비스를 시작할 수 있다는
+		의미다. 카카오 카풀은 인증을 마친 드라이버를 7만명 이상 확보했다.</p>
+	</div>
+</body>
+</html>

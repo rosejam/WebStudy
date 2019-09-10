@@ -25,7 +25,19 @@ from member;
 -- insert into v_member(mid, mname, tel) values(729,'Genie','123'); -- 안됨 not null로 지정한 컬럼이 있다.
 
 -- INDEX
--- create
+-- view: member(mid, manme, tel) v_member
+create or replace view v_member as select mid, mname, tel from member;
+select * from v_member;
+insert into v_member values(729, 'Genie', '123'); -- view: 원래 테이블에 영향을 주기 때문에 원래 테이블에 맞는 형식으로 insert 해야됨.
+
+create or replace view v_emp1 as select empid, fname, salary, deptid from emp where deptid<=50;
+select * from v_emp1;
+
+drop view v_emp1;
+
+create or replace view v_emp1 as select fname from emp where salary = (select max(salary) from emp); -- 서브 쿼리 사용
+select * from v_emp1;
+-- from others
 
 --
 -- transaction
