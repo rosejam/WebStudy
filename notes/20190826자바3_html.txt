@@ -1,7 +1,7 @@
 	자바 커리
 Java SE 	   -> 	<Java EE(Web)>
 		Web Front-End(=Design 또는 Presentation) : https://www.w3schools.com 참고
-			: "html(content) + css(design) + javascript(간단한 logic)" + Framework(웹 프론트용) + jquery, bootstrap...
+			: <html(content) + css(design) + javascript(간단한 logic, dynamic한 기능 추가!)> + Framework(웹 프론트용) + jquery, bootstrap...
 		Web Back-End(=Biz logic)
 			: Java(logic) + JDBC framework를 활용해서 DB관리
 		DB (설계 + Framework 등)
@@ -39,7 +39,11 @@ Interactive 지원
 5. Canvas Drawing : 실시간 이미지 프로세싱, 다양한 것을 그릴 수 있음
 6. 오프라인 애플리캐이션(Data storage and offline access) : DB를 쓰지 않고도 브라우저안에 오프라인 저장소에 간단하게 데이터를 저장, 원래는 쿠키를 사용
 7. 파일 및 장치 제어(File and hardware access)
-8. **Semantic Tag : 태그 이름만으로 기능을 알 수 있는 태그 ex)header, article
+
+<html에서 새롭게 추가된 것>
+8. **Semantic Tag** : 태그 이름만으로 기능을 알 수 있는 태그 ex)header, article, nav, section, footer, aside. div는 원래 있던 태그이므로 아님
+추가된 input type 알아두기 ex)date, color
+audio/video tag
 
 	<이클립스 서버 환경설정>
 1. 서버 프로그램 다운로드 http://tomcat.apache.org/
@@ -76,8 +80,8 @@ http://localhost:8080/WebFrontProject/html/p76_formtest.html
 http:// IP주소  :8080/  Context Root값/ html폴더(Web Content아래에 있음!!!)	/.html문서
 								/welcome.jsp?num=asdf&pass=qqq (get 방식)
 								/welcome.jsp (post 방식)
-
-block 요소- h1, hr(가로줄), list의 li, div(영역 지정)
+ ////외우기!! 시험
+block 요소- h1, hr(가로줄), list의 li, div(영역 지정), p
 	:1줄에 한개의 요소가 들어가고 줄바꿈O
 inline 요소- a, img, span(영역 지정)
 	:줄바꿈X

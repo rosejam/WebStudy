@@ -5,16 +5,17 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function(){
+	$(document).ready(function(){ //1번>.이벤트(function(){이벤트 핸들러});
 		$('h1').click(function(){});
-		$('h1').on('click', function(){ //위와 동일한 이벤트핸들러 //"on(이벤트이름,핸들러함수)":이벤트에 핸들러 등록
-			var p = $('<p>hello p tag</p>');//엘리먼트 생성 
+		$('h1').on('click', function(){ //위와 동일한 이벤트핸들러 //2번>"on(이벤트이름,핸들러함수)":이벤트에 핸들러 등록
+			var p = $('<p>hello pp tag</p>');//엘리먼트 생성 
 											//$();안에 태그이름을 쓰지 않고 내용을 적는다면 태그가 새로 생성됨!!
-			$('div').append(p); //div의 자식으로 p를 추가.
+			//$('#here').append(p); //div의 자식으로 p를 추가.
+			p.appendTo('#here'); //위와 동일!!!
 		}); 
 		
 		//jquery 실행 당시에는 p태그가 아직 존재하지 않음
-		//div 태그 아래 자식으로 생기는 p태그에 대해 이벤트를 등록시킴
+		//3번>div 태그 아래 자식으로 생기는 p태그에 대해 이벤트를 등록시킴
 		$('div').on('click', 'p', function(){ //on(이벤트, "자식element!", 핸들러함수) 파라메터3개!
 			alert('gogo!');
 		});
@@ -23,6 +24,6 @@
 </head>
 <body>
 	<h1>press here</h1>
-	<div></div>
+	<div id="here"></div>
 </body>
 </html>

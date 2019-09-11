@@ -38,6 +38,7 @@ responseXML>
 2. 컬렉션데이터구조 {"key":value,,,,} 
 	key는 항상 "string문자열" : value는 JSON데이터 -> 2중 컬렉션 데이터 구조 가능
 
+////eval("")은 ""를 떼고 안에것을 적용시키는 함수!
 var x = eval("("+ {  JSON형식의 데이터 key:val, key:val } +")");  //배열형식인 경우 ()를 붙이지 않아도 됨
 		->JSON형식의 (문자열) 데이터를 자바스크립트 "JSON 객체 x"로 변환
 		x['key'] 또는 x.key로 키를 통해 JSON데이터에 access할 수있다.
@@ -51,11 +52,12 @@ https://jquery.com/download/#using-jquery-with-a-cdn
 CDN = Content Delivery Network = 중간서버(본서버보다 물리적으로 가까운데 위치하고 서버의 내용이 로딩되어있는 중간 서버)
 그냥 본서버에서 다운로드 받아서 해도 되지만 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>를 써주면 중간서버에서 적용이 된다.
 
-	<$(selector).action();>
+	<$(selector).action();> 
 $ : jquery sign
 selector : html elements "선택자"
 action() : 선택된 element에 대해 실행할 동작
 ex) $("p").hide(); //html내에서 <p>태그를 모두 찾아 숨긴다.
+//$();안에 태그이름을 쓰지 않고 내용을 적는다면 태그가 새로 생성됨!!
 
 	<selector=선택자> ,로 여러개 구분한다.
 1. ("*")는 모든 elements
@@ -72,7 +74,8 @@ jquery event> ex)Document ready event
 	이벤트핸들러> 
 		$(selector).이벤트(function(){
 			//이벤트가 발생했을 경우의 동작 작성
-		});	
+		});
+	이벤트핸들러 3가지 방식 외우기~	
 
 html문서를 브라우저로 실행할 때 script(-jQuery이용) 실행 후 body 실행
 	-> "body까지 실행후(=브라우저에 HTML문서의 로딩이 끝난 후)" jquery를 실행되도록 해주어야 함!! => by 이벤트
@@ -83,3 +86,11 @@ $(document).ready(
 );
 
 참고)브라우저에서 소스보기 했을 때 코드는 "처음 html문서가 로딩되었을 때" 코드!
+
+////부모태그 내부에 자식태그를 넣는 방법!!!
+부모.append(자식);
+자식.appendTo(부모);
+$('img').first().appendTo('body);는 처음 자식을 마지막 자식으로 이동시킨다~
+
+////타이머함수_p.493
+setInterval(function(){}, 2000); 2초마다 함수를 실행

@@ -11,19 +11,19 @@
 	//그냥 (function(){ 와 같다. = 앞에 (document).ready 를 생략해도 동일
 		//jquery로 내용 작성
 		$('h1').css('color','red');
-		$('h2').css('color','blue');
-		$('h1').css('font-size','30pt');
+		$('h2:eq(1)').css('color','blue');
+		$('h1:first').css('font-size','30pt');
 		$('#green').css('color', 'green'); //id
 		$('.orange').css('color','orange'); //class
 		$('p').css({'background-color':'#ffffb3', 'font-size':'50pt'}); //JSON구조
 		
-		//모든=each h2태그에 대해 적용할 내용 지정
+		////모든=each h2태그에 대해 적용할 내용 지정
 		$('h2').each(function(index, item){ //액션에 함수가 들어가고 거기에 파라메터가 들어간다
 											//두번째 파라메터 item은 현재 선택된 h2 의미 = this
 			if(index % 2 ==0)
 				$(item).css('color', 'cyan');
 			else
-				$(this).css('color', 'orange');
+				$(this).css('color', 'orange'); //this는 item과 같다!!!(지금 보고 있는 h2)
 		});
 	});
 

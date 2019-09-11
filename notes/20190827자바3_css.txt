@@ -25,7 +25,7 @@ p105_에 선택자 종류
 
 ///////////
 class>
-동일한 선택자에 다른디자인을 적용하고 싶을 때 class만들어서 class속성 활용
+동일한 선택자에 다른 디자인을 적용하고 싶을 때 class만들어서 class속성 활용
 선택자.class이름{}		h1.italic{font-style:italic}  -> <h1 class="italic">로 클래스가 italic인 선택자h1에 폰트적용
 모든 element에서 class속성 사용시		.class이름{}으로 클래스를 만든다.
 
@@ -41,6 +41,8 @@ h1 h2{color:blue} -> "h1태그 내부의 h2태그에만" 적용된다.  ex)ul li{}
 특정 태그 하위 선택자들은 모두 후손, 바로 아래 후손은 자손이라고 함!
 p126_자손선택자>
 부모A>자손B{} A태그 바로 아래의 B태그에만 적용
+
+ex) h2:nth-child(2)는 h2태그의 두번째 자식을 의미하는 선택자!!
 //////////
 
 https://fonts.google.com/에서 필요한 폰트 링크사용
@@ -56,6 +58,13 @@ https://fonts.google.com/에서 필요한 폰트 링크사용
 
 참고)JS에러는 콘솔이 아니고 브라우저에서 확인할 수 있다.
 
-div로 나눠진 것을 position&float을 이용해 화면에 구성한다.
+div로 나눠진 것을 position&float을 이용해 화면에 구성한다. -> float : right;를 해서 화면 오른쪽에 붙이면 먼저 붙인게 가장 오른쪽에 있다.
 
 반응선택자 hover:마우스커서가 올려져 있을 때, active:마우스로 누르고 있을 때
+
+////시험
+visibility : hidden; 속성은 자리 차지는 하고 있음
+display : none; 속성은 자리 차지도 안하고 사라지게 됨 = height:0px로 한 것과 동일해짐
+display : inline-block; 은 줄바꿈은 안되고 "width/height부분을 차지하는 블락"을 만든다.
+	inline; 이면 width/height 적용이 안된다.
+	block; 이면 줄바꿈이 되고 블락이 생성된다.

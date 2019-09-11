@@ -1,0 +1,77 @@
+Standard 애플리케이션
+Web 애플리케이션 - 웹상에서 돌아감, 3tier로 구성됨
+
+Client Tier	--	<Server Tier>	--	Data Tier
+프론트		 	 백엔드			DB
+(웹 브라우저)	    웹서버   웹앱서버(WAS)		mysql사용
+
+웹서버 = 웹브라우저의 요청을 받아들이는 곳
+WAS = 요청한 작업에 필요한 로직 or DB와 연동
+아파치 톰캣에 둘다 들어있음
+
+Client	 ->요청		<-응답 	웹서버
+			Servelet(자바) / JSP로 두가지 언어를 사용해서 "웹앱(브라우저에서 돌아가는 프로그램) 작성"
+			
+Servlet(.java) 	->JSP(.jsp 텍스트문서=자바가 아니고 스크립트 언어-나중에 자바가 생성되어 실행)
+플랫폼독립적		html과 유사해서 태그 쓰기가 쉬움='Presentation 부분"이 쉬움
+서버독립적!			만들기 간단하고 이식성이 좋지만 상대적으로 느림
+확장성 등
+자바의 특징
+
+프론트에서 쓰이는 JavaScript도 사용 가능 node.js
+
+	<Servlet> 자바로 작성된 웹앱
+"웹 컨테이너(=웹 서버!=WAS)"에서 실행되며 동적인 콘텐츠를 생성하기 위한 자바 클래스
+ ㄴJSP/서블릿을 실행시킬수 있는 SW ex)아파치 톰캣
+
+서블릿 소스가 변경된 경우엔 컴파일을 하고 생성된 실행파일을 메모리에 올리는 과정 후에 새로고침해야 변경된다.
+이 과정이 제대로 이루어지지 않을 경우
+Server에서 Clean을 하면 메모리에 올라온 실행파일이 모두 삭제된다.
+clean tomcat workdirectory해서 톰캣서버 작업폴더 내로 복사된 실행파일도 지운다.
+
+컨텍스트=실행단위=프로젝트 - 웹컨텐트에는 java아닌것, 자바Resources에는 자바인것
+	이미지등 공유 불가
+자바 Servlet을 만들면 superclass(=부모!)로 javax.servlet.http.HttpServlet가 지정, 클래스/이름/urlmapping을 따로 정할 수 있다.
+	extends HttpServlet로 상속받는 클래스는 서블릿 클래스라는 뜻
+
+참고)클래스 선언문 위의 Annotation으로 그 클래스가 뭔지 알 수 있다.(ex)Servlet,필터 등)
+
+web.xml에서 파일 타입에 따라 mime-type을 어떻게 지정해야 되는지 찾아볼 수 있다.
+
+서버가 만들어질 때마다 모든 파일이 체크되므로 url mapping이 중복되면 안된다.
+
+				<http 프로토콜>*
+클라이언트 -> [요청]					[응답] <- 서버
+		-요청줄				       -응답줄
+		-header				       -header 
+		-body				       -body
+
+-메서드방식(get/post) / 액션(리소스)				-HTTP/ 200
+-user-agent=클라이언트의 브라우저,host=서버			-날짜, 서버
+-							-
+
+	<http 명령어>
+get : 웹서버에게 "데이터 요청"할 때 주로 사용
+	간단한 데이터는 웹서버로 전달하기도 함
+	전달되는 데이터는 url끝에 추가됨
+	header에 넣어서 전달
+psot : 웹서버로 "데이터 전달"
+	전달된 데이터는 http프로토콜에서 entity body부분에 포함됨
+	body에 넣어서 전달
+
+	<Request 처리 단계>
+	         container 	-> request(client에서 전달된 정보를 넣어서 생성)
+			-> response(비어있는채로 생성)
+
+클라이언트로부터 서버에 요청이 들어올 때마다 thread생성, 프로세스는 한개 (C는 프로세스를 생성) -> 멀티스레드이므로 공유데이터 처리 주의
+	-> thread에 request, response를 전달
+	-> 서비스 메소드를 실행하고 그 정보를 response에 저장하고 다시 container에 전달
+	-> 스레드, 리퀘스트, 리스폰스 삭제
+
+		<Interface>Servlet
+		^
+	       <	GenericServlet   > 
+		^
+	       <	HttpServlet   >
+		^
+		MyServlet

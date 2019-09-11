@@ -1,5 +1,8 @@
-JavaScript 객체지향형언어("JavaScript기본내장객체 object JSON등+브라우저내장객체(HTML DOM) window등+직접만든 객체" 등 활용)      / jQuery  --Ajax
-			w3스쿨/책목차에서 각각의 종류를 구분하자!!
+JavaScript 객체지향형언어("JavaScript기본내장객체+브라우저내장객체(HTML DOM)+직접만든 객체" 등 활용)      / jQuery  --Ajax
+			w3스쿨/책목차에서 각각의 종류를 구분하자!!!!
+	JS객체 : String, Math, Array, Object, JSON, Number, Date
+	Browser제공 객체(BOM) : Window, Document, Location
+
 문서객체모델 DOM -> html의 모든 태그를 객체로 사용할 수 있게 함. -> 메소드 활용가능
 (Window, location, history)
 
@@ -57,3 +60,21 @@ html도 xml처럼 돔트리로 되어있다("body는 태그의 자식~(아래), 속성은 옆으로 그림(
 	|		|
 	head		body
 	title script	h1 input
+
+////
+("")는 false 아무것도 없기 때문에
+("0")는 true
+(0)은 false 0아닌건 true
+("" == true)는 false
+
+////
+파라메터보다 아규먼츠를 많이주면 알아서 앞에만 쓰이지만 부족하면 실행되지 않는다!!!
+("0" == true)는 false
+
+////for in으로 루프! for : 이 아님~ 108p
+// 키값 in JSON 하면 키가 존재하는지 여부가 true/false로 나온다. 178p
+////p.145 타이머 함수
+setTimeout(function, ms); //ms후 한번시행	clearTimeout(id);
+setInterval(function, ms);			clearInterval(id);
+
+//DOM : JavaScript를 활용해서 html을 Dynamic하게 조작할수 있게 해줌!!!!
