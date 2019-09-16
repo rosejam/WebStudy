@@ -17,9 +17,11 @@ public class LoginServlet extends HttpServlet {
 	}//HTTP Status 405 – Method Not Allowed(서블릿과 html의 do/post방식이 안맞을 때 발생)
 	//클라이언트가 post방식으로 요청을 보내오면 받아서 처리
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//parameter로 전송되어 온 한글 처리
-		request.setCharacterEncoding("euc-kr"); //"요청 들어올 때" id등의 한글이 안깨지도록 추가함! -> 그후 getParameter를 추가해야 함
+		//parameter로 전송되어 온 한글 처리(client -> server)
+		//클라이언트가 서버로 보낼때="요청 들어올 때(request)" 아이디 등의 한글이 안깨지도록 하므로, request.getParameter이전에 수행되어야 한다!
+		request.setCharacterEncoding("euc-kr");
 		
+		//server -> client에서 한글이 안깨지도록
 		response.setContentType("text/html;charset=euc-kr");
 		PrintWriter out = response.getWriter();
 		

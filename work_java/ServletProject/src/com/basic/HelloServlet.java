@@ -21,6 +21,7 @@ public class HelloServlet extends HttpServlet {
 	//post방식 : form을 사용하면서 메소드를 post로 지정한 경우 밖에 없다.
 	//			<form action=".jsp" method="post"></form>
 	
+	
 	//request: 클라이언트로부터 서버로 들어오는 "요청"정보가 들어있는 객체(form태그 안의 내용 등)
 	//response: 서버에서 클라이언트로 나가는 "응답"정보가 들어있는 객체
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,8 +33,9 @@ public class HelloServlet extends HttpServlet {
 		//클라이언트로 보낼 컨텐츠 출력을 위한 "출력 스트림 준비!"(response에서 출력용 파이프를 가져옴)
 		PrintWriter out = response.getWriter();
 		
-		//클라이언트는 컨텐트 타입을 미리 말해주었기 때문에 태그인식을 할 것임, 브라우저에 출력
-		//JSP는 이부분이 간단해짐
+		System.out.println("HelloServlet");
+		
+		//클라이언트는 컨텐트 타입을 미리 말해주었기 때문에 태그인식을 할 것임(JSP는 이부분이 간단해짐), 브라우저에 출력
 		out.println("<html>");
 		out.println("<body>");
 		out.println("<h1>hello servlet 입니다</h1>");

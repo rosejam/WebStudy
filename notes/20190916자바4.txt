@@ -1,0 +1,60 @@
+	web.xml은 서버를 껐다 켰을 경우 톰캣이 읽고 "환경"설정 세팅을 하는 파일이다.
+2.대 web설정에서는 서블릿에 Annotation이 없으며, 대신 web.xml에 자동으로 생성된 servlet & servlet-mapping태그가 대신한다!
+						servlet-name(짧은 별명), servlet-class(=패키지명.클래스명), url-pattern(url매핑값)
+3.대에서는 Annotation에 url매핑을 적고 web.xml을 생략하지만 자주 수정해야하는 경우 매번 컴파일을 하지 않기 위해 web.xml를 사용한다.
+
+	<서블릿 필터>
+인코딩설정, 사용자 인증(권한체크)이나 로깅(기록남기기)과 같은 서블릿/JSP들의 공통기능을 전처리/후처리에 넣는 방법 ex)감시, 데이터압축, 암호화 등
+
+				   	 [Filter] 3개
+	/HelloServlet요청		   	request에 사전처리기 필터	
+client	     --->		WAS가	   	-[-]-[-]-[-]->
+			서블릿	  	 f1>f2>f3  		         <HelloServlet의 서비스 메소드>의 작업
+			객체	  	response에 사후처리기 필터
+			생성	   	<[-]-[-]-[-]-
+				    	 f1<f2<f3
+
+ServletRequest (필터에서 사용)
+^
+HttpServletRequest (서블릿에서 사용)
+
+				<Web App비교>
+	Servlet						JSP
+Java파일						텍스트문서-html
+WAS에 의해 직접 실행				"WAS가 서블릿을 생성"한 후 그 서블릿을 실행
+Java코드안에 html tag가 포함되어 있음			html코드 안에 Java코드<%로직%>가 포함되어 있음
+"Logic"(계산)중심 코드				"Presentation"(입출력작업I/O 등 디자인)중심 코드
+					
+client	--->	Servlet 	--->	JSP	로 2개를 로직과 디자인을 분리해서 활용하는 구조가 좋다. (재활용성이 커짐)
+
+	<JSP> -커스텀 태그를 활용
+	first.jsp
+client	   --->	      WAS	가 .jsp를 읽고 같은 역할을 하는	-->	컴파일되어 메모리에 올라온 .class 실행파일을 실행
+		      서블릿 .java파일을 생성				(그후의 요청에서는 또 생성하지 않고 바로 실행)
+		      (이 "변환"과정이 추가됨)
+워크스페이스\.metadata\.plugins\org.eclipse.wst.server.core\tmp0에 생성됨
+
+	<JSP 스크립팅 요소>
+JSP 페이지 구성요소	-->	.jsp의 tag는 html, jsp, jstl의 3가지
+	1.Fixed template data - HTML tag
+	2.Element(원소)
+		1) Directive Element(지시어원소)
+			<%@ 지시어종류* {지시할 내용=지시어 속성} %>   : jsp>java 변환할 때 WAS(웹컨테이너-톰캣)에게 지시할 사항을 표기
+				ㄴ page는 (언어 language/컨텐트 타입contentType/인코딩pageEncoding 등을 지시)
+					그외 속성: import, errorPage(에러가발생할 경우 어떤 에러페이지로 갈지), isErrorPage(에러처리하는 페이지면 true값) 등
+				ㄴ include 
+					
+				ㄴ taglib
+		2) Scripting Element(스크립팅 원소)
+			!선언 (java코드로 변환시 그대로 복사됨)
+			=식(Expression) : 변수 값, 계산 결과, 함수 호출 결과를 직접 출력. ;을 끝에 붙이지 않음
+			스크립트렛(scriptlet) : 자바코드를 작성 (변환시 내용이 바뀌어서 늘어난다.) 
+			식언어
+		3) Action Element(액션 원소, jsp 태그)
+
+	<JSP 디폴트(내장) 객체>
+request : HttpServeltRequest
+response : HttpServeltResponse
+out : JSPWriter
+exception : 
+

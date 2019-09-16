@@ -19,7 +19,8 @@ public class Survey extends HttpServlet {
 		String dept = request.getParameter("dept");
 		String employee = request.getParameter("employee");
 		String comment = request.getParameter("comment");
-		//Checkbox의 값 받을 때
+		
+		//Checkbox의 값 받을 때!
 		String[] ide = request.getParameterValues("ide"); //name이 ide인 것들의 value들 - Parameter는 무조건 다 스트링
 		
 		out.println("<html><body>");
