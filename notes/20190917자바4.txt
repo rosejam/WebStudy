@@ -1,0 +1,23 @@
+	<MVC패턴>
+
+Model(logic, data처리) : db에 접속해서 작업. POJO로 작성(=그냥 자바파일)
+
+View(presentation) : 화면에 데이터 뿌림. JSP로 작성
+
+Controller(Servlet로 작성) : client의 요청 받기 -> Model -> View (forward로 전달)
+	   ㄴ 또는 Filter(Front Controller)+POJO
+
+	request
+ 	--->	Controller	 --->	Model
+		(Servlet) 			(POJO)
+		   |		<---	DAO      <--> 	DB	
+client		   |			^
+		   |			|
+	response	   v			|
+	<---	  View			VO
+		  (JSP)			(POJO)
+
+http://localhost:8080/customer/list.cus  : 클라이언트가 할 요청
+         서버:port/Context_Root/Servlet_Path
+
+Context Root는 프로젝트의 Web Project Settings 또는 Servers의 server.xml에서 확인 가능

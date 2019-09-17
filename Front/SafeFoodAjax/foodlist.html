@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>SSAFALLERGY</title>
+<!-- Bootstrap -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<style>
+.collapse {
+	padding-right: 50px;
+}
+
+#menu ul li {
+	vertical-align: middle;
+	text-align: center;
+}
+
+#menu ul li a:hover {
+	background-color: #006F00;
+}
+
+.contents img {
+	width: 200px;
+	height: 100px;
+}
+</style>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$.ajax({
+		url : '../xml/foodInfo.xml', //xml 파일 경로 맞추기
+		dataType : 'xml',
+		success : function(result) {//result:서버에서 온 xml data					
+			if ($(result).find('food').length > 0) {//find(): xml문서 안에서 원하는 태그 찾기						
+				var cnt = 2;
+				var row;
+				
+				$(result).find('food').each(function() {//each(): 찾은  food 태그 각각에 대하여 반복작업 수행	
+					if(cnt >= 2){//cnt가 2보다 크거나 같을 때만  div 태그 생성함
+						cnt = 0;
+						row = $('<div class="row">');//div 태그 생성하기
+						$('.contents').append(row);						
+					}
+				
+					var col = $('<div class="col-sm-6">');
+						
+					var imgurl = $(this).find('image').text();//img tag 안의 값 알아내기(이미지 이름 알아내기)
+					var itemdiv = $('<div class="row item">');
+
+					var imgdiv = $('<div class="col-sm-3"><a href="fooddetail.html" class="thumbnail"><img src="../'+imgurl+'"></a></div>');
+					var txtdiv = $('<div class="col-sm-8 txt"><h3>'+$(this).find('name').text()+'</h3>'
+									+'<p>'+$(this).find('material').text()+'</div>');					
+					
+					var btndiv = $('<div class="btn-group" role="group">'+
+								'<button type="button" class="btn btn-primary">추가</button>'+
+								'<button type="button" class="btn btn-primary">찜</button><br></div>');
+					txtdiv.append(btndiv);
+					itemdiv.append(imgdiv);
+					itemdiv.append(txtdiv);
+					
+					col.append(itemdiv);
+					row.append(col);
+					cnt++;					
+					
+				});
+			}
+		}
+	});
+	
+	$('#userinfo').click(function () {
+		location.href = 'userInfo.html';
+	});
+	
+	$('#search').click(function () {
+		location.href = 'search_result.html';
+	});
+});
+</script>
+</head>
+<body>
+	<!-- 여기가 툴바(네비게이션 바) -->
+	<div class="container">
+		<!-- nav: 네비게이션 시작을 알리는 태그. navbar navbar-default: 배경색상과 테두리 지정해 주는 역할 
+		navbar-fixed-top: 화면 상단에 고정-->
+		<div class="navbar" role="navigation">
+			<div class="container" style="background-color: white;">
+				<div class="navber-header">
+					<div class="navber-brand" style="float: left;"
+						onclick="location.href='main.html'">
+						<img alt="로고" src="../img/로고.png">
+						<p style="display: inline-block; padding-top: 15px; height: 100%;">SSAF'ALLERGY</p>
+					</div>
+				</div>
+
+				<div class="collapse navbar-collapse navbar-right">
+					<ul class="nav navbar-nav">
+						<li><a href="login.html" style="color: black">로그인</a></li>
+						<li><a href="modification.html" style="color: black">내정보</a></li>
+						<li><a href="register.html" style="color: black">회원가입</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+			<div class="container" style="background-color: #1B818D">
+				<div class="navbar-header">
+					<!-- navbar-toggle: 화면 사이즈가 크면 안보임 -->
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-ex1-collapse">
+						<span class="sr-only">toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+				</div>
+				<!-- class="navbar-header -->
+
+				<!-- navbar-collapse: 화면 사이즈가 작으면 안보임 -->
+				<div
+					class="collapse navbar-collapse navbar-right navbar-ex1-collapse"
+					id="menu">
+					<ul class="nav navbar-nav">
+						<li><a href="#" style="color: white;">사이트 소개</a></li>
+						<li><a href="#" style="color: white;">공지사항</a></li>
+						<li><a href="foodlist.html" style="color: white;">상품리스트</a></li>
+						<li><a href="#" style="color: white;">정보공개</a></li>
+						<li><a href="#" style="color: white;">지식마당</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- 여기가 툴바(네비게이션 바) 끝 -->
+
+		<!-- contents -->
+		<div class="darkbox" align="right" style="margin-bottom: 10px;">
+			<table>
+				<tr>
+					<td><input type="text"></td>
+					<td><button id="search">검색</button></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="contents" style="margin-bottom: 10px;">
+		</div>
+		<!-- contents end -->
+
+		<div class="" id="footer"
+			style="background-color: #2C2C2C; padding: 10px; text-align: right;">
+			<p style="color: #989898">(021237)서울 강남구 테헤란로 212(멀티캠퍼스 빌딩) 8층
+				809호</p>
+			<p style="color: #989898">TEL : 02-123-8888 / FAX : 02-6464-1111
+				/ E-mail : Multi@Campus.kr</p>
+			<p style="color: #989898">Copyright (c) National Food SSAFALLEGY
+				All Rights Reserved</p>
+		</div>
+
+
+
+	</div>
+</body>
+</html>

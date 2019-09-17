@@ -1,0 +1,9 @@
+tommy/lion 계정>>
+table:book
+project: BookMVCProject
+context-root: book
+
+초기화면-http://localhost:port/book/index.book
+상세화면-http://localhost:port/book/detail.book
+책등록화면-http://localhost:port/book/insertForm.book
+책등록처리-http://localhost:port/book/insertProcess.book
