@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%@ page import="java.util.ArrayList, java.util.Date"%>
-<%@ page info="지시어 테스트 파일입니다." errorPage="error.jsp"%>
-<%@ page import="java.sql.Connection" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+	<hr>
+	<h3>여기는 inner2.jsp파일입니다.</h3>
+	<hr>
 </body>
 </html>
