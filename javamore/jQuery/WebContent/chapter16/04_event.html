@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
+<script type="text/javascript">
+$(function(){
+ 	$('#btn1').on('click', function(){ //$('#btn1').click(function(){
+		alert(event);
+		alert(this); //이벤트가 발생한 대상인 DOM객체
+		$(this).css('background','pink');
+	});
+});
+</script>
+</head>
+<body>
+<button id="btn1">Click Me</button>
+<button id="btn2">Click Me</button>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
+<script>
+ $(function(){
+	var divA = $('#a');
+	console.log(divA);
+	console.log(divA.length);
+	console.log(divA.get(0));
+	$('span').css('color','purple');
+	$('#a').css('background','pink');
+	$('.bclass').css('border','1px solid orange');
+	$('p[title]').css('border','1px sold gray');
+	$('#c>span').css('background','blue');
+	
+	var divC = $('#c');
+	$('span', divC).css('background','purple'); //divC로 찾아둔 범위 안에서만 찾게 된다.
+ });
+</script>
+</head>
+<body>
+	<div id='a'>
+		<div class="bclass">
+			<p title='classB'>P1</p>
+			<span>Span1</span>
+		</div>
+	</div>
+	<div id="c" class="cclass">
+		<p>P2</p>
+		<span>Span2</span>
+	</div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
+<script>
+ $(function(){
+	$('#btn').click(function(){
+		//A.appendTo(B)   : A를 B의 맨 끝에 추가 
+		$('<h1 class="header">Header</h1>').appendTo('#content');
+		
+		//B.append(A)     :  A를 B의 맨 끝에 추가		
+        $('#content').append('<h1 class="header">Header</h1>');
+		
+		//innerHTML == html()
+/*      $('#content').html( $('#content').html()
+        					+'<h1 class="header">Header</h1>'); */
+	});
+ });
+</script>
+<style type="text/css">
+	.header{ color :pink;
+			 border: 1px solid purple}
+</style>
+</head>
+<body>
+	<button id='btn'>생성</button>
+	<div id="content"></div>
+</body>
+</html>
+
+
+
+
+

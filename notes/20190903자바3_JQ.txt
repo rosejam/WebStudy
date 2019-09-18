@@ -46,6 +46,12 @@ var x = eval("("+ {  JSON형식의 데이터 key:val, key:val } +")");  //배열형식인 �
 		var y = 'name';일 때 x[y]는 키가 'name'인것을 찾지만 x.y는 키가 y인것을 찾는다!! ([]는 변수처리가 되지만 .뒤에는 변수가 아니고 그냥 바로 key가 와야함)
 
 	<JQuery> .js파일 1개로, <script src=로 추가해준다.
+
+참고)$(function(){} | 'selector' | DOM객체 | '<태그명>')
+	2.아래에 자세히
+	3.DOM객체를 jQuery객체로 생성(jQuery의 함수 사용가능해짐)	ex)$(document).ready(function(){}); = 1.과 동일
+	4.태그를 jQuery객체로 생성
+
 JavaScript Library(framework) 편리한 기능의 함수 제공, 다양한 플러그인
 
 https://jquery.com/download/#using-jquery-with-a-cdn
@@ -94,3 +100,11 @@ $('img').first().appendTo('body);는 처음 자식을 마지막 자식으로 이동시킨다~
 
 ////타이머함수_p.493
 setInterval(function(){}, 2000); 2초마다 함수를 실행
+
+//자식선택자! 부모>자식
+//후손선택자! 부모 후손
+//속성! [속성이름]
+이벤트참고)
+//$(로드한 html의 태그에만 이벤트 연결).on('이벤트명','selector',function(){}); 
+						ㄴ 동적으로 추가된 tag 
+//$().on({'이벤트명':함수, ,..}); 
