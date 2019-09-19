@@ -21,3 +21,5 @@ http://localhost:8080/customer/list.cus  : 클라이언트가 할 요청
          서버:port/Context_Root/Servlet_Path
 
 Context Root는 프로젝트의 Web Project Settings 또는 Servers의 server.xml에서 확인 가능
+
+백엔드시과목평가는 소스코드 -> 객관식 

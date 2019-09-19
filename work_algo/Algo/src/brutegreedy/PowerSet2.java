@@ -3,7 +3,7 @@ package brutegreedy;
 import java.util.Arrays;
 import java.util.Scanner;
 
-//중복순열 nPIr =n^r,  5PI3 :60
+//중복순열 2PIr = 2^r
 
 public class PowerSet2 {
 	public static int n, r, cnt, a[], v[], d[]={0,1};

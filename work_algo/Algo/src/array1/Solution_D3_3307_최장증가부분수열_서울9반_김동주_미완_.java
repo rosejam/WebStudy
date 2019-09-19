@@ -1,4 +1,4 @@
-package array1; //제출할때는 패키지명 삭제!!!
+package array1;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -6,14 +6,14 @@ import java.io.InputStreamReader;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-class Solution_D3_3307_최장증가부분수열_서울9반_김동주_미완_{ //제출할 때 클래스명은 솔루션으로 바꿔야함!!! F2키로 파일이름 바꿀수 있음
+class Solution_D3_3307_최장증가부분수열_서울9반_김동주_미완_{
 	public static Stack<Integer> stack;
 	static long[] A;
 	static long[] V;
 	static int N;
 	static int cnt;
 	public static void main(String args[]) throws Exception {
-		System.setIn(new FileInputStream("res/input_D3_3307.txt")); //제출할때는 입력 삭제!!!
+		System.setIn(new FileInputStream("res/input_D3_3307.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int T = Integer.parseInt(br.readLine());
 
@@ -48,8 +48,9 @@ class Solution_D3_3307_최장증가부분수열_서울9반_김동주_미완_{ //
 					//System.out.print("#" + tc + " " + B[i][j]);
 					//System.out.print(B[i][j]);
 				}
-				System.out.println();
+				//System.out.println();
 			}
+			System.out.println(cnt);
 		}
 	}
 	

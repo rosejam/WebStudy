@@ -4,7 +4,6 @@
 <fullyQualifiedTypeName name="java.util.Stack"/>
 <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthSeparatorUI"/>
 <fullyQualifiedTypeName name="tree.Tree.Node"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="tree.BinaryTree.Node"/>
 <fullyQualifiedTypeName name="dcbacktracking.Main_정올_1335_색종이만들기_서울9반_김동주_미완"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
@@ -12,15 +11,16 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Queue"/>
 <fullyQualifiedTypeName name="sun.text.CompactByteArray"/>
-<fullyQualifiedTypeName name="java.io.FileInputStream"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="java.util.StringTokenizer"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="java.util.Comparator"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>

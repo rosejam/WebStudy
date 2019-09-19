@@ -1,0 +1,31 @@
+	<Best First Search Algo>
+BFS에서 PriorityQueue(-heap으로 구현가능)를 이용(최고 한계를 가진 노드를 우선적으로 선택 -일반적으로 성능이 더좋다)
+
+
+
+분기 한정 가지치기로 DFS = 백트래킹
+
+	<branch&bound>
+방문처리 bfs를 사용하지 않고 
+best = value(v);
+for eachchild u of v에서
+	밸류와 바운드 계산
+
+	<DP-2>
+NP문제 : 어려운 문제는 최적해가 아닌 근사해를 구하는 방법
+LIS : 최장부분수열
+최단경로 : djikstra / 모든 쌍의 최단경로 : 플로이드-워샬
+TSP :
+
+시간복잡도>
+정렬문제 nlogn 
+부분집합 합문제 2^n
+지수시간(2^n) 이내에 결과를 낼수 있다면 현실적
+
+계산복잡도>
+P(polynomial 다차시간)/NP/NP-Complete
+
+	<P-NP>
+1. 다차시간 알고리즘을 찾은 문제 -> DFS+Backtracking
+2. 다루기 힘들다고 증명된 문제 -> DP사용
+3. 둘 다 아닌것 -> 근사해를 찾기
