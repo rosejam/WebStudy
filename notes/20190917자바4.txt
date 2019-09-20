@@ -21,5 +21,11 @@ http://localhost:8080/customer/list.cus  : 클라이언트가 할 요청
          서버:port/Context_Root/Servlet_Path
 
 Context Root는 프로젝트의 Web Project Settings 또는 Servers의 server.xml에서 확인 가능
+Context Root뒤의 /가 context 
 
 백엔드시과목평가는 소스코드 -> 객관식 
+
+저장소(scope)>
+1.request : request가 유지될 때 까지(forward를 통해서 페이지를 이동하면 유지가 된다.)
+2.session : session이 유지될 때 까지
+3.application(=context) : 서버 구동~종료까지

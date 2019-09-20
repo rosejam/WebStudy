@@ -31,7 +31,9 @@ client	--->	Servlet 	--->	JSP	로 2개를 로직과 프리젠테이션을 분리해서 활용하는 �
 	first.jsp
 client	   --->	      WAS	가 .jsp를 읽고 같은 역할을 하는	-->	컴파일되어 메모리에 올라온 .class 실행파일을 실행
 		      서블릿 .java파일을 생성				(그후의 요청에서는 또 생성하지 않고 바로 실행)
-		      (이 "변환"과정이 추가됨)
+		      (이 "변환!"과정이 추가됨)
+
+새로운 요청이 들어왔을 때 바뀐 부분이 있을 경우 새로 만들고 그대로면 스레드만 생성
 워크스페이스\.metadata\.plugins\org.eclipse.wst.server.core\tmp0에 생성됨
 
 	<JSP 스크립팅 요소>
@@ -54,8 +56,10 @@ JSP 페이지 구성요소	-->	.jsp의 tag는 html, jsp, jstl의 3가지
 		3) Action Element(액션 원소=jsp 태그) - 스크립트렛의 양을 줄임
 			<jsp(접두어역할):태그이름 /> : xml 코딩 규칙을 지켜야한다.
 					ㄴ include - 두개이상의 페이지를 하나의 페이지 처럼 나타낼 때 사용
-					ㄴ forward - jsp페이지 간에 요청처리를 전달(client 는 action까지만 요청하고, 서버의 jsp내부에서 forward할 때 다른 파일에 "request 객체"를 패스(내용 추가해도 됨)하고 바꿔친 파일이 응답 -> url은 action된 곳까지만 표시함)
-						(redirect와 차이점: action된 redirect파일이 일단 응답하고, 그 다음 redirect가 보내진 파일을 "client에서 또 요청"을 한다. - request가 전달되지 않음!)
+					ㄴ "forward" - jsp페이지 간에 요청처리를 전달(client 는 action까지만 요청하고, 서버의 jsp내부에서 forward할 때 다른 파일에 "request 객체"를 패스(scope내용 추가해서 저장해도 됨)하고 바꿔친 파일이 응답 -> url은 action된 곳까지만 표시함)
+							새로고침해도 계속 살아있다. 따라서 select에서 사용
+						("redirect의 차이"점: action된 redirect파일이 일단 응답하고(url변경), 그 다음 redirect가 보내진 파일에 "client에서 또 요청"을 해야한다. - request가 전달되지 않음!=scope에 저장한 data가 유지)
+							redirect는 원래 request가 폐기된다. 따라서 insert에서 사용
 					ㄴ param - 
 					ㄴ useBrean
 					ㄴ setProperty

@@ -6,7 +6,26 @@
 <script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
 <script type="text/javascript">
 $(function(){
-
+	$('#calc').click(function(){
+		$.ajax({
+			 url:'jsp/plus_ajax_xml.jsp' //비동기 통신할 서버 url
+			,data:{
+				 op1: $('#op1').val() //서버에 보낼 요청 데이터
+				,op2: $('#op2').val()
+			}
+			,dataType:'xml'	//응답받을 데이터의 타입
+			,success: function(data, status, xhr){ //비동기적으로 요청한 데이터가 정상적으로 응답되었을 때 처리할 함수를 지정
+				console.log(data);
+				//비동기적으로 전송받은 xml Data에서 result태그를 찾아 태그 바디의 text를 추출
+				//$('#result').val(data.result);
+				var r = $('result', data).text();
+				$('#result').val(r);
+			}
+			,error: function(err){ //비동기적으로 요청한 데이터가 오류났을 때 처리할 함수를 지정
+				alert(err);
+			}
+		});
+	});
 });
 </script>
 </head>

@@ -48,9 +48,10 @@ web.xml에서 파일 타입에 따라 mime-type을 어떻게 지정해야 되는지 찾아볼 수 있다.
 		-header				       -header 
 		-body				       -body
 
--메서드방식(get/post) / 액션(리소스)				-HTTP/ 200
--user-agent=클라이언트의 브라우저,host=서버			-날짜, 서버
--							-
+-메서드방식(get) / 액션(리소스)				-HTTP/ 200
+-쿠키, user-agent=클라이언트의 브라우저,host=서버		-날짜, 서버
+-							-양이 많을 때 패킷으로 나눌 수 있음
+
 
 	<http 명령어>
 get : 웹서버에게 "데이터 요청"할 때 주로 사용
@@ -66,6 +67,7 @@ psot : 웹서버로 "데이터 전달"
 			-> response(비어있는채로 생성)
 
 클라이언트로부터 서버에 요청이 들어올 때마다 thread생성, 프로세스는 한개 (C는 프로세스를 생성) -> 멀티스레드이므로 공유데이터 처리 주의
+(다른 클라이언트에서 요청이 들어왔을 때 isLoad되어있다면 객체생성은 안하고 스레드만 생성해서 로딩되어있는 것을 멀티스레드로 사용한다)
 	-> thread에 request, response를 전달
 	-> 서비스 메소드(doGet/doPost)를 실행하고 그 정보를 response에 저장하고 다시 container에 전달
 	-> 스레드, 리퀘스트, 리스폰스 삭제
@@ -77,3 +79,7 @@ psot : 웹서버로 "데이터 전달"
 	       <	HttpServlet   >
 		^
 		MyServlet
+
+
+//request.getAttribute(저장소에 저장해둔 데이터 꺼낼 때)
+  request.getParameter(요청데이터를 가져올 때) 여러개는 getParameterValues(이름)

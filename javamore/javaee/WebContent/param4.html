@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="param4.do" method="post" enctype="multipart/form-data">
+	<fieldset>
+		<legend>필수 입력 요소</legend>
+    <!--  name : 서버에 전송될 데이터 이름 
+          value: 서버에 전송될 데이터        -->
+	<label for='id'>아이디</label>: <input type="text"  	name="id"  id="id"><br/>
+	<label for='pw'>비밀번호</label>:<input type="password"  	name="pw"  id="pw"><br/>
+	<label for='fileup'>파일</label>:<input type="file"  	name="fileup"  id="fileup"><br/>
+	</fieldset>
+	
+	<!-- radio는 name에 동일한 이름을 부여하면 group설정  -->
+	<label for='gender'>성별</label>:
+	          <input type="radio"  	id="gender"	name="gender"  value="m"/>남자
+	          <input type="radio"  	checked="checked"			name="gender" value="f">여자 <br/>
+	           
+	취미    : <input type="checkbox"  checked="checked"	   name="hobby"  value="sleeping">잠자기
+	          <input type="checkbox"    name="hobby"  value="movie">영화감상
+	          <input type="checkbox"    name="hobby"  value="reading">독서
+	          <input type="checkbox"    name="hobby"  value="coding">코드작성<br/>
+	직업    :
+	  <select  name="job"  size="5" multiple="multiple">
+	    <optgroup label="IT">
+	  		<option  value="si" selected="selected" >SI</option>
+	  		<option  value="sm" selected="selected" >SM</option>
+	  		<option  value="pm" selected="selected" >PM</option>
+	  	</optgroup> 
+	  	<optgroup label="Other">
+		  	<option  value="teacher">교사</option> 
+		  	<option  value="banker">은행원</option>
+	  	</optgroup> 
+	  </select> 
+	자기소개 :
+	<textarea name="content" rows="5" cols="50"></textarea>
+	<input  type="submit" value="전송">    
+	<input  type="reset" value="다시작성">    
+</form>
+</body>
+</html>
+
+
+
+
+
+
