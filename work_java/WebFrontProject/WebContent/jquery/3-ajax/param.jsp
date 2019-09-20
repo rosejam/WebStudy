@@ -8,9 +8,4 @@
 	String address = request.getParameter("address");
 	out.println("hello... "+name+"<br>"); //클라이언트에 보내기
 	out.println("you live in "+address+"<br>");
-	
-
-
-
-
 %>

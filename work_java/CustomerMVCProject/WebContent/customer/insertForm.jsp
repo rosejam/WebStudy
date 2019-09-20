@@ -9,7 +9,7 @@
 <body>
 	<h1>새고객정보입력</h1>
 	<form action="insertProcess.cus" method="post">
-		번호:<input type="text" name="id"><br>
+		번호:<input type="text" name="num"><br>
 		이름:<input type="text" name="name"><br>
 		주소:<input type="text" name="address"><br>
 		<input type="submit" value="전송">

@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.controller.CustomerController;
 
-//annotation대신 web.xml 작성
+//annotation대신 web.xml 작성 (*.cus를 받도록)
 //client의 모든 요청이 처음에 들어오는 front controller
 public class CustomerFilter implements Filter {	
 	
@@ -49,7 +49,16 @@ public class CustomerFilter implements Filter {
 			}else if(reqString.equals("/delete.cus")){
 				cc.delete(req,  res);
 				
-			}				
+			}else if(reqString.equals("/loginProcess.cus")){ //로그인 처리 요청
+				cc.loginProcess(req,  res);
+				
+			}else if(reqString.equals("/login.cus")){ //로그인 화면 요청
+				cc.login(req,  res);
+				
+			}else if(reqString.equals("/logout.cus")){ //로그아웃 요청
+				cc.logout(req,  res);
+				
+			}
 	}
 	
 	public void init(FilterConfig fConfig) throws ServletException {}

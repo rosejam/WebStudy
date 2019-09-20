@@ -1,0 +1,50 @@
+	<쿠키>http는 1회성이므로 서버응답끝난후 클라이언트 식별할 수 없다. -> 쿠키를 "client쪽" 브라우저에 저장하고 요청응답에 붙어서 client 식별
+									(세션은 server쪽 장바구니 같은 것)
+	         4K용량이고 새로운쿠키가 덮어씌워짐
+
+	1.
+client	--->	server   /  2.서버에서 세션ID를 생성(요청들어온 클라이언트 식별용)하고 저장 + 쿠키 생성
+	<---
+	3.res+쿠키 부여
+
+client	--->	server  / 클라이언트쪽에서는 세션ID를 jsessionid로 저장
+쿠키	<---
+저장	
+	req+쿠키 전송
+client	--->	server(클라이언트 식별)
+	<---
+
+세션의 데이터 : ("data이름", data객체!)
+서버의 web.xml에서 디폴트 Session 시간(분)을 확인할 수 있다.
+
+application메소드는 ServletContext리턴 타입 
+	프로젝트안의 모든 파일
+
+
+	<EL(Expression Language)> = ${내용}
+-식이나 스크립트렛에서 하던 작업을 간단히 할 수 있음. "거의 출력용"
+  <%= request.getParameter("num") %> (Jsp)
+  <c:out value="${param.num}"/> (Jstl)
+  ${param.num} (EL)
+-연산자를 단어로 적어도 된다.
+  산술연산자 mod(%) div(/)
+  관계연산자 eq(==) ne(!=) gt(>)
+  논리연산자 and or not
+  공백연산자 empty -> ${empty 대상} : 대상이 null이나 빈 문자열인지 체크할 때 사용 
+-EL디폴트객체
+	param : http의 파라메터들 	ex)${param.num}==${param["name"]}
+	request/session/applicationScope	ex).setAttribute()
+
+	<JSTL(JSP Standard tag Library) 표준화 태그 라이브러리> - db연동등을 태그로 쉽게 할 수 있음, EL사용 -> 결국 스크립트렛의 내용을 대신할 수 있다.
+jstl.jar, standard.jar (톰캣\webapps\examples\WEB-INF\lib에 있음)
+
+라이브러리 카테고리 5개의 식별자>	-> 쓰려면 taglib지시어 사용해야함!! <%@ taglib prefix="접두어지정" uri="http://java.sun.com/jsp/jstl/식별자" %>
+									태그 사용시 <접두어 : 태그이름/>
+core : 프로그래밍 핵심기능(반복,조건비교,변수)
+fmt : 숫자 날짜 시간등의 format지정, 국제화/다국어 지원기능
+sql : db작업기능
+xml : xml문서 처리 파싱 등
+functions : 문자열
+
+WebWorkshop이 시험범위!+사진
+CustomerMVC는 복습!+사진

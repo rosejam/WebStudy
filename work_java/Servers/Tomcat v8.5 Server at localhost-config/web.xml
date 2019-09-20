@@ -584,6 +584,7 @@
 
 
   <!-- ==================== Default Session Configuration ================= -->
+  <!-- ==================== 기본 세션 시간 30(분) ================= -->
   <!-- You can set the default session timeout (in minutes) for all newly   -->
   <!-- created sessions by modifying the value below.                       -->
 
