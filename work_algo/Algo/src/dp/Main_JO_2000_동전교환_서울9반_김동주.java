@@ -54,9 +54,9 @@ public class Main_JO_2000_동전교환_서울9반_김동주 {// 잔돈 W를 구�
 		}
 		if(m[coin.length-1][W]>Integer.MAX_VALUE/2) System.out.println("impossible");
 		else System.out.print(m[coin.length-1][W]);
-		
+/*		
 		System.out.println();
-		System.out.println(Integer.MAX_VALUE/2);
+		System.out.println(Integer.MAX_VALUE/2);*/
 		//for(int[] a:m) System.out.println(Arrays.toString(a));
 	}
 }
