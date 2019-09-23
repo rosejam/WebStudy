@@ -20,11 +20,12 @@ HttpServletRequest (서블릿에서 사용)
 
 				<Web App비교>
 	Servlet						JSP
-Java파일						텍스트문서-html
-WAS에 의해 직접 실행				"WAS가 서블릿을 생성"한 후 그 서블릿을 실행
-Java코드안에 html tag가 포함되어 있음			html코드 안에 Java코드<%로직%>가 포함되어 있음
+Java파일						"텍스트문서"-html
+WAS에 의해 직접 실행				"WAS가 서블릿을 생성한 후" 그 서블릿을 실행
+Java코드안에 html tag가 포함되어 있음			Html코드 안에 Java코드(스크립트렛 등)가 포함되어 있음
 "Logic"(계산)중심 코드				"Presentation"(입출력작업I/O 등 디자인)중심 코드
-					
+				   구현은 동일				
+	
 client	--->	Servlet 	--->	JSP	로 2개를 로직과 프리젠테이션을 분리해서 활용하는 구조가 좋다. (재활용성이 커짐)
 
 	<JSP> -커스텀 태그를 활용
@@ -37,42 +38,45 @@ client	   --->	      WAS	가 .jsp를 읽고 같은 역할을 하는	-->	컴파일되어 메모리에
 워크스페이스\.metadata\.plugins\org.eclipse.wst.server.core\tmp0에 생성됨
 
 	<JSP 스크립팅 요소>
-JSP 페이지 구성요소	-->	.jsp의 tag는 html, jsp, jstl(taglib)의 3가지
+	JSP 페이지 구성요소!!!!	-->	.jsp의 tag는 html, jsp, jstl(taglib)의 3가지
 	1.Fixed template data - HTML tag
 	2.Element(원소)
 		1) Directive Element(지시어원소)
 			<%@ *지시어종류* {지시할 내용=지시어 속성} %>   : jsp>java 변환할 때 WAS(웹컨테이너-톰캣)에게 지시할 사항을 표기
 				ㄴ page는 (언어 language/컨텐트 타입contentType/인코딩pageEncoding 등을 지시)
-					그외 속성: import, errorPage(에러가발생할 경우 어떤 에러페이지로 갈지), isErrorPage(에러처리하는 페이지면 true값) 등
+					그외 속성: import, errorPage(에러가발생할 경우 어떤 에러페이지로 갈지), isErrorPage(에러처리하는 페이지면 true값!!!) 등
 				ㄴ include는 jsp나 html파일등을 추가할 때
-					복사 붙여넣기 효과(정적인 include)
+					파일 전체 복사 붙여넣기 효과(정적인 include)
 				ㄴ taglib는 사용자 정의 tag(JSTL등)을 사용할 때
 					
 		2) Scripting Element(스크립팅 원소)
 			<% %>
-			ㄴ !선언 (java코드로 변환시 그대로 복사됨) : 변수나 메소드 선언
-			ㄴ =식(Expression) : 변수 값, 계산 결과, 함수 호출 결과를 직접 "출력" ;을 끝에 붙이지 않음
-			ㄴ 스크립트렛(scriptlet) : "자바코드"를 작성 (변환시 내용이 바뀌어서 늘어난다.) - 중간에닫고 다시 열경우 중간에 다른 내용이 있어야 오류가 나지 않는다.
+			ㄴ !선언 (java코드로 변환시 그대로 복사됨) : 멤버필드나 메소드 선언 시 사용
+			ㄴ =식(Expression) : 변수 값, 계산 결과, 함수 호출 결과를 직접 "출력".   ;을 끝에 붙이지 않음!
+			ㄴ 스크립트렛(scriptlet) : "자바코드"를 작성 (변환시 내용이 바뀌어서 늘어난다!-양을 줄여야 한다.) 중간에닫고 다시 열경우 중간에 다른 내용이 있어야 오류가 나지 않는다.
 			ㄴ 식언어(EL) : 식이나 스크립트렛에서 하던 작업을 간단히 할 수 있음. 
-		3) Action Element(액션 원소=jsp 태그) - 스크립트렛의 양을 줄임
-			<jsp(접두어prefix 역할):태그이름 /> : xml 코딩 규칙을 지켜야한다.
+		3) Action Element(액션 원소=jsp 태그!!) - 스크립트렛의 양을 줄임
+			<jsp(prefix 역할):태그이름 /> : xml 코딩 규칙을 지켜야한다.
 					ㄴ include - 두개이상의 페이지를 하나의 페이지 처럼 나타낼 때 사용
-							함수 호출 처럼 동작한다(이 태그를 만났을 때 가져옴 - 동적인 include)
+							함수 호출 처럼 동작한다(이 태그를 만났을 때 가져옴 - 동적인 include) 선언한 변수등은 사용할 수 없음
 					ㄴ "forward" - jsp페이지 간에 요청처리를 전달(client 는 action까지만 요청하고, 서버의 jsp내부에서 forward할 때 다른 파일에 "request 객체"를 패스(scope내용 추가해서 저장해도 됨)하고 바꿔친 파일이 응답 -> url은 action된 곳까지만 표시함)
 							새로고침해도 계속 살아있다. 따라서 select에서 사용
 						("redirect의 차이"점: action된 redirect파일이 일단 응답하고(url변경), 그 다음 redirect가 보내진 파일에 "client에서 또 요청"을 해야한다. - request가 전달되지 않음!=scope에 저장한 data가 유지)
 							redirect는 원래 request가 폐기된다. 따라서 insert에서 사용
 					ㄴ param - 
-					ㄴ useBrean
-					ㄴ setProperty
-					ㄴ getProperty
 
-	<JSP 디폴트(내장) 객체>
+	<JSP 디폴트(내장) 객체> EL의 내장객체와 비교
 request : HttpServeltRequest
 response : HttpServeltResponse
 out : JSPWriter
 exception : 
-session :
-application
+session/application
+
 
 참고)mysql Build Path 설정할 필요 없이 WebContent-WEBINF아래 lib에 넣어두면된다. 
+
+//라이프사이클
+서블릿				JSP
+init() 				jspInit()	메모리에 로드될때 초기화
+service() : doGet/doPost()		서비스메소드가 따로 없고 스크립팅 원소에 적는다 -> jsp_Service()로 톰캣이 자동으로 변환
+destroy()				jspDestroy() 메모리에서 언로드될 때 마무리

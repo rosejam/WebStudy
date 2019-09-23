@@ -21,7 +21,8 @@ public class LifeCycle extends HttpServlet { //서블릿의 생명주기 테스�
 		System.out.println("destroy method...");
 	}
 	
-	//클라이언트 요청이 들어올 때 마다 스레드가 생성되어서 병행적으로 서비스 함수를 수행
+	//클라이언트 요청이 들어올 때 마다 스레드가 생성되어서 병행적으로 서비스 함수 service()를 수행
+	//service() -> doGet/Post()로 전달
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doGet method888...");
 	}

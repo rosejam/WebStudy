@@ -26,9 +26,10 @@
 	4. class=부품, 작업단위 (.java파일=소스코드): 패키지안의 소스코드 파일
 
 <Java>
+	ME(Micro) : IoT -> 일부는 Android로 대체됨
 	SE(Standard) : Application
 	EE(Enterprise) : Web(브라우저를 통해 공유가능), Servlet/JSP
-	ME(Micro) : IoT -> 일부는 Android로 대체됨
+	
 1.개발환경=실행환경(환경=플랫폼=OS들)여야 실행가능한 기존의 C언어와 다르게 
 	"JVM"만 설치되면 달라도 실행가능한 "플랫폼 독립적" Java
 2."객체지향"

@@ -1,9 +1,9 @@
 Standard 애플리케이션
 Web 애플리케이션 - 웹상에서 돌아감, 3tier로 구성됨
 
-Client Tier	--	<Server Tier>	--	Data Tier
+Client Tier	--	<Server(Middle) Tier> --	Data Tier
 프론트		 	 백엔드			DB
-(웹 브라우저)	    웹서버   웹앱서버(WAS)		mysql사용
+(웹 브라우저)	    "웹서버"   "웹앱서버(WAS)"	mysql사용
 
 웹서버 = 웹브라우저의 요청을 받아들이는 곳
 WAS = 요청한 작업에 필요한 로직 or DB와 연동
@@ -22,7 +22,7 @@ Servlet(.java) 	->JSP(.jsp 텍스트문서=자바가 아니고 스크립트 언어-나중에 자바가 
 프론트에서 쓰이는 JavaScript도 사용 가능 node.js
 
 	<Servlet> 자바로 작성된 웹앱
-"웹 컨테이너(=웹 서버!=WAS)"에서 실행되며 동적인 콘텐츠를 생성하기 위한 자바 클래스
+"웹 컨테이너(=웹 서버!=WAS)"에서 실행되며 "동적"인 콘텐츠(DB를 사용)를 생성하기 위한 자바 클래스
  ㄴJSP/서블릿을 실행시킬수 있는 SW ex)아파치 톰캣
 
 서블릿 소스가 변경된 경우엔 컴파일을 하고 생성된 실행파일을 메모리에 올리는 과정 후에 새로고침해야 변경된다.
@@ -30,7 +30,7 @@ Servlet(.java) 	->JSP(.jsp 텍스트문서=자바가 아니고 스크립트 언어-나중에 자바가 
 Server에서 Clean을 하면 메모리에 올라온 실행파일이 모두 삭제된다.
 clean tomcat workdirectory해서 톰캣서버 작업폴더 내로 복사된 실행파일도 지운다.
 
-컨텍스트=실행단위=프로젝트 - 웹컨텐트에는 java아닌것, 자바Resources에는 자바인것
+"컨텍스트=실행단위=프로젝트" - 웹컨텐트에는 java아닌것, 자바Resources에는 자바인것
 	이미지등 공유 불가
 자바 Servlet을 만들면 superclass(=부모!)로 javax.servlet.http.HttpServlet가 지정, 클래스/이름/urlmapping을 따로 정할 수 있다.
 	extends HttpServlet로 상속받는 클래스는 서블릿 클래스라는 뜻
@@ -47,15 +47,14 @@ web.xml에서 파일 타입에 따라 mime-type을 어떻게 지정해야 되는지 찾아볼 수 있다.
 		-요청줄				       -응답줄
 		-header				       -header 
 		-body				       -body
-
 -메서드방식(get/post) / 액션(리소스)				-HTTP/ 200
 -쿠키, user-agent=클라이언트의 브라우저,host=서버		-날짜, 서버
 -							-양이 많을 때 패킷으로 나눌 수 있음
 
-	<http 명령어>
+	<http 명령어>*교재 보기
 get : 웹서버에게 "데이터 요청"할 때 주로 사용
 	간단한 데이터는 웹서버로 전달하기도 함
-	전달되는 데이터는 url끝에 추가됨
+	전달되는 데이터는 URL끝에 추가됨
 	header에 넣어서 전달
 	uri나 링크로 접근
 post : 웹서버로 "데이터 전달"
@@ -83,4 +82,4 @@ post : 웹서버로 "데이터 전달"
 
 
 //request.getAttribute(저장소에 저장해둔 데이터 꺼낼 때)
-  request.getParameter(요청데이터를 가져올 때) 여러개는 getParameterValues(이름)
+  request.getParameter(요청데이터를 가져올 때) 여러개-체크박스 등은 String[] values = getParameterValues(이름)

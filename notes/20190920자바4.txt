@@ -22,8 +22,8 @@ application메소드는 ServletContext리턴 타입
 
 
 	<EL(Expression Language)> = ${내용}
--식이나 스크립트렛에서 하던 작업을 간단히 할 수 있음. "거의 출력용"
-  <%= request.getParameter("num") %> (Jsp)
+-식이나 스크립트렛에서 하던 작업을 jstl로 간단히 할 수 있음. "거의 출력용"
+  <%= request.getParameter("num") %> (Jsp 식)
   <c:out value="${param.num}"/> (Jstl)
   ${param.num} (EL)
 -연산자를 단어로 적어도 된다.
@@ -32,19 +32,16 @@ application메소드는 ServletContext리턴 타입
   논리연산자 and or not
   공백연산자 empty -> ${empty 대상} : 대상이 null이나 빈 문자열인지 체크할 때 사용 
 -EL디폴트객체
-	param : http의 파라메터들 	ex)${param.num}==${param["name"]}
-	request/session/applicationScope	ex).setAttribute()
+	param : http의 파라메터들 	ex)${param.num}==${param["num"]}
+	request/session/applicationScope	ex)~.setAttribute()
 
 	<JSTL(JSP Standard tag Library) 표준화 태그 라이브러리> - db연동등을 태그로 쉽게 할 수 있음, EL사용 -> 결국 스크립트렛의 내용을 대신할 수 있다.
 jstl.jar, standard.jar (톰캣\webapps\examples\WEB-INF\lib에 있음)
 
-라이브러리 카테고리 5개의 식별자>	-> 쓰려면 taglib지시어 사용해야함!! <%@ taglib prefix="접두어지정" uri="http://java.sun.com/jsp/jstl/식별자" %>
+라이브러리 카테고리 <5개의 "식별자">	: 쓰려면 taglib지시어 사용해야함!! <%@ taglib prefix="접두어지정" uri="http://java.sun.com/jsp/jstl/식별자" %>
 									태그 사용시 <접두어 : 태그이름/>
-core : 프로그래밍 핵심기능(반복,조건비교,변수)
-fmt : 숫자 날짜 시간등의 format지정, 국제화/다국어 지원기능
-sql : db작업기능
-xml : xml문서 처리 파싱 등
-functions : 문자열
-
-WebWorkshop이 시험범위!+사진
-CustomerMVC는 복습!+사진
+	core : 프로그래밍 핵심기능(반복,조건비교,변수)
+	fmt : 숫자 날짜 시간등의 format지정, 국제화/다국어 지원기능
+	sql : db작업기능
+	xml : xml문서 처리 파싱 등
+	functions : 문자열

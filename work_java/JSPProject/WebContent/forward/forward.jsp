@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- 이전 화면에서 넘어온 파라메터 값에 따라 welcome.jsp나 login.haml로 forward 시킴 --%>
+<%-- 이전 화면에서 넘어온 파라메터 값에 따라 welcome.jsp나 login.html로 forward 시킴 --%>
 <%
 	String id = request.getParameter("id");
 	String pass = request.getParameter("pass");
