@@ -65,12 +65,19 @@ client	   --->	      WAS	가 .jsp를 읽고 같은 역할을 하는	-->	컴파일되어 메모리에
 							redirect는 원래 request가 폐기된다. 따라서 insert에서 사용
 					ㄴ param - 
 
-	<JSP 디폴트(내장) 객체> EL의 내장객체와 비교
-request : HttpServeltRequest
+	<JSP 디폴트(내장) 객체>* EL의 내장객체와 비교
+request : HttpServeltRequest타입
 response : HttpServeltResponse
 out : JSPWriter
 exception : 
-session/application
+session : HttpSession타입
+application : ServletContext타입
+
+	<저장소(scope)> .setAttribute
+1.request : request가 유지될 때 까지(forward를 통해서 페이지를 이동할때 유지가 된다.)
+2.session : session이 유지될 때 까지(지울때 까지!)
+3.application(=context) : 서버 구동~종료까지!
+아래로 갈수록 오래간다.
 
 
 참고)mysql Build Path 설정할 필요 없이 WebContent-WEBINF아래 lib에 넣어두면된다. 

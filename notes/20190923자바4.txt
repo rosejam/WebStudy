@@ -7,3 +7,13 @@ WebApp의 장점>
 
 WebWorkshop(MyMVCProject)가 시험범위!+사진
 (BookMVC)
+
+////
+getQueryString(): get방식으로 전송한 데이터만 추출 가능
+		?num=99에서 뒤의 string
+ServletConfig : 서블릿만들 때 마다 1:1로 만들어짐
+ServletContext : 하나의 프로젝트안의 모든 서블릿이 이 객체를 공유(프로젝트 마다 1:1로 만들어짐)
+
+////
+405error : 메소드의 방식(get/post)이 일치하지 않을때의 에러
+404 : not found
