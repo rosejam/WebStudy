@@ -5,14 +5,14 @@
 	</list>
 	<section name="ExternalProjectImportWizard">
 		<item value="true" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
-		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
-		<item value="true" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/dj_kim/ssafy/work_java"/>
 			<item value="C:\ssafy\work_java\MVCBoardProject"/>
 			<item value="C:\ssafy\work_java"/>
 			<item value="/Users/dj_kim/ssafy/work_algo"/>
 			<item value="C:\Users\student\Downloads\WebWorkshop"/>
-			<item value="/Users/dj_kim/ssafy/work_java"/>
 			<item value=""/>
 			<item value="C:\ssafy\work_java\hw\hwjava11_서울_9반_김동주"/>
 			<item value="C:\ssafy\work_java\wsjava08_서울_9반_김동주"/>
@@ -20,8 +20,8 @@
 			<item value="C:\ssafy\work_java"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
-			<item value="C:\Users\student\Downloads\MyMVCProject.zip"/>
 			<item value=""/>
+			<item value="C:\Users\student\Downloads\MyMVCProject.zip"/>
 			<item value="C:\Users\student\Downloads\CustomerMVCProject.zip"/>
 		</list>
 	</section>
