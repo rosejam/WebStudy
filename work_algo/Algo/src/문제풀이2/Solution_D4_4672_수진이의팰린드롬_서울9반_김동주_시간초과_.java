@@ -31,7 +31,7 @@ public class Solution_D4_4672_수진이의팰린드롬_서울9반_김동주_시�
 /*        	int ans = ll; //길이 1인경우 끝
         	for(int i=0; i<26; i++) {
         		if(alpha[i] > 0) { //좌우대칭을 만들 수 있음
-        			for(int j=1; j<alpha[i]; j++) ans +=j; //피보나치
+        			for(int j=1; j<alpha[i]; j++) ans +=j; //피보나치 //하면 된다던데 이 이유는..?
         		}
         	}*/
         	

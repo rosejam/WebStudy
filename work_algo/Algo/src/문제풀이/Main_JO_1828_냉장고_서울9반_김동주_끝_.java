@@ -42,7 +42,7 @@ public class Main_JO_1828_냉장고_서울9반_김동주_끝_ {
 			if(minhigh > high[n]) minhigh = high[n];
 		}
 		Ans=0;
-		if(minhigh >= maxlow) Ans++;
+		if(minhigh >= maxlow) Ans++; //이경우는 답 1
 loop:	while(minhigh < maxlow) {
 			Ans+=2;
 /*			for(int n=0; n<cs.size();) {

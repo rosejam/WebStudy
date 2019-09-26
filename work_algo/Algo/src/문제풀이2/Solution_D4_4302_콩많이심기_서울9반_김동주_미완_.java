@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.Arrays;
  
-public class Solution_D4_4302_콩많이심기_서울9반_김동주 { //재구성 -> 부분문자열
+public class Solution_D4_4302_콩많이심기_서울9반_김동주_미완_ { //재구성 -> 부분문자열
     public static int T,ans;
     public static void main(String[] args) throws Exception{
     	System.setIn(new FileInputStream("res/input_D4_4672.txt"));

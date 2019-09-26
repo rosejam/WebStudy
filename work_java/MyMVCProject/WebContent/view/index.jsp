@@ -46,7 +46,7 @@ a {
 					$('#display').html('<h3>'+result+'</h3>');//div에 표시할땐 html()사용!! 아닐경우 val()
 					//$('#display').css('visibility','visible');
 				}
-			});			
+			});	
 		});
 	});
 	
