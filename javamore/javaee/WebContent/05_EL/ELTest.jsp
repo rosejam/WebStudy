@@ -17,7 +17,15 @@
 <title>Insert title here</title>
 </head>
 <body>
+	상품 이름 :    ${pageScope['goods'].proname}
+				,${pageScope.goods.proname}
+				,${goods.proname}
+				,${goods['proname']}  	<br/>
+	상품 수량 :	 ${goods[proname]} <%-- 따옴표가 없어서 변수로 인식 --%><br/>
 	
+	music: ${pageScope['music']['0'] }
+	music: ${music['0'] }
+	music: ${music[0] }
 </body>
 </html>
 

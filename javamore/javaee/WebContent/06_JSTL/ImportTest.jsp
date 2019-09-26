@@ -11,8 +11,9 @@
 
 <br/><br/><br/><br/><br/>
 <!-- include는 context 내의 페이지만 include한다
-	 jstl의  import는 다른 context 다른 server의 페이지도 include한다. 
+	 그러나 jstl의 import는 다른 context 다른 server의 페이지도 include한다. 
  -->
-
+<c:set var='url' value='https://www.naver.com'/>
+<c:import url="${url }"/>
 </body>
 </html>

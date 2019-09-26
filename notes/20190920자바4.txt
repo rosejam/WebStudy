@@ -7,7 +7,7 @@ client	--->	server   /  2.서버에서 세션ID를 생성(요청들어온 클라이언트 식별용)하
 	<---
 	3.res+쿠키 부여
 
-client	--->	server  / 클라이언트쪽에서는 세션ID를 jsessionid로 저장
+client	--->	server  / 클라이언트쪽에서는 세션ID를 JSESSIONID로 저장
 쿠키	<---
 저장	
 	req+쿠키 전송
@@ -30,14 +30,16 @@ application메소드는 ServletContext리턴 타입
 -연산자를 단어로 적어도 된다.
   산술연산자 mod(%) div(/)
   관계연산자 eq(==) ne(!=) gt(>)
-  논리연산자 and or not
-  공백연산자 empty -> ${empty 대상} : 대상이 null이나 빈 문자열인지 체크할 때 사용 
--EL디폴트객체
+  논리연산자 and or not(!)
+  공백연산자 empty -> ${empty 대상} : 대상이 null이나 빈 문자열인지 체크할 때 사용
+	
+-EL디폴트객체 			${내장객체.속성명 }(DTO or Map) or ${내장객체['속성명'] }(DTO,Map,"배열",컬렉션 등)
 	param : http의 파라메터들 	ex)${param.num}==${param["num"]}
-	request/session/applicationScope	ex)~.setAttribute()
+	page/request/session/applicationScope : 생략이 가능한 내장객체(알아서 찾아서 사용됨)	ex)~.setAttribute()
+	pageContext : 
 
 	<JSTL(JSP Standard tag Library) 표준화 태그 라이브러리> - db연동등을 태그로 쉽게 할 수 있음, EL사용 -> 결국 스크립트렛의 내용을 대신할 수 있다.
-jstl.jar, standard.jar (톰캣\webapps\examples\WEB-INF\lib에 있음)
+jstl.jar, standard.jar (아파치톰캣\webapps\examples\WEB-INF\lib에 있음)
 
 라이브러리 카테고리 <5개의 "식별자">	: 쓰려면 taglib지시어 사용해야함!! <%@ taglib prefix="접두어지정" uri="http://java.sun.com/jsp/jstl/식별자" %>
 									태그 사용시 <접두어 : 태그이름/>
@@ -46,3 +48,6 @@ jstl.jar, standard.jar (톰캣\webapps\examples\WEB-INF\lib에 있음)
 	sql : db작업기능
 	xml : xml문서 처리 파싱 등
 	functions : 문자열
+
+////HttpRequest
+	1.header 2.cookie 3.요청데이타(param) 4.scope
