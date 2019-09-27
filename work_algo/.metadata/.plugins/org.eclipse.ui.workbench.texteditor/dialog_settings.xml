@@ -6,12 +6,14 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="h" key="selection"/>
+		<item value="Integer" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Long"/>
+			<item value="long"/>
 			<item value="mt"/>
 			<item value="readLine"/>
 			<item value="coins"/>
@@ -19,16 +21,16 @@
 			<item value="w"/>
 			<item value="j"/>
 			<item value=" list.get(m).x;"/>
-			<item value="long"/>
 			<item value="unionParent"/>
 			<item value="getParent"/>
 			<item value="map"/>
 			<item value="LinkedList"/>
 			<item value="ArrayList"/>
 			<item value="ss"/>
-			<item value="append"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Integer"/>
+			<item value="int"/>
 			<item value="h"/>
 			<item value="coin"/>
 			<item value="c"/>
@@ -42,7 +44,6 @@
 			<item value="st"/>
 			<item value="addLast"/>
 			<item value="queue"/>
-			<item value="Queue"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

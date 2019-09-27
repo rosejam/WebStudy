@@ -9,62 +9,64 @@ import java.util.StringTokenizer;
 public class Main_정올_2247_도서관_서울9반_김동주_메모리초과 { //int범위 long범위 알아둘 것
 												//visited체크하면 메모리초과.. 알고리즘을 생각해야한다
 	public static int N;
-	public static long mx, mn;
-	public static long[] X, Y;
+	public static int diff, mx, mn;
+	public static boolean[] V;
+	public static int[] X, Y;
+	public static HashSet<Integer> VV;
+	//public static int[] X, Y;
 	public static void main(String[] args) throws Exception {
 		System.setIn(new FileInputStream("res/input_JO_2247.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		N = Integer.parseInt(br.readLine());
-		
-		X = new long[N];
-		Y = new long[N];
-		
-		mx = 0;
-		mn = Long.MAX_VALUE;
-		
 		for(int n=0; n<N; n++) {
 			StringTokenizer st = new StringTokenizer(br.readLine());
-			X[n] = Long.parseLong(st.nextToken());
-			Y[n] = Long.parseLong(st.nextToken());
-			if(mn > X[n]) mn = X[n];
-			if(mx < Y[n]) mx = Y[n];
+			X[n] = Integer.parseInt(st.nextToken());//-1
+			Y[n] = Integer.parseInt(st.nextToken());//-1
+			
+			diff = Y-X;
+			//if(max < diff) max = diff;
+			for(int i=0; i<diff; i++) {
+				V[X+i-1] = true;
+			}			//범위 구하기
+			if(mn > X) mn = X;
+			if(mx < Y) mx = Y;
 		}
 		
-		System.out.println(max+" "+blank);
 	}
 	
-	
 /*	public static int N;
-	public static long diff, mx, mn;
+	public static int mx, mn;
 	//public static boolean[] V;
-	public static HashSet<Long> VV;
-	//public static long[] X, Y;
+	public static HashSet<Integer> VV;
+	//public static int[] X, Y;
 	public static void main(String[] args) throws Exception {
-		System.setIn(new FileInputStream("res/input_JO_2247.txt"));
+		//System.setIn(new FileInputStream("res/input_JO_2247.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
 		N = Integer.parseInt(br.readLine());
 		
-		//X = new long[N];
-		//Y = new long[N];
+		//X = new int[N];
+		//Y = new int[N];
 		
+		//V = new boolean[2147483647]; //2^31 - 1
 		mx = 0;
-		mn = Long.MAX_VALUE;
+		mn = Integer.MAX_VALUE;
 		VV = new HashSet<>();
 		
 		for(int n=0; n<N; n++) {
 			StringTokenizer st = new StringTokenizer(br.readLine());
-			long X = Long.parseLong(st.nextToken());
-			long Y = Long.parseLong(st.nextToken());
-			diff = Y-X;
+			int X = Integer.parseInt(st.nextToken())-1;//-1
+			int Y = Integer.parseInt(st.nextToken())-1;//-1
+			
+//			diff = Y-X;
+//			//if(max < diff) max = diff;
+//			for(int i=0; i<diff; i++) {
+//				V[X+i] = true;
+//			}
+			
+			int diff = Y-X;
 			//if(max < diff) max = diff;
-			for(int i=0; i<diff; i++) {
-				V[X+i] = true;
-			}
-			diff = Y-X;
-			//if(max < diff) max = diff;
-			for(long i=0; i<diff; i++) { //for문도 long으로 돌려주어야 함!
+			for(int i=0; i<diff; i++) { //for문도 long으로 돌려주어야 함!
 				VV.add(X+i); //X~Y-1까지 체크
 			}
 			//범위 구하기
@@ -72,40 +74,57 @@ public class Main_정올_2247_도서관_서울9반_김동주_메모리초과 { /
 			if(mx < Y) mx = Y;
 		}
 		
-		for(int n=0; n<N; n++) {
-
-		}
+//		int max = 0; 
+//		int cnt1 =0;
+//		int v1=mn-1;
+//		while(v1<mx-1) {
+//			//if(!V[v1]) {
+//			if(!VV.contains(v1)) {
+//				if(max < cnt1) max = cnt1;
+//				cnt1 = 0;
+//				v1++;
+//				continue;
+//			}
+//			cnt1++;
+//			v1++;
+//		}
+//		if(max < cnt1) max = cnt1;
+//		
+//		int blank=0;//학생들이 다녀간 전체 시간 중 가장 긴시간 .. 24시간 중 아님
+//		int cnt =0;
+//		int v=mn-1;
+//		while(v<mx-1) {
+//			//if(V[v]) {
+//			if(VV.contains(v)) {
+//				if(blank < cnt) blank = cnt;
+//				cnt = 0;
+//				v++;
+//				continue;
+//			}
+//			cnt++;
+//			v++;
+//		}
+//		if(blank < cnt) blank = cnt;
 		
-		long max = 0; 
-		long cnt1 =0;
-		long v1=mn;
-		while(v1<mx) {
-			//if(!V[v1]) {
-			if(!VV.contains(v1)) {
+		int max = 0; 
+		int blank=0;//학생들이 다녀간 전체 시간 중 가장 긴시간 .. 24시간 중 아님
+		int v=mn;
+		int cnt =0;
+		int cnt1 =0;
+		while(v<mx) {
+			if(!VV.contains(v)) {
 				if(max < cnt1) max = cnt1;
 				cnt1 = 0;
-				v1++;
-				continue;
-			}
-			cnt1++;
-			v1++;
-		}
-		if(max < cnt1) max = cnt1;
-		
-		long blank=0;//학생들이 다녀간 전체 시간 중 가장 긴시간 .. 24시간 중 아님
-		long cnt =0;
-		long v=mn;
-		while(v<mx) {
-			//if(V[v]) {
-			if(VV.contains(v)) {
+				cnt++;
+				v++;
+			}else{
 				if(blank < cnt) blank = cnt;
 				cnt = 0;
+				cnt1++;
 				v++;
-				continue;
 			}
-			cnt++;
-			v++;
 		}
+		if(max < cnt1) max = cnt1;
 		if(blank < cnt) blank = cnt;
 		
 		System.out.println(max+" "+blank);
