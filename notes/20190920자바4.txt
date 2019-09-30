@@ -51,3 +51,4 @@ jstl.jar, standard.jar (아파치톰캣\webapps\examples\WEB-INF\lib에 있음)
 
 ////HttpRequest
 	1.header 2.cookie 3.요청데이타(param) 4.scope
+
