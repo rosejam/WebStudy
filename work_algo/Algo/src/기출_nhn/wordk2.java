@@ -1,3 +1,4 @@
+package 기출_nhn;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -8,8 +9,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-class Main {
-	public static int N;
+class wordk2 {
+	public static int N,nnn;
 	public static ArrayList<Integer> de;
 	public static HashMap<Integer,Integer> q;
 	public static boolean flag,ans;
@@ -39,14 +40,17 @@ class Main {
         System.out.print(sb);
 	}
 	private static int deq() {
-		
 		if(q.isEmpty()) return -1;
 		else {
-			int max =0;
+			int max = 0;
 			for(Entry<Integer, Integer> entry : q.entrySet()){
-				if(entry.getValue() > max) N = entry.getKey();
+				if(entry.getValue() > max) {
+					nnn = entry.getKey();
+					max = entry.getValue();
+				}
 			}
-			return N;
+			q.remove(nnn);
+			return nnn;
 		}
 	}
 	private static void enq(int en) {

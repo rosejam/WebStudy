@@ -59,9 +59,10 @@ client	   --->	      WAS	가 .jsp를 읽고 같은 역할을 하는	-->	컴파일되어 메모리에
 			<jsp(prefix 역할):태그이름 /> : xml 코딩 규칙을 지켜야한다.
 					ㄴ include - 두개이상의 페이지를 하나의 페이지 처럼 나타낼 때 사용
 							함수 호출 처럼 동작한다(이 태그를 만났을 때 가져옴 - 동적인 include) 선언한 변수등은 사용할 수 없음
-					ㄴ "forward" - jsp페이지 간에 요청처리를 전달(client 는 action까지만 요청하고, 서버의 jsp내부에서 forward할 때 다른 파일에 "request 객체"를 패스(scope내용 추가해서 저장해도 됨)하고 바꿔친 파일이 응답 -> url은 action된 곳까지만 표시함)
+					ㄴ "forward" - jsp페이지 간에 요청처리를 전달(client 는 action까지만 요청하고, 서버의 jsp내부에서 forward할 때 다른 파일에 "request 객체"를 패스(scope내용 추가해서 저장해도 됨)하고 
+										바꿔친 파일이 응답 -> url은 action된 곳까지만 표시함)
 							새로고침해도 계속 살아있다. 따라서 select에서 사용
-						("redirect의 차이"점: action된 redirect파일이 일단 응답하고(url변경), 그 다음 redirect가 보내진 파일에 "client에서 또 요청"을 해야한다. - request가 전달되지 않음!=scope에 저장한 data가 유지)
+						("redirect의 차이"점: action된 redirect파일이 일단 응답하고(url변경), 그 다음 redirect가 보내진 파일로 "client에서 또 요청"을 해야한다. - request가 전달되지 않음!=scope에 저장한 data가 유지)
 							redirect는 원래 request가 폐기된다. 따라서 insert에서 사용
 					ㄴ param - 
 
@@ -84,6 +85,6 @@ application : ServletContext타입
 
 //라이프사이클
 서블릿				JSP
-init() 				jspInit()	메모리에 로드될때 초기화
+init() 				jspInit()										메모리에 로드될때 초기화
 service() : doGet/doPost()		서비스메소드가 따로 없고 스크립팅 원소에 적는다 -> jsp_Service()로 톰캣이 자동으로 변환
-destroy()				jspDestroy() 메모리에서 언로드될 때 마무리
+destroy()				jspDestroy() 									메모리에서 언로드될 때 마무리

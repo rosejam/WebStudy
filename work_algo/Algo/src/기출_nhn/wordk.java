@@ -1,3 +1,4 @@
+package 기출_nhn;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;

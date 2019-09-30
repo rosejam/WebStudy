@@ -11,16 +11,16 @@ public class Solution_D4_4796_의석이의우뚝선산_서울9반_김동주_끝_
 		System.setIn(new FileInputStream("res/input_D4_4796.txt"));
 		StringBuilder sb = new StringBuilder();
 		
-		//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		//T = Integer.parseInt(br.readLine());
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		T = Integer.parseInt(br.readLine());
 		
 		Scanner sc = new Scanner(System.in);
 		T = sc.nextInt();
 		
 		for(int tc=1; tc<=T; tc++) {
-			//br사용하는 경우
-/*			N = Integer.parseInt(br.readLine());
-			StringTokenizer st = new StringTokenizer(br.readLine(), " \t\n\r\f");
+/*			//br사용하는 경우
+			N = Integer.parseInt(br.readLine());
+			StringTokenizer st = new StringTokenizer(br.readLine(), "( \r\n|[\n\r\u2028\u2029\u0085])?");
 			h = new int[N];
 			n=0;cnt = 0;
 			while(st.hasMoreTokens()) {
@@ -35,6 +35,7 @@ public class Solution_D4_4796_의석이의우뚝선산_서울9반_김동주_끝_
 			for(int n=0; n<N; n++) {
 				h[n] = sc.nextInt();
 			}
+			
 			
 			n=0;
 			up = 0;
