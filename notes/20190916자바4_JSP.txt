@@ -76,8 +76,11 @@ application : ServletContext타입
 
 	<저장소(scope)> .setAttribute
 1.request : request가 유지될 때 까지(forward를 통해서 페이지를 이동할때 유지가 된다.)
+		모델수행결과를 임시로 request
 2.session : session이 유지될 때 까지(지울때 까지!)
+		클라이언트의 상태 정보 
 3.application(=context) : 서버 구동~종료까지!
+		같은 context내의 모든 servlet이 접근 가능
 아래로 갈수록 오래간다.
 
 
