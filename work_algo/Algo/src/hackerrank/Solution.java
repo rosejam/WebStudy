@@ -1,28 +1,44 @@
 package hackerrank;
 
-//Complete this code or write your own from scratch
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
-class Solution{
-	public static Map<String, Integer> myMap;
-    public static void main(String []argh){
-        Scanner in = new Scanner(System.in);
-        myMap = new HashMap<String, Integer>();
-        
-        int n = in.nextInt();
-        for(int i = 0; i < n; i++){
-            String name = in.next();
-            int phone = in.nextInt();
-            // Write code here
-            myMap.put(name, phone);
+class Node {
+	int data;
+	Node next;
+	Node(int d) {
+        data = d;
+        next = null;
+    }
+}
+
+class Solution {
+
+    public static  Node insert(Node head,int data) { //head부터 끝까지 따라가서 tail 추가
+        //Complete this method
+    	Node tail = new Node(data);
+    	
+    	return head;
+    }
+
+	public static void display(Node head) {
+        Node start = head;
+        while(start != null) {
+            System.out.print(start.data + " ");
+            start = start.next;
         }
-        while(in.hasNext()){
-            String s = in.next();
-            // Write code here
-            if(myMap.containsKey(s)) System.out.println(s+"="+myMap.get(s));
-            else System.out.println("Not found");
+    }
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        Node head = null;
+        int N = sc.nextInt();
+
+        while(N-- > 0) {
+            int ele = sc.nextInt();
+            head = insert(head,ele);
         }
-        in.close();
+        display(head);
+        sc.close();
     }
 }

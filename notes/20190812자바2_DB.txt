@@ -29,10 +29,12 @@ DB 관리 시스템=DBMS : 관리 프로그램들의 묶음 	ex)Oracle-MySQL, MS SQL (mysql은 �
 	drop table 테이블이름;
 	<TRUNCATE table> = Table은 남아있고 data는 다 날림~!
 	truncate table 테이블이름;
+	<COMMENT>
+	<RENAME>
 
 -DML(데이터 조작어) - 검색 등 -- **DML문장(update/insert/delete)은 취소=rollback(<->commit=확인)이 가능함!!!!
 	"사용자"가 "응용프로그램(Java)나 질의어"로 실제 데이터를 검색,수정,삭제,변경
-	<SELECT문(검색):>
+	<<SELECT문(검색):>>
 		5*[SELECT] : 열
 		1*[FROM] : 테이블
 		2-WHERE : 가로로 자름! "(일반)조건"에 따라(작업 대상 줄만 추려냄)
@@ -49,7 +51,7 @@ DB 관리 시스템=DBMS : 관리 프로그램들의 묶음 	ex)Oracle-MySQL, MS SQL (mysql은 �
 
 -DCL(데이터 제어어) 
 	"관리자(DBA)"가 데이터의 보안,무결성,데이터복구,병행수행제어(여러개가 하나의 데이터에 접근했을 경우),사용자권한설정
-	
+		grant, revoke 등
 	취소=rollback(<->commit=확인)
 -------------------------------------------
 
@@ -94,6 +96,3 @@ cast( , ) 형변환
 to_char(hdate, 'yyyy-mm-dd') 오라클에서 문자형식에맞추어 생성하는 함수
 
 
-
-
-단지번호, 토마토

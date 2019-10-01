@@ -13,7 +13,10 @@ public class Hello2 {
 		System.out.println(ss+1);
 		
 		System.out.println(s.split("")[0]); //스트링.split("")은 .toCharArray()
-
+		int a=10; int b=3;
+		double c = a/b;
+		System.out.println(a/b);
+		System.out.println(c); //3.0 (연산할 때 앞에 더블을 붙여야 함!!! 끝난 수에 double에 넣는 것은 소용없음!)
 	}
 
 }
