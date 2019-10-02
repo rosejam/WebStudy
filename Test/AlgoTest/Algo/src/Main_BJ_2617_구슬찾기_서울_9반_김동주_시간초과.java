@@ -3,7 +3,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_BJ_2617_구슬찾기_서울_9반_김동주_시간초과 { //최적화 필요
+public class Main_BJ_2617_구슬찾기_서울_9반_김동주_시간초과 { //최적화 필요 //Algo3
 	public static int N,M;
 	public static int num, half;
 	public static int[][] weight;

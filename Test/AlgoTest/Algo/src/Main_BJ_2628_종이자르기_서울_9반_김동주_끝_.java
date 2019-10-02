@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.StringTokenizer;
 
-public class Main_BJ_2628_종이자르기_서울_9반_김동주_끝_ { 
+public class Main_BJ_2628_종이자르기_서울_9반_김동주_끝_ { //Algo2
 	public static int N,M;
 	public static int rc;
 	public static ArrayList<Integer> rnum;

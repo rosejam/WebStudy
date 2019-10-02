@@ -1,2 +1,3 @@
 eclipse.preferences.version=1
-prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<watchExpressions>\r\n<expression enabled\="true" text\="indx2"/>\r\n<expression enabled\="true" text\="indx"/>\r\n<expression enabled\="true" text\="n"/>\r\n<expression enabled\="true" text\="N"/>\r\n<expression enabled\="true" text\="nnn"/>\r\n<expression enabled\="true" text\="max"/>\r\n</watchExpressions>\r\n
+org.eclipse.debug.core.USE_STEP_FILTERS=true
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<watchExpressions>\r\n<expression enabled\="true" text\="b"/>\r\n<expression enabled\="true" text\="B"/>\r\n</watchExpressions>\r\n

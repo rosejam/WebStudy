@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="numSwaps" key="selection"/>
+		<item value="&amp;&amp;" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="&amp;"/>
 			<item value="numberOfSwaps"/>
 			<item value="a_i"/>
 			<item value="map"/>
@@ -26,9 +27,9 @@
 			<item value=" list.get(m).x;"/>
 			<item value="unionParent"/>
 			<item value="getParent"/>
-			<item value="LinkedList"/>
 		</list>
 		<list key="replacehistory">
+			<item value="&amp;&amp;"/>
 			<item value="numSwaps"/>
 			<item value="i"/>
 			<item value="q"/>
@@ -43,13 +44,12 @@
 			<item value="findSet"/>
 			<item value="cheese"/>
 			<item value="ArrayList"/>
-			<item value="LinkedList"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="294" key="DIALOG_WIDTH"/>
-		<item value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont" key="DIALOG_FONT_NAME"/>
-		<item value="408" key="DIALOG_HEIGHT"/>
+		<item value="288" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="391" key="DIALOG_HEIGHT"/>
 		<item value="626" key="DIALOG_X_ORIGIN"/>
 		<item value="203" key="DIALOG_Y_ORIGIN"/>
 	</section>
