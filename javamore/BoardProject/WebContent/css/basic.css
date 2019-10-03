@@ -62,7 +62,10 @@ body {
 		margin: 0 auto;
 		padding-right: 22px;
 	}
-
+	#aside{
+		display: table-cell;
+		width: 85px;
+	}
 footer {
 	margin: 0 auto;
 	width:800px;

@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 //		1	2		3	3	4	4
 //	1	1	2	2		3	4
-public class Main_JO_2543_타일채우기_서울9반_김동주 { //분할 정복
+public class Main_JO_2543_타일채우기_서울9반_김동주 { //분할 정복 //한번의 분할로 끝내도록 만들어야 함
 	public static int N,X,Y;// ,M;
 	public static int[][] B;
 	public static boolean flag;
@@ -40,7 +40,7 @@ public class Main_JO_2543_타일채우기_서울9반_김동주 { //분할 정복
         B[N-1][0] = B[N-1][1] = B[N-2][0] = 2;
         B[N-1][N-1] = B[N-1][N-2] = B[N-2][N-1] = 4;*/
         
-        do {
+/*        do {
         	flag = true;
 	        B = tiling(0,0,N); ////
 here:       for(int i=0; i<N; i++) {
@@ -51,8 +51,8 @@ here:       for(int i=0; i<N; i++) {
 	        		}
 	        	}
         	}
-        }while(!flag);
-        //B = tiling(0,0,N);
+        }while(!flag);*/
+        B = tiling(0,0,N,B);
         //B = tiling(0,0,N);
         
         //출력시작
@@ -69,15 +69,15 @@ here:       for(int i=0; i<N; i++) {
         sb.append(B[N-1][N-1]);
         System.out.println(sb);
 	}
-	private static int[][] tiling(int i, int j, int n) {
+	private static int[][] tiling(int i, int j, int n, int[][] b) {
 		//int[][] b = new int[n][n];
 		if(n == 2) { //최소단위시드
-			int[][] b1 = {{B[i][j]}};
-			int[][] b2 = {{B[i][j+1]}};
-			int[][] b3 = {{B[i+1][j]}};
-			int[][] b4 = {{B[i+1][j+1]}};
-			return merge(b1,b2,b3,b4,2);
 			
+			int[][] b1 = {{b[i][j]}};
+			int[][] b2 = {{b[i][j+1]}};
+			int[][] b3 = {{b[i+1][j]}};
+			int[][] b4 = {{b[i+1][j+1]}};
+			return merge(b1,b2,b3,b4,2);
 /*			if(B[i][j] != 0 && B[i][j+1]==0 && B[i+1][j]==0 && B[i+1][j+1]==0) B[i][j+1] = B[i+1][j] = B[i+1][j+1] = 1;
 	        else if(B[i][j+1] != 0 && B[i][j]==0 && B[i+1][j]==0 && B[i+1][j+1]==0) B[i][j] = B[i+1][j] = B[i+1][j+1] = 2;
 	        else if(B[i+1][j] != 0 && B[i][j+1]==0 && B[i][j]==0 && B[i+1][j+1]==0) B[i][j] = B[i][j+1] = B[i+1][j+1] = 3;
@@ -85,27 +85,54 @@ here:       for(int i=0; i<N; i++) {
 			return new int[][] {{B[i][j],B[i][j+1]},{B[i+1][j],B[i+1][j+1]}};*/
 		}
 		
-		int[][] b1 = tiling(i, j, n/2);
-		int[][] b2 = tiling(i, j+n/2, n/2);
-		int[][] b3 = tiling(i+n/2, j, n/2);
-		int[][] b4 = tiling(i+n/2, j+n/2, n/2);
+		int[][] b1 = tiling(i, j, n/2, b);
+		int[][] b2 = tiling(i, j+n/2, n/2, b);
+		int[][] b3 = tiling(i+n/2, j, n/2, b);
+		int[][] b4 = tiling(i+n/2, j+n/2, n/2, b);
 		return merge(b1,b2,b3,b4,n);
 	}
 	private static int[][] merge(int[][] b1, int[][] b2, int[][] b3, int[][] b4, int n) {
-		if(b1[n/2-1][n/2-1]*b2[n/2-1][0]*b3[0][n/2-1]*b4[0][0] ==0) { //합치려는 중간 부분에 0이 있을 경우
-			if(b1[n/2-1][n/2-1] != 0 && b2[n/2-1][0]==0 && b3[0][n/2-1]==0 && b4[0][0]==0) {
-				b2[n/2-1][0] = b3[0][n/2-1] = b4[0][0] = 1;
-			}
-			else if(b2[n/2-1][0] != 0 && b1[n/2-1][n/2-1]==0 && b3[0][n/2-1]==0 && b4[0][0]==0) {
-				b1[n/2-1][n/2-1] = b3[0][n/2-1] = b4[0][0] = 2;
-			}
-			else if(b3[0][n/2-1] != 0 && b1[n/2-1][n/2-1]==0 && b2[n/2-1][0]==0 && b4[0][0]==0) {
-				b1[n/2-1][n/2-1] = b2[n/2-1][0] = b4[0][0] = 3;
-			}
-			else if(b4[0][0] != 0 && b1[n/2-1][n/2-1]==0 && b2[n/2-1][0]==0 && b3[0][n/2-1]==0) {
-				b1[n/2-1][n/2-1] = b2[n/2-1][0] = b3[0][n/2-1] = 4;
-			}
+/*		if(b1[n/2-1][n/2-1]*b2[n/2-1][0]*b3[0][n/2-1]*b4[0][0] !=0) {
+			return putin(b1,b2,b3,b4,n);//합치려는 중간 부분에 0이 없는 경우
+		}*/
+			
+		if(b1[n/2-1][n/2-1] != 0 && b2[n/2-1][0]==0 && b3[0][n/2-1]==0 && b4[0][0]==0) {
+			b2[n/2-1][0] = b3[0][n/2-1] = b4[0][0] = 1;
+			int[][] b = putin(b1,b2,b3,b4,n);
+			b2 = tiling(0, n/2, n/2, b);
+			b3 = tiling(n/2, 0, n/2, b);
+			b4 = tiling(n/2, n/2, n/2, b);
+			return b;
 		}
+		else if(b2[n/2-1][0] != 0 && b1[n/2-1][n/2-1]==0 && b3[0][n/2-1]==0 && b4[0][0]==0) {
+			b1[n/2-1][n/2-1] = b3[0][n/2-1] = b4[0][0] = 2;
+			int[][] b = putin(b1,b2,b3,b4,n);
+			b2 = tiling(0, n/2, n/2, b);
+			b3 = tiling(n/2, 0, n/2, b);
+			b4 = tiling(n/2, n/2, n/2, b);
+			return b;
+		}
+		else if(b3[0][n/2-1] != 0 && b1[n/2-1][n/2-1]==0 && b2[n/2-1][0]==0 && b4[0][0]==0) {
+			b1[n/2-1][n/2-1] = b2[n/2-1][0] = b4[0][0] = 3;
+			int[][] b = putin(b1,b2,b3,b4,n);
+			b2 = tiling(0, n/2, n/2, b);
+			b3 = tiling(n/2, 0, n/2, b);
+			b4 = tiling(n/2, n/2, n/2, b);
+			return b;
+		}
+		else if(b4[0][0] != 0 && b1[n/2-1][n/2-1]==0 && b2[n/2-1][0]==0 && b3[0][n/2-1]==0) {
+			b1[n/2-1][n/2-1] = b2[n/2-1][0] = b3[0][n/2-1] = 4;
+			int[][] b = putin(b1,b2,b3,b4,n);
+			b2 = tiling(0, n/2, n/2, b);
+			b3 = tiling(n/2, 0, n/2, b);
+			b4 = tiling(n/2, n/2, n/2, b);
+			return b;
+		}
+		else return putin(b1,b2,b3,b4,n);
+		//b = putin(b1,b2,b3,b4,n);
+		//return b;
+	}
+	private static int[][] putin(int[][] b1, int[][] b2, int[][] b3, int[][] b4, int n) { //4개를 단순히 붙이기
 		int[][] b = new int[n][n];
 		for(int i=0; i<n/2; i++) {
 			for(int j=0; j<n/2; j++) {

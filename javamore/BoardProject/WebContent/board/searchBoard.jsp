@@ -41,21 +41,19 @@
 	<article  id="mainContent">
 		<div class="main" id="viewBoard">
 	 	<form id="frm"  >
-	 	    <input type ="hidden" name="no"  id="no"  value=''/>
+	 	    <input type ="hidden" name="no"  id="no"  value='${board.no }'/>
 	 	    <input type ="hidden" name="query"  id="query" />
 			<table border="1" align="center"  width='400'>
 				<tbody>
 					<tr><td width='100'><label for="title">제목</label></td>
-					    <td></td>
+					    <td>${board.title}</td>
 					</tr>
-					
-				
 					<tr><td colspan="2">내용 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-															글쓴이:
+															글쓴이:${board.id}
 															&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-															게시일: </td></tr>
+															게시일:${board.regdate}</td></tr>
 					<tr><td colspan="2"  valign="top" height="200">
-						<pre></pre>							
+						<pre>${board.contents}</pre>							
 						</td></tr>
 				</tbody>
 				<tfoot>

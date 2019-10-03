@@ -35,7 +35,7 @@
 	 		   	<form action="login.do" method="post"  id="frm">
 		 		   <table>
 		 		   <c:if test="${ not empty msg }">
-		 		   	 <tr><td colspan='2' class="errorMsg">${msg}</td></tr>
+		 		   	 <tr><td colspa='2' class="errorMsg">${msg}</td></tr>
 		 		   </c:if>
 	 				<c:if test="${not empty referer}">
 						<input type="hidden" name="referer" value='${referer}'/>	 				

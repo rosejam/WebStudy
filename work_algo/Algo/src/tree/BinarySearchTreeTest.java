@@ -40,7 +40,7 @@ class BinarySearchTree{
 			root.left=delete(root.left,data);
 		}else if(data>root.data) {
 			root.right=delete(root.right,data);
-		}else {
+		}else { //지울 노드에
 			//자식이 없으면
 			if(root.left==null && root.right==null) return null;
 			

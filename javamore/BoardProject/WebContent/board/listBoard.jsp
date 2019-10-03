@@ -13,9 +13,18 @@
 <style type="text/css">
 	.boardSub 	{display: none}
 	.boardView 	{display: block}
+	.seen		{overflow: hidden;
+				 width: 75px;
+				 height: 25px;}
 </style>
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script type="text/javascript">
+    $(function() {
+		<c:if test='${not empty param.key}'>
+			$('#key').val('${param.key}')
+		</c:if>
+	})
+	
 	//조건 검색, 페이지 번호로 게시글 요청을 위한 메서드 
 	//조건 검색, 페이지 번호로 게시글 요청을 위한 메서드  
 	function pagelist(cpage){
@@ -28,7 +37,7 @@
 	//게시글 번호나 타이틀을 클릭하면 해당 게시글 요청을 위한 메서드 
 	function getBoard(no){
 		//input 양식의 hidden으로 선언된 no(게시글 번호)에 요청된 게시글 번호를 셋팅
-		$("#pageNo").val(cpage);
+		$("#no").val(no);
 		var frm = $("#frm");
 		frm.attr('action',"searchBoard.do");
 		frm.submit();
@@ -57,7 +66,7 @@
 	  		<option value="title"   >제목</option>
 	  		<option value="contents">내용</option>
 	  	  </select>
-	  	  <input type="text" id="word" name="word"  value=''/>
+	  	  <input type="text" id="word" name="word"  value='${param.word}'/>
 	  	  <a href="#" onclick="pagelist(1)">검색</a> &nbsp;&nbsp;&nbsp;
 	  	  <c:if test="${not empty id }">
 	  	  	<a href="insertBoardForm.do" >글쓰기</a>
@@ -70,18 +79,28 @@
 	  	  <td width="50">아이디</td>
 	  	  <td width="100">게시일</td>
 	  	</tr>
-	  
+	  	<c:forEach  items="${list}" var='board'>
 	  		<tr>
-	  		<td align='center' ><a href='#' onclick="getBoard()"></a></td>
-	  		<td align='center'><a href='#' onclick="getBoard()"></a></td>
-	  		<td align='center'></td>
-	  		<td align='center'></td>
+	  		<td align='center'><a href='#' onclick="getBoard(${board.no})">${board.no}</a></td>
+	  		<td align='center'><a href='#' onclick="getBoard(${board.no})">${board.title}</a></td>
+	  		<td align='center'>${board.id}</td>
+	  		<td align='center'>${board.regdate}</td>
 	  		</tr>
+	  	</c:forEach>
 		</table>
-			<div class="bottom"><center></center></div>
+			<div class="bottom"><center>${bean.pagelink}</center></div>
 		</form>
 	</div>
 	</article>
+	<c:if test="${!empty seens}">
+		<aside id="aside">
+			<table>
+				<c:forEach items="${seens}" var='board'>
+					<tr><td class='seen'><a href='#' onclick="getBoard(${board.no})">${board.title}</a></td></tr>
+				</c:forEach>
+			</table>
+		</aside>
+	</c:if>
 </article>		
 <footer id="copyright">
 <jsp:include page="/copyright.jsp"/>
