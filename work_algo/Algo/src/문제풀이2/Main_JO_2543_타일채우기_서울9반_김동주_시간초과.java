@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 //		1	2		3	3	4	4
 //	1	1	2	2		3	4
-public class Main_JO_2543_타일채우기_서울9반_김동주 { //분할 정복 //한번의 분할로 끝내도록 만들어야 함
+public class Main_JO_2543_타일채우기_서울9반_김동주_시간초과 { //분할 정복 //한번의 분할로 끝내도록 만들어야 함
 	public static int N,X,Y;// ,M;
 	public static int[][] B;
 	public static boolean flag;
@@ -40,9 +40,9 @@ public class Main_JO_2543_타일채우기_서울9반_김동주 { //분할 정복
         B[N-1][0] = B[N-1][1] = B[N-2][0] = 2;
         B[N-1][N-1] = B[N-1][N-2] = B[N-2][N-1] = 4;*/
         
-/*        do {
+        do {
         	flag = true;
-	        B = tiling(0,0,N); ////
+	        B = tiling(0,0,N,B); ////
 here:       for(int i=0; i<N; i++) {
 	        	for(int j=0; j<N; j++) {
 	        		if(B[i][j] == 0) { //0이 있다면
@@ -51,9 +51,9 @@ here:       for(int i=0; i<N; i++) {
 	        		}
 	        	}
         	}
-        }while(!flag);*/
-        B = tiling(0,0,N,B);
-        //B = tiling(0,0,N);
+        }while(!flag);
+        //B = tiling(0,0,N,B);
+        //B = tiling(0,0,N);A
         
         //출력시작
         B[X][Y] = 0;
@@ -99,33 +99,33 @@ here:       for(int i=0; i<N; i++) {
 		if(b1[n/2-1][n/2-1] != 0 && b2[n/2-1][0]==0 && b3[0][n/2-1]==0 && b4[0][0]==0) {
 			b2[n/2-1][0] = b3[0][n/2-1] = b4[0][0] = 1;
 			int[][] b = putin(b1,b2,b3,b4,n);
-			b2 = tiling(0, n/2, n/2, b);
-			b3 = tiling(n/2, 0, n/2, b);
-			b4 = tiling(n/2, n/2, n/2, b);
+//			b2 = tiling(0, n/2, n/2, b);
+//			b3 = tiling(n/2, 0, n/2, b);
+//			b4 = tiling(n/2, n/2, n/2, b);
 			return b;
 		}
 		else if(b2[n/2-1][0] != 0 && b1[n/2-1][n/2-1]==0 && b3[0][n/2-1]==0 && b4[0][0]==0) {
 			b1[n/2-1][n/2-1] = b3[0][n/2-1] = b4[0][0] = 2;
 			int[][] b = putin(b1,b2,b3,b4,n);
-			b2 = tiling(0, n/2, n/2, b);
-			b3 = tiling(n/2, 0, n/2, b);
-			b4 = tiling(n/2, n/2, n/2, b);
+//			b2 = tiling(0, n/2, n/2, b);
+//			b3 = tiling(n/2, 0, n/2, b);
+//			b4 = tiling(n/2, n/2, n/2, b);
 			return b;
 		}
 		else if(b3[0][n/2-1] != 0 && b1[n/2-1][n/2-1]==0 && b2[n/2-1][0]==0 && b4[0][0]==0) {
 			b1[n/2-1][n/2-1] = b2[n/2-1][0] = b4[0][0] = 3;
 			int[][] b = putin(b1,b2,b3,b4,n);
-			b2 = tiling(0, n/2, n/2, b);
-			b3 = tiling(n/2, 0, n/2, b);
-			b4 = tiling(n/2, n/2, n/2, b);
+//			b2 = tiling(0, n/2, n/2, b);
+//			b3 = tiling(n/2, 0, n/2, b);
+//			b4 = tiling(n/2, n/2, n/2, b);
 			return b;
 		}
 		else if(b4[0][0] != 0 && b1[n/2-1][n/2-1]==0 && b2[n/2-1][0]==0 && b3[0][n/2-1]==0) {
 			b1[n/2-1][n/2-1] = b2[n/2-1][0] = b3[0][n/2-1] = 4;
 			int[][] b = putin(b1,b2,b3,b4,n);
-			b2 = tiling(0, n/2, n/2, b);
-			b3 = tiling(n/2, 0, n/2, b);
-			b4 = tiling(n/2, n/2, n/2, b);
+//			b2 = tiling(0, n/2, n/2, b);
+//			b3 = tiling(n/2, 0, n/2, b);
+//			b4 = tiling(n/2, n/2, n/2, b);
 			return b;
 		}
 		else return putin(b1,b2,b3,b4,n);

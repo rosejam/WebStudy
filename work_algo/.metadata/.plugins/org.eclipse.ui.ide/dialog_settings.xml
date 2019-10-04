@@ -5,9 +5,9 @@
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\ssafy\work_algo"/>
 			<item value="/Users/dj_kim/ssafy/work_algo"/>
 			<item value="/Users/dj_kim/ssafy/work_algo/Algo"/>
-			<item value="C:\ssafy\work_algo"/>
 			<item value="C:\ssafy\work_algo\Algo"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
