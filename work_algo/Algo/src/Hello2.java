@@ -17,6 +17,9 @@ public class Hello2 {
 		double c = a/b;
 		System.out.println(a/b);
 		System.out.println(c); //3.0 (연산할 때 앞에 더블을 붙여야 함!!! 끝난 수에 double에 넣는 것은 소용없음!)
+		
+		char ch = '0'+1;
+		System.out.println(ch+"*");
 	}
 
 }
