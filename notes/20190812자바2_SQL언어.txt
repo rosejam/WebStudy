@@ -35,24 +35,27 @@ DB 관리 시스템=DBMS : 관리 프로그램들의 묶음 	ex)Oracle-MySQL, MS SQL (mysql은 �
 -DML(데이터 조작어) - 검색 등 -- **DML문장(update/insert/delete)은 취소=rollback(<->commit=확인)이 가능함!!!!
 	"사용자"가 "응용프로그램(Java)나 질의어"로 실제 데이터를 검색,수정,삭제,변경
 	<<SELECT문(검색):>>
+		쿼리문 실행 순서
 		5*[SELECT] : 열
 		1*[FROM] : 테이블
 		2-WHERE : 가로로 자름! "(일반)조건"에 따라(작업 대상 줄만 추려냄)
 		3-GROUP BY : 대상을 열 값에 따라 그룹지음
 		4-HAVING : "그룹의 조건" - 집계함수로 조건을 보통체크
 		6-ORDER BY : 정렬한다.
-		ALIAS AS : "별칭" 공백있을 경우""필수
+		(ALIAS AS : "별칭" 공백있을 경우""필수)
 		연산자
 	<INSERT문(투플 삽입)>
-	<DELETE문(삭제)> = Table은 남아있고 data를 삭제~!
+	<DELETE문(삭제)> = Table은 남아있고 data를 삭제~!(truncate와 같지만 rollback가능)
 		DELETE FROM 테이블 WHERE 조건;
-	<UPDATE문(수정)>		
+	<UPDATE문(수정)>
 		UPDATE 테이블 set 컬럼 WHERE 조건;
+	<MERGE>
 
 -DCL(데이터 제어어) 
 	"관리자(DBA)"가 데이터의 보안,무결성,데이터복구,병행수행제어(여러개가 하나의 데이터에 접근했을 경우),사용자권한설정
-		grant, revoke 등
 	취소=rollback(<->commit=확인)
+	<GRANT> 권한 부여
+	<REVOKE> 권한 철회
 -------------------------------------------
 
 -관리자 DBA : 전체 환경구성과 운영 관련 책임자
