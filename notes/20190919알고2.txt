@@ -30,6 +30,6 @@ P(polynomial 다차시간)/NP/NP-Complete
 2. 다루기 힘들다고 증명된 문제 -> DP사용
 3. 둘 다 아닌것 -> 근사해를 찾기
 
-	<모든쌍 최단경로> FloydWarshall
+	<모든쌍 최단경로> = FloydWarshall (모든정점~모든정점)
 	<최적여행경로TSP> 
 	

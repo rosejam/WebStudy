@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Solution_JO_1082_화염에서탈출_서울9반_김동주_미완_ { 
+public class Solution_JO_1082_화염에서탈출_BJ_3055_탈출_서울9반_김동주_틀림_ { 
 	public static int R,C,sr,sc,walk;
 	public static char cnt;
 	public static boolean poss;
@@ -50,7 +50,6 @@ public class Solution_JO_1082_화염에서탈출_서울9반_김동주_미완_ {
 //       do { //불이 먼저인지 이동이 먼저인지 ? //일단 매 단계의 불의 좌표를 만든다. -> dfs
 //        	alive = true;
 //        	poss = false;
-        	
 //        	move(sr,sc);////
     	//cnt = (char) (cnt+1);
         firebfs(); //단계별로 불 표시
@@ -66,7 +65,7 @@ public class Solution_JO_1082_화염에서탈출_서울9반_김동주_미완_ {
 	private static void firebfs() { //불번지기
 		while(!q.isEmpty()) {
 			cnt = (char) (cnt+1);
-			//System.out.println(cnt);
+			//System.out.println((int)cnt);
 			int size = q.size();
 			for(int c=0; c<size; c++) {
 				int[] curr = q.poll();
@@ -77,23 +76,10 @@ public class Solution_JO_1082_화염에서탈출_서울9반_김동주_미완_ {
 					int ni = i+ di[d];
 					int nj = j+ dj[d];
 					if(ni>=0 && nj>=0 && ni<R && nj<C && map[ni][nj] == '.') {//&& map[ni][nj] != 'X' && map[ni][nj] != 'D') {
-//						if(map[ni][nj] == 'S') {
-//							alive = false; //죽음
-//							return;
-//						}else { //'.'
-//							map[ni][nj] = '1';
-//							q.offer(new int[] {ni, nj});
-//						}
-//						if(map[ni][nj] == '.') { //길
-						map[ni][nj] = (char) cnt;
+						map[ni][nj] = (char) cnt; //방문처리 대신
 						q.offer(new int[] {ni, nj});
-//						}else if(map[ni][nj] == cnt) { //불
-//							q.offer(new int[] {ni, nj});
-//						}
 					}
 				}
-				//System.out.println(cnt);
-				//move(sr,sc);
 			}
 /*			System.out.println((int)cnt);
 			for(int i=0; i<R; i++) {
@@ -107,36 +93,10 @@ public class Solution_JO_1082_화염에서탈출_서울9반_김동주_미완_ {
 		}
 	}
 	
-/* 		dfs활용..안좋음
+	//최단거리는 dfs가 아니고 bfs로 구하는게 맞다!!
 	private static void move(int i, int j) { //'S'의 위치를 옮긴다. walk보다 큰 곳은 지날 수 있음!
+		//q = new LinkedList<>();
 		v[i][j] = true;
-		walk++;
-		for(int d=0; d<4; d++) {
-			int ni = i+ di[d];
-			int nj = j+ dj[d];
-			if(ni>=0 && nj>=0 && ni<R && nj<C && map[ni][nj] != 'X' && !v[ni][nj]) {
-				if(map[ni][nj] == '.') {
-					//walk++;
-					move(ni,nj);
-					//walk--;
-				}else if(map[ni][nj] > walk && map[ni][nj] < cnt) { //불이 생기기 이전
-					//walk++;
-					move(ni,nj);
-					//walk--;
-				}else if(map[ni][nj] == 'D') {
-					poss = true;
-					walks = walk+1;
-					return;
-				}
-			}
-		}
-		//v[i][j] = false;
-		walk--;
-	}*/
-	
-	//최단거리는 dfs가 아니고 bfs로 구하는게 맞다!
-	private static void move(int i, int j) { //'S'의 위치를 옮긴다. walk보다 큰 곳은 지날 수 있음!
-		q = new LinkedList<>();
 		q.offer(new int[] {i,j});
 		while(!q.isEmpty()) {
 			int size = q.size();
@@ -146,12 +106,13 @@ public class Solution_JO_1082_화염에서탈출_서울9반_김동주_미완_ {
 				int[] curr = q.poll();
 				int ii = curr[0];
 				int jj = curr[1];
-				v[ii][jj] = true;
+				//v[ii][jj] = true;
 				for(int d=0; d<4; d++) {
 					int ni = ii + di[d];
 					int nj = jj + dj[d];
 					if(ni>=0 && nj>=0 && ni<R && nj<C && !v[ni][nj] && map[ni][nj]!='X') {
-						if(map[ni][nj] == '.' || (map[ni][nj] < cnt && map[ni][nj] > walk)) { //여기에 더하기 1!!(불이 걷기보다 한번 먼저 번진다.)
+						if(map[ni][nj] == '.' || (map[ni][nj] <= cnt && map[ni][nj] > walk)) { //(불이 걷기보다 한번 먼저 번진다.)
+							v[ni][nj] = true;
 							q.offer(new int[] {ni,nj});
 						}else if(map[ni][nj]=='D') {
 							poss = true;

@@ -1,59 +1,44 @@
 import java.io.*;
 import java.math.*;
-import java.security.*;
 import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
 import java.util.regex.*;
 
 public class Solution {
 
-    // Complete the birthdayCakeCandles function below.
-    static int birthdayCakeCandles(int[] ar) {
-    	int cnt = 0;
-     	int max = 0;
-/*  	for(int i=0; i<ar.length; i++) {
-    		if(max < ar[i]) max = ar[i];
-    	}//불 수 있는 가장 큰 촛불
-    	for(int i=0; i<ar.length; i++) {
-    		if(max == ar[i]) cnt++;
-    	}*/
-    	for(int i=0; i<ar.length; i++) {
-    		if(max < ar[i]) {
-    			max = ar[i];
-    			cnt = 1;
-    		}else if(max == ar[i]) {
-    			cnt++;
-    		}
+	/*
+     * Complete the timeConversion function below.
+     */
+    static String timeConversion(String s) {
+        /*
+         * Write your code here.
+         */
+    	int h1 = s.charAt(0)-'0';
+    	int h2 = s.charAt(1)-'0';
+    	String rest = s.substring(2,8); //2~7
+    	char ap= s.charAt(8);
+    	//System.out.println(ap);
+    	if(ap=='A') { //Midnight is 12:00:00AM on a 12-hour clock, and 00:00:00 on a 24-hour clock.
+    		if(h1 != 1 || h2 != 2) return s.substring(0,8); //12시 대가 아닌경우
+    		else return "00" + rest;
+    	}else { //Noon is 12:00:00PM on a 12-hour clock, and 12:00:00 on a 24-hour clock.
+    		if(h1 != 1 || h2 != 2 ) return String.valueOf(h1*10 + h2 + 12) + rest; //12시 대가 아닌경우
+    		else return "12" + rest;
     	}
-    	return cnt; //the number of candles that can be blown out
     }
 
-    private static final Scanner scanner = new Scanner(System.in);
+    private static final Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+        BufferedWriter bw = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        int arCount = scanner.nextInt();
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        String s = scan.nextLine();
 
-        int[] ar = new int[arCount];
+        String result = timeConversion(s);
 
-        String[] arItems = scanner.nextLine().split(" ");
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        bw.write(result);
+        //bw.newLine();
 
-        for (int i = 0; i < arCount; i++) {
-            int arItem = Integer.parseInt(arItems[i]);
-            ar[i] = arItem;
-        }
-
-        int result = birthdayCakeCandles(ar);
-
-        bufferedWriter.write(String.valueOf(result));
-        //bufferedWriter.newLine();
-
-        bufferedWriter.close();
-
-        scanner.close();
+        bw.close();
     }
 }

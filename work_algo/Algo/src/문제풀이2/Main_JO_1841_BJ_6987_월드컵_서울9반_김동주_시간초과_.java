@@ -76,39 +76,7 @@ public class Main_JO_1841_BJ_6987_월드컵_서울9반_김동주_시간초과_ {
 		return false;
 	}*/
 	public static int permcomb(int depth) { //return int로 백트랙킹
-		if(depth == 15) {
-/*			for(int i=0; i<6; i++) {
-				R2[i] = R[i].clone();
-			}
-			int k = 0;
-			for(int i=0; i<5; i++) {
-				for(int j=i+1; j<6; j++) { //15번 합은 30
-					switch(a[k++]) {
-						case 1:
-							R2[i][0]--;
-							R2[j][2]--;
-						break;
-						case 0:
-							R2[i][1]--;
-							R2[j][1]--;
-						break;
-						case -1:
-							R2[i][2]--;
-							R2[j][0]--;
-						break;
-//						default:
-//							System.out.println("theres something wrong");
-					}
-					//k++;
-				}
-			}
-			//
-			for(int i=0; i<6; i++) {
-				for(int j=0; j<3; j++) {
-					if(R2[i][j] != 0) return 0;
-				}
-			}*/
-			
+		if(depth == 15) {		
 			int k = 0;
             for(int i=1; i<6; i++) {
                 for(int j=0; j<i; j++) {
@@ -150,3 +118,77 @@ public class Main_JO_1841_BJ_6987_월드컵_서울9반_김동주_시간초과_ {
 		return 0;
 	}
 }
+
+/*import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main_JO_1841_BJ_6987_월드컵_서울9반_김동주_예시답안_ {
+	public static int[] winn, lose, draw;
+	public static int[] gama = new int[15], gamb = new int[15];
+
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int cnt = 0;
+		for (int i = 0; i < 5; i++) {
+			for (int j = i + 1; j < 6; j++) {
+				gama[cnt] = i;
+				gamb[cnt++] = j;
+			}
+		}
+		winn = new int[6];
+		draw = new int[6];
+		lose = new int[6];
+		here: for (int i = 0; i < 4; i++) {
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			for (int j = 0; j < 6; j++) {
+				winn[j] = Integer.parseInt(st.nextToken());
+				draw[j] = Integer.parseInt(st.nextToken());
+				lose[j] = Integer.parseInt(st.nextToken());
+			}
+			for (int k = 0; k < 6; k++) {
+				if (winn[k] > 5 || draw[k] > 5 || lose[k] > 5) {
+					System.out.print(0 + " ");
+					continue here;
+				}
+			}
+			System.out.print(dfs(0) + " ");
+		}
+	}
+
+	private static int dfs(int n) {
+		if (n >= 15) {
+			return 1;
+		}
+
+		int a = gama[n];
+		int b = gamb[n];
+		if (winn[a] != 0 && lose[b] != 0) {
+			winn[a]--;
+			lose[b]--;
+			if (dfs(n + 1) == 1)
+				return 1;
+			winn[a]++;
+			lose[b]++;
+		}
+		if (draw[a] != 0 && draw[b] != 0) {
+			draw[a]--;
+			draw[b]--;
+			if (dfs(n + 1) == 1)
+				return 1;
+			draw[a]++;
+			draw[b]++;
+		}
+		if (lose[a] != 0 && winn[b] != 0) {
+			lose[a]--;
+			winn[b]--;
+			if (dfs(n + 1) == 1)
+				return 1;
+			lose[a]++;
+			winn[b]++;
+		}
+		return 0;
+	}
+
+}// end of class
+*/

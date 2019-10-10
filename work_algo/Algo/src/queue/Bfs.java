@@ -59,7 +59,6 @@ public class Bfs {
 		queue.offer(node);
 		while(!queue.isEmpty()) {
 			int curr = queue.poll();
-			//if(visit[curr]==false) { //이게 없으면 큐가 터짐
 				visit[curr]=true;
 				System.out.print(curr + " ");
 				//
@@ -68,7 +67,6 @@ public class Bfs {
 						queue.offer(next);
 					}
 				}
-			//}
 		}
 	}
 }
