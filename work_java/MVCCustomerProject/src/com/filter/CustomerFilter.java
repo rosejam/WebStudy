@@ -68,8 +68,3 @@ public class CustomerFilter implements Filter {
 	public void destroy() {}
 
 }
-
-
-
-
-

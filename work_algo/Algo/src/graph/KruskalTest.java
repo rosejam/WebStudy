@@ -17,24 +17,20 @@ import java.util.List;
 ..........[5]..37..[2]      
 0베이스*/
 public class KruskalTest {
-/*	public static class Edge implements Comparable<Edge>{
-		int a; //
-		int b; //정점
-		int distance; //간선의 가중치or거리
-		Edge(int a, int b, int distance) {
-			this.a = a;
-			this.b = b;
-			this.distance = distance;
-		}
-		@Override
-		public int compareTo(Edge o) {
-			return Integer.compare(distance, o.distance);
-		}
-		@Override
-		public String toString() {
-			return "(a=" + a + ", b=" + b + ") distance=" + distance;
-		}
-	}*/
+	//2.용
+	public static int INF=Integer.MAX_VALUE/2; 	//+하면 음수로 오버플로우 되므로 조작을 할일이 있으면 /2한다.
+												//또는987654321;
+	public static int[][] a={ //INF는 인접하지 않는다는 뜻
+	{  0, 67,INF, 28, 17,INF, 12},
+	{ 67,  0,INF, 24, 62,INF,INF},
+	{INF,INF,  0,INF, 20, 37,INF},
+	{ 28, 24,INF,  0,INF,INF, 13},
+	{ 17, 62, 20,INF,  0, 45, 73},
+	{INF,INF, 37,INF, 45,  0,INF},
+	{ 12,INF,INF, 13, 73,INF,  0},
+	};
+	//
+	
 	public static int N=7;
 	public static List<int[]> v;
 	public static int[] p;
@@ -48,13 +44,6 @@ public class KruskalTest {
 		if(a<b) p[b]=a;
 		else 	p[a]=b; //이 대소비교는 상관X
 	}
-/*	public static boolean findParent(int[] p, int a, int b) {
-		a=findSet(p,a);
-		b=findSet(p,b);
-		if(a==b) 	return true; //같은 집합에 있다.
-		else 		return false; //다른 집합에 있다.
-	}*/
-	
 	public static int kruskal() {
 		Collections.sort(v, new Comparator<int[]>() {
 			@Override
@@ -63,7 +52,7 @@ public class KruskalTest {
 			}
 		});
 		for(int[] e:v) System.out.println(Arrays.toString(e));
-
+		
 		System.out.println();
 		//Make-Set
 		p = new int[N+1]; //+1
@@ -73,17 +62,22 @@ public class KruskalTest {
 		int sum=0;
 		for(int i=0; i<v.size(); i++) {
 			//if(!findParent(p, v.get(i).a -1, v.get(i).b -1)){
-			if(findSet(v.get(i)[0])!=findSet(v.get(i)[1])) {
-				System.out.println("->"+Arrays.toString(v.get(i)));
+			if(findSet(v.get(i)[0])!=findSet(v.get(i)[1])) { //부모가 다르면 두개 붙이기
+				//System.out.println("->"+Arrays.toString(v.get(i)));
 				sum += v.get(i)[2];
 				union(p, v.get(i)[0], v.get(i)[1]); //그래프가 사이클인지 확인할 수 있음
 			}
 		}
+		
+		//부모가 다 같지 않다면 연결되지 않은 부분이 있다는 것
+		
 		return sum;
 	}
 	public static void main(String[] args) {
 		v = new ArrayList<>();
-		v.add(new int[]{1,7,12});
+
+		//1. 1베이스의 연결리스트
+/*		v.add(new int[]{1,7,12});
 		v.add(new int[]{1,4,28});
 		v.add(new int[]{1,2,67});
 		v.add(new int[]{1,5,17});
@@ -93,7 +87,15 @@ public class KruskalTest {
 		v.add(new int[]{3,6,37});
 		v.add(new int[]{4,7,13});
 		v.add(new int[]{5,6,45});
-		v.add(new int[]{5,7,73}); //a<-b, 한쪽으로 방향이 있다.
+		v.add(new int[]{5,7,73}); //a<-b, 한쪽으로 방향이 있다.*/
+		
+		//2. 0베이스의 연결배열로 1.을 자동으로 만들기
+		for(int i=0; i<N; i++) {
+			for(int j=i+1; j<N; j++) {
+				if(a[i][j] != INF) v.add(new int[] {i,j,a[i][j]});
+			}
+		}
+		
 		System.out.println(kruskal());
 	}
 }

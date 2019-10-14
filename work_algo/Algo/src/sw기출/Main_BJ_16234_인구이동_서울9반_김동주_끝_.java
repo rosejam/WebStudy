@@ -50,8 +50,9 @@ public class Main_BJ_16234_인구이동_서울9반_김동주_끝_ {
 						}
 					}
 				}
-				for(int[] u : union) System.out.println(Arrays.toString(u));
-				if(cnt == nn) { //연합을 더이상 만들 수 없을 때
+				//for(int[] u : union) System.out.println(Arrays.toString(u));
+				//for(int[] x : A)  System.out.println(Arrays.toString(x));
+				if(cnt == nn) { //연합을 더이상 만들 수 없을 때 = 벽 허물 수 없음
 					//(cnt == befcnt) { //연합을 다시 나눠도 개수가 동일할 때(원래는 계속 줄어야 함)
 					break;
 				}
@@ -95,7 +96,7 @@ public class Main_BJ_16234_인구이동_서울9반_김동주_끝_ {
 	
 	public static void findunion(int i, int j) {
 		union[i][j] = cnt;
-		sum += cnt;
+		sum += A[i][j];
 		nat++;
 		for(int d=0; d<4; d++) {
 			int ni = i+di[d];

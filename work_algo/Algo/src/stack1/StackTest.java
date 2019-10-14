@@ -7,7 +7,7 @@ public class StackTest {
 	public static int top = -1;
 	
 	public static boolean push(int value) {
-		if(top >= stack.length) return false; //full
+		if(top >= stack.length-1) return false; //full (-1을 내가 붙였다.)
 		stack[++top] = value;
 		return true;
 	}

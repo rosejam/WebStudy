@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_JO_1841_BJ_6987_월드컵_서울9반_김동주_시간초과_ { //6개국이 15번의 시합(국가별로 5번) //Main_JO_1841_BJ_6987_월드컵_서울9반_김동주_시간초과_
+public class Main_JO_1841_BJ_6987_월드컵_서울9반_김동주_시간초과_ { //6개국이 15번의 시합(국가별로 5번)
 	public static int[][] R, R2, RR;//
 	public static int a[],game[] = {-1,0,1};
 	//public static int possible;//

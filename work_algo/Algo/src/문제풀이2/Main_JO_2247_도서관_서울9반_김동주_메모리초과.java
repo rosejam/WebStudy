@@ -6,8 +6,8 @@ import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.StringTokenizer;
 
-public class Main_정올_2247_도서관_서울9반_김동주_메모리초과 { //int범위 long범위 알아둘 것
-												//visited체크하면 메모리초과.. 알고리즘을 생각해야한다
+public class Main_JO_2247_도서관_서울9반_김동주_메모리초과 { //int범위 long범위 알아둘 것
+												//visited체크하면 메모리초과.. 알고리즘을 생각해야한다 //이어나가기
 	public static int N;
 	public static int diff, mx, mn;
 	public static boolean[] V;

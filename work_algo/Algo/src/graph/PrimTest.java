@@ -29,7 +29,7 @@ public class PrimTest {
 		//for(int i=0; i<N; i++) w[i]=-1;
 		Arrays.fill(w, -1); //위와 같은 코드이다~
 		w[0]=0;
-		for(int k=1; k<N; k++) {
+		for(int k=1; k<N; k++) { //int k=0; k<cnt; k++
 			int minWeight=INF;
 			int minVertax=0;
 			for(int i=0; i<N; i++) {
@@ -37,8 +37,8 @@ public class PrimTest {
 				for(int j=0; j<N; j++) {
 					if(w[j]>=0) continue; //방문처리 했다면
 					if(minWeight>a[i][j]) {
-						minWeight=a[i][j];
-						minVertax=j;
+					   minWeight=a[i][j];
+					   minVertax=j;
 					}
 				}
 			}
@@ -47,7 +47,7 @@ public class PrimTest {
 		}
 		
 		int sum=0;
-		for(int i=1; i<N; i++) sum+=w[i];
+		for(int i=1; i<N; i++) sum+=w[i]; //w가 -1이라면 연결이 안된것
 		return sum;
 	}
 	public static void main(String[] args) {

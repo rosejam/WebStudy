@@ -33,3 +33,6 @@ P(polynomial 다차시간)/NP/NP-Complete
 	<모든쌍 최단경로> = FloydWarshall (모든정점~모든정점)
 	<최적여행경로TSP> 
 	
+
+참고)정렬1이 같으면 정렬2인 경우 정렬2먼저 하고 정렬1
+중복불허는 set 활용

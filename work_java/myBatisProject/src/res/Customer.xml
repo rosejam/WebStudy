@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper file : 실행할 쿼리 문을 저장하는 파일. 테이블 하나 당 한 개씩 작성 (사용하지 않더라도 모두 완성된 상태의 쿼리여야 한다.)-->
+<!-- namespace : 작업하는 "테이블들을 구분"해주기 위한 식별자 -->
+<mapper namespace="Customer">
+<!-- mapper namespace="Board" -->
+
+<!-- 리절트 맵 정의 : select한 후의 결과 처리를 위해 정의해 놓음 --><!-- 쿼리마다 id가 있어서 자바에서 id를 통해 쿼리를 실행하도록 함 -->
+   <resultMap id="CustomerResult"  type="customer"> <!-- 설정파일의 typeAlias를 type에 넣는다!(customer vo를 사용한다고 표시한 것)-->
+     <result property="num" column="num"/> <!-- column의 값을 가져다가 vo객체의 property에 set하여 넣는다. -->
+     <result property="name" column="name"/>
+     <result property="address" column="address"/>
+   </resultMap>
+
+  <!-- CustomerResult의 resultMap을 리턴한다. -->
+  <select id="selectAll" resultMap="CustomerResult"> 
+    select * from customer
+  </select>
+  
+  <!-- 파라메터 표시 #{} --> 
+  <select id="selectOne" parameterType="java.lang.String" resultMap="CustomerResult"> 
+    select * from customer where num = #{x} 
+  </select>
+  
+  <!-- 파라메터 타입은 customer vo로 넣어주고 resultType필요없음 -->
+  <!-- customer vo에서 파라메터의 이름을 각각 getter로 호출하여 가져와 넣는다. (아무 이름이나 넣으면 가져올 수 없다.) -->
+  <insert id="insert" parameterType="customer">
+	insert into customer values(#{num}, #{name}, #{address})
+  </insert>
+  
+  <delete id="delete" parameterType="java.lang.String">
+	delete from customer where num = #{xx}
+  </delete>
+  
+  <update id="update" parameterType="customer"> 
+	update customer set address = #{address} where num = #{num}
+  </update>
+  
+  <!-- customer vo말고 Map으로 파라메터를 넣을 수도 있다. -->
+  <update id="update2" parameterType="java.util.Map"> 
+	update customer set address = #{address} where num = #{num}
+  </update>
+  
+  <select id="findAddress" parameterType="java.lang.String" resultMap="CustomerResult">
+	select * from customer where address = #{address}
+  </select>
+  
+</mapper>

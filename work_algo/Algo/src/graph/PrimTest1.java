@@ -30,7 +30,7 @@ public class PrimTest1 {
 		PriorityQueue<int[]> pq = new PriorityQueue<>(new Comparator<int[]>() {
 			@Override
 			public int compare(int[] o1, int[] o2) {
-				return Integer.compare(o1[0], o2[0]);
+				return Integer.compare(o1[0], o2[0]); //가중치기준 자동소팅
 			}
 		});
 		boolean[] v = new boolean[N];
@@ -39,12 +39,13 @@ public class PrimTest1 {
 		int sum=0;
 		
 		for(int next=0; next<N; next++) {
-			pq.offer(new int[] {a[0][next], next});
+			pq.offer(new int[] {a[0][next], next}); //가중치와 curr
 		}
 		while(!pq.isEmpty()) {
 			int[] curra = pq.poll();
 			int weight = curra[0];
 			int curr = curra[1];
+			//if(weight == INF) continue; //추가 부분
 			
 			if(!v[curr]) {
 				v[curr]=true; //방문처리

@@ -35,18 +35,18 @@ public class Solution_D4_1249_보급로_서울9반_김동주_dijkstra { //다익
         	v=new boolean[N][N];
         	memo = new int[N][N];
         	
-/*        	for(int n=0; n<N; n++) {
-        		for(int m=0; m<N; m++) {
+        	for(int n=0; n<N; n++) {
+        		for(int m=0; m<N; m++) { 
         			memo[n][m] = Integer.MAX_VALUE/2;
         		}
         	}
-        	memo[0][0] = 0;*/
-        	//dfs(0,0); //1. 좀느린듯?(내가만든 방법)
+        	memo[0][0] = 0;  //인덱스 주의! 딱 0,0한 점만 0으로
+        	dfs(0,0); //1. 좀느린듯?(내가만든 방법)
         	//bfs2(); //2.
         	//dijkstra(); //3.
         	
         	
-        	bfs(); //4.초기화필요없음
+        	//bfs(); //4.초기화필요없음
         	sb.append("#"+tc+" "+memo[N-1][N-1]+"\n");
         	//System.out.print("#"+tc+" "+memo[N-1][N-1]+"\n");
         }
@@ -69,7 +69,7 @@ public class Solution_D4_1249_보급로_서울9반_김동주_dijkstra { //다익
 				}
 			}
 		}
-		//v[i][j] = false;
+		v[i][j] = false;
 	}
 	public static void bfs() {
 		Queue<int[]> q = new LinkedList<>();
