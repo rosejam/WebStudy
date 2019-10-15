@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- "디폴트 생성자"로 그냥 생성할 수 없으므로 bean태그안에 내용(=parameter)을 넣어서 전달해야 함!!! : constructor-arg -->
+	
+	<!-- i)constructor-arg : 생성자 주입 -->
+	<bean id="bean1" class="com.di.MessageBeanEN"> 
+		<constructor-arg name="num" value="123"/> <!-- index="0"으로 첫번째 arg를 표현할 수 있다! -->
+		<constructor-arg index="1" value="tommy lee jones"/>
+		<property name="truck"> <!-- ref="t1"해서 아래 객체를 여기도 넣어도 된다. -->
+			<bean class="com.di.Truck"/> <!-- id가 필요하지 않음. 트럭 객체 생성해서 바로 setter로 주입 -->
+		</property>
+	</bean>
+	
+	<!-- ii)property : setter 주입 -->
+	<bean id="bean2" class="com.di.MessageBeanKO">
+		<constructor-arg name="truck" ref="t1" /> <!-- 아래에 생성한 t1 트럭 객체를 생성자의 (트럭 truck)에 넣음!! -->
+		<property name="num" value="789"/> <!-- setNum("789");와 동일 -->
+		<property name="name" value="james kim"/>
+	</bean>
+	
+	<bean id="t1" class="com.di.Truck"/>
+</beans>

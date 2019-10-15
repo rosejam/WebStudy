@@ -47,4 +47,5 @@
 <fullyQualifiedTypeName name="com.config.MyBatisUtil"/>
 <fullyQualifiedTypeName name="com.dao.CustomerDAO"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 </qualifiedTypeNameHistroy>

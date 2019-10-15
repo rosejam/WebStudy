@@ -108,7 +108,17 @@ public class CustomerController {
 		bean.delete(num);
 		list(req,res);
 	}
-
+	
+	public void login(HttpServletRequest req, HttpServletResponse res) {//로그인 화면 요청
+		RequestDispatcher dispatcher = 
+				req.getRequestDispatcher("/customer/login.jsp");		
+		try {
+			dispatcher.forward(req, res);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void loginProcess(HttpServletRequest req, HttpServletResponse res) {//로그인 처리 요청
 		//클라이언트가 입력한 id를 받아와서 세션에 저장시킴
 		String id = req.getParameter("id"); //db에서 체크하는 과정 생략
@@ -122,17 +132,7 @@ public class CustomerController {
 			e.printStackTrace();
 		}
 	}
-
-	public void login(HttpServletRequest req, HttpServletResponse res) {//로그인 화면 요청
-		RequestDispatcher dispatcher = 
-				req.getRequestDispatcher("/customer/login.jsp");		
-		try {
-			dispatcher.forward(req, res);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
+	
 	public void logout(HttpServletRequest req, HttpServletResponse res) {//로그아웃 요청
 		HttpSession session = req.getSession(); //session을 얻어오기
 		session.setAttribute("id", null); //session에서 지우기

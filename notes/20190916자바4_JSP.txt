@@ -91,3 +91,5 @@ application : ServletContext타입
 init() 				jspInit()										메모리에 로드될때 초기화
 service() : doGet/doPost()		서비스메소드가 따로 없고 스크립팅 원소에 적는다 -> jsp_Service()로 톰캣이 자동으로 변환
 destroy()				jspDestroy() 									메모리에서 언로드될 때 마무리
+
+//jstl은 taglib필요하지만 el은 그냥 사용할 수 있다.

@@ -34,7 +34,7 @@
 </form>
 <p>
 	<a href="list.bod">전체화면</a>&nbsp;&nbsp;&nbsp;
-	</center>
+</center>
 
 </BODY></HTML>
 

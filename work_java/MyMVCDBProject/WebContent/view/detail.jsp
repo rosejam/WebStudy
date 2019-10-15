@@ -6,7 +6,7 @@
 	Customer c = (Customer)request.getAttribute("c");	
 --%>
 <h1>Customer Detail Data</h1>
-
+<jsp:include page="loginCheck.jsp"/>
 <table border="1">
 	<tr>
 		<td>${c.num }</td>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<!-- @Component("id")붙은 클래스를 자동 생성, @Autowire등도 포함-->
+	<context:component-scan base-package="com.di.animal.collection"/>
+	
+	<bean id="tiger1" class="com.di.animal.collection.Tiger">
+		<property name="name" value="tigris"/>
+		<constructor-arg name="age" value="1"/>
+	</bean>
+	<bean id="tiger2" class="com.di.animal.collection.Tiger">
+		<constructor-arg name="age" value="2"/>
+		<property name="name" value="queen"/>
+	</bean>
+	
+	<bean id="lion1" class="com.di.animal.collection.Lion">
+		<constructor-arg name="age" value="3"/>
+		<property name="name" value="leon"/>
+	</bean>	
+	<bean id="lion2" class="com.di.animal.collection.Lion">
+		<constructor-arg name="age" value="4"/>
+		<property name="name" value="king"/>
+	</bean>
+	
+	<bean id="paris" class="com.di.animal.collection.ParisZoo">
+		<property name="lions">
+			<list>
+				<ref bean="lion1"/>
+				<ref bean="lion2"/>
+			</list>		
+		</property>
+		<property name="tigers">
+			<list>
+				<ref bean="tiger1"/>
+				<ref bean="tiger2"/>
+			</list>
+		</property>
+	</bean>
+
+</beans>
