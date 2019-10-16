@@ -10,7 +10,7 @@ public class pctest {
 			System.out.println(Arrays.toString(a));
 			System.out.println("실제배열조작");
 			System.out.print("[");
-			for(int j=0;j<r-1;j++) {
+			for(int j=0;j<r-1;j++) { //0~r-1까지 r개
 				System.out.print(d[a[j]]+", ");
 			}
 			System.out.println(d[a[r-1]]+"]");

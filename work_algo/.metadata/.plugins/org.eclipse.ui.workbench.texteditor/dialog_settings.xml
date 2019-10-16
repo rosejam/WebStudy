@@ -6,12 +6,18 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Lotto" key="selection"/>
+		<item value="Integer.parseInt(st.nextToken())" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="turns[k][1]"/>
+			<item value="turns[k][0]"/>
+			<item value="dir[0]"/>
+			<item value="dir[3]"/>
+			<item value="dir[2]"/>
+			<item value="dir[1]"/>
 			<item value="lotto"/>
 			<item value="random"/>
 			<item value="return"/>
@@ -21,14 +27,15 @@
 			<item value="map"/>
 			<item value="st"/>
 			<item value="movedfs"/>
-			<item value="cheese"/>
-			<item value="tiling"/>
-			<item value="&amp;"/>
-			<item value="numberOfSwaps"/>
-			<item value="a_i"/>
-			<item value="Long"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Integer.parseInt(st.nextToken())"/>
+			<item value="turns[k][1]"/>
+			<item value="Integer.parseInt(st.nextToken())-1"/>
+			<item value="dir[k][0]"/>
+			<item value="dir[k][3]"/>
+			<item value="dir[k][2]"/>
+			<item value="dir[k][1]"/>
 			<item value="Lotto"/>
 			<item value="break"/>
 			<item value="list"/>
@@ -37,20 +44,13 @@
 			<item value="rcm"/>
 			<item value="move"/>
 			<item value="map"/>
-			<item value="til"/>
-			<item value="&amp;&amp;"/>
-			<item value="numSwaps"/>
-			<item value="i"/>
-			<item value="q"/>
-			<item value="Integer"/>
-			<item value="int"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="294" key="DIALOG_WIDTH"/>
-		<item value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont" key="DIALOG_FONT_NAME"/>
-		<item value="408" key="DIALOG_HEIGHT"/>
-		<item value="550" key="DIALOG_X_ORIGIN"/>
-		<item value="203" key="DIALOG_Y_ORIGIN"/>
+		<item value="288" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="391" key="DIALOG_HEIGHT"/>
+		<item value="-45" key="DIALOG_X_ORIGIN"/>
+		<item value="280" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
