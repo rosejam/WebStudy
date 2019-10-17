@@ -90,7 +90,7 @@ public class Main_BJ_14891_톱니바퀴_서울9반_김동주_끝_ {
 			//돌리기
 			for(int i=0; i<4; i++) {
 				if(dir[k][i]== 1) { //시계방향 돌리기
-					//주의!!!!대입 방향 잘못하면 다똑같아짐!!!!
+					//주의!!!!대입 방향 잘못하면 다똑같아짐!!!! //어레이리스트로 처음것과 마지막만 조절하면 자동으로 인덱스 처리가 된다!!
 					int temp = T[i][7];
 					for(int j=7; j>0; j--) {
 						T[i][j] = T[i][j-1]; //7에 6넣음
@@ -102,7 +102,8 @@ public class Main_BJ_14891_톱니바퀴_서울9반_김동주_끝_ {
 						T[i][j] = T[i][j+1]; //0에 1넣음
 					}
 					T[i][7] = temp;
-				}//그대로 있기
+				}
+				//그대로 있기
 			}
 //			System.out.println(Arrays.toString(dir[k]));
 //			System.out.println(Arrays.toString(T[0]));
@@ -118,5 +119,18 @@ public class Main_BJ_14891_톱니바퀴_서울9반_김동주_끝_ {
 		if(T[2][0]==1) score += 4;
 		if(T[3][0]==1) score += 8;
 		System.out.print(score);
+		
+/*		//예시답안 //n은 지금 돌리는 바퀴 index
+		int dir = new int[4];
+		for(int i=n; i<3; i++) { //오른쪽으로
+			if(T[i][2]!=T[i+1][6]) dir[i+1] = dir[i]*-1;
+		}
+		for(int i=n; i>0; i--) { //왼쪽으로
+			if(T[i-1][2]!=T[i][6]) dir[i-1] = dir[i]*-1;
+		}
+		for(int i=0; i<4; i++) {
+			if(dir[i]!=0) rotate(i,dir[i]);
+		}*/
 	}
+	
 }

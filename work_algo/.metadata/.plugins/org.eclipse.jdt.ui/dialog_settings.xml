@@ -39,7 +39,7 @@
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="678" key="DIALOG_HEIGHT"/>
 		<item value="310" key="DIALOG_X_ORIGIN"/>
-		<item value="71" key="DIALOG_Y_ORIGIN"/>
+		<item value="-30" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="NewClassWizardPage">
 		<item value="false" key="create_constructor"/>
@@ -59,7 +59,7 @@
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="696" key="DIALOG_HEIGHT"/>
 		<item value="698" key="DIALOG_X_ORIGIN"/>
-		<item value="64" key="DIALOG_Y_ORIGIN"/>
+		<item value="-48" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.dialogs.OpenTypeSelectionDialog2">
 		<item value="true" key="ShowStatusLine"/>

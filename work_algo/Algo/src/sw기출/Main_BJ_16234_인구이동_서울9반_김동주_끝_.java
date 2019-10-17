@@ -1,10 +1,8 @@
 package sw기출;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main_BJ_16234_인구이동_서울9반_김동주_끝_ {
@@ -15,7 +13,7 @@ public class Main_BJ_16234_인구이동_서울9반_김동주_끝_ {
 	public static int[] dj = {0,0,-1,1};
 	public static ArrayList<Integer> evenn;
 	public static void main(String[] args) throws Exception {
-		System.setIn(new FileInputStream("res/input_BJ_16234.txt"));
+		//System.setIn(new FileInputStream("res/input_BJ_16234.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		N = Integer.parseInt(st.nextToken());
@@ -51,6 +49,7 @@ public class Main_BJ_16234_인구이동_서울9반_김동주_끝_ {
 					}
 				}
 				//for(int[] u : union) System.out.println(Arrays.toString(u));
+				//System.out.println("-----------------------");
 				//for(int[] x : A)  System.out.println(Arrays.toString(x));
 				if(cnt == nn) { //연합을 더이상 만들 수 없을 때 = 벽 허물 수 없음
 					//(cnt == befcnt) { //연합을 다시 나눠도 개수가 동일할 때(원래는 계속 줄어야 함)

@@ -1,0 +1,10 @@
+폼태그에서 서버로 전송할 시 오류
+DB오류 익셉션 트라이 캐치, throws
+request/session scope를 foward로 잘 넘기고(redirect는 안됨!!) JSP페이지에서 EL로 잘 받아서 표시 (req는 한번 res로 나가면사라짐!!)
+페이지 전환 url경로 설정
+404not found 500server쪽의 문제(콘솔을 보고 뭐가 잘못됬는지 줄번호 찾기)
+DAO의 커넥션 설정(rs.next()로 데이터를 꼭 가리켜줌)
+VO(게터세터, 디폴트 생성자는 퍼블릭)  ${c.num } 이 안되면 겥네임이 없는거 
+prepraredstat resultset / 결과 int값이 0리턴할 경우 받았을 때 req.setattribute("msg", 에러입니다)
+insert는 주고 select는 작성?
+ajax도 볼것

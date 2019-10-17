@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Integer.parseInt(st.nextToken())" key="selection"/>
+		<item value="A" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="map"/>
 			<item value="turns[k][1]"/>
 			<item value="turns[k][0]"/>
 			<item value="dir[0]"/>
@@ -24,11 +25,11 @@
 			<item value="move"/>
 			<item value="set"/>
 			<item value="TreeSet"/>
-			<item value="map"/>
 			<item value="st"/>
 			<item value="movedfs"/>
 		</list>
 		<list key="replacehistory">
+			<item value="A"/>
 			<item value="Integer.parseInt(st.nextToken())"/>
 			<item value="turns[k][1]"/>
 			<item value="Integer.parseInt(st.nextToken())-1"/>
@@ -43,7 +44,6 @@
 			<item value="set"/>
 			<item value="rcm"/>
 			<item value="move"/>
-			<item value="map"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
