@@ -73,6 +73,6 @@ Conceptual World		----->		Data Model
 
 2.*논리적 데이터 모델(관계형 데이터 모델)/객체형/NonSQL등 데이터 모델 결정
 	DB구조를 이차원의 표를 이용하여 표현
-	Table
+	"Table"작성
 3.물리적 데이터 모델링
 	컴퓨터 내부에서 어떻게 저장되는가 표현(관계형 DB 중 종류 oracle 등, data type 등 결정)
