@@ -32,4 +32,3 @@ public class MyBatisUtil2 {
         return factory.openSession();
     }
 }
-

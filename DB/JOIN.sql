@@ -80,3 +80,7 @@ where locid in (select locid from loc where state = 'Ontario');
 select deptid, deptname
 from dept
 where locid in (select locid from loc where city = 'Southlake');
+
+select d.deptno, d.deptid, e.deptid
+from emp e right join dept d
+on e.deptid = d.deptid;

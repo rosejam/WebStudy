@@ -30,7 +30,7 @@ SQL Mapping : java의 VO객체"object1개"와 DBtable의 "record1개"가 정확히 매핑됨 -
 
 App(Java)
 |
-myBatis 설정파일	    -----------	Mapper 파일 : SQL쿼리문이 들어있는 파일
+myBatis 설정파일	    -----------	Mapper 파일 : "SQL쿼리문"이 들어있는 파일
 (Configuration.xml)			(Customer.xml)
 |
 DB
@@ -39,12 +39,16 @@ Configuration.xml 설정파일 :
 	1. Alias지정(vo객체에 별칭 설정)
 	2. 환경 세팅(db 정보 제공)
 	3. Mapper 파일의 경로
-	
-ResultMap>
+매퍼 파일 : 실행 할 쿼리 문을 저장하는 파일. 테이블 하나당 한개씩 작성
+	ㄴnamespace태그: 작업하는 "테이블들을 구분"해주기 위한 식별자
+
+ResultMap> select후의 결과 처리를 위해 정의
 SqlSession메소드에서 Mapper file의 ResultMap정의에 따라
-1. VO생성
-2. vo에 값 set
-3. List에 담아서 return해줌 while(rs.next())
+1. (type 속성의) VO생성 -> 디폴트 생성자 사용
+2. vo의 필드에 값 set - > property 속성 이름 기준으로 setter사용
+3. List에 담아서 return해줌 -> while(rs.next())
+
+SQL문태그에서 parameterType 속성이 VO인 경우 #{}안의 이름 기준으로 getter사용!!
 
 	<SqlSession>
 1. SqlSessionFactoryBuilder 클래스 : 2.를 생성하는 클래스

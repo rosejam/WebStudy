@@ -1,0 +1,75 @@
+Spring Legacy 옛날 방식
+------------------------------------------------------------------
+4개의 dependency(=library) 참고
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+<groupId>mysql</groupId>
+<artifactId>mysql-connector-java</artifactId>
+<version>8.0.17</version>
+</dependency>
+		
+<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+<dependency>
+<groupId>org.mybatis</groupId>
+<artifactId>mybatis</artifactId>
+<version>3.2.8</version>
+</dependency>
+		
+<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+<dependency>
+<groupId>org.mybatis</groupId>
+<artifactId>mybatis-spring</artifactId>
+<version>1.1.1</version>
+</dependency>
+		
+<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+<dependency>
+<groupId>commons-dbcp</groupId>
+<artifactId>commons-dbcp</artifactId>
+<version>1.4</version>
+</dependency>
+-----------------------------------------------------------------------
+(DBCP = 데이터베이스 커넥션 풀)>
+dbcp의 "DataSource"클래스 = Connection"Pool"객체
+	클라이언트 프로그램에서 요청하기 전에 "미리 DB와의 Connection을 만들어 pool에 저장"해 놓고 있는 객체 (DB작업이 필요할 때마다 getConnection으로 생성할 필요X, 속도가 훨씬 빨라짐)
+	Connection에 대한 요청이 들어오면 pool에서 꺼내서 빌려주고 나중에 반납받음
+		따라서 db정보를 xml에 적어둔다.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Client			 (App을 위해 만듬)	      		       (CustomerServiceImpl을 위해 만듬)
+			2.CustomerService	     		   	4.CustomerDao
+	 	     	   	|					|  
+1.App  <ㄱ  			|					|
+(main)	|			|	        	      dao			|		       SqlSession		(Spring "Bean" 환경파일)
+	ㄴ ㅡㅡㅡㅡ	3.CustomerServiceImpl     <--- "자동주입"---     5.CustomerDaoImpl   	<--- "자동주입"----	      6.mybatis-db.xml
+	  "getBean"	"서비스 객체"				"CRUD"작업(dao객체)				1)import (7.db.xml - db커넥션설정관련)
+	  		메소드 하나당 "여러개의 			메소드 하나당 "1개의 				2)SqlSessionFactory 생성
+	     		   dao메소드" 묶어서 호출가능 		   Query"수행					3)SqlSession 생성 
+	  		"Tx관리"(=트랜잭션)			서비스 객체에 의해 이용됨				4)서비스 객체, dao객체 생성(bean) - Component어노테이션 사용! cus및 cdao로 생성(bean태그X)
+				<cus>					<cdao>
+			   											  ^
+													    	   |
+  						Customer								(매퍼파일)
+												 	      8.CustomerMapper.xml
+													      실행할 쿼리문 포함 파일
+자동주입은 @AutoWired
+---------------------------------------------------------------------
+트랜잭션 처리>
+0.@Transactional 어노테이션을 tx관리할 메서드 앞에 작성
+1.xml파일의 namespaces에서 tx 체크박스 체크
+2.<tx:annotation-driven transaction-manager="transactionManager"/>를 xml에 작성
+3.어노테이션된 메서드를 실행하면 AOP방식(중간중간에 필요한게 있으면 알아서 끼워넣어주는 방식)으로 자동으로 rollback및 commit을 처리해서 alll or nothing이 되도록 tx처리를 해준다.
+AOP라이브러리 필요
+-----------------------------------------------------------------------
+<!-- Transaction용 dependency 2개 -->
+<dependency>
+	<groupId>org.aspectj</groupId>
+	<artifactId>aspectjrt</artifactId>
+	<version>1.8.9</version>
+</dependency>
+<dependency>
+	<groupId>org.aspectj</groupId>
+	<artifactId>aspectjweaver</artifactId>
+	<version>1.8.9</version>
+</dependency>

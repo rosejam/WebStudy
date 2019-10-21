@@ -1,16 +1,17 @@
 	<Spring 기본 설정>
 https://spring.io/tools3/sts/legacy 에서 sts 3.9.7버전 안에 sts bundle - 3.9.7 release의 sts.exe가 스프링이 포함된 이클립스이다.
-서버에 톰캣이 이미 들어있음
-Spring Legacy 프로젝트 생성 - 탬플릿 : Simple Spring Maven - Library 자바 버전 1.8로 바꾸기
+서버에는 톰캣이 이미 들어있음
+1. Spring Legacy 프로젝트 생성 - 탬플릿 : Simple Spring Maven   ->   Build path가서 jre(자바 library) 버전 1.8로 바꾸기
+2. dependency 추가
 	 - "pom.xml(project object model)" : 프로젝트에 필요한 lib나 각종 환경정보.
 		ㄴ 필요한 라이브러리를 추가하고 저장하면 Maven Build Tool이 알아서 "Maven Repository사이트(https://mvnrepository.com)에서 Local Repository(/user/.m2/repository)로" 다운로드 및 버전 관리를 해줌!!(lib파일에 jar복붙 필요X)
 		ㄴ dependency태그 1개가 라이브러리(=항아리 모양) 1개
-		ㄴ xml에서 태그 추가하거나 Dependencies에서 Add하여 추가 할 수있음 (groupId / artifactId 필수) - 저 사이트에서 복붙하면 됨
+		ㄴ xml에서 태그 추가하거나 Dependencies에서 Add하여 추가 할 수있음 (groupId / artifactId/version 필수/scope는 옵션) - 저 사이트에서 복붙하면 됨
 		ㄴ 로컬에는 groupId / artifactId 순으로 폴더에 들어있음
-
-main/java : 자바 코드
-main/resources : 자바 아닌것들
-test/java : 테스트 코드
+3. 패키지 생성
+	main/java : 패키지 아래 자바 코드
+	main/resources : 자바 아닌것들 - Spring Bean Configuration file(.xml)설정파일, myBatis의 Mapper file 등
+	test/java : 테스트 코드
 
 	<Spring Framework> 
 Enterprise Application(웹환경 등 네트워크에서 돌아가는 어플리케이션)에서 필요한 기반 기능(comprehensive infrastructural support) 제공
@@ -21,7 +22,7 @@ Core(=IoC Container=Bean Factory), Context, DAO, ORM, Web, WebMVC, AOP //, JMS, 
 -----------------------------------------------------------------------------------------------------
 Application Server(=Web logic) 톰캣
 
-1. Core : IoC(or DI)기능 지원, Bean 클래스 제어
+1. Core : IoC(or DI)기능 지원, Bean 클래스 제어=Container 기능
 2. Context 
 
 3. DAO : JDBC 쉽게
@@ -32,23 +33,30 @@ DB작업 java app> 	1.JDBC(직접 모두 작성) -- 3.SpringDAO
 
 
 	<Bean>
+ApplicationContext : 스프링에서 제공해주는 "Container 클래스". 필요한 객체(bean) 생성해서 다른 곳에 공급.
+
 Spring Bean Configuration file(.xml) : ApplicationContext 컨테이너에 파라메터로 전달할 spring 설정파일.
 	ㄴ <bean id="c" class="Car"/> 는 Car c=new Car(); 와 동일 (bean 1개 당 객체 1개)
 ~~XmlApplicationContext컨테이너 객체를 생성하면 "context.xml"을 읽어와서 모든 bean태그 안의 class를 객체로 생성하고 레퍼런스는 id로 매긴다.  그 후 컨테이너에 대기시킴
 	ㄴ lazy-init이 "true"면 미리 객체를 생성해놓지 않고 요청되었을 때 생성한다.
 	ㄴ getBean(id)로 받아갈 수 있음
 
-	<DI>=Dependency Injection=의존성 주입 < IoC(Inversion of Control=제어 역전)
+	<DI>=Dependency Injection=의존성 주입 <= IoC(Inversion of Control=제어 역전)
 컨테이너가 Test Class안으로 필요한 객체를 모두 주입해서
-	App의 main에서는 Test객체만 getBean()해서 가져가면 된다!(필요한 객체=의존하는 객체를 new해서 만들지 않음)
-i)생성자 주입
-ii)Setter 주입
+	App의 main에서는 Test객체만 getBean()해서 가져가면 된다!(Test에게 필요한 객체=Test가 의존하는 객체를 new해서 만들지 않고 스프링 컨테이너가 주입해서 미리 넣어줌)
+i)"생성자 주입 : constructor-arg"태그(인덱스는 0부터), 주입하는 것이 값이면 value/객체이면 ref=해서 bean의 id를 넣어줌
+ii)"Setter 주입 : property"태그
 생성자주입이 안되면 객체생성을 못해서 에러가 발생하지만
 
 	<Annotation>
 0. 소스코드에 어노테이션 작성 @Autowired @Qualifier("id") 등
-1. Namespace에서 context 체크
-2. <context:annotation-config/>를 xml에 추가 -> 소스코드에 추가한 어노테이션을 활성화시키는 태그!!!!
-
-<context:component-scan base-package="com.di.annotation"/>는 지정 패키지를 뒤져서 어노테이션붙은 클래스를 자동등록!! @Component("id"), @Repository, @Autowired 등
+1. Namespace에서 context 체크박스 체크
+2. 어노테이션 활성화 태그를 xml에 작성
+<context:annotation-config/>를 xml에 추가 -> 소스코드에 추가한 어노테이션을 활성화시키는 태그!!!!
+<context:component-scan base-package="com.di.annotation"/>는 지정 "패키지를 뒤져서 어노테이션붙은 클래스를 자동등록"!! @Component("id"), @Repository, @Autowired 등
 	위의 annotation-config보다 처리하는 annotation범위가 더 넓다!!
+
+어노테이션 종류>
+@Autowired는 "멤버필드 자동주입"
+	1.컨테이너 내의 bean 중 "타입"이 같은 것을 주입 2.타입같은 것이 여러개라면 이름이 같은것을 주입 3. Qualifier("id")가 있는 경우 타입이 같은 것 중 그 id를 가진 bean을 주입
+@Component("id")는 해당 클래스를 xml에 작성하지 않아도 컨테이너가 클래스의 "객체 자동 생성" (괄호안의 id는 생성할 bean의 id를 의미)

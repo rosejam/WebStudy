@@ -27,8 +27,13 @@ Transaction : 하나의 단위로 묶여서 처리되어야 하는 것
 조인(이너-equi , 아우터-left/right, 셀프-self)>
 
 inner join은 null이 빠짐
+----------------------------------------------------***********
 outer join은 null도 들어감
-
+!!!!>deptid기준으로 empid가 null인 것도 되는 것
+select d.deptid, d.deptname, e.empid
+from emp e right join dept d -- left join 아님!
+on e.deptid = d.deptid;
+----------------------------------------------------***********
 =은 1개 in은 여러개
 sub query는 먼저 실행 되어 main query의 조건으로 사용됨
 ------------------------

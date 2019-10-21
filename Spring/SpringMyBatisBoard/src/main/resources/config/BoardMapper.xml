@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+
+<!-- 리절트 맵 정의 : select 한 후의 결과 처리를 위해 정의 해 놓음-->
+   <resultMap id="BoardResult"  type="Board">
+     <result property="num" column="num"/>
+     <result property="name" column="name"/>
+     <result property="title" column="title"/>
+     <result property="count" column="count"/>
+   </resultMap>
+
+  <select id="selectAll" resultMap="BoardResult">
+    select * from board
+  </select>
+
+  <select id="selectOne" parameterType="java.lang.String" resultMap="BoardResult">
+    select * from board where num = #{x}
+  </select>
+  
+  <insert id="insert" parameterType="Board">
+  	insert into board(name, title) values(#{name}, #{title})
+  </insert>
+  
+  <delete id="delete" parameterType="java.lang.String">
+    delete from board where num = #{num}
+  </delete>
+  
+  <select id="findTitle" parameterType="java.lang.String" resultMap="BoardResult">
+  	select * from board where title like concat('%', #{title}, '%')
+  </select>
+  
+  <select id="findName" parameterType="java.lang.String" resultMap="BoardResult">
+  	select * from board where name like concat('%', #{xx}, '%')
+  </select>
+  
+  <update id="countUp" parameterType="Board">
+    update board set count = #{count} + 1 where num = #{num}
+  </update>
+  
+</mapper>

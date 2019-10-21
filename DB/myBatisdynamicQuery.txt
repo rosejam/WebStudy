@@ -1,0 +1,33 @@
+  List<Customer> list = dao.searchAll(null, null);
+    	//List<Customer> list = dao.searchAll("name", "t");
+    	//List<Customer> list = dao.searchAll("address", "la");
+
+------------------------------------------------------------------------------
+    public List<Customer> searchAll(String condition, String word) {
+		SqlSession session = MyBatisUtil.getSqlSession();
+		HashMap<String, String> map = new HashMap<String, String>();
+		
+        map.put("key", condition);//검색조건
+        map.put("word", word);//검색어	
+        return session.selectList("searchAll", map);
+       
+		
+	}
+-------------------------------------------------------------------------------------
+
+<select id='searchAll' resultType="Customer"  parameterType="java.util.HashMap">
+   	  select * from customer
+   	  <where>  
+   	  		<if test="key != null">
+   	  			<choose>
+   	  				<when test="key == 'name'">
+   	  					name like concat('%', #{word}, '%')
+   	  				</when>
+   	  				<when test="key == 'address'">
+   	  					address = #{word}
+   	  				</when>
+   	  			</choose>
+   	  		</if>   	  
+   	  </where>
+   </select> 
+   

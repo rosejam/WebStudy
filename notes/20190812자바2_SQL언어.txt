@@ -22,6 +22,7 @@ DB 관리 시스템=DBMS : 관리 프로그램들의 묶음 	ex)Oracle-MySQL, MS SQL (mysql은 �
 	"관리자(DBA)나 설계자"가 데이터간의 관계를 정의, 구조를 변경
 	<CREATE table>
 	create table 테이블이름(칼럼이름 칼럼데이터타입(크기) 칼럼제약조건,.. ,.. );
+	INDEX도 create 할수 있다!!
 	<ALTER table> add, modify, drop(컬럼 삭제), 새로운 칼럼 정의 등
 	alter table 테이블이름 뭐할건지
 		add (컬럼),  drop(컬럼 삭제) 등 
@@ -86,7 +87,7 @@ Developer Default로 my sql 설치 -1체크 - standalone - use legacy - PW설정(manage
 	<중요 함수>
 *round(숫자, 자릿수) -- ceiling, floor
 *concat
-*substring('문자열', 시작위치, 개수) -- 인덱스는 1부터 시작, 뒤에 것은 인덱스 아니고 개수
+*substring('문자열', 시작위치, 개수) -- 인덱스는 1부터 시작!, 뒤에 것은 인덱스 아니고 개수
 *ifnull, coalesce
 집계함수 5개
 *now() = sysdate(), curdate() = currentdate()
@@ -97,5 +98,3 @@ Developer Default로 my sql 설치 -1체크 - standalone - use legacy - PW설정(manage
 
 cast( , ) 형변환
 to_char(hdate, 'yyyy-mm-dd') 오라클에서 문자형식에맞추어 생성하는 함수
-
-
