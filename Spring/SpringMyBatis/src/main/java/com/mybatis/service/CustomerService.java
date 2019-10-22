@@ -18,6 +18,7 @@ public interface CustomerService {
 	@Transactional
 	public void insert2(Customer c) throws Exception;
 	//public void txTest(String num);
+	
 }
 
 

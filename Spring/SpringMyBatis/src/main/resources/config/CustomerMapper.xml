@@ -7,6 +7,7 @@ namespace: 작업하는 테이블들을 구분해주기 위한 식별자 -->
 <mapper namespace="customer">
 
 <!-- 리절트 맵 정의 : select 한 후의 결과 처리를 위해 정의 해 놓음-->
+<!-- 여기서 Customer객체의 디폴트 생성자!로 생성이 된후 setter로 내용을 넣는다. -->
    <resultMap id="CustomerResult"  type="Customer">
      <result property="num" column="num"/>
      <result property="name" column="name"/>

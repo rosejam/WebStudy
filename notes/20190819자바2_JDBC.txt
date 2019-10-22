@@ -61,7 +61,7 @@ CallableStatement : 실행 Query문이 이미 DB안에 내장되어 있음
 		|
 		|--------->레코드 1건의 정보를 저장하기 위한 객체 : VO(Value Object)
 		|
-		Java: server					Java-main(): client			-------->DAO(Data Access Object) : DB에 접근해서 CRUD등 작업
+		Java: server					Java-main(): client			           	--->DAO(Data Access Object) : DB에 접근해서 CRUD등 작업
 		|						|
 		<JDBC>						<JDBC>					
 		|						|	

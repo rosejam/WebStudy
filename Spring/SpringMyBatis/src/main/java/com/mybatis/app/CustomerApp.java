@@ -20,7 +20,9 @@ public class CustomerApp {
 		Customer cc = new Customer("99","bambie","london");
 		try {
 			service.insert2(cc); //transaction처리된 메서드를 try~catch로 받는다.
-		}catch(Exception e) {}
+		}catch(Exception e) {
+			//System.out.println("insert2를 할 수 없다~ 롤백됨~");
+		}
 		
 		List<Customer> list = service.selectAll();
 		for(Customer c: list) {

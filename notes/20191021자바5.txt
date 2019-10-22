@@ -42,7 +42,7 @@ Client			 (App을 위해 만듬)	      		       (CustomerServiceImpl을 위해 만듬)
 	 	     	   	|					|  
 1.App  <ㄱ  			|					|
 (main)	|			|	        	      dao			|		       SqlSession		(Spring "Bean" 환경파일)
-	ㄴ ㅡㅡㅡㅡ	3.CustomerServiceImpl     <--- "자동주입"---     5.CustomerDaoImpl   	<--- "자동주입"----	      6.mybatis-db.xml
+	ㄴ ㅡㅡㅡㅡ	3.CustomerServiceImpl     <--- "자동주입"---     5.CustomerDaoImpl   	<--- "자동주입"----	       6.mybatis-db.xml
 	  "getBean"	"서비스 객체"				"CRUD"작업(dao객체)				1)import (7.db.xml - db커넥션설정관련)
 	  		메소드 하나당 "여러개의 			메소드 하나당 "1개의 				2)SqlSessionFactory 생성
 	     		   dao메소드" 묶어서 호출가능 		   Query"수행					3)SqlSession 생성 
@@ -73,3 +73,5 @@ AOP라이브러리 필요
 	<artifactId>aspectjweaver</artifactId>
 	<version>1.8.9</version>
 </dependency>
+
+//내가 메소드를 호출하면 myBatis가 직접 JDBC로 DB작업을 하면서 dbcp에서 커넥션을 빌려 사용한다.

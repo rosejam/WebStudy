@@ -3,13 +3,14 @@ package com.mybatis.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mybatis.dao.BoardDao;
 import com.mybatis.vo.Board;
 
-@Component("bod")
+//@Component("bod")
+@Service("bod")
 public class BoardServiceImpl implements BoardService {
 	@Autowired
 	BoardDao dao;
@@ -19,10 +20,10 @@ public class BoardServiceImpl implements BoardService {
 		return dao.selectAll();
 	}
 	
-	@Transactional
 	@Override
+	@Transactional
 	public Board selectOne(String num) throws Exception {
-		dao.update(dao.selectOne(num));
+		dao.countUp(num);
 		return dao.selectOne(num);
 	}
 	
@@ -37,13 +38,13 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public List<Board> findByTitle(String title) {
-		return dao.findByTitle(title);
-	}
-
-	@Override
-	public List<Board> findByName(String name) {
-		return dao.findByName(name);
+	public List<Board> search(String condition, String word){
+		if(condition.equals("title")) {
+			return dao.findByTitle(word);
+		}else if(condition.equals("name")) {
+			return dao.findByName(word);
+		}
+		return null;
 	}
 
 }

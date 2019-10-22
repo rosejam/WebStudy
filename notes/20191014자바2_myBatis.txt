@@ -44,7 +44,7 @@ Configuration.xml 설정파일 :
 
 ResultMap> select후의 결과 처리를 위해 정의
 SqlSession메소드에서 Mapper file의 ResultMap정의에 따라
-1. (type 속성의) VO생성 -> 디폴트 생성자 사용
+1. (type 속성의) VO생성 -> 디폴트 생성자 사용!!!!(VO에 디폴트 생성자가 꼭 있어야 함)
 2. vo의 필드에 값 set - > property 속성 이름 기준으로 setter사용
 3. List에 담아서 return해줌 -> while(rs.next())
 

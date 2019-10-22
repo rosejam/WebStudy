@@ -5,40 +5,46 @@
 
 <mapper namespace="board">
 
-<!-- 리절트 맵 정의 : select 한 후의 결과 처리를 위해 정의 해 놓음-->
-   <resultMap id="BoardResult"  type="Board">
-     <result property="num" column="num"/>
-     <result property="name" column="name"/>
-     <result property="title" column="title"/>
-     <result property="count" column="count"/>
-   </resultMap>
+	<!-- 리절트 맵 정의 : select 한 후의 결과 처리를 위해 정의 해 놓음 -->
+	<resultMap id="BoardResult" type="Board">
+		<result property="num" column="num" />
+		<result property="pass" column="pass" />
+		<result property="name" column="name" />
+		<result property="wdate" column="wdate" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="count" column="count" />
+	</resultMap>
 
-  <select id="selectAll" resultMap="BoardResult">
-    select * from board
-  </select>
+	<select id="selectAll" resultMap="BoardResult">
+		select num,name,wdate,title,count from board order by num desc
+	</select>
 
-  <select id="selectOne" parameterType="java.lang.String" resultMap="BoardResult">
-    select * from board where num = #{x}
-  </select>
-  
-  <insert id="insert" parameterType="Board">
-  	insert into board(name, title) values(#{name}, #{title})
-  </insert>
-  
-  <delete id="delete" parameterType="java.lang.String">
-    delete from board where num = #{num}
-  </delete>
-  
-  <select id="findTitle" parameterType="java.lang.String" resultMap="BoardResult">
-  	select * from board where title like concat('%', #{title}, '%')
-  </select>
-  
-  <select id="findName" parameterType="java.lang.String" resultMap="BoardResult">
-  	select * from board where name like concat('%', #{xx}, '%')
-  </select>
-  
-  <update id="countUp" parameterType="Board">
-    update board set count = #{count} + 1 where num = #{num}
-  </update>
-  
+	<select id="selectOne" parameterType="java.lang.String"
+		resultMap="BoardResult">
+		select num,name,wdate,title,content,count from board where num = #{x}
+	</select>
+
+	<insert id="insert" parameterType="Board">
+		insert into board(pass,name,wdate,title,content,count) values(#{pass},#{name},sysdate(),#{title},#{content},0)
+	</insert>
+
+	<delete id="delete" parameterType="java.lang.String">
+		delete from board where num = #{num}
+	</delete>
+
+	<select id="findTitle" parameterType="java.lang.String"
+		resultMap="BoardResult">
+		select num,name,wdate,title,count from board where title like concat('%', #{title}, '%')
+	</select>
+
+	<select id="findName" parameterType="java.lang.String"
+		resultMap="BoardResult">
+		select num,name,wdate,title,count from board where name like concat('%', #{name}, '%')
+	</select>
+
+	<update id="countUp" parameterType="java.lang.String">
+		update board set count = count + 1 where num = #{num}
+	</update>
+
 </mapper>

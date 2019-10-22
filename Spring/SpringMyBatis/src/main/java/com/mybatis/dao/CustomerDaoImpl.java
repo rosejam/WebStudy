@@ -4,15 +4,17 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.mybatis.vo.Customer;
 
 //dao객체(crud)
-@Component("cdao")
+//@Component("cdao")
+@Repository("cdao") //Component중에서 repository역할(dao객체)임을 표시
 public class CustomerDaoImpl implements CustomerDao {
 	@Autowired
-	SqlSession session; //SqlSessionTemplate빈(세션 객체)이 주입된다.
+	SqlSession session; //SqlSessionTemplate빈(세션 객체)이 주입된다.(SqlSession의 자식)
+						//	메서드로 쿼리를 1개 실행 시킬 때 마다 SqlSession을 생성해서 사용할 수 있게 해준다.
 	
 	@Override
 	public List<Customer> selectAll() {

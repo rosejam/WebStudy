@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 디폴트 namespace가 mvc로 됐다.(아래 첫번째 줄) -->
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+	<!-- "웹  MVC 환경"에서 스프링이 사용하는 BEAN 설정 파일 : 생성할 객체가 있으면 이 파일에 언급해야 함 -->
+	
+	<!-- spring bean 설정 파일 : 스프링의 컨테이너가 생성할 객체를 적는 파일 -->
+	<!-- 가져온 bean 설정 파일 import(namespace는 beans로) -->
+	<!-- 컨테이너는 지금 xml문서만 읽어가면 된다. import태그안의 xml도 같이 읽어가게 됨.(재활용성) -->
+	<beans:import resource="mybatis-db.xml"/> <!-- 이 안에 db.xml도 import되어 있음 -->
+	
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<!-- 이미지,js,css 등 정적 리소스가 MVC구조를 타지 않고 바로 해당 location에서 가져다 쓰도록 함 -->
+	<resources mapping="/resources/**" location="/resources/" /> <!-- /**의 의미는 resources아래 폴더에 넣어도 된다는 뜻 --> <!-- resources/폴더명~ -->
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<!-- beans접두어를 붙임 --><!-- JSP를 view로 사용하는 ViewResolver클래스 -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+		<!-- 논리적 view 이름에 prefix와 suffix를 붙여서 물리적 view이름으로 바꿔줌! -->
+	</beans:bean>
+	
+	<context:component-scan base-package="com.mvc.controller" />
+	
+	
+</beans:beans>

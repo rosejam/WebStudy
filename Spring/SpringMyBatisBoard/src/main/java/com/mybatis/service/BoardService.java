@@ -10,7 +10,6 @@ public interface BoardService {
 	public Board selectOne(String num) throws Exception;
 	public void insert(Board c);
 	public void delete(String num);
-	public List<Board> findByTitle(String title);
-	public List<Board> findByName(String name);
+	public List<Board> search(String condition, String word);
 	
 }

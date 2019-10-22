@@ -1,0 +1,44 @@
+MVC프로젝트 생성시 Simple Maven이 아니고 MVC Project 탬플릿을 선택한다. 그 다음 top-level-package는 3단계이상(맨 마지막은 Context Root로 들어감)
+1. jre버전 1.8로 바꾸기
+2. 6가지 dependency를 pom.xml에 복붙, spring framework는 3.1.1에서 4.3.23으로 올리기
+3. MVC중 C에 해당하는 HomeController.java가 main/java에 이미 생성되어 있다. (@Controller 어노테이션)
+4. Web Project Setting에서 Context Root 수정
+5. src/main/webapp/WEB-INF에 web.xml에서 servlet-mapping의 url-pattern 수정 ( *.do나 /등), 한글 처리용 필터 추가
+
+	<Spring MVC> 웹앱개발
+"DispatcherServlet"!이 Filter(="Front Controller)역할"을 한다.
+	ㄴ"web.xml에 servlet init-param"에 주어진 정보로 생성
+		ㄴ"param-value"!!가 스프링 bean설정파일!!!!
+
+	        	HandlerMapping(url에 따라 "어떤 controller" 사용할지 검색) : @RequestMapping() 어노테이션으로 간단하게 할 수 있음!!!
+		           ^
+	1.요청URL  	|2.	3.처리요청     처리				
+클라이언트  --> 	"DispatcherServlet"     -->	"Controller"   <--->    Service   -->   Dao   <--->	DB
+          	   <--	   |	|        	    <--		 	     		
+	7.결과전달  |	|	4.ModelAndView 리턴	      		^
+	           	   |	|	 "data"와 "논리적view" 정보	      		vo
+	6. 응답화면 |	|
+	          	   v	|5."어떤 view" 사용할지 검색해서 물리적view 정보 리턴
+		 "View"	v
+			ViewResolver(접두어와 접미어를 붙여줌)
+				
+http://localhost:8080/ContextRoot/@RequestMapping의 value값  : 클라이언트가 할 요청
+
+체크할 순서>
+1.web.xml에서 ServletContext의 context-param태그 -> 모든 서블릿에서 공유해서 사용할 수 있는 정보를 입력
+		servlet의 init-param태그 -> 특정 서블릿(DispatcherServlet등)에서 사용할 수 있는 정보 입력
+2.context-param의 <param-value태그>안의 xml파일 -> db정보, myBatis(mapper파일의 경로), 트랜잭션 정보 등을 표시, 어노테이션 태그가 dao,service 패키지를 체크하도록 되어있는지
+3.servlet의 init-param의 <param-value태그>안의 xml파일 -> view의 "webapp기준의 접두사/접미사 경로" 체크, 리소스경로 체크, 어노테이션 태그가 controller 패키지를 체크하도록 되어있는지
+4.Controller클래스의 @Controller및 @Autowired 메소드마다 @Get/PostMapping
+5.서비스 객체의 @Service DAO객체의 @Repository
+6.JSP에서 링크 걸 때 파라메터 잘 넘겨주기
+
+시험>
+*모든 환경파일은 setting이 되어 있고 내용을 채워 넣기
+*모든 자바 파일에서 어노테이션 확인하기
+1.jdbc.properties에서 db설정 정보체크
+2.매퍼파일에서 CRUD쿼리 작성
+3.컨트롤러>서비스>DAO순으로
+4.Controller클래스의 @Controller및 @Autowired 메소드마다 @Get/PostMapping
+5.서비스 객체의 @Service DAO객체의 @Repository
+6.JSP에서 링크 걸 때 파라메터 잘 넘겨주기

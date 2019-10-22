@@ -3,13 +3,14 @@ package com.mybatis.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.mybatis.dao.CustomerDao;
 import com.mybatis.vo.Customer;
 
-//클라이언트(CustomerApp.java)가 사용하는 객체 -> 이 객체를 getBean해가서 이 안의 메소드를 활용
-@Component("cus")
+//클라이언트(CustomerApp.java)가 사용하는 객체(=서비스 객체) -> 이 객체를 getBean해가서 이 안의 메소드를 활용
+//@Component("cus")
+@Service("cus") //Component중에서도 역할이 Service 객체임을 표시하는 어노테이션. 위와 동일
 public class CustomerServiceImpl implements CustomerService {
 	@Autowired
 	CustomerDao dao; //type기준으로 주입 (CustomerDaoImpl은 CustomerDaoImpl타입이자 부모인 CustomerDao타입이기도 함!!!!)

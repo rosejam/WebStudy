@@ -4,11 +4,12 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.mybatis.vo.Board;
 
-@Component("bdao")
+//@Component("bdao")
+@Repository("bdao")
 public class BoardDaoImpl implements BoardDao {
 	@Autowired
 	SqlSession session;
@@ -46,8 +47,8 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
-	public void update(Board b) { //countUp
-		session.update("board.countUp", b);
+	public void countUp(String num) { //countUp
+		session.update("board.countUp", num);
 	}
 	
 }

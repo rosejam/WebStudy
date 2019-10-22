@@ -8,5 +8,6 @@
 </head>
 <body>
 	<h1>검색결과 데이터가 없습니다.</h1>
+	<a href="list.bod">돌아가기</a>
 </body>
 </html>

@@ -8,6 +8,7 @@
 <!-- mapper namespace="Board" -->
 
 <!-- 리절트 맵 정의 : select한 후의 결과 처리를 위해 정의해 놓음 --><!-- 쿼리마다 id가 있어서 자바에서 id를 통해 쿼리를 실행하도록 함 -->
+<!-- 여기서 customer의 디폴트 생성자!로 생성이 된후 setter로 내용을 넣는다. -->
    <resultMap id="CustomerResult"  type="customer"> <!-- 설정파일의 typeAlias를 type에 넣는다!(customer vo를 사용한다고 표시한 것)-->
      <result property="num" column="num"/> <!-- column의 값을 가져다가 vo객체의 property에 set하여 넣는다. -->
      <result property="name" column="name"/>

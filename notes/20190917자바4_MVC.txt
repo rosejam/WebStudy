@@ -15,7 +15,7 @@ client		   |		<---	DAO      <->    DB
 		   |forward		VO
 		   v			(POJO)
 	<---	  "View"			
-	response	  (JSP)			
+	response	  (JSP)
 
 http://localhost:8080/customer/list.cus  : 클라이언트가 할 요청
          서버:port/Context_Root/Servlet_Path

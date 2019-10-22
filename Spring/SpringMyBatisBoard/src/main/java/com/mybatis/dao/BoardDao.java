@@ -11,6 +11,6 @@ public interface BoardDao {
 	public int delete(String num);
 	public List<Board> findByTitle(String title);
 	public List<Board> findByName(String name);
-	public void update(Board b);
+	public void countUp(String num);
 	
 }

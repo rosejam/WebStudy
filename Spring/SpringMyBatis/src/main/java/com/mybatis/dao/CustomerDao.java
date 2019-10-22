@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.mybatis.vo.Customer;
 
-//client(CustomerService.java)를 위한 인터페이스
+//client(CustomerServiceImpl.java)를 위한 인터페이스
 public interface CustomerDao {
 	public List<Customer> selectAll();
 	public Customer selectOne(String num);
