@@ -15,7 +15,7 @@
 		permcomb(0);
 		
 		for(int i=0; i<4; i++) {
-			System.out.print(Lotto[i]+" ");
+			System.out.print(Lotto[i]);
 		}
 	}
 	// XX6X . 7, 9포함 8X
@@ -38,6 +38,6 @@
 }*/
 public class Main {
 	public static void main(String[] args) {
-		System.out.print("5 7 0 6");  //06 //X: 127934 //58
+		System.out.print("5706");  //06 //X: 127934 //58
 	}
 }

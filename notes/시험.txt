@@ -1,2 +1,7 @@
 월 : 객관식, 선택식
 금 : 실기
+
+DB새로 만들기
+users and privileges - add account - 3번째 탭에서 모두 체크 -apply
+create new schema - utf8및 bin -apply
+setup new connection name username defaultschema

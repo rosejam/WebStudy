@@ -31,8 +31,8 @@ public class Main_BJ_16236_아기상어_서울9반_김동주 { //구현및bfs
 					9: 아기 상어의 위치 - 한마리, 처음 크기 "2"
 				*/
 				if(pool[n][m] > 0) {
-					if(pool[n][m] == 9) {si =n; sj= m; pool[n][m] = 0;}
-					else if(pool[n][m] < 2) isFish = true;
+					if(pool[n][m] == 9) {si =n; sj= m; pool[n][m] = 0;} //아기상어
+					if(pool[n][m] < 2) isFish = true; //먹을 수 있는 물고기 유무
 				}
 			}
 			//System.out.println(Arrays.toString(pool[n]));
