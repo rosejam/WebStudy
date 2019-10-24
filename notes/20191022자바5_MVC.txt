@@ -27,7 +27,7 @@ http://localhost:8080/ContextRoot/@RequestMapping의 value값  : 클라이언트가 할 �
 체크할 순서>
 1.web.xml에서 ServletContext의 context-param태그 -> 모든 서블릿에서 공유해서 사용할 수 있는 정보를 입력
 		servlet의 init-param태그 -> 특정 서블릿(DispatcherServlet등)에서 사용할 수 있는 정보 입력
-2.context-param의 <param-value태그>안의 xml파일 -> db정보, myBatis(mapper파일의 경로), 트랜잭션 정보 등을 표시, 어노테이션 태그가 dao,service 패키지를 체크하도록 되어있는지
+2.context-param의 <param-value태그>안의 xml파일 -> db정보, myBatis(mapper파일의 경로), mapper파일에서 사용할 Alias 체크!, 트랜잭션 정보 등을 표시, 어노테이션 태그가 dao,service 패키지를 체크하도록 되어있는지
 3.servlet의 init-param의 <param-value태그>안의 xml파일 -> view의 "webapp기준의 접두사/접미사 경로" 체크, 리소스경로 체크, 어노테이션 태그가 controller 패키지를 체크하도록 되어있는지
 4.Controller클래스의 @Controller및 @Autowired 메소드마다 @Get/PostMapping
 5.서비스 객체의 @Service DAO객체의 @Repository

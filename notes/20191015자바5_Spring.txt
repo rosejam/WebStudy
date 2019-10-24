@@ -37,7 +37,7 @@ DB작업 java app> 	1.JDBC(직접 모두 작성) -- 3.SpringDAO
 
 Spring Bean Configuration file(.xml) : ApplicationContext 컨테이너에 파라메터로 전달할 spring 설정파일.
 	ㄴ <bean id="c" class="Car"/> 는 Car c=new Car(); 와 동일 (bean 1개 당 객체 1개)
-~~XmlApplicationContext컨테이너 객체를 생성하면 "xml설정파일"을 읽어와서 모든 bean태그 안의 class를 객체로 생성하고 레퍼런스는 id로 매긴다.  그 후 컨테이너에 대기시킴
+~~XmlApplicationContext"컨테이너 객체!"를 생성하면 "xml설정파일"을 읽어와서 모든 bean태그 안의 class를 객체로 생성하고 레퍼런스는 id로 매긴다.  그 후 컨테이너에 대기시킴
 	ㄴ lazy-init이 "true"면 미리 객체를 생성해놓지 않고 요청되었을 때 생성한다.
 	ㄴ getBean(id)로 받아갈 수 있음
 

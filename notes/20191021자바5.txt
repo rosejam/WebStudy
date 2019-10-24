@@ -43,7 +43,7 @@ Client			 (App을 위해 만듬)	      		       (CustomerServiceImpl을 위해 만듬)
 1.App  <ㄱ  			|					|
 (main)	|			|	        	      dao			|		       SqlSession		(Spring "Bean" 환경파일)
 	ㄴ ㅡㅡㅡㅡ	3.CustomerServiceImpl     <--- "자동주입"---     5.CustomerDaoImpl   	<--- "자동주입"----	       6.mybatis-db.xml
-	  "getBean"	"서비스 객체"				"CRUD"작업(dao객체)				1)import (7.db.xml - db커넥션설정관련)
+	  "getBean"	"서비스 객체"				"CRUD"작업(dao객체)				1)Connection Pool import (7.db.xml - db커넥션설정관련)
 	  		메소드 하나당 "여러개의 			메소드 하나당 "1개의 				2)SqlSessionFactory 생성
 	     		   dao메소드" 묶어서 호출가능 		   Query"수행					3)SqlSession 생성 
 	  		"Tx관리"(=트랜잭션)			서비스 객체에 의해 이용됨				4)서비스 객체, dao객체 생성(bean) - Component어노테이션 사용! cus및 cdao로 생성(bean태그X)

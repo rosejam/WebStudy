@@ -1,4 +1,4 @@
-package 문제풀이4;
+package PS;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
