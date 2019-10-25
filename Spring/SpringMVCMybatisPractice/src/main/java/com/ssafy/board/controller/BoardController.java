@@ -19,8 +19,6 @@ public class BoardController {
 	@Autowired
 	BoardService service;
 	
-	
-
 	@GetMapping("/boardList.do")
 	public String boardList(Model model) {
 		List<Board> list = service.selectAll();
