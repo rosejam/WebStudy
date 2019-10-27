@@ -3,7 +3,7 @@ package 문제풀이_PS;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Main_정올_2074_홀수마방진_서울9반_김동주 {
+public class Main_JO_2074_홀수마방진_서울9반_김동주_끝_ {
 	public static int N, mbj[][], limit;
 	public static void main(String[] args) throws Exception {
 		//System.setIn(new FileInputStream("res/input_D4_1249.txt"));

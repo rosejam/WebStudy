@@ -2,7 +2,7 @@ package 문제풀이_PS;
 
 import java.util.Scanner;
 
-public class Main_정올_1658_최대공약수와최소공배수_서울9반_김동주 { //GCD, LCM
+public class Main_JO_1658_최대공약수와최소공배수_서울9반_김동주_끝_ { //GCD, LCM
 	public static int A,B,GCD,LCM;
 	
 	public static void main(String[] args) throws Exception {
@@ -14,8 +14,8 @@ public class Main_정올_1658_최대공약수와최소공배수_서울9반_김�
 		LCM = A*B / GCD;
 		
 		System.out.println(GCD);
-		System.out.println(gcd_get2(A,B));
-		System.out.println(gcd_get3(A,B));
+		//System.out.println(gcd_get2(A,B));
+		//System.out.println(gcd_get3(A,B));
 		System.out.print(LCM);
 	}
 	
@@ -25,7 +25,7 @@ public class Main_정올_1658_최대공약수와최소공배수_서울9반_김�
 		return gcd_get(y, x%y);
 	}
 	
-	private static int gcd_get2(int x, int y) {
+/*	private static int gcd_get2(int x, int y) { //재귀X
 		int r;
 		while(y!=0) {
 			r = x%y;
@@ -43,7 +43,7 @@ public class Main_정올_1658_최대공약수와최소공배수_서울9반_김�
 			}
 		}
 		return ans;
-	}
+	}*/
 	
 	
 }
