@@ -65,20 +65,19 @@ public class CustomerController {
 	}
 	
 	//Exception 처리
-	@ExceptionHandler
+/*	@ExceptionHandler
 	public ModelAndView exceptionHandle(Exception e) {
 		ModelAndView mv = new ModelAndView("errorPage"); //생성할 때 view이름을 주어서 생성
 		mv.addObject("emsg", e.getMessage()); //.addObject()로 model 정보를 추가한다.
 		return mv;
-	}
-	/*
+	}	*/
+	
 	//이 방법으로 mv가 아닌 model에 저장해도 된다.
 	@ExceptionHandler
 	public String exceptionHandle2(Model model, Exception e) {
-		model.addAttribute("emsg", e.getMessage());
+		model.addAttribute("emsg", e.getMessage()); //익셉션.getMessage한 것을 emsg로 전달해서 에러페이지에서 출력
 		return "errorPage";
 	}
-	*/
 	
 	@GetMapping(value="/login.cus")
 	public String login() { //로그인 화면
