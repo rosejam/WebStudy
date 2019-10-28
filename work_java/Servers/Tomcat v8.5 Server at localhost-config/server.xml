@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="MyMVCDBProject" path="/MyMVCDB" reloadable="true" source="org.eclipse.jst.jee.server:MyMVCDBProject"/><Context docBase="MVCBoardProject" path="/board" reloadable="true" source="org.eclipse.jst.jee.server:MVCBoardProject"/></Host>
+      <Context docBase="MyMVCDBProject" path="/MyMVCDB" reloadable="true" source="org.eclipse.jst.jee.server:MyMVCDBProject"/><Context docBase="MyMVCProject" path="/MyMVCProject" reloadable="true" source="org.eclipse.jst.jee.server:MyMVCProject"/><Context docBase="MVCBoardProject" path="/board" reloadable="true" source="org.eclipse.jst.jee.server:MVCBoardProject"/><Context docBase="JSPProject" path="/JSPProject" reloadable="true" source="org.eclipse.jst.jee.server:JSPProject"/><Context docBase="ServletProject" path="/ServletProject" reloadable="true" source="org.eclipse.jst.jee.server:ServletProject"/><Context docBase="MVCCustomerProject" path="/customer" reloadable="true" source="org.eclipse.jst.jee.server:MVCCustomerProject"/><Context docBase="WebFrontProject" path="/WebFrontProject" reloadable="true" source="org.eclipse.jst.jee.server:WebFrontProject"/><Context docBase="WebWorkshop" path="/ws" reloadable="true" source="org.eclipse.jst.jee.server:WebWorkshop"/><Context docBase="wsBackEnd" path="/wsBackEnd" reloadable="true" source="org.eclipse.jst.jee.server:wsBackEnd"/></Host>
     </Engine>
   </Service>
 </Server>
