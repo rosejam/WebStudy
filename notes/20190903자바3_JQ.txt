@@ -1,4 +1,4 @@
-	<Ajax> Ascynchronous JavaScript & XML
+	<Ajax> Ascynchronous JavaScript & XML 	$.ajax();
 자바스크립트로 서버와 클라이언트(웹브라우저)사이 "비동기 통신-화면 refresh X" - XML데이터를
 (백엔드는 동기 통신-화면이 refresh - html페이지는 그대로)
 
@@ -45,7 +45,9 @@ var x = eval("("+ {  JSON형식의 데이터 key:val, key:val } +")");  //배열형식인 �
 		둘의 차이)
 		var y = 'name';일 때 x[y]는 키가 'name'인것을 찾지만 x.y는 키가 y인것을 찾는다!! ([]는 변수처리가 되지만 .뒤에는 변수가 아니고 그냥 바로 key가 와야함)
 
-	<JQuery> .js파일 1개로, <script src=로 추가해준다.
+	<JQuery> .js파일 1개로, <script src=로 추가해준다. 
+jQuery는 $(document).ready(function(){	
+	});)안에 써주는 것이 필수!!!! (html문서보다 나중에 실행되야 하므로 !)
 
 참고)$(function(){} | 'selector' | DOM객체 | '<태그명>')
 	2.아래에 자세히

@@ -5,6 +5,8 @@ MVC프로젝트 생성시 Simple Maven이 아니고 MVC Project 탬플릿을 선택한다. 그 다음 
 4. Web Project Setting에서 Context Root 수정
 5. src/main/webapp/WEB-INF에 web.xml에서 servlet-mapping의 url-pattern 수정 ( *.do나 /등), 한글 처리용 필터 추가
 
+//index.jsp 기본 경로는 webapp아래이다. (그냥 Contextroot/ 까지 요청할 경우) : web.xml의 welcome file 설정
+
 	<Spring MVC> 웹앱개발
 "DispatcherServlet"!이 Filter(="Front Controller)역할"을 한다.
 	ㄴ"web.xml에 servlet init-param"에 주어진 정보로 생성
@@ -12,7 +14,7 @@ MVC프로젝트 생성시 Simple Maven이 아니고 MVC Project 탬플릿을 선택한다. 그 다음 
 
 	        	HandlerMapping(url에 따라 "어떤 controller" 사용할지 검색) : @RequestMapping() 어노테이션으로 간단하게 할 수 있음!!!
 		           ^
-	1.요청URL  	|2.	3.처리요청     처리				
+	1.요청URL  	|2.	3.처리요청     처리			   이부분이 Model	
 클라이언트  --> 	"DispatcherServlet"     -->	"Controller"   <--->    Service   -->   Dao   <--->	DB
           	   <--	   |	|        	    <--		 	     		
 	7.결과전달  |	|	4.ModelAndView 리턴	      		^
@@ -32,6 +34,7 @@ http://localhost:8080/ContextRoot/@RequestMapping의 value값  : 클라이언트가 할 �
 4.Controller클래스의 @Controller및 @Autowired 메소드마다 @Get/PostMapping
 5.서비스 객체의 @Service DAO객체의 @Repository
 6.JSP에서 링크 걸 때 파라메터 잘 넘겨주기
+
 
 시험>
 *모든 환경파일은 setting이 되어 있고 내용을 채워 넣기
