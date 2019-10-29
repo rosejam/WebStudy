@@ -17,8 +17,12 @@ public class CustomerTest {
 			System.out.println(rec.getNum() + "--" + rec.getName() + "--" + rec.getAddress());
 		}
 		System.out.println("----------------------------");
-		
-		Customer rec = dao.selectOne("729");
+		List<Customer> list2 = dao.searchAll(null, null); // name / address / null(ÀüºÎ)
+		for (Customer rec : list2) {
+			System.out.println(rec.getNum() + "--" + rec.getName() + "--" + rec.getAddress());
+		}
+		System.out.println("----------------------------");
+		Customer rec = dao.selectOne("730");
 		System.out.println(rec.getNum() + "--" + rec.getName() + "--" + rec.getAddress());
 	}
 

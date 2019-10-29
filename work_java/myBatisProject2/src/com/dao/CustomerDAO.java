@@ -22,11 +22,11 @@ public class CustomerDAO implements ICustomer {
 		return session.selectOne("Customer.selectOne", num);
 	}
 
-	@Override
+/*	@Override
 	public List<Customer> findByAddress(String address) {
 		SqlSession session = MyBatisUtil.getSqlSession();
 		return session.selectList("Customer.findAddress",address);
-	}
+	}*/
 
 	@Override
 	public int insert(Customer c) {
@@ -53,6 +53,17 @@ public class CustomerDAO implements ICustomer {
 		int x = session.delete("Customer.delete", num);
 		session.commit();
 		return x;
+	}
+	
+	//다이나믹 쿼리 용으로 맵에 키 밸류를 넣어서 준다.
+	@Override
+	public List<Customer> searchAll(String condition, String word) {
+		SqlSession session = MyBatisUtil.getSqlSession();
+		HashMap<String, String> map = new HashMap<String, String>();
+		
+        map.put("key", condition);//검색조건
+        map.put("word", word);//검색어	
+        return session.selectList("searchAll", map);
 	}
 
 }

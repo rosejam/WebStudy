@@ -28,7 +28,7 @@
 </bean>
 
 <tx:annotation-driven transaction-manager="tm"/> <!-- 만약에 id="transactionManager"로 생성한다면 여기서는 쓸 필요X -->
-<!-- "transaction 관리자 객체"중 한가지 생성(JDBC와 myBatis사용할 때 사용하는 관리자) -->
+<!-- "transaction 관리자 객체"중 한가지 생성(JDBC와 myBatis사용할 때 사용하는 관리자!) -->
 <bean id="tm"
 	class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 	<property name="dataSource" ref="ds"/> <!-- db.xml안의 DB정보 (커넥션 pool객체 정보) -->

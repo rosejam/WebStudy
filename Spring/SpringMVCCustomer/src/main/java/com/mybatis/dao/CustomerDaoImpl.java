@@ -17,11 +17,13 @@ public class CustomerDaoImpl implements CustomerDao {
 						//	메서드로 쿼리를 1개 실행 시킬 때 마다 SqlSession을 생성해서 사용할 수 있게 해준다.
 	
 	@Override
+	//selectList : 쿼리 실행 결과가 여러 개일 때
 	public List<Customer> selectAll() {
 		return session.selectList("customer.selectAll"); //"네임스페이스.쿼리id" <- Mapperfile에 있음
 	}
 
 	@Override
+	//selectOne : 쿼리 실행 결과가 한 개일 때
 	public Customer selectOne(String num) {
 		return session.selectOne("customer.selectOne", num);
 	}

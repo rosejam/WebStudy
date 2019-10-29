@@ -44,8 +44,25 @@
 	update customer set address = #{address} where num = #{num}
   </update>
   
-  <select id="findAddress" parameterType="java.lang.String" resultMap="CustomerResult">
+<!--   <select id="findAddress" parameterType="java.lang.String" resultMap="CustomerResult">
 	select * from customer where address = #{address}
+  </select> -->
+  
+  <!-- 다이나믹 쿼리!!! -->
+  <select id='searchAll' resultType="Customer"  parameterType="java.util.HashMap">
+   	  select * from customer
+	  <where>  
+   	  		<if test="key != null">
+   	  			<choose>
+   	  				<when test="key == 'name'">
+   	  					name like concat('%', #{word}, '%')
+   	  				</when>
+   	  				<when test="key == 'address'">
+   	  					address = #{word}
+   	  				</when>
+   	  			</choose>
+   	  		</if>   	  
+   	  </where>
   </select>
   
 </mapper>
