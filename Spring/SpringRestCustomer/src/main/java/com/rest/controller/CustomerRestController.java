@@ -27,15 +27,27 @@ public class CustomerRestController {
 		return service.selectAll();
 	}
 	
+	//GET - http://localhost:8080/rest/customers/address/la
+	//GET - http://localhost:8080/rest/customers/name/kim
+	@RequestMapping(value="/customers/{condition}/{value}", method=RequestMethod.GET)
+	public List<Customer> find(@PathVariable String condition, @PathVariable String value){ //url 경로상의 {num}을 가져오기 위한 어노테이션
+		if(condition.equals("address")) {
+			return service.findByAddress(value);
+		}else { //name 등
+			//return service.findByName(value); //이 메소드는 없음
+			return null;
+		}
+	}
+	
 	//GET - http://localhost:8080/rest/customers/111
 	@RequestMapping(value="/customers/{num}", method=RequestMethod.GET)
-	public Customer selectOne(@PathVariable String num){ //경로상의 {num}을 가져오기 위한 어노테이션
+	public Customer selectOne(@PathVariable String num){ //url 경로상의 {num}을 가져오기 위한 어노테이션
 		return service.selectOne(num);
 	}
 	
 	//DELETE - http://localhost:8080/rest/customers/111
 	@RequestMapping(value="/customers/{num}", method=RequestMethod.DELETE) //메소드를 오퍼레이션으로 변경
-	public Map delete(@PathVariable String num){ //경로상의 {num}을 가져오기 위한 어노테이션
+	public Map delete(@PathVariable String num){ //url 경로상의 {num}을 가져오기 위한 어노테이션
 		service.delete(num);
 		HashMap<String, String> map = new HashMap();
 		map.put("result", "삭제성공");

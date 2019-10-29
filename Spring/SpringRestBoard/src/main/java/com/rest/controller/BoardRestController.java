@@ -27,15 +27,22 @@ public class BoardRestController {
 		return service.selectAll();
 	}
 	
+	//GET - http://localhost:8080/rest/boards/title/la
+	//GET - http://localhost:8080/rest/boards/name/kim
+	@RequestMapping(value="/boards/{condition}/{value}", method=RequestMethod.GET)
+	public List<Board> find(@PathVariable String condition, @PathVariable String value){ //url 경로상의 {num}을 가져오기 위한 어노테이션
+		return service.search(condition,value);
+	}
+	
 	//GET - http://localhost:8080/restb/boards/111
 	@RequestMapping(value="/boards/{num}", method=RequestMethod.GET)
-	public Board selectOne(@PathVariable String num){ //경로상의 {num}을 가져오기 위한 어노테이션
+	public Board selectOne(@PathVariable String num){ //url 경로상의 {num}을 가져오기 위한 어노테이션
 		return service.selectOne(num);
 	}
 	
 	//DELETE - http://localhost:8080/restb/boards/111
 	@RequestMapping(value="/boards/{num}", method=RequestMethod.DELETE) //메소드를 오퍼레이션으로 변경
-	public Map delete(@PathVariable String num){ //경로상의 {num}을 가져오기 위한 어노테이션
+	public Map delete(@PathVariable String num){ //url 경로상의 {num}을 가져오기 위한 어노테이션
 		service.delete(num);
 		HashMap<String, String> map = new HashMap();
 		map.put("result", "삭제성공");

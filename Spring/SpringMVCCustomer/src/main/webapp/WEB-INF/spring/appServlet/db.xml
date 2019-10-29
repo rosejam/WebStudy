@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!-- "db 정보" : "DataSource" = Connection"Pool"객체
+<!-- "db 정보" : "DataSource" = Connection"Pool"객체!!
 	클라이언트 프로그램에서 요청하기 전에 미리 DB와의 Connection을 만들어 pool에 저장해 놓고 있는 객체 (DB작업이 필요할 때마다 getConnection으로 생성하지 않는다~)
 	Connection에 대한 요청이 들어오면 pool에서 꺼내서 빌려주고 나중에 반납받음 -->
 <bean id="ds" class="org.apache.commons.dbcp.BasicDataSource">

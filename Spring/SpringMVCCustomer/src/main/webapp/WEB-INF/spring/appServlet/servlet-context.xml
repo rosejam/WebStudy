@@ -24,7 +24,7 @@
 	<resources mapping="/resources/**" location="/resources/" /> <!-- /**의 의미는 resources아래 폴더에 넣어도 된다는 뜻 --> <!-- resources/폴더명~ -->
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
-	<!-- beans접두어를 붙임 --><!-- JSP를 view로 사용하는 ViewResolver클래스 -->
+	<!-- beans접두어를 붙임 --><!-- JSP를 view로 사용하는 ViewResolver클래스!! -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
@@ -32,6 +32,5 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.mvc.controller" />
-	
 	
 </beans:beans>

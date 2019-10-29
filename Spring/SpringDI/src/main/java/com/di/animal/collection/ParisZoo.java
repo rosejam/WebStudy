@@ -18,12 +18,14 @@ public class ParisZoo implements Zoo {
 
 	@Override
 	public void info() {	
+		System.out.println("-----------------------------------");
 		for(Lion lion : lions)
 			lion.info();
 		System.out.println("-----------------------------------");
 		for(Tiger tiger : tigers)
 			tiger.info();
 		System.out.println("-----------------------------------");
+		System.out.println();
 		
 	}
 }

@@ -1,7 +1,7 @@
 서버가 MVC와 REST 두개를 돌린다.
 스프링 MVC 프로젝트로 생성, jackson과 (Tx처리하는 거 빼서)4가지 dependency 추가, 스프링은 4.점대 (너무 최근거는 X)
 "chrome postman" 앱추가!! : REST Client Tool -> 4가지 메서드 테스트
-	POST할 때 Body에 raw, JSON 설정으로 요청전달한다.
+	POST할 때 Body에 raw 및 JSON 설정으로 입력해서 요청전달한다.
 
 1. 컨트롤러 작성
 2. db관련 패키지 가져오기
@@ -58,8 +58,10 @@ var x = eval("("+ {  JSON형식의 데이터 key:val, key:val } +")");  //배열형식인 �
 ------------
 
 어노테이션>
+"컨트롤러에 @RestController" (= @Controller + @ResponseBody) : 자바 객체를 응답의 Body에 바로 넣어보냄
 요청 처리 메서드에 @RequestMapping
+
 @RequestBody : xml/json -> java vo 객체 (클라이언트에서 서버로 요청이 들어올 때 수신) HTTP Request body
 @ResponseBody : java vo 객체 -> xml/json (서버에서 클라이언트로 응답이 나갈 때 송신) HTTP Response body
 
-"컨트롤러에 @RestController" (= @Controller + @ResponseBody) : 자바 객체를 응답의 Body에 바로 넣어보냄
+//클라이언트에서는 ajax통신으로 서비스 호출
