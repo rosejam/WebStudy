@@ -52,10 +52,6 @@ public class StackTest {
 		System.out.println(st.pop());
 		System.out.println(st.pop());
 		//System.out.println(stack.pop()); //한번 더빼면 익셉션 발생
-		String[] rec = {"1","2"};
-		System.out.println(rec.length);
-		String[] ans = {};
-		
 
 	}
 
