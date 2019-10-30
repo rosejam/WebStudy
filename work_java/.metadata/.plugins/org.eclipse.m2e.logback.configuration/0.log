@@ -786,3 +786,48 @@ Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find
 2019-10-29 15:15:55,605 [Worker-6: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2019-10-29 15:21:51,158 [Worker-2: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2019-10-29 18:26:42,391 [Worker-1: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-10-30 17:57:09,486 [Worker-1: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-10-30 18:09:20,894 [Worker-19: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com:BootPhoneProject:0.0.1-SNAPSHOT @ C:\ssafy\work_java\BootPhoneProject\pom.xml.
+2019-10-30 18:09:23,918 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-30 18:09:23,920 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-30 18:09:23,928 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-10-30 18:09:23,934 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-30 18:09:23,934 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\ssafy\work_java\BootPhoneProject\src\test\resources
+2019-10-30 18:09:24,591 [Worker-24: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com:BootPhoneProject:0.0.1-SNAPSHOT @ C:\ssafy\work_java\BootPhoneProject\pom.xml.
+2019-10-30 18:09:25,718 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-30 18:09:25,721 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-30 18:09:25,728 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-10-30 18:09:25,733 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-30 18:09:25,733 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\ssafy\work_java\BootPhoneProject\src\test\resources
+2019-10-30 18:14:16,832 [Worker-27: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com:BootPhoneProject:0.0.1-SNAPSHOT @ C:\ssafy\work_java\BootPhoneProject_±èµ¿ÁÖ\pom.xml.
+2019-10-30 18:14:17,785 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-30 18:14:17,785 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-30 18:14:17,786 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-10-30 18:14:17,789 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-30 18:14:17,789 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\ssafy\work_java\BootPhoneProject_±èµ¿ÁÖ\src\test\resources
+2019-10-30 18:14:19,328 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-30 18:14:19,329 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-30 18:14:19,330 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-10-30 18:14:19,342 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-30 18:14:19,342 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\ssafy\work_java\BootPhoneProject_±èµ¿ÁÖ\src\test\resources
+2019-10-30 18:14:38,902 [Worker-28: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com:BootPhoneProject:0.0.1-SNAPSHOT @ C:\ssafy\work_java\BootPhoneProject\pom.xml.
+2019-10-30 18:14:39,310 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-30 18:14:39,310 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-30 18:14:39,311 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-10-30 18:14:39,314 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-30 18:14:39,314 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\ssafy\work_java\BootPhoneProject\src\test\resources
+2019-10-30 18:14:40,922 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-30 18:14:40,923 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-30 18:14:40,924 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-10-30 18:14:40,928 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-30 18:14:40,928 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\ssafy\work_java\BootPhoneProject\src\test\resources
+2019-10-30 18:14:51,438 [Worker-2: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com:BootPhoneProject:0.0.1-SNAPSHOT @ C:\ssafy\work_java\BootPhoneProject_È«±æµ¿\pom.xml.
+2019-10-30 18:14:51,851 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-30 18:14:51,851 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-30 18:14:51,852 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-10-30 18:14:51,857 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-30 18:14:51,857 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\ssafy\work_java\BootPhoneProject_È«±æµ¿\src\test\resources
+2019-10-30 18:14:53,327 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-30 18:14:53,328 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-30 18:14:53,329 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-10-30 18:14:53,333 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
