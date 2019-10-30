@@ -2,7 +2,7 @@ package Data_Structure;
 
 import java.util.Scanner;
 
-class Queue {
+class _Queue {
 
 	static final int MAX_N = 100;
 

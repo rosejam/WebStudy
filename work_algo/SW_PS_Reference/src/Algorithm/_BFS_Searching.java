@@ -2,7 +2,7 @@ package Algorithm;
 
 import java.util.Scanner;
 
-class BFS_Searching {
+class _BFS_Searching {
 
 	static final int MAX_VERTEX = 30;
 

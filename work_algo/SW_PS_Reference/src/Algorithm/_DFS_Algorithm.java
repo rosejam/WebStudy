@@ -2,7 +2,7 @@ package Algorithm;
 
 import java.util.Scanner;
 
-class DFS_Algorithm
+class _DFS_Algorithm
 {
 	static final int MAX_VERTEX = 30;
 	static int[][] map = new int[MAX_VERTEX][MAX_VERTEX];

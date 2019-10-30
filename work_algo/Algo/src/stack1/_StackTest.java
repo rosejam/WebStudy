@@ -2,7 +2,7 @@ package stack1;
 
 import java.util.Stack;
 
-public class StackTest {
+public class _StackTest {
 	public static int[] stack = new int[100];
 	public static int top = -1;
 	

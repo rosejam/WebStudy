@@ -50,7 +50,7 @@ class Queue
 	}
 }
 
-class BFS_Algorithm
+class _BFS_Algorithm
 {
 	static final int MAX_N = 50;
 	static int[][] MAP;
