@@ -3,7 +3,7 @@ package queue;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class QueueCircular {
+public class _QueueCircular {
 	public static int n =3; 
 	public static int[] queue = new int[n];
 	public static int front = 0;

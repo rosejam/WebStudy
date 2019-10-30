@@ -3,7 +3,7 @@ package queue;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class QueueTest {
+public class _QueueTest {
 	public static int[] queue = new int[100];
 	public static int front = -1;
 	public static int rear = -1;
