@@ -2,7 +2,7 @@ package Algorithm;
 
 import java.util.Scanner;
 
-class DFS_Searching {
+class _DFS_Searching {
 
 	static final int MAX_VERTEX = 30;
 

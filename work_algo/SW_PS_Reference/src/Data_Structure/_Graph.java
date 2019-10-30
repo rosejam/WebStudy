@@ -3,7 +3,7 @@ package Data_Structure;
 import java.util.Scanner;
 
 
-class Graph
+class _Graph
 {
 	
 	class AdjlistNode
@@ -34,7 +34,7 @@ class Graph
 	int num_vertices;
 	AdjList []adjListArr;
 	
-	public Graph(int n)
+	public _Graph(int n)
 	{
 		num_vertices = n;
 		adjListArr = new AdjList[n];
@@ -95,7 +95,7 @@ class Solution_Graph
 			int V = sc.nextInt();
 			int E = sc.nextInt();
 			int Q = sc.nextInt();
-			Graph graph = new Graph(V);
+			_Graph graph = new _Graph(V);
 			for (int i = 0; i < E; i++)
 			{
 				int sv = sc.nextInt();

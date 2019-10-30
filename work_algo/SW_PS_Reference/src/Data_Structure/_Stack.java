@@ -2,7 +2,7 @@ package Data_Structure;
 
 import java.util.Scanner;
 
-class Stack {
+class _Stack {
 
 	static final int MAX_N = 100;
 

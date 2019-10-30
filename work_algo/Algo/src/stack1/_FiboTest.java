@@ -1,11 +1,11 @@
 package stack1;
 
-public class FiboTest {
+public class _FiboTest {
 	public static int fibo(int n) {
 		if(n<2) return n;
 		return fibo(n-1) + fibo(n-2);
 	}
-	public static int[] memo; //메모이제이션
+	public static int[] memo; //메모이제이션(중복호출 방지용)
 	
 	public static int fibo1(int n) { //메모이제이션
 		if(n>=2 && memo[n] ==0) {
@@ -14,8 +14,8 @@ public class FiboTest {
 		return memo[n];
 	}
 	
-	public static int fibo2(int n) { //DP
-		for(int i=2; i<=n; i++) { //memo ==0인지 확인하고 해도 좋음 
+	public static int fibo2(int n) { //DP(작은 부분 집합부터 해 구해나가기)
+		for(int i=2; i<=n; i++) {
 			memo[i] = memo[i-1] + memo[i-2];
 		}
 		return memo[n];
