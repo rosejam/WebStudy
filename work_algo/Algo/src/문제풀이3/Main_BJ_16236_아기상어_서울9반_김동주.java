@@ -1,20 +1,21 @@
 package 문제풀이3;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main_BJ_16236_아기상어_서울9반_김동주 { //구현및bfs
+public class Main_BJ_16236_아기상어_서울9반_김동주 { //구현및bfs //거리, i, j순으로 PQ사용할 수도 있다.
 	public static int N, pool[][],cnt,size,eat,si,sj,ii,jj,ni,nj,far;//,fishnum;
 	public static int[] di = {-1,0,0,1}; 
 	public static int[] dj = {0,-1,1,0};
 	public static boolean isFish, v[][];
 	public static Queue<int[]> q;
 	public static void main(String[] args) throws Exception {
-		//System.setIn(new FileInputStream("res/input_BJ_16236.txt"));
+		System.setIn(new FileInputStream("res/input_BJ_16236.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		N = Integer.parseInt(br.readLine());
 		StringTokenizer st;
@@ -78,6 +79,11 @@ public class Main_BJ_16236_아기상어_서울9반_김동주 { //구현및bfs
 					//pool[i][j] = 0;
 					si = ni; sj = nj;
 					q.clear();
+					
+/*					v = new boolean[N][N];
+					v[i][j] = true;
+					q.offer(new int[] {ni,nj,far+1});
+					break;*/
 					return;
 				}
 				v[ni][nj] = true;

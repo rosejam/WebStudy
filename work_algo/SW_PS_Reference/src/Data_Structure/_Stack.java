@@ -41,12 +41,26 @@ class _Stack {
 	{
 		if (top == 0) 
 		{
-			System.out.println("stack is empty!");
+			System.out.println("stack underflow!");
 			return null;
 		}
 
 		top--;		
 		Integer value = new Integer(stack[top]);
+
+		return value;
+	}
+
+    static Integer stackPeek()
+    {
+		if (top == 0) 
+		{
+			System.out.println("stack underflow!");
+			return null;
+		}
+
+		//top--;		
+		Integer value = new Integer(stack[top - 1]); //
 
 		return value;
 	}
