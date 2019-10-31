@@ -76,19 +76,6 @@ public class MainController {
 		}
 	}
 	
-	@GetMapping("delete.do")
-	public String doDelete(@RequestParam List<String> list, Model model) {
-		try {
-			service.delete(list);
-			return "redirect:searchPhone.do";
-		}catch(RuntimeException e) {
-			logger.error("폰삭제실패", e);
-			model.addAttribute("title", "핸드폰 관리-에러");
-			model.addAttribute("message", "문제 내용 - 삭제 중 오류가 발생했습니다.");
-			return "Error";
-		}
-	}
-	
 	@GetMapping("login.do")
 	public String getLoginForm() {
 		return "Login";
@@ -122,6 +109,33 @@ public class MainController {
 	@GetMapping("rest.do")
 	public String getRestClient() {
 		return "rest";
+	}
+	
+	@PostMapping("update.do")
+	public String doUpdate(Phone phone, Model model) {
+		try {
+			service.update(phone);
+			model.addAttribute("title", "핸드폰 관리-수정성공");
+			return "Result";
+		}catch(RuntimeException e) {
+			logger.error("폰수정실패", e);
+			model.addAttribute("title", "핸드폰 관리-에러");
+			model.addAttribute("message", "문제 내용 - 저장 중 오류가 발생했습니다.");
+			return "Error";
+		}
+	}
+	
+	@GetMapping("delete.do")
+	public String doDelete(@RequestParam List<String> list, Model model) {
+		try {
+			service.delete(list);  ////리스트를 어떻게 하나씩 지우는지??
+			return "redirect:searchPhone.do";
+		}catch(RuntimeException e) {
+			logger.error("폰삭제실패", e);
+			model.addAttribute("title", "핸드폰 관리-에러");
+			model.addAttribute("message", "문제 내용 - 삭제 중 오류가 발생했습니다.");
+			return "Error";
+		}
 	}
 	
 }
