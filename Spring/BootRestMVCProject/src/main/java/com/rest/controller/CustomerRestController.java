@@ -64,7 +64,7 @@ public class CustomerRestController {
 	@RequestMapping(value="/customers", method=RequestMethod.POST) //메소드를 오퍼레이션으로 변경
 	@ApiOperation("새 고객 등록") //
 	public Map insert(@RequestBody Customer c){
-		//@RequestBody(json -> java객체) : RequestBody에 담겨져 온 "json객체가 vo인 Customer에 매핑됨"
+					//@RequestBody(json -> java객체) : RequestBody에 담겨져 온 "json객체가 vo인 Customer에 매핑됨!!!"
 		service.insert(c);
 		HashMap<String, String> map = new HashMap();
 		map.put("result", "추가성공");
@@ -75,7 +75,7 @@ public class CustomerRestController {
 	@RequestMapping(value="/customers", method=RequestMethod.PUT)
 	@ApiOperation("고객 정보 수정") //
 	public Map update(@RequestBody Customer c){
-		//@RequestBody(json -> java객체) : RequestBody에 담겨져 온 "json객체가 vo인 Customer에 매핑됨"
+					//@RequestBody(json -> java객체) : RequestBody에 담겨져 온 "json객체가 vo인 Customer에 매핑됨!!!"
 		service.update(c);
 		HashMap<String, String> map = new HashMap();
 		map.put("result", "수정성공");

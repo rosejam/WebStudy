@@ -18,7 +18,7 @@ application.properties(맵 구조) 에 환경 설정을 지정해 준다
 	<컨테이너가 객체 생성하는 방법>
 1. xml만 : "생성자/Setter주입"으로 DI주입
 2. 어노테이션+xml(활성화 태그) @Autowired 등
-3.  java만(xml문서 대신) 
+3.  java만(xml문서 대신)
 	@Configuration : spring 설정 정보를 가지고 있는 자바 클래스. xml 문서를 대신함!!
 	@Bean : 메소드 "리턴 타입의 객체가 생성"됨. <bean>태그와 동일
 		"메소드 이름"이 생성되는 "bean의 id"가 됨!!!

@@ -14,11 +14,11 @@ MVC프로젝트 생성시 Simple Maven이 아니고 MVC Project 탬플릿을 선택한다. 그 다음 
 
 	        	HandlerMapping(url에 따라 "어떤 controller" 사용할지 검색) : @RequestMapping() 어노테이션으로 간단하게 할 수 있음!!!
 		           ^
-	1.요청URL  	|2.	3.처리요청     처리			   이부분이 Model	
-클라이언트  --> 	"DispatcherServlet"     -->	"Controller"   <--->    Service   -->   Dao   <--->	DB
-          	   <--	   |	|        	    <--		 	     		
-	7.결과전달  |	|	4.ModelAndView 리턴	      		^
-	           	   |	|	 "data"와 "논리적view" 정보	      		vo
+	1.요청URL  	|2.	    3.처리요청     처리			   이부분이 Model	
+클라이언트  --> 	<<DispatcherServlet>>     -->	"Controller"   <--->    Service   -->   Dao     <--->	DB
+          	   <--	   |	|        	         <--		 	     Tx처리	        MyBatis에서 
+	7.결과전달  |	|	4.ModelAndView 리턴	      			^       SqlSession가져다 사용
+	           	   |	|	 "data"와 "논리적view" 정보	      			vo
 	6. 응답화면 |	|
 	          	   v	|5."어떤 view" 사용할지 검색해서 물리적view 정보 리턴
 		 "View"	v
@@ -26,7 +26,7 @@ MVC프로젝트 생성시 Simple Maven이 아니고 MVC Project 탬플릿을 선택한다. 그 다음 
 				
 http://localhost:8080/ContextRoot/@RequestMapping의 value값  : 클라이언트가 할 요청
 
-
+//Controller는 Service의 인터페이스의 메서드를 사용. Service는 Dao의 인터페이스의 메서드를 사용
 
 체크할 순서>
 //서버가 실행되면 DispatcherServlet과 ContextLoaderListener가 각각 컨테이너를 만든다.

@@ -42,7 +42,7 @@ public class TSPTest2 {
 			for(int i=0; i<N; i++) {
 				for(int j=0; j<N; j++) {
 					G[i][j]=sc.nextInt();
-					if(i!=j & G[i][j]==0) G[i][j]=INF;
+					if(i!=j & G[i][j]==0) G[i][j]=INF; //연결되지 않음
 				}
 			} //인풋다받음
 			
