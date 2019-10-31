@@ -11,11 +11,21 @@ class ListNode {
 	public ListNode()
 	{
 		data = 0;
-		prev = this;
-		next = this;
+		prev = this; //링크
+		next = this; //링크
 	}
 
-	public static ListNode appendListNode(ListNode head, int data)
+	public static ListNode getListNode(ListNode head, int data) //select
+	{
+		return null;
+	}
+
+	public static ListNode addtoFirstListNode(ListNode head, int data) //insert
+	{
+		return null;
+	}
+
+	public static ListNode addtoLastListNode(ListNode head, int data) //append
 	{
 		ListNode node = new ListNode();
 		node.data = data;
@@ -33,8 +43,13 @@ class ListNode {
 		}
 		return head;
 	}
-	
-	public static ListNode removeListNode(ListNode head, ListNode node)
+
+	public static ListNode addListNode(ListNode head, int data) //
+	{
+		return null;
+	}
+
+	public static ListNode deleteListNode(ListNode head, ListNode node) //remove
 	{
 		if (head == head.next)
 		{
@@ -66,13 +81,13 @@ class Solution_Linked_List
 			for (int i = 0; i < N; i++)
 			{
 				int data = sc.nextInt();
-				head = ListNode.appendListNode(head, data);
+				head = ListNode.addtoLastListNode(head, data);
 			}
 			ListNode node = head;
 			while(head != head.next)
 			{
 				ListNode nextNode = node.next;
-				head = ListNode.removeListNode(head, node);
+				head = ListNode.deleteListNode(head, node);
 				node = nextNode.next.next;
 			}
 			System.out.printf("#%d %d\n", test_case, head.data);
