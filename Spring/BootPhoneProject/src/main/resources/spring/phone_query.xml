@@ -46,7 +46,7 @@
 	</select>
 	
 	<!-- model, price -->
- 	<update id="update" parameterType="phone"> <!-- 그냥 이렇게 써도 됌!! -->
+ 	<update id="update" parameterType="phone"> <!-- 그냥 이렇게 써도 됌!!(phone.안쓰는것) -->
 		update phones set model=#{model}, price=#{price} where num = #{num};
 	</update>
 	

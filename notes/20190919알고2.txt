@@ -26,7 +26,7 @@ TSP :
 P(polynomial 다차시간)/NP/NP-Complete
 
 	<P-NP>
-1. 다차시간 알고리즘을 찾은 문제 -> DFS+Backtracking (10개미만)
+1. 다차시간 알고리즘을 찾은 문제 -> DFS+Backtracking (10승 미만 정도)
 2. 다루기 힘들다고 증명된 문제 -> DP사용
 3. 둘 다 아닌것 -> 근사해를 찾기
 
