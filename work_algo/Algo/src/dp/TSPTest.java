@@ -14,7 +14,7 @@ public class TSPTest {
 	public static int solve(int pos, int visited, int start) {
 		//
 		//if(m[pos][visited]!=0) return m[pos][visited];//
-		if(visited==(1<<N)-1) //
+		if(visited==(1<<N)-1) //2^N -1을 의미한다.
 			return d[pos][start]; //return m[pos][visited]=d[pos][start];//
 			
 		int ret=INF;
@@ -42,7 +42,7 @@ public class TSPTest {
 			for(int i=0; i<N; i++) {
 				for(int j=0; j<N; j++) {
 					G[i][j]=sc.nextInt();
-					if(i!=j & G[i][j]==0) G[i][j]=INF;
+					if(i!=j & G[i][j]==0) G[i][j]=INF; //연결되지 않음
 				}
 			} //인풋다받음
 			

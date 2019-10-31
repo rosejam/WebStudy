@@ -22,7 +22,7 @@ public class CustomerRestController {
 	CustomerService service;
 	
 	//GET - http://localhost:8080/rest/customers
-	@RequestMapping(value="/customers", method=RequestMethod.GET)
+	@RequestMapping(value="/customers", method=RequestMethod.GET) //이 쌍은 고유해야 함
 	public List<Customer> selectAll(){
 		return service.selectAll();
 	}
@@ -57,7 +57,7 @@ public class CustomerRestController {
 	//POST - http://localhost:8080/rest/customers
 	@RequestMapping(value="/customers", method=RequestMethod.POST) //메소드를 오퍼레이션으로 변경
 	public Map insert(@RequestBody Customer c){
-		//@RequestBody(json -> java객체) : RequestBody에 담겨져 온 "json객체가 vo인 Customer에 매핑됨"
+					//@RequestBody(json -> java객체) : RequestBody에 담겨져 온 "json객체가 vo인 Customer에 매핑됨!!!"
 		service.insert(c);
 		HashMap<String, String> map = new HashMap();
 		map.put("result", "추가성공");
@@ -67,7 +67,7 @@ public class CustomerRestController {
 	//PUT - http://localhost:8080/rest/customers
 	@RequestMapping(value="/customers", method=RequestMethod.PUT)
 	public Map update(@RequestBody Customer c){
-		//@RequestBody(json -> java객체) : RequestBody에 담겨져 온 "json객체가 vo인 Customer에 매핑됨"
+					//@RequestBody(json -> java객체) : RequestBody에 담겨져 온 "json객체가 vo인 Customer에 매핑됨!!!"
 		service.update(c);
 		HashMap<String, String> map = new HashMap();
 		map.put("result", "수정성공");
