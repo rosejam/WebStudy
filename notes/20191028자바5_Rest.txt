@@ -5,6 +5,7 @@
 
 1. 컨트롤러 작성
 2. db관련 패키지 가져오기
+3. postman이나 swagger등으로 결과를 확인한다.
 
 	<Spring REST API> REpresentational State Transfer = 분산 네트워크 프로그래밍의 아키텍처 스타일
 			http request

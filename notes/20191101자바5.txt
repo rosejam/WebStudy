@@ -1,2 +1,15 @@
-백엔드 : MVC, Rest, Boot
-컨트롤누르고 메서드 open Implementation으로 따라갈 수 있다.
+프론트엔드:
+html, css, js 
+jquery, bootstrap
+
+백엔드: 
+Servlet, jsp
+Spring, MVC, Rest(MC), Boot
+	ㄴclient - Controller - Service - Dao - SqlSession - Mapper(.xml)
+
+Vue: MVVM. 프론트에서 MV역할
+
+	최종 서버 2가지 > MVC(+View), Rest
+클라이언트는 MVC에 요청을 보내서 일단 화면을 받아온 후 Rest에 요청을 보내서 데이터를 받아서 쓴다. 
+
+//컨트롤누르고 메서드 open Implementation으로 따라갈 수 있다.
