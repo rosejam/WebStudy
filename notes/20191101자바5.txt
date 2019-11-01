@@ -5,7 +5,7 @@ jquery, bootstrap
 백엔드: 
 Servlet, jsp
 Spring, MVC, Rest(MC), Boot
-	ㄴclient - Controller - Service - Dao - SqlSession - Mapper(.xml)
+	ㄴ client - DispatcherServlet - Controller - Service - Dao - SqlSession - Mapper(.xml)
 
 Vue: MVVM. 프론트에서 MV역할
 
@@ -13,3 +13,16 @@ Vue: MVVM. 프론트에서 MV역할
 클라이언트는 MVC에 요청을 보내서 일단 화면을 받아온 후 Rest에 요청을 보내서 데이터를 받아서 쓴다. 
 
 //컨트롤누르고 메서드 open Implementation으로 따라갈 수 있다.
+
+에러종류)
+500 코드잘못
+405 get/post 방식 안맞음
+404 페이지 없음
+400 데이터 타입이 안맞음(form과 컨트롤러에서)
+
+@ExceptionHandler -> 에러 처리 메서드
+
+//NoUniqueBeanDefinitionException : 주입이 애매할때 생성
+
+//ResponsEntity<리턴하는 데이터 객체> : 데이터 객체에 추가적인 정보를 붙인 객체
+	

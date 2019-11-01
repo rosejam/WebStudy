@@ -23,7 +23,7 @@ public class LinkedStackTest {
 	public static int peek() {
 		if(isEmpty()) {
 			System.out.println("Stack Empty");
-			return -1; 
+			return -1;
 		}
 		int value=top.data;
 		//top=top.link;

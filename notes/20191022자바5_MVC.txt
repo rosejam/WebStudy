@@ -6,6 +6,7 @@ MVC프로젝트 생성시 Simple Maven이 아니고 MVC Project 탬플릿을 선택한다. 그 다음 
 5. src/main/webapp/WEB-INF에 web.xml에서 servlet-mapping의 url-pattern 수정 ( *.do나 /등), 한글 처리용 필터 추가
 
 //index.jsp 기본 경로는 webapp아래이다. (그냥 Contextroot/ 까지 요청할 경우) : web.xml의 welcome file 설정
+//prefix의 기본 경로도 webapp!!이다 /view/는 webapp아래 view아래를 의미
 
 	<Spring MVC> 웹앱개발
 "DispatcherServlet"!이 Filter(="Front Controller)역할"을 한다.
@@ -21,7 +22,8 @@ MVC프로젝트 생성시 Simple Maven이 아니고 MVC Project 탬플릿을 선택한다. 그 다음 
 	           	   |	|	 "data"와 "논리적view" 정보	      			vo
 	6. 응답화면 |	|
 	          	   v	|5."어떤 view" 사용할지 검색해서 물리적view 정보 리턴
-		 "View"	v
+		 "View"	|
+			v
 			ViewResolver(접두어와 접미어를 붙여줌)
 				
 http://localhost:8080/ContextRoot/@RequestMapping의 value값  : 클라이언트가 할 요청

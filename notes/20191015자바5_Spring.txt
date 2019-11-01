@@ -32,14 +32,16 @@ DB작업 java app> 	1.JDBC(직접 모두 작성) -- 3.SpringDAO
  		2.myBatis 	     -- 4.SpringORM
 
 
-	<Bean>
+	<Bean> scope= singleton 또는 prototype
 "ApplicationContext" : 스프링에서 제공해주는 "Container 클래스". 필요한 객체(bean) 생성해서 다른 곳에 공급.
 
 Spring Bean Configuration file(.xml) : ApplicationContext 컨테이너에 파라메터로 전달할 spring 설정파일.
-	ㄴ <bean id="c" class="Car"/> 는 Car c=new Car(); 와 동일 ("bean 1개 당 객체 1개!")
+	ㄴ <bean id="c" class="Car"/> 는 Car c=new Car(); 와 동일. class타입의 이름이 id인 객체. ("bean 1개 당 객체 1개!")
 ~~XmlApplicationContext"컨테이너 객체!"를 생성하면 "xml설정파일"을 읽어와서 모든 bean태그 안의 class를 객체로 생성하고 레퍼런스는 id로 매긴다.  그 후 컨테이너에 대기시킴
 	ㄴ lazy-init이 "true"면 미리 객체를 생성해놓지 않고 요청되었을 때 생성한다.
 	ㄴ getBean(id)로 받아갈 수 있음
+
+init-method속성="생성자 메서드 이름", destroy-method속성="마무리 메서드 이름"~
 
 //getBean해온 것은 부모인 인터페이스 타입으로 형변환 하고 인터페이스 타입의 변수로 받는다!
 
@@ -48,9 +50,11 @@ Spring Bean Configuration file(.xml) : ApplicationContext 컨테이너에 파라메터로 
 컨테이너가 어떤 Test Class안으로 필요한 객체를 모두 주입해서
 	App의 main에서는 Test Class의 객체만 getBean()해서 가져가면 된다!(Test에게 필요한 객체=Test가 의존하는 객체를 new해서 만들지 않고 스프링 컨테이너가 미리 주입해서 생성해줌)
 
-i> 생성자 주입 : constructor-arg!!태그("index는 0-베이스"!), 주입하는 것이 값이면 value / 객체이면 ref=해서 다른 bean의 id를 넣어줌
+name="주입하려는곳 이름"!!
+주입하는 것이 값이면 value / 객체이면 ref=해서 다른 bean의 id를 넣어줌!
+i> 생성자 주입 : constructor-arg!!태그("index는 0-베이스"!!)
 ii> Setter 주입 : property!!태그
-생성자주입이 안되면 디폴트 생성자가 없을 경우!! 객체생성을 못해서 에러가 발생한다
+//생성자주입이 안되면 디폴트 생성자가 없을 경우!! 객체생성을 못해서 에러가 발생한다
 
 
 	<Annotation>
@@ -62,10 +66,10 @@ ii> Setter 주입 : property!!태그
 	위의 annotation-config보다 처리하는 annotation범위가 더 넓다!! 그냥 이거 쓰기!
 
 	<어노테이션 종류>
-1. "멤버필드 자동주입">
+1. "멤버필드 자동주입"!!!>
 	-@Autowired는
 		*1.컨테이너 내의 bean 중 "타입"이 같은 것을 주입 2.타입같은 것이 여러개라면 이름이 같은것을 주입 3. Qualifier("id")가 있는 경우 타입이 같은 것 중 그 id를 가진 bean을 주입
-	-@Resource(name="lion2") : id기준으로 주입(이름이 없으면 타입기준, 타입이 여러개면 이름기준) 오토와이어드+퀄리파이어와 유사
+	-@Resource(name="lion2") : id기준으로 주입(이름이 없으면 타입기준, 타입이 여러개면 이름기준) 위의 오토와이어드+퀄리파이어와 같다.
 
 2. "클래스의 객체 자동 생성">
 	-@Component("id")는 해당 클래스를 xml에 작성하지 않아도 컨테이너가 클래스의 "객체 자동 생성" (괄호안의 id는 생성할 bean의 id를 의미)
