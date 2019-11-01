@@ -29,6 +29,7 @@ selectOne	/customers/{num}	GET
 insert		/customers	POST
 update		/customers	PUT
 delete		/customers/{num}	DELETE
+{num} 안의 num은 파라메터의 @PathVariable num 으로 받아서 사용!!!
 
 //원래 uri는 액션을 나타냈고 ?뒤에 파라메터를 전달하였다. 
 
