@@ -25,4 +25,12 @@ Vue: MVVM. 프론트에서 MV역할
 //NoUniqueBeanDefinitionException : 주입이 애매할때 생성
 
 //ResponsEntity<리턴하는 데이터 객체> : 데이터 객체에 추가적인 정보를 붙인 객체
-	
+
+-------	
+Mapping어노테이션은 클래스에도 붙을 수 있고!! (@RequestMapping("/a"))
+		메서드에도 붙을 수 있다. (@GetMapping("/b") 등)
+매핑된 호출 url은 "http://localhost:8080/context-root/a/b" 가 될 것이다!!!
+
+-------
+@Autowired는 클래스 필드 뿐만아니라 생성자나 Setter에도 쓸 수 있다.
+	생성자 중에선 Autowired된 생성자만 실행된다!!!! 그 후 Autowired된 세터가 실행된다.
