@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_정올_1733_오목_서울9반_김동주 { //안됨....
+public class Main_정올_1733_오목_서울9반_김동주_미완_ { //안됨.... 6개넘는 오목알일때 구분
 	public static int[][] pan = new int[19][19];
 	public static boolean[][] v ;
 	//검은색1, 흰색 2
