@@ -2,7 +2,7 @@ package 보충3;
 
 import java.util.Scanner;
 
-public class Main_BJ_1436_영화감독숌_서울9반_김동주 {
+public class Main_BJ_1436_영화감독숌_서울9반_김동주_최적화중_ {
 
 	public static void main(String[] args) throws Exception {
 		//666이 포함되는 수
@@ -25,7 +25,7 @@ public class Main_BJ_1436_영화감독숌_서울9반_김동주 {
 				if(y%10 == 6) {
 					cnt++;
 					if(cnt ==3) {
-						flag = true;
+						//flag = true;
 						cnt = 0;
 						break;
 					}

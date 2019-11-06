@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 //꺾는 코너 최소화
-public class Main_JO_1113_119구급대_서울9반_김동주 {
+public class Main_JO_1113_119구급대_서울9반_김동주 { //카운트 뿐만아니라 각각의 점에서 꺾은횟수가 최소인지도 봐야함
 	public static int M,N,m,n,map[][],ni,nj,min;
 	public static final int[] di = {-1,1,0,0};
 	public static final int[] dj = {0,0,-1,1};//상하좌우
@@ -14,7 +14,7 @@ public class Main_JO_1113_119구급대_서울9반_김동주 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		M = Integer.parseInt(st.nextToken());
-		N = Integer.parseInt(st.nextToken()); //열, 행
+		N = Integer.parseInt(st.nextToken()); //행, 열(문제 오타)
 		st = new StringTokenizer(br.readLine());
 		m = Integer.parseInt(st.nextToken());
 		n = Integer.parseInt(st.nextToken()); //행, 열
@@ -30,14 +30,21 @@ public class Main_JO_1113_119구급대_서울9반_김동주 {
 		//입력다받음. 1로만 지날 수 있음
 		min = Integer.MAX_VALUE;
 		dfs(0,0,4,-1);
+		//bfs(0,0,4,-1);
 		//dfs(1,0,1,0);
 		//dfs(0,1,3,0);
 		System.out.print(min);
 	}
+/*	private static void bfs(int i, int j, int k, int l) {
+		Queue<Point> q = new LinkedList<>();
+		dMap[0][0] = l;
+		while(!q)
+		
+	}*/
 	private static void dfs(int i, int j, int dir, int cnt) {
 		map[i][j] = 0; //비짓처리
 		
-		if(cnt>min) {
+		if(cnt>=min) { //같은것도 포함해야함!
 			map[i][j] = 1; //제발 ;;;;
 			return; //
 		}
@@ -56,7 +63,7 @@ public class Main_JO_1113_119구급대_서울9반_김동주 {
 			}
 		}
 		
-		map[i][j] = 1;
+		map[i][j] = 1;////
 	}
 
 }

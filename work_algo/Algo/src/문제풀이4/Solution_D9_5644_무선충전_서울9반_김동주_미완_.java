@@ -10,9 +10,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Solution_D9_5644_무선충전_서울9반_김동주 { //구현
+public class Solution_D9_5644_무선충전_서울9반_김동주_미완_ { //50개중 49개 맞음;
 	static class Battery{
-		public Battery(int x, int y, int c, int p) {
+		public Battery(int y, int x, int c, int p) { //아 배터리 행렬 반대...(개빡;)
 			this.x = x;
 			this.y = y;
 			C = c;
@@ -32,7 +32,8 @@ public class Solution_D9_5644_무선충전_서울9반_김동주 { //구현
 	public static char[][] map;
 	public static int[] A, B;
 	public static boolean[][] v;
-	public static boolean[] a, b;
+	public static boolean a, b;
+	//public static boolean[] a, b;
 	public static Battery[] bcs;
 	public static Person[] ab;
 	public static int TC, T, N, maxsum;
@@ -49,9 +50,15 @@ public class Solution_D9_5644_무선충전_서울9반_김동주 { //구현
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 		StringTokenizer st;
+		Comparator<int[]> comp = new Comparator<int[]>() {
+			@Override
+			public int compare(int[] o1, int[] o2) {
+				return -Integer.compare(o1[0], o2[0]); //앞에꺼로비교하는 컴패래터 작성 내림차순
+			}
+		};
 		
 		TC = Integer.parseInt(br.readLine());
-		for(int tc=1; tc<=TC; tc++) {
+		for(int tc=1; tc<=TC; tc++) { //테케1만 돌려보자*************
 			map = new char[10][10];/////
 			ab = new Person[2];
 			ab[0] = new Person(0,0); //A
@@ -77,37 +84,40 @@ public class Solution_D9_5644_무선충전_서울9반_김동주 { //구현
 			for(int n=0; n<N; n++) {
 				st = new StringTokenizer(br.readLine());
 				bcs[n] = new Battery(Integer.parseInt(st.nextToken())-1, Integer.parseInt(st.nextToken())-1, Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
+				//System.out.println(bcs[n].x+" "+bcs[n].y);
 			}
 			//배터리들 정보 받음
 			//입력
 			
 			maxsum = 0;
 			for(int t=0; t<=T; t++) { //시간이 흐름
+				map[ab[0].x][ab[0].y] = '\u0000';
+				map[ab[1].x][ab[1].y] = '\u0000'; //원래있던자리는 널처리!!!
 				ab[0].x += di[A[t]];
 				ab[0].y += dj[A[t]];
 				ab[1].x += di[B[t]];
 				ab[1].y += dj[B[t]];
-				//일단 ab이동해서
 				map[ab[0].x][ab[0].y] = 'A';
 				map[ab[1].x][ab[1].y] = 'B';
-				//map에 표시
+				//일단 ab이동해서 //map에 표시
+/*				if(t==3) {
+					System.out.println(t+"******");
+					for(char[] x:map)System.out.println(Arrays.toString(x));
+				}*/
 				
-				//AP = new int[N]; //a에게 p의 영향
-				//BP = new int[N];
-				a = new boolean[N];
-				b = new boolean[N];
-				for(int n=0; n<N; n++) { //각각의 충전기에 대해 bfs해서 A,B를 찾음
-					bfs(bcs[n].x, bcs[n].y, bcs[n].C, n);
-				}
-				
+				//a = new boolean[N];
+				//b = new boolean[N];
 				alist = new ArrayList<>();
 				blist = new ArrayList<>();
-				//이제 A,B는 어떤 게 최대값인지 찾아 접속
-				for(int n=0; n<N; n++) { //이거 위에 포문에 들어갈 수 있음!!!!
-					if(a[n]) alist.add(new int[] {bcs[n].P, n});
-					if(b[n]) blist.add(new int[] {bcs[n].P, n});
+				for(int n=0; n<N; n++) { //각각의 충전기에 대해 bfs해서 A,B를 찾음
+					a = false; b = false;
+					bfs(bcs[n].x, bcs[n].y, bcs[n].C);
+					if(a) alist.add(new int[] {bcs[n].P, n});
+					if(b) blist.add(new int[] {bcs[n].P, n});
 				}
-				Collections.sort(alist, new Comparator<int[]>() {
+				
+				//이제 A,B는 어떤 게 최대값인지 찾아 접속
+/*				Collections.sort(alist, new Comparator<int[]>() {
 					@Override
 					public int compare(int[] o1, int[] o2) {
 						return -Integer.compare(o1[0], o2[0]);
@@ -119,21 +129,70 @@ public class Solution_D9_5644_무선충전_서울9반_김동주 { //구현
 						return -Integer.compare(o1[0], o2[0]);
 					}
 				}); //P기준 내림차순으로 각각 정렬!
-				
-				if(alist.size()!=0 && blist.size()!=0) {
-					//합에 더하기
-					if(alist.get(0)[1] == blist.get(0)[1]) { //max가 같은 곳에서 받을 경우
-						if(alist.get(1)[0] > blist.get(1)[0]) { //두번째거 비교해서 크거나 같은 쪽 넣기
-							maxsum += alist.get(1)[0];
-							maxsum += blist.get(0)[0];
-						}else {
-							maxsum += alist.get(0)[0];
-							maxsum += blist.get(1)[0];
+*/				
+				Collections.sort(alist, comp);
+				Collections.sort(blist, comp);
+				/*System.out.println(t+"******");
+				Collections.sort(alist, comp);
+				for(int[] x:alist) System.out.print(x[0]+" ");
+				System.out.println();
+				Collections.sort(blist, comp);
+				for(int[] x:blist) System.out.print(x[0]+" ");
+				System.out.println();*/
+				//합에 더하기
+				if(alist.size()!=0 && blist.size()!=0) { //두사람 다 접속가능한 경우
+					
+					if(alist.get(0)[1] == blist.get(0)[1]) { //max가 같은 곳에서 받을 경우!!!!
+/*						if(alist.size()>1 && blist.size()>1) { //둘다 2개 이상
+							if(alist.get(1)[0] > blist.get(1)[0]) { //두번째거 비교해서 크거나 같은 쪽 넣기
+								maxsum += alist.get(1)[0];
+								maxsum += blist.get(0)[0];
+							}else {
+								maxsum += alist.get(0)[0];
+								maxsum += blist.get(1)[0];
+							}
+						}else {//둘다 2개이상이 아님
+							if(alist.size()>1) {
+								
+							}
 						}
 					}else {
 						maxsum += alist.get(0)[0];
 						maxsum += blist.get(0)[0];
+					}*/
+						if(alist.size()==1 && blist.size()==1) {
+							maxsum += alist.get(0)[0];
+							//maxsum += blist.get(0)[0]/2;
+						}else if(alist.size()>1 && blist.size() ==1) {
+							maxsum += alist.get(1)[0] + blist.get(0)[0]; //따로 갖는 것
+						}else if(blist.size()>1 && alist.size() ==1) {
+							maxsum += blist.get(1)[0] + alist.get(0)[0]; //따로 갖는 것						
+						}else { //둘다 2개 이상인 경우 !!
+							//if()
+							maxsum += Math.max(alist.get(1)[0] + blist.get(0)[0], blist.get(1)[0] + alist.get(0)[0]);
+						}
+/*						int xx = 1;
+						while(alist.size()>xx && blist.size()>xx && alist.get(xx)[1] == blist.get(xx)[1]) { //맥스가 같은 n인경우
+							int n = alist.get(0)[1];
+							alist.remove(0);
+							alist.add(new int[] {bcs[n].P/2, n});
+							Collections.sort(alist, comp);
+							blist.remove(0);
+							alist.add(new int[] {bcs[n].P/2, n});
+							Collections.sort(blist, comp);
+							xx++;
+						}*/
+						
+/*						if(alist.get(0)[1] == blist.get(0)[1] && alist.get(0)[1] == n) { //반으로 나눠도 최대
+							maxsum += alist.get(0)[0];
+							maxsum += blist.get(0)[0];
+						}*/
+						
+					}else {
+						maxsum += alist.get(0)[0];
+						maxsum += blist.get(0)[0];
 					}
+					
 				}else if(alist.size()!=0 && blist.size()==0) {
 					maxsum += alist.get(0)[0];
 				}else if(blist.size()!=0 && alist.size()==0) {
@@ -147,19 +206,22 @@ public class Solution_D9_5644_무선충전_서울9반_김동주 { //구현
 		}
 		System.out.print(sb);
 	}
-	private static void bfs(int x, int y, int c, int n) {
+	private static void bfs(int x, int y, int c) { //이거 시간흐르기 전에 세팅해놓기
 		v = new boolean[10][10];
 		v[x][y] = true;
 		Queue<int[]> q = new LinkedList<>();
 		q.offer(new int[] {x,y,0});
 		while(!q.isEmpty()) {
-			int[] curr = q.poll();
-			int ci = curr[0];
-			int cj = curr[1];
-			int depth = curr[2];
-			if(map[ci][cj] == 'A') a[n] = true;
-			if(map[ci][cj] == 'B') b[n] = true;
-			if(depth == c) return;
+			int ci = q.peek()[0];
+			int cj = q.peek()[1];
+			int depth = q.poll()[2];
+			if(map[ci][cj] == 'A') a = true;// a[n] = true;
+			if(map[ci][cj] == 'B') b = true;// b[n] = true;
+			
+			if(depth == c) {
+				//System.out.println("n:"+n+", x:"+ci+", y:"+cj);
+				continue;
+			}
 			
 			for(int d=1; d<5; d++) {
 				int ni = ci + di[d];
