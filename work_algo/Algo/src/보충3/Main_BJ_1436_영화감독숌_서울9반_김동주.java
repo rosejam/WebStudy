@@ -13,7 +13,7 @@ public class Main_BJ_1436_영화감독숌_서울9반_김동주 {
 		int x = 666;
 		int y = 0;//
 		int cnt = 0;//
-		boolean flag = false;//
+		//boolean flag = false;//
 		for(int n=1; n<N; n++) {
 			x++;
 /*			while(!String.valueOf(x).contains("666")) { //666이 들어있을때 벗어난다.
