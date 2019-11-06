@@ -6,3 +6,4 @@ V전사함수(공역과 치역이 같은 함수) 단사함수 개수
 V모듈라(두수 합를 모듈라 하거나 각각 모듈라합을 다시모듈라 하면 동일), 모듈라 연산
 	나누기 ->곱셈의 지수형태로 만들 수 있음 : *페르마의 소정리*	
 
+fffffㄹㄹㄹㄹffㄹㄹㄹㄹㄹffffㄹㄹffㄹffㄹㄹffㄹffffㄹㄹfㄹㄹfㄹfㄹfㄹfㄹfㄹffㄹfㄹfffㄹfㄹfㄹfㄹfㄹfㄹfㄹffㄹㄹfㄹㄹfㄹffㄹfㄹㄹffㄹfㄹfㄹfㄹfㄹfㄹfㄹfㄹfㄹfㄹfㄹfㄹfㄹㄹffㄹfㄹffㄹfㄹffㄹffㄹfㄹfㄹfㄹㄹfㄹfㄹfㄹfㄹfㄹfㄹfㄹfㄹfㄹf
