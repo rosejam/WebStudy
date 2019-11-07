@@ -10,6 +10,8 @@ public class Test {
 		}
 		long end = System.currentTimeMillis();
 		System.out.println(end-start);*/
-		System.out.println((-3)/2);
+		System.out.println((-3)/2); //-1
+		System.out.println(1/10); //0
+		System.out.println(0/10);
 	}
 }

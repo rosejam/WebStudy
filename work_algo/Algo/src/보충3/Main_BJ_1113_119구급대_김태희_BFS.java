@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
- 
+
 /*
 5 5
 4 4
@@ -19,7 +19,7 @@ import java.util.StringTokenizer;
  */
 
 // BFS + Queue
-public class Main_J1113_119구급대_김태희_BFS {
+public class Main_BJ_1113_119구급대_김태희_BFS {
     static int N, M;
     static int tx, ty;
     static int[][] map,dMap;    
