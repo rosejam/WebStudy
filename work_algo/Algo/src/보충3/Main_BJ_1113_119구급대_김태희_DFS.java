@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
  
 // 백트랙킹
 // max 사이즈로 할시 스택오버플로 발생.(97까지 가능했음)
-public class Main_J1113_119구급대_김태희_DFS {
+public class Main_BJ_1113_119구급대_김태희_DFS {
     static int N, M;
     static int tx, ty;
     static int[][] map,dMap;    

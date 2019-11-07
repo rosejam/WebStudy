@@ -1,7 +1,6 @@
 package 문제풀이4;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,16 +45,19 @@ public class Solution_D9_5644_무선충전_서울9반_김동주_미완_ { //50�
 		//한사용자에 2개의 충전기 -> 더P가 큰것 선택(사용자가 겹칠떄 반 또는 다른사용자가 안쓰는것 중에 큰것)
 		//한충전기에 2명의 사용자 -> 반으로 나눔
 		//충전 합의 최댓값
-		System.setIn(new FileInputStream("res/input_SW_5644.txt"));
+		//System.setIn(new FileInputStream("res/input_SW_5644.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 		StringTokenizer st;
 		Comparator<int[]> comp = new Comparator<int[]>() {
 			@Override
 			public int compare(int[] o1, int[] o2) {
-				return -Integer.compare(o1[0], o2[0]); //앞에꺼로비교하는 컴패래터 작성 내림차순
+				int com = o2[0] - o1[0];
+				if(com != 0) return com; //앞에꺼로비교하는 컴패래터 작성 내림차순
+				else return Integer.compare(o2[1], o1[1]); //이걸 추가해서 P가 같은 배터리끼리도 소팅이 제대로 되도록 함!!!
 			}
 		};
+		
 		
 		TC = Integer.parseInt(br.readLine());
 		for(int tc=1; tc<=TC; tc++) { //테케1만 돌려보자*************
@@ -130,63 +132,37 @@ public class Solution_D9_5644_무선충전_서울9반_김동주_미완_ { //50�
 					}
 				}); //P기준 내림차순으로 각각 정렬!
 */				
+				//소팅안한경우 테케 4,5 틀림!
 				Collections.sort(alist, comp);
 				Collections.sort(blist, comp);
-				/*System.out.println(t+"******");
-				Collections.sort(alist, comp);
+				
+/*				if(tc ==1) {
+				System.out.println(t+"******");
 				for(int[] x:alist) System.out.print(x[0]+" ");
 				System.out.println();
-				Collections.sort(blist, comp);
 				for(int[] x:blist) System.out.print(x[0]+" ");
-				System.out.println();*/
+				System.out.println();
+				}*/
+				
 				//합에 더하기
+				//!!!!만약 소팅이 잘못되었다면? 최대 성능P를 가지는 배터리가 여러개 중첩??
 				if(alist.size()!=0 && blist.size()!=0) { //두사람 다 접속가능한 경우
 					
 					if(alist.get(0)[1] == blist.get(0)[1]) { //max가 같은 곳에서 받을 경우!!!!
-/*						if(alist.size()>1 && blist.size()>1) { //둘다 2개 이상
-							if(alist.get(1)[0] > blist.get(1)[0]) { //두번째거 비교해서 크거나 같은 쪽 넣기
-								maxsum += alist.get(1)[0];
-								maxsum += blist.get(0)[0];
-							}else {
-								maxsum += alist.get(0)[0];
-								maxsum += blist.get(1)[0];
-							}
-						}else {//둘다 2개이상이 아님
-							if(alist.size()>1) {
-								
-							}
-						}
-					}else {
-						maxsum += alist.get(0)[0];
-						maxsum += blist.get(0)[0];
-					}*/
-						if(alist.size()==1 && blist.size()==1) {
-							maxsum += alist.get(0)[0];
-							//maxsum += blist.get(0)[0]/2;
+						
+						if(alist.size()==1 && blist.size()==1) { //반띵
+							maxsum += alist.get(0)[0]/2;
+							maxsum += blist.get(0)[0]/2;
+							//maxsum += alist.get(0)[0];
 						}else if(alist.size()>1 && blist.size() ==1) {
 							maxsum += alist.get(1)[0] + blist.get(0)[0]; //따로 갖는 것
 						}else if(blist.size()>1 && alist.size() ==1) {
-							maxsum += blist.get(1)[0] + alist.get(0)[0]; //따로 갖는 것						
+							maxsum += blist.get(1)[0] + alist.get(0)[0]; //따로 갖는 것
 						}else { //둘다 2개 이상인 경우 !!
-							//if()
-							maxsum += Math.max(alist.get(1)[0] + blist.get(0)[0], blist.get(1)[0] + alist.get(0)[0]);
+							if(alist.get(1)[0] > blist.get(1)[0]) maxsum += (blist.get(0)[0] + alist.get(1)[0]);
+							else maxsum += (alist.get(0)[0] + blist.get(1)[0]);
+							//maxsum += Math.max(alist.get(1)[0] + blist.get(0)[0], blist.get(1)[0] + alist.get(0)[0]);
 						}
-/*						int xx = 1;
-						while(alist.size()>xx && blist.size()>xx && alist.get(xx)[1] == blist.get(xx)[1]) { //맥스가 같은 n인경우
-							int n = alist.get(0)[1];
-							alist.remove(0);
-							alist.add(new int[] {bcs[n].P/2, n});
-							Collections.sort(alist, comp);
-							blist.remove(0);
-							alist.add(new int[] {bcs[n].P/2, n});
-							Collections.sort(blist, comp);
-							xx++;
-						}*/
-						
-/*						if(alist.get(0)[1] == blist.get(0)[1] && alist.get(0)[1] == n) { //반으로 나눠도 최대
-							maxsum += alist.get(0)[0];
-							maxsum += blist.get(0)[0];
-						}*/
 						
 					}else {
 						maxsum += alist.get(0)[0];
@@ -195,7 +171,7 @@ public class Solution_D9_5644_무선충전_서울9반_김동주_미완_ { //50�
 					
 				}else if(alist.size()!=0 && blist.size()==0) {
 					maxsum += alist.get(0)[0];
-				}else if(blist.size()!=0 && alist.size()==0) {
+				}else if(alist.size()==0 && blist.size()!=0) {
 					maxsum += blist.get(0)[0];
 				}
 				
