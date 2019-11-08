@@ -6,17 +6,17 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main_정올_1733_오목_서울9반_김동주_미완_ { //안됨.... 6개넘는 오목알일때 구분
-	public static int[][] pan = new int[19][19];
+	public static int[][] pan = new int[19][19]; //가로세로 / 행렬
 	public static boolean[][] v ;
 	//검은색1, 흰색 2
 	public static int ni,nj,wi,wj,wd,wii,wjj, win;
 	public static boolean flag;
-	public static final int[] di = {-1,-1,-1,0,0,1,1,1};
-	public static final int[] dj = {-1,0,1,-1,1,-1,0,1}; //07, 16, 25, 34 가 쌍이다. 합7
+	public static final int[] di = {-1,-1,-1,0,0,1,1,1};  //07, 16, 25, 34 가 쌍이다. 합7
+	public static final int[] dj = {-1,0,1,-1,1,-1,0,1};  //0,1,3,5가 대표방향임
 	public static void main(String[] args) throws Exception {
-		//8방향(4방향)중 한방향으로 5알연속이면 이김
-		//6알은 아님
-		//한군데에서, 한쪽이 이김
+		//8방향(4방향)중 한방향으로 "5알연속"이면 이김
+		//6알은 아님!
+		//한군데에서, 한쪽이 이기거나 승부결정이 안남
 		System.setIn(new FileInputStream("res/input_JO_1733.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
@@ -27,7 +27,7 @@ public class Main_정올_1733_오목_서울9반_김동주_미완_ { //안됨....
 				pan[i][j] = Integer.parseInt(st.nextToken());
 			}
 		}
-		//판입력받음
+		//바둑판입력받음
 
 here:	for(int i=0; i<19; i++) {
 			for(int j=0; j<19; j++) {
@@ -41,7 +41,7 @@ here:	for(int i=0; i<19; i++) {
 					if(dfs(i,j,0,0,1)) win = 0;
 					if(win !=0) break here;
 					flag = false;
-					if(dfs(i,j,0,0,2)) win = 0;
+					if(dfs(i,j,0,0,5)) win = 0;
 					if(win !=0) break here;
 					flag = false;
 					if(dfs(i,j,0,0,3)) win = 0;
@@ -54,12 +54,12 @@ here:	for(int i=0; i<19; i++) {
 		System.out.println(win);
 		//가장 왼쪽. 세로면 가장 위 의 좌표+1
 		findLeft(wi,wj,wd);
-		if(win!=0) System.out.print(wii+" "+wjj);
+		if(win!=0) System.out.print((wii+1)+" "+(wjj+1));
 	}
 	
 	private static void findLeft(int i, int j, int dir) {
-		wii = i+1;
-		wjj = j+1;
+		wii = i;
+		wjj = j;
 		
 		ni = i+di[dir];
 		nj = j+dj[dir];
