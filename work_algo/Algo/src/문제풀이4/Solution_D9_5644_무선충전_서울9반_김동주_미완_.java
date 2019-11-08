@@ -14,8 +14,8 @@ public class Solution_D9_5644_무선충전_서울9반_김동주_미완_ { //50�
 		public Battery(int y, int x, int c, int p) { //아 배터리 행렬 반대...(개빡;)
 			this.x = x;
 			this.y = y;
-			C = c;
-			P = p;
+			this.C = c;
+			this.P = p;
 		}
 		int x,y;
 		int C;//충전범위C(bfs)
@@ -27,6 +27,7 @@ public class Solution_D9_5644_무선충전_서울9반_김동주_미완_ { //50�
 			this.x = x;
 			this.y = y;
 		}
+		//void move(int dir) {} 여기서 이동하는 메서드 만들면 편함
 	}
 	public static char[][] map;
 	public static int[] A, B;
@@ -54,7 +55,7 @@ public class Solution_D9_5644_무선충전_서울9반_김동주_미완_ { //50�
 			public int compare(int[] o1, int[] o2) {
 				int com = o2[0] - o1[0];
 				if(com != 0) return com; //앞에꺼로비교하는 컴패래터 작성 내림차순
-				else return Integer.compare(o2[1], o1[1]); //이걸 추가해서 P가 같은 배터리끼리도 소팅이 제대로 되도록 함!!!
+				else return o2[1] - o1[1]; //이걸 추가해서 P가 같은 배터리끼리도 소팅이 제대로 되도록 함!!!
 			}
 		};
 		
@@ -118,20 +119,6 @@ public class Solution_D9_5644_무선충전_서울9반_김동주_미완_ { //50�
 					if(b) blist.add(new int[] {bcs[n].P, n});
 				}
 				
-				//이제 A,B는 어떤 게 최대값인지 찾아 접속
-/*				Collections.sort(alist, new Comparator<int[]>() {
-					@Override
-					public int compare(int[] o1, int[] o2) {
-						return -Integer.compare(o1[0], o2[0]);
-					}
-				});
-				Collections.sort(blist, new Comparator<int[]>() {
-					@Override
-					public int compare(int[] o1, int[] o2) {
-						return -Integer.compare(o1[0], o2[0]);
-					}
-				}); //P기준 내림차순으로 각각 정렬!
-*/				
 				//소팅안한경우 테케 4,5 틀림!
 				Collections.sort(alist, comp);
 				Collections.sort(blist, comp);
