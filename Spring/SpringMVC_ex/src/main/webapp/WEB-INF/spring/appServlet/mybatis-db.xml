@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+<!-- spring bean 설정 파일: 스프링의 컨테이너가 생성할 객체를 적는 파일 -->
+
+<import resource="db.xml"/>
+
+<!-- service객체, dao 객체 생성 : annotation 으로 생성되게 함 -->
+<context:component-scan base-package="com.mybatis.service"/>
+<context:component-scan base-package="com.mybatis.dao"/>
+
+<!-- SqlSessionFactory, SqlSession 객체 생성 -->
+<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="dataSource" ref="ds"/>
+	<property name="mapperLocations" value="classpath:mapper/CustomerMapper.xml"/>
+	<property name="typeAliasesPackage" value="com.mybatis.vo"/>
+</bean>
+
+<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+	<constructor-arg ref="sqlSessionFactory"/>
+</bean>
+
+<tx:annotation-driven transaction-manager="tm"/>
+<!-- transaction 관리자 객체 생성 -->
+<bean id="tm"
+	class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	<property name="dataSource" ref="ds"/>	
+</bean>
+
+
+
+</beans>
+
+
+
+
+
+

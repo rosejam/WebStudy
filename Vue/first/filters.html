@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+</head>
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <!-- |(filter) : 왼쪽의 데이터를 오른쪽의 필터로 가공해서 목적에 맞는 값이나 형식으로 변환 -->
+        <p>{{message | threeTimes}}</p>
+        <p>{{message | toUpper}}</p>
+        <p>{{message | toLower}}</p>
+    </div>
+    
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data:{
+                message: 'Hello, Vue!!!'
+            },
+            filters:{
+                threeTimes: function(){
+                    var s = "";
+                    for (index = 0; index < 3; index++) {
+                        s += "ssafy";
+                    }
+                    return s;
+                },
+                toUpper: function(value){ //파라메터를 받아와서 가공
+                    return value.toUpperCase();
+                },
+                toLower: function(value){
+                    return value.toLowerCase();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

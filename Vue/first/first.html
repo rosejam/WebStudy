@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+</head>
+<!-- 
+    1. 뷰 라이브러리 로딩 : cdn
+    2. 화면 구성 요소 생성 : V ({{}}안에 data은 아직 안들어감)
+    3. 뷰 인스턴스 생성 : VM
+    4. 화면과 뷰객체(인스턴스) 연결 : el속성
+    5. 화면 변환 ({{}}안에 data가 들어감)
+    6. 확인
+ -->
+<body>
+
+    <!-- view(V) : 화면 구성 요소 -->
+    <div id="app"> 
+        <!-- vue객체에 의해 관리받는 화면 요소 대상은 vue 객체 안의 데이터 접근 시 {{}} 사용 -->
+        <h1>{{message}}</h1>
+        <h1>{{name}}</h1>
+        <h1>{{age}}</h1>
+    </div><!-- div#app (태그
+        이름)#(아이디로 사용할 것)치고 탭 -->
+
+
+    <script>
+        /* (VM)역할을 하는 Vue객체 생성 */
+        var vm = new Vue({ //{json객체로 정보를 주어 생성}
+
+            el: '#app', //el속성 : vue 객체가 관심을 가지는 화면 요소(V)
+            data:{ //data, model(M) - DB에서 Rest로 가져온 값 M
+                message: 'hello, vue',
+                name: 'jane',
+                age: 12
+            }
+
+        }); //이 ;는 빼도됨!!
+    </script>
+    
+</body>
+</html>

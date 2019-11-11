@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>SSAFY</title>
+    <style>
+      body {
+        background-color: #ffffff;
+      }
+      #second > h2 {
+        margin: auto;
+        padding: 0px;
+        text-align: center;
+        color: blue;
+      }
+      .red {
+        color: red;
+      }
+      #signup-form {
+        width: 70%;
+        height: 200px;
+        margin: auto;
+        padding: 20px;
+        text-align: center;
+        font-family: serif;
+        font-size: 14px;
+      }
+      #signup-form2 {
+        width: 70%;
+        height: 200px;
+        margin: auto;
+        padding: 20px;
+        text-align: center;
+        font-family: serif;
+        font-size: 14px;
+        color: red;
+      }
+    </style>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+  </head>
+  <body>
+    <div id="second">
+      <h2 v-html="title"></h2>
+    </div>
+
+    <section id="app">
+      <div id="signup_form">
+        <h2>Sign Up Form</h2><!-- 폼태그 -->
+        <form id="_formhrm" action="" method="post" @submit.prevent="process()">
+          <!-- @submit.prevent="process()" = 넘어가는 것을 막는 제약조건 .prevent -->
+          <!-- v-on:submit='process' = 서밋하면 process가 작동한다 (v-on: 은 @로 줄여서 쓸 수 있다!) -->
+          
+          <label><span class="label">이름<span class="red">*</span></span></label>
+              <input id="_signName" name="name" type="text" placeholder="이름을 입력하세요" v-model="name"/><br/>
+
+          <label><span class="label">주소<span class="red">*</span></span></label>
+              <input id="_signAddress" name="address" type="text" placeholder="주소를 입력하세요" v-model="address"/><br/>
+
+          <label><span class="label">전화번호<span class="red">*</span></span></label>
+              <input id="_signPhone" name="phone" type="tel" placeholder="010-xxxx-xxxx" v-model="phone"/><br/>
+
+          <button type="submit">submit</button><!-- 그냥 button type이면 따로 submit해야 함 -->
+        </form>
+      </div>
+
+      <div id="signup_form2">
+        <fieldset>
+          <span v-text="name"></span>
+          <span v-text="address"></span>
+          <span v-text="phone"></span>
+        </fieldset>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+      var vm = new Vue({
+        el: "#app", //위 section에만 관심이 있음
+        data: {      
+          name: null,
+          address: null,
+          phone: null
+        },
+        methods: {
+         //입력한 값 alert로 알려주기 -> 아래 버튼 눌렀을 때 할 일
+          process: function(){
+            alert(this.name);
+            alert(this.address);
+            alert(this.phone);
+          }
+        }
+      });
+
+      //Vue 객체 생성: id가 second인 영역 관리하는 객체(#app밖에 있으므로 따로 뷰객체를 생성해야함)
+      var vm2 = new Vue({
+        el: '#second',
+        data: {
+          title:'form test'
+        }
+      });
+    </script>
+  </body>
+</html>

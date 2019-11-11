@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+</head>
+<body>
+    <div id="app">
+        <h1>Calculator</h1>
+        <input v-model.number="num1"> <!-- .number로 제약조건을 건다!(숫자로 받아옴)-->
+        <select v-model="op">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+        <input v-model.number="num2">
+        <br>
+        <h2>result: {{num1}} {{op}} {{num2}} = {{calc}}</h2>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                num1: 1,
+                num2: 2,
+                op: '+'
+            },
+            computed: {
+                calc: function() { //calc(){ 로 줄여쓸 수 있음
+                    switch(this.op){ //op에도 this를 붙여야 한다!(위의 data에서 가져오는 것이므로)
+                        case '+':
+                            return this.num1 + this.num2;
+                        case '-':
+                            return this.num1 - this.num2;
+                        case '*':
+                            return this.num1 * this.num2;
+                        case '/':
+                            return this.num1 / this.num2;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

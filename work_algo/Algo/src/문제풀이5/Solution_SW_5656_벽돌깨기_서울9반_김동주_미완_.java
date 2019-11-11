@@ -39,9 +39,12 @@ public class Solution_SW_5656_벽돌깨기_서울9반_김동주_미완_ {
 			//입력
 			
 			min = Integer.MAX_VALUE;
-			//dfs(0, temp);
-			temp = new int[H][W];
 			
+			temp = new int[H][W];
+/*			for(int h=0; h<H; h++) {
+				temp[h] = map[h].clone();
+			}
+			dfs(0, temp);*/
 			dfs(0,map);
 			
 			//출력
@@ -71,14 +74,15 @@ public class Solution_SW_5656_벽돌깨기_서울9반_김동주_미완_ {
 			return;
 		}
 		
+		for(int h=0; h<H; h++) {
+			temp[h] = tmap[h].clone();
+		}
 		for(int w=0; w<W; w++) { //공 떨구기
 			//
 			//dfs(n+1, dropTheBall(w, tmap));
 //			System.out.println("**"+n);
 //			for(int[] x : tmap) System.out.println(Arrays.toString(x));
-			for(int h=0; h<H; h++) {
-				temp[h] = tmap[h].clone();
-			}
+
 			dfs(n+1, dropTheBall(w, temp));
 		}
 	}

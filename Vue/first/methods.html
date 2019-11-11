@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+</head>
+<body>
+    <div id="app">
+        <!-- 메서드 실행(잘안됨..막 여러번되고) -->
+        <!-- {{reverse()}}
+        <br>
+        {{addage()}}
+        <hr> -->
+        {{message}}
+        <br>
+        {{age}}
+        <br>
+        <!-- button click시 메소드 호출. 위 message가 reverse된다. -->
+        <button v-on:click="reverse">reverse</button><!-- v-on 디렉티브는 이벤트 핸들러 -->
+        <button v-on:click="hello">hello</button>
+        <button v-on:click="addage">addage</button>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                message: 'welcome to Vue',
+                age: 25
+            },
+            methods:{ //호출했을 때 나오는 결과가 동일하더라도 호출하는 만큼 실행됨
+                reverse: function(){
+                    console.log('reverse method');
+                    this.message = this.message //this란? 이 Vue객체의 데이터를 의미!!!
+                                    .split('')
+                                    .reverse() 
+                                    .join('');
+                    return this.message; //this.message의 값 변경 후 리턴
+                },
+                hello(){
+                    console.log();
+                    this.message = this.message + "hello,,,";
+                },
+                addage(){
+                    console.log('hello method');
+                    return this.age = this.age + 1;
+                }
+            },
+            //computed : "caching기능"을 가지고 있어서 computed옵션이 사용하는 데이터가 수정되기 전까지는 캐싱된 결과를 사용하고
+            //그 값이 수정될 때만 그때마다 다시 작업을 수행함. 사용하는 값이 바뀌지 않으면 캐싱된 값을 사용하므로 재사용 가능함.
+            computed: { //메소드와 달리 message가 변하지 않으면 그대로 리턴
+                chello: function() {
+                    console.log('computed');
+                    return this.message + ", welcome"; //this.message가 변할때만 실행이 됨. 처음엔 결과"welcome to Vue, welcome"가 캐시에 저장이 됨
+                }
+            }
+        });
+    </script>
+</body>
+</html>
