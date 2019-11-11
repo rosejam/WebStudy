@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="EUC-KR" />
+    <title>Insert title here</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ message }}</p>
+      <p>{{ chello }}</p> <!-- computed의 이름. 일단 이게 있어야 computed가 호출 될 수 있다.-->
+
+      <button v-on:click="mhello">메서드 호출</button> <!-- method의 이름(원래대로 reverse 시켜도 computed가 바로 인지하고 다시 돌려놓는다!) -->
+    </div>
+    
+    <script type="text/javascript">
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          message: "hello, vue!"
+        },
+
+        computed: { //this.message에 변동이 있을 때마다! 실행되고 캐시에 저장
+          //method format
+          chello: function() { 
+            console.log("computed");
+            this.message = this.message
+                          .split("")
+                          .reverse()
+                          .join("");
+            return this.message;
+          }
+        },
+
+        methods: {
+          mhello: function() {
+            console.log("method");
+            this.message = this.message
+                          .split("")
+                          .reverse()
+                          .join("");
+            return this.message;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

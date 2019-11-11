@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+</head>
+<!-- "directives" :
+    태그 안에서 "v-로 시작하는 모든 속성".
+    화면 요소를 좀 더 쉽게 조작하기 위해 사용.
+    v-bind, v-if, v-else, v-show, v-on, v-text, v-for, v-html
+-->
+<body>
+    <div id="app">
+        <p>{{msg}}</p>      <!-- 태그인식X -->
+        <p v-text="msg"></p><!-- 태그인식X. text()와 동일 -->
+        <p v-html="msg"></p><!-- 태그인식O. html()과 동일 -->
+        <hr>
+
+        <!-- flag가 true일 때만 태그가 보여진다 -->
+        <a v-show="flag" href="#">show vue!</a> <!-- if와 다르게 false일 때 태그css의 "display속성이 none"이 되어서 안보이게 됨을 elements에서 알 수 있다.(dom구조에는 이미 만들어져 있음) -->
+        <a v-if="flag2" href="#">if vue!</a> <!-- false라면 elements에서 "태그 자체가 주석으로" 바꾸어 버림(dom구조에 아얘 생성되지 않거나 빠짐. flag 변동이 많다면 show사용!) -->
+        
+        <a v-else href="#">else vue!</a> <!-- 위의 if의 조건이 false일 때 보여진다. true라면 dom구조에 없음 -->
+
+        <!-- v-bind : 태그의 속성과 Vue객체의 data를 연결시킬 때 사용. -->
+        <!-- data가 바뀌면 화면이 바뀌지만 반대로는 X!! -->
+        <img v-bind:src="src"/>
+        <h3 v-bind:id="uid">test1</h3>
+        <h5 :id="uid2">test2</h5>
+        <input :value="msg2"><!-- v-bind:은 :으로 줄여 쓸 수 있다. -->
+
+        <!-- v-for: 반복 작업 시 -->
+        <ul>
+            <li v-for="system in systems">
+                {{system}}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                flag: true,
+                flag2: false,
+                systems: ['android', 'ios', 'windows'],
+                uid: 10,
+                uid2: 25,
+                msg: '<h1>hello</h1>',
+                src: '../img/f.jpg',
+                msg2: 'hello'
+            }
+        });
+    </script>
+</body>
+</html>

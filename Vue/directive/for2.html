@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+</head>
+<body>
+    <div id="app">
+        <!-- <template v-for></template> 를 사용하면 태그 안의 내용만 출력되고 <template>태그는 화면에 남지 않음 -->
+        <template v-for="nation in nations">
+            <!-- <span>{{nation.code}}</span>
+            <span>{{nation.name}}</span>
+            <span>{{nation.capital}}</span> -->
+            <span><p v-text="nation.code"></p></span> <!-- 위에서 p태그가 더해져 줄바꿈이 됨 -->
+            <span><p v-text="nation.name"></p></span>
+            <span><p v-text="nation.capital"></p></span>
+            <hr>           
+        </template>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                nations:[
+                    {
+                        name: 'korea',
+                        capital: 'seoul',
+                        code: 'kr'
+                    },
+                    {
+                        name: 'china',
+                        capital: 'beijing',
+                        code: 'cn'
+                    },
+                    {
+                        name: 'japan',
+                        capital: 'tokyo',
+                        code: 'jp'
+                    }
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

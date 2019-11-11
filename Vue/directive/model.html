@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+</head>
+<body>
+    <div id="app">
+        <!-- vue 인스턴스와 화면요소간의 단방향 bind -->
+        <input v-bind:value="message"><br>
+
+        <!-- vue 인스턴스와 화면요소간의 "양방향" bind = v-model(속성명을 따로 적지 않는다!! - 몇가지만 가능) -->
+                                                                <!-- input, select, textarea 등 -->
+        <!-- 화면 요소에서 값을 바꿨을 때 vue인스턴스의 data가 바뀌게 된다!!!-->
+        <input v-model="message2"><br>
+        {{message}}<br>
+        {{message2}}<br>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                message: 'our king is dead! send help!',
+                message2: 'our king is dead! send help!'
+            }
+        });
+    </script>
+</body>
+</html>

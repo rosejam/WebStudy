@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data() {
+                key: value
+            },
+            methods: {
+                hello() {
+                    console.log('hello method'); //log치고 탭
+                },
+                bye() {
+                    console.log('bye method');
+                }
+            },
+            computed: {
+                name() {
+                    return this.data 
+                }
+            } //여기에 콤마 붙으면 실행 안됨..
+        });
+    </script>
+</body>
+</html>

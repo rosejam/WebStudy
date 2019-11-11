@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+</head>
+<body>
+    <div id="app">
+        <h1>v-for 연습</h1>
+        <ul>
+            <li v-for="i in 10">
+                {{i}} * 5 = {{i * 5}}
+            </li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="book in books">
+                I like {{book}}
+            </li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="(value, key, index) in story">
+                {{index}}. {{key}} : {{value}}
+            </li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="(story, index) in stories">
+                {{index + 1}}. {{story.title}} : {{story.writer}}
+            </li> <!-- json 내부에 접근할 때 .으로 접근 -->
+        </ul>
+    </div>
+    
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data:{
+                books:['햄릿','콩쥐팥쥐','누가 내 치즈를 옮겼을까'],
+                story:{
+                    title:'tempest',
+                    writer:'셰익스피어',
+                    publisher:'green house'
+                },
+                stories:[
+                    {
+                        writer: "james kim",
+                        title: "who killed my robin?"
+                    },
+                    {
+                        writer: "billy jones",
+                        title: "farewell to arms"
+                    },
+                    {
+                        writer: "queen lee",
+                        title: "are you fine?"
+                    }
+                ] //json이 들어있는 배열
+            }
+        });
+    </script>
+</body>
+</html>
