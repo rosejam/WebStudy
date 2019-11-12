@@ -31,7 +31,8 @@
 	<a href="" id="selectedDel">선택항목삭제</a>
 </body>
 <script type="text/javascript">
-
+	
+	//이거뭔가 문제 발생. 다르게 전달하는것이 더좋다고 들음
 	$("#selectedDel").on("click", function(e){
 		e.preventDefault();
 		let url = "delete.do?"

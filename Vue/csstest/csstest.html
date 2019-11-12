@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+    <style>
+        .red{
+            color: red;
+        }
+        .blue{
+            color: blue;
+        }
+        .myfont{
+            font-family: 궁서체;
+            font-size: 30pt;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1 class="myfont" v-bind:class="{red: flag}">hello-1</h1><!-- {css내용 : 참/거짓} 뒤의 값이 참일 때만 css가 적용된다. -->
+        <h1 class="myfont" v-bind:class="{blue: flag2}">hello-2</h1>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data:{
+                flag: false,
+                flag2: true
+            }
+        })
+    </script>
+</body>
+</html>

@@ -16,6 +16,8 @@
             data:{
                 message:'hello, vue'
             },
+
+            //life cycle hooks
             beforeCreate: function() {
                 console.log('before create...');
             },
@@ -28,6 +30,7 @@
             updated: function() { //웹console에 vm.message='hihihi'쳐서 데이터를 수정하여 log 확인 가능
                 console.log('updated...');
             }
+            
         });
     </script>
 </body>

@@ -11,7 +11,7 @@ import java.util.StringTokenizer;
 public class Solution_SW_5656_벽돌깨기_서울9반_김동주_미완_ {
 	//N, W, H, 그리고 벽돌들의 정보가 주어질 때,
 	//남은 벽돌의 개수를 구하라!(min)
-	public static int T,N,W,H,min,map[][],temp[][];
+	public static int T,N,W,H,min,map[][];//,temp[][];
 	public static boolean[][] v;
 	public static Queue<int[]> q;
 	public static final int[] di = {-1,1,0,0};
@@ -40,7 +40,7 @@ public class Solution_SW_5656_벽돌깨기_서울9반_김동주_미완_ {
 			
 			min = Integer.MAX_VALUE;
 			
-			temp = new int[H][W];
+			//temp = new int[H][W];
 /*			for(int h=0; h<H; h++) {
 				temp[h] = map[h].clone();
 			}
@@ -58,32 +58,23 @@ public class Solution_SW_5656_벽돌깨기_서울9반_김동주_미완_ {
 			System.out.println("**");
 			for(int[] x : tmap) System.out.println(Arrays.toString(x));
 		//}
-		if(n == N) { //다 떨궈본 경우 min값 계산
+		if(n == N) { //다 떨궈본 경우 min값 계산(또는 중간에 벽돌들을 계산하고 벽돌이 안남은 경우로 백트래킹!!)
 			int cnt = countTheBrick(tmap);
 			if(min > cnt) {
 				min = cnt;
-//				System.out.println(cnt);
-//				System.out.println("**");
-				//for(int[] x:tmap) System.out.println(Arrays.toString(x));
 			}
-/*			min = (min < cnt)? min : cnt;
-			if(min == cnt) {
-			System.out.println("**");
-			for(int[] x:tmap) System.out.println(Arrays.toString(x));
-			}*/
 			return;
 		}
 		
+		int[][] temp = new int[H][W];
 		for(int h=0; h<H; h++) {
-			temp[h] = tmap[h].clone();
+			for(int w=0; w<W; w++) {
+				temp[h] = tmap[h].clone();
+			}
 		}
 		for(int w=0; w<W; w++) { //공 떨구기
-			//
-			//dfs(n+1, dropTheBall(w, tmap));
-//			System.out.println("**"+n);
-//			for(int[] x : tmap) System.out.println(Arrays.toString(x));
-
-			dfs(n+1, dropTheBall(w, temp));
+			dfs(n+1, dropTheBall(w, tmap));
+			tmap = temp;
 		}
 	}
 	

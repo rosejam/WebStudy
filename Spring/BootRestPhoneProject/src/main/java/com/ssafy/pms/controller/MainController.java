@@ -125,6 +125,8 @@ public class MainController {
 		}
 	}
 	
+	//체크박스로 여러개를 입력받아 삭제하는 과정
+	//jsp부터 다시설계 해야함..!
 	@GetMapping("delete.do")
 	public String doDelete(@RequestParam List<String> list, Model model) {
 		try {

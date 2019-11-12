@@ -1,0 +1,32 @@
+v-on:  == @
+v-bind: == :
+
+CSS>
+1. class="클래스이름" 속성으로 CSS에서 사용
+2. v-bind:class="{클래스이름: 보일지(참)/안보일지(거짓)}" 속성 사용
+(같이 사용할 수도 있음)
+
+
+BootRestMVCProject의 @RestController위에 
+@CrossOrigin("*") 어노테이션을 붙임
+
+일단 Server에서 html을 받아옴.
+	->원래는 그 server의 그 port에 Ajax요청을 해서 받아온다.(port가 달라도 다른것으로 인식)
+
+LiveServer(localhost:5500)에서 html을 받아오고 Rest의 TomcatServer(localhost:9090)에 데이터를 요청해 받아와서 뿌린다.
+	        ->	1. client쪽에서 다른서버에서 오더라도 뿌려주게 설정 
+		2. server쪽에서 어떤 client에서 요청이 들어와도 다 응답을 하게 보안 설정 -> @CrossOrigin("*") 사용
+
+axios (js라이브러리)를 활용해서 Rest서버에 비동기요청을 보냄
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+--------------
+	<JavaScript(=ECMA Script)>
+ES5버전 -> 2015년의 ES6버전으로 프로젝트를 만든다. (사용자 브라우저에 맞게 ES5로 변환해주는 컴파일러 = Babel ) https://babeljs.io/
+		=>(화살표함수)등을 사용가능. 
+			function키워드없이, 간단하게 "(파라메터)=>리턴값;"꼴로 익명함수를 작성
+			리턴값 대신 {return 리턴값;}로 적어도 됨. 리턴값은 json객체 등
+		;를 붙여주는게 좋다
+함수자체가 객체로 인식이 되기 때문에 "파라메터나 리턴값"으로 함수 전달 가능!
+	var x = (function(){ }); 일 때  x();하면 저 익명함수가 실행됨

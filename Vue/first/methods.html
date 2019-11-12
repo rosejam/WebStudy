@@ -18,6 +18,8 @@
         <br>
         {{age}}
         <br>
+        {{chello}}
+        <br>
         <!-- button click시 메소드 호출. 위 message가 reverse된다. -->
         <button v-on:click="reverse">reverse</button><!-- v-on 디렉티브는 이벤트 핸들러 -->
         <button v-on:click="hello">hello</button>
@@ -31,7 +33,7 @@
                 message: 'welcome to Vue',
                 age: 25
             },
-            methods:{ //호출했을 때 나오는 결과가 동일하더라도 호출하는 만큼 실행됨
+            methods:{ //호출했을 때 나오는 결과가 동일하더라도 호출하는 만큼 그때마다 실행됨
                 reverse: function(){
                     console.log('reverse method');
                     this.message = this.message //this란? 이 Vue객체의 데이터를 의미!!!
@@ -50,7 +52,7 @@
                 }
             },
             //computed : "caching기능"을 가지고 있어서 computed옵션이 사용하는 데이터가 수정되기 전까지는 캐싱된 결과를 사용하고
-            //그 값이 수정될 때만 그때마다 다시 작업을 수행함. 사용하는 값이 바뀌지 않으면 캐싱된 값을 사용하므로 재사용 가능함.
+            //그 "값이 수정될 때만 그때마다" 다시 작업을 수행함. 사용하는 "값이 바뀌지 않으면 캐싱된 값을 사용"하므로 재사용 가능함.
             computed: { //메소드와 달리 message가 변하지 않으면 그대로 리턴
                 chello: function() {
                     console.log('computed');

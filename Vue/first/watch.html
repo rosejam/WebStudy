@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+</head>
+<body>
+    <div id="app">
+        <input v-model="message"/>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data:{
+                message: 'hello, vue!!'
+            },
+
+            //function 형식. data변화를 감지해서 변동 시 마다 실행
+            //반응형 콜백 메소드. 복잡하고 시간이 걸리는 긴 작업에 사용
+            //비동기 호출 등에 적합
+            //  computed와 다르게 호출되지 않아도 연결된 data의 변화를 감지해서 실행됨!!!
+            watch:{
+                message: function(value){ //"데이터이름": 를 감시함!!! (여기서는 this.message의 변화를 감시함)
+                    console.log('data changed...' + value);
+                }
+            },
+
+            //function 형식. cache기능, 간단한 계산 작업 수행
+            //반응형 getter
+            //  처음 한번은 호출되어야 관련된 data의 변화를 감시해서 실행됨!!!
+            computed:{
+                hello: function(){
+                    console.log('computed');
+                    return this.message + 'hello'; //this.message에 변화가 있을 때만 처리를 해서 리턴해줌
+                }
+            },
+
+            //필요 시 반복 실행(이벤트 처리 등)
+            methods:{
+                go: function(){
+                    return this.message + "gogogo~!";
+                }
+            },
+
+            //원본 데이터를 변환시켜 형식(포맷)이나 표현방식을 바꿔줌
+            filters:{
+                myfilter: function(value){
+                    return value.toLowerCase();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

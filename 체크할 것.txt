@@ -1,5 +1,3 @@
-phone delete그렇게 하는거 맞나..?
+axios의 null처리
 
 11월 18일까지 어학성적 제출
-
-first에 method.html에 뒷부분 체크

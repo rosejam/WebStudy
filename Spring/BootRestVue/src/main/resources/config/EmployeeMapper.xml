@@ -36,7 +36,7 @@
 	</select>
 
 	<insert id="addEmp" parameterType="Emp"><!--  -->
-		insert into emp values(#{id}, #{name}, #{mailid}, #{start_date}, #{manager_id}, #{title}, #{dept_id}, #{salary}, #{commission_pct})
+		insert into emp values(#{id}, #{name}, #{mailid}, sysdate(), #{manager_id}, #{title}, #{dept_id}, #{salary}, #{commission_pct})
 	</insert>
 
 	<update id="updateEmp" parameterType="Emp"><!-- id기준  -->
@@ -65,8 +65,8 @@
 	</select><!-- count(*)하면 120부서 0명이 아니어서 틀린다! -->
 	
 	<select id="findDeptByname" resultType="Emp"  parameterType="java.lang.String">
-		select * from emp where dept_id in (select dept_id from dept where name = #{name})
-	</select> <!-- 이너 조인해서 그냥 select * 해도 됨 -->
+		select * from emp where dept_id in (select dept_id from dept where name like concat('%', #{name}, '%'))
+	</select> <!-- 이너 조인해서 그냥 select * 해도 됨 --> <!-- 그냥 like검색으로 만듬 -->
 	
 	<select id="findDeptBydeptid" resultType="Emp" parameterType="int">
 		select * from emp where dept_id = #{dept_id}
