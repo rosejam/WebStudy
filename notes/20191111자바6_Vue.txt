@@ -33,8 +33,8 @@ IDE(에디터)는 이클립스 대신 'vscode stable버전'을 사용한다!(설치시 code어쩌구 모
 	"created"
 -el과 template속성 체크후 
 	beforeMount
--data가 화면에 반영된 후
-	"mounted"	--> data에 변동사항이 있으면 beforeUpdate와 updated가 호출되면서 화면에 다시 반영
+-"data가 화면에 반영"된 후
+	"mounted"	--> "data에 변동사항"이 있으면 beforeUpdate와 updated가 호출되면서 화면에 다시 반영
 -화면닫을 때
 	beforeDestroy
 	destroyed

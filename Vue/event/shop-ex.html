@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SSAFY</title>
+
+<style type="text/css">
+/* css import */
+@import url('../css/shop.css');
+.sale{
+	display: none;
+}
+</style>
+</head>
+<body>
+	<div class="nav-bar"></div>
+	<div id="app">
+		<div class="product">
+			<div class="product-image">
+				<!-- image -->
+				<img :src="image" />
+			</div>
+
+			<div class="product-info">
+				<h1>{{product}}</h1>
+				
+				<!-- inStock값에 따라 메세지 다르게 뿌려주기; 재고있음 or 품절 -->
+				<p v-show="inStock">In Stock</p>
+				<p v-show="!inStock">Out of Stock</p><!-- false는 그냥 !하면 되네 -->
+				
+				<!-- On Sale값에 따라 메세지 뿌려주기; On Sale!  -->
+				<!-- <span v-show="onSale">On Sale!</span> -->
+				<span v-bind:class="{sale: !onSale}">On Sale!</span><!-- onSale이 true면 보이도록 설정 -->
+				
+				<p>{{description}}</p>
+
+				<ul>
+					<!-- 제품 상세 정보 출력하기 -->
+					<li v-for="detail in details">
+						{{detail}}
+					</li>
+				</ul>
+
+				<!-- mouseover: image change (json객체 내부는 "."으로 접근함 -->	
+				<div v-for="option in options" :key="option.optionId" class="color-box"
+				 		@mouseover="updateProduct(option.optionImage)" 
+				 		:style="[	{backgroundColor: option.optionColor },
+									{display: 'inline-block'},
+									{margin: '5px'}
+								]">
+					
+				</div>
+				<br>
+
+				<!-- size 표시하기(select에선 option에 for를 붙여서 반복한다!!) -->	
+				<select>
+					<option v-for="size in sizes" :value="size">{{size}}</option><!-- :value는 옵션 -->
+				</select> 
+							
+				<br>
+				<!-- addToCart 호출 -->
+				<button @click="addToCart">Add </button>
+
+				<!-- removeFromCart 호출 -->
+				<button @click="removeFromCart">Remove </button>
+
+				<div class="cart">
+					<p>Cart({{cart}})</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://unpkg.com/vue"></script>
+	<script>
+	//Create a new button and method to decrement the value of `cart`.
+
+	var app = new Vue({
+	  el: '#app',
+	  data: {
+	    product: 'Blouse',
+	    image: '../img/blueBlouse.jpg',
+		inStock: true,
+		quantity: 10,
+		onSale: true,
+		description: '올 봄에 어울리는 멋진 데님 블라우스',
+		
+		sizes: [90, 95, 100, 105, 110],
+	    details: ['80% cotton', '20% polyester', 'Gender-neutral'],
+	    options: [
+	      {
+	        optionId: 2234,
+	        optionColor: 'violet',
+	        optionImage: '../img/violetBlouse.jpg'
+	      },
+	      {
+	        optionId: 2235,
+	        optionColor: 'blue',
+	        optionImage: '../img/blueBlouse.jpg'
+	      }
+	    ],
+	    
+	    cart: 0
+	  },
+	  methods: {
+	    addToCart() {
+		  if(this.quantity >0){
+		  this.quantity--;
+		  this.cart++;
+		  }
+	    },
+	    
+	    updateProduct(optionImage) {
+	      this.image = optionImage;
+	    },
+	    
+	    removeFromCart() {
+		  if(this.cart > 0){
+		  this.quantity++;
+		  this.cart--;
+		  }else{
+			alert('장바구니가 비었습니다');
+		  }
+	    }
+	  },
+	  watch:{
+		//quantity 감시 후 inStock값 변경
+		quantity: function(value){
+		  if(value > 0){
+			this.inStock = true;
+		  }else{
+			this.inStock = false;
+		  }
+		}
+	  }
+	})
+
+
+	</script>
+	
+
+</body>
+</html>

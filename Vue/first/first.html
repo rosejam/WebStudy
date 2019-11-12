@@ -11,7 +11,7 @@
     1. 뷰 라이브러리 로딩 : cdn
     2. 화면 구성 요소 생성 : V ({{}}안에 data은 아직 안들어감)
     3. 뷰 인스턴스 생성 : VM
-    4. 화면과 뷰객체(인스턴스) 연결 : el속성
+    4. 화면과 뷰객체(인스턴스) 연결 : el속성 으로
     5. 화면 변환 ({{}}안에 data가 들어감)
     6. 확인
  -->
@@ -23,16 +23,15 @@
         <h1>{{message}}</h1>
         <h1>{{name}}</h1>
         <h1>{{age}}</h1>
-    </div><!-- div#app (태그
-        이름)#(아이디로 사용할 것)치고 탭 -->
-
+    </div><!-- div#app (태그이름)#(아이디로 사용할 것)치고 탭 -->
 
     <script>
-        /* (VM)역할을 하는 Vue객체 생성 */
+        /* "(VM)역할"을 하는 Vue객체 생성 */
         var vm = new Vue({ //{json객체로 정보를 주어 생성}
 
-            el: '#app', //el속성 : vue 객체가 관심을 가지는 화면 요소(V)
-            data:{ //data, model(M) - DB에서 Rest로 가져온 값 M
+            el: '#app', //el속성 : vue 객체가 관심을 가지는 화면 요소(V)와 연결
+
+            data:{ //data, model(M) - DB에서 Rest로 가져온 값 M, json형식
                 message: 'hello, vue',
                 name: 'jane',
                 age: 12

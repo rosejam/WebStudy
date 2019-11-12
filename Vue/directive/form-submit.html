@@ -46,9 +46,10 @@
     <section id="app">
       <div id="signup_form">
         <h2>Sign Up Form</h2><!-- 폼태그 -->
-        <form id="_formhrm" action="" method="post" @submit.prevent="process()">
-          <!-- @submit.prevent="process()" = 넘어가는 것을 막는 제약조건 .prevent -->
-          <!-- v-on:submit='process' = 서밋하면 process가 작동한다 (v-on: 은 @로 줄여서 쓸 수 있다!) -->
+        <form id="_formhrm" action="" method="post" @submit.prevent="process">
+          <!-- @submit.prevent="process" (넘어가는 것을 막는 제약조건 수식어 = .prevent) -->
+          <!-- v-on:submit='process' (서밋하면 process가 작동한다) -->
+          <!-- (v-on: 은 @로 줄여서 쓸 수 있다!!) -->
           
           <label><span class="label">이름<span class="red">*</span></span></label>
               <input id="_signName" name="name" type="text" placeholder="이름을 입력하세요" v-model="name"/><br/>

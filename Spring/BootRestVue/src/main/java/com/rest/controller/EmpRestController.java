@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,7 @@ import io.swagger.annotations.ApiOperation;
 
 //@RestController = @Controller + @ResponseBody 가 합쳐진 어노테이션
 //								  @ResponseBody : 응답결과(자바 객체)를 json 형식으로 바꿔 보내줌
+@CrossOrigin("*")
 @RestController
 public class EmpRestController {
 	@Autowired
@@ -147,7 +149,7 @@ public class EmpRestController {
 		}
 	}
 	@RequestMapping(value="/deptcount", method=RequestMethod.GET)
-	@ApiOperation("부서 사원 수") //
+	@ApiOperation("부서 사원 수") //회계부 사람 없음!!!!
 	public List<DeptCount> findAllDepCounts(){
 		try {
 			return service.findAllDepCounts();
