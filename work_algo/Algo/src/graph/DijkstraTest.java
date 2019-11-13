@@ -45,13 +45,17 @@ public class DijkstraTest {
 		System.out.println();
 		
 		v[start]=true;
-		for(int i=0; i<N-2; i++) {
+		//
+		//pq생성 및 offer
+		for(int i=0; i<N-2; i++) {//while(!pq.isEmpty()){
 			int curr=getSmallIndex();
 			v[curr]=true;
 			for(int j=0; j<N; j++) {
 				if(!v[j]) { //방문하지 않았었고
 					if(d[j] > d[curr]+a[curr][j]) {
 					   d[j] = d[curr]+a[curr][j]; //직항보다 짧은 거리인 경우 업데이트
+					   //p[j] = curr; JO2097
+					   //pq.offer(new Point(dis+a[curr][j], j));
 					}
 				}
 			}

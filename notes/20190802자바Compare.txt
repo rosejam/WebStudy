@@ -19,3 +19,6 @@ public int compareTo(Actor other) { //Comparable<Actor>인터페이스를 완성하는 메�
 		return 1; //기준객체가 자리를 바꿈!
 }
 Collections.sort(list, new ActorComparator());
+
+//Comparable을 implements한 스태틱클래스 작성
+메서드 완성해서 기본 정렬기준으로 사용

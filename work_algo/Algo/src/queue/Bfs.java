@@ -37,7 +37,7 @@ public class Bfs {
 		visit = new boolean[V];
 		visit[node]=true; //미리 방문처리를 하고 넣는다!(큐중복방지)
 		queue.offer(node); //(new int[]{node,1})
-		while(!queue.isEmpty()) { 
+		while(!queue.isEmpty()) {
 			//int size = queue.size(); //cnt+1;
 			//for(int i=0; i<size; i++) { //cnt용
 				int curr = queue.poll(); 
