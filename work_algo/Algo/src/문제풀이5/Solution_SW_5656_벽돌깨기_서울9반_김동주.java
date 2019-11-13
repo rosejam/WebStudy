@@ -1,14 +1,12 @@
 package 문제풀이5;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Solution_SW_5656_벽돌깨기_서울9반_김동주_미완_ {
+public class Solution_SW_5656_벽돌깨기_서울9반_김동주 { //계속 맵복사하는게 약간 비효율적인가?
 	//N, W, H, 그리고 벽돌들의 정보가 주어질 때,
 	//남은 벽돌의 개수를 구하라!(min)
 	public static int T,N,W,H,min,map[][];//,temp[][];
@@ -17,22 +15,22 @@ public class Solution_SW_5656_벽돌깨기_서울9반_김동주_미완_ {
 	public static final int[] di = {-1,1,0,0};
 	public static final int[] dj = {0,0,-1,1}; //상하좌우
 	public static void main(String[] args) throws Exception {
-        System.setIn(new FileInputStream("res/input_SW_5656.txt"));
+        //System.setIn(new java.io.FileInputStream("res/input_SW_5656.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         StringTokenizer st;
         
         T = Integer.parseInt(br.readLine());
-        for(int tc=1; tc<=1; tc++) {
+        for(int tc=1; tc<=T; tc++) {
 			st = new StringTokenizer(br.readLine());
 			N = Integer.parseInt(st.nextToken()); //구슬쏘는 횟수
 			W = Integer.parseInt(st.nextToken());
 			H = Integer.parseInt(st.nextToken());
-			map = new int[H][W];
+			map = new int[H][W]; //[N+1][H][W]; (메모리는 많이쓰지만)
 			for(int h=0; h<H; h++) {
 				st = new StringTokenizer(br.readLine());
 				for(int w=0; w<W; w++) {
-					map[h][w] = Integer.parseInt(st.nextToken());
+					map[h][w] = Integer.parseInt(st.nextToken()); //[0][H][W]
 				}
 			}
 			//for(int[] x:map) System.out.println(Arrays.toString(x));
@@ -53,10 +51,41 @@ public class Solution_SW_5656_벽돌깨기_서울9반_김동주_미완_ {
 		System.out.print(sb);
 	}
 	
-	private static void dfs(int n, int[][] tmap) {
+	/*public static int perm(int depth) {//예시
+		if(depth>N) return 0;
+		int max=0;
+		for(int i=0;i<W;i++) {
+			copy(depth); //depth-1의 배열을 카피해온다. 
+			for(int j=0;j<H;j++) {
+				if(map[depth][j][i] > 0) {
+					int cnt = bomb(j,i,depth);
+					max = Math.max(max, perm(depth+1)+cnt);
+					break;
+				}
+			}
+		}
+		//여기서 리턴?
+	}
+	
+	public static int bomb(x,y,depth) {//예시
+		int siz = map[depth][x][y];
+		int cnt = 1;
+		map[depth][x][y] = 0;
+		for(int i=0; i<siz; i++) {
+			for(int d=0;d<4;d++) {
+				int nx = x + i*dx[d];
+				int ny = y + i*dy[d];
+				if(nx>=0 && ny>=0 && nx<H && ny<W && map[depth][nx][ny] !=0)
+					cnt+=dfs(nx,ny,depth);
+			}
+		}
+		return cnt;
+	}*/
+	
+	private static void dfs(int n, int[][] tmap) { //되돌리기가 잘 안되고 있음..
 		//if(n==1) {
-			System.out.println("**");
-			for(int[] x : tmap) System.out.println(Arrays.toString(x));
+//			System.out.println("**");
+//			for(int[] x : tmap) System.out.println(Arrays.toString(x));
 		//}
 		if(n == N) { //다 떨궈본 경우 min값 계산(또는 중간에 벽돌들을 계산하고 벽돌이 안남은 경우로 백트래킹!!)
 			int cnt = countTheBrick(tmap);
@@ -68,13 +97,16 @@ public class Solution_SW_5656_벽돌깨기_서울9반_김동주_미완_ {
 		
 		int[][] temp = new int[H][W];
 		for(int h=0; h<H; h++) {
-			for(int w=0; w<W; w++) {
-				temp[h] = tmap[h].clone();
-			}
+			temp[h] = tmap[h].clone(); //되돌리기위해 카피!
 		}
+		//
 		for(int w=0; w<W; w++) { //공 떨구기
-			dfs(n+1, dropTheBall(w, tmap));
-			tmap = temp;
+			dfs(n+1, dropTheBall(w, tmap)); //tmap이 바뀌면
+			
+			for(int h=0; h<H; h++) {
+				tmap[h] = temp[h].clone();
+			}//dfs전으로 되돌리기!!!! 드디어 성공. tmap = temp;는 안됨...
+			
 		}
 	}
 	
@@ -124,6 +156,7 @@ public class Solution_SW_5656_벽돌깨기_서울9반_김동주_미완_ {
 			ci = curr[0];
 			cj = curr[1];
 			cd = curr[2];
+			//이 십자 탐색은 bfs로 할 수 있음!!(d 0~4, i 1~길이-1)
 			for(int i=1; i<cd; i++) { //십자 탐색
 				if(ci+i<H && ttmap[ci+i][cj] >0) {
 					if(ttmap[ci+i][cj] >1) {

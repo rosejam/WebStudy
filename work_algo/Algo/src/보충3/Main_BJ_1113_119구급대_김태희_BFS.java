@@ -37,7 +37,7 @@ public class Main_BJ_1113_119구급대_김태희_BFS {
         st=new StringTokenizer(br.readLine().trim());
         tx=Integer.parseInt(st.nextToken());
         ty=Integer.parseInt(st.nextToken());
-         
+        
         for (int i = 0; i < N; ++i) {
 			for (int j = 0; j < N; ++j) {
 				dMap[i][j] = Integer.MAX_VALUE;
@@ -52,7 +52,7 @@ public class Main_BJ_1113_119구급대_김태희_BFS {
         System.out.println(ambulance());
 //        System.out.println(System.nanoTime()-start);
     }
-     
+    
     static class Point{
     	int x,y,dir,drift;
 
@@ -103,6 +103,6 @@ public class Main_BJ_1113_119구급대_김태희_BFS {
 	        }
 		}
     	return minDrift;
-    }
- 
+	}
+
 }
