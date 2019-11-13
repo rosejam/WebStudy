@@ -61,7 +61,7 @@ public class Main_BJ_16987_계란으로계란치기_서울9반_김동주_끝_ {
 				}
 			}
 			if(!flag) { //다깨져있는 경우
-				dfs(n+1);
+				dfs(n+1); //return 0;로 백트래킹해야지
 			}
 		}
 		
