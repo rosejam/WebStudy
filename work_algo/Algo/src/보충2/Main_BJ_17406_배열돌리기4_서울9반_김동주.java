@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+//돌릴때 더 좋은 방법 찾아보기
 public class Main_BJ_17406_배열돌리기4_서울9반_김동주 {
 	public static int N,M,K,Ans;
 	public static int[][] A,B;//,C;
