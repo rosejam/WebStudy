@@ -7,9 +7,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
+//가중치가 없는 그래프(= 맵)
 //말의 움직임 최대 K번까지 가능
 //기본 움직임은 상하좌우
-public class Main_BJ_1600_말이되고픈원숭이_서울9반_김동주_미완_ {
+public class Main_BJ_1600_말이되고픈원숭이_서울9반_김동주_미완_ { //작동안됨..
 	public static int K,W,H,map[][],min,ni,nj;
 	//public static boolean v[][];
 	public static ArrayList<Integer> v[][];
