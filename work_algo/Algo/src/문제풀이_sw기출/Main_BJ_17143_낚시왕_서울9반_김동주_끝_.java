@@ -45,6 +45,8 @@ public class Main_BJ_17143_낚시왕_서울9반_김동주_끝_ {
 			int s = Integer.parseInt(st.nextToken());
 			int d = Integer.parseInt(st.nextToken())-1; //0~3
 			int z = Integer.parseInt(st.nextToken());
+			if(d==0 || d==1) s = s%((R-1)*2);
+			else if(d==2 || d==3) s = s%((C-1)*2);
 			pool[r][c] = new Fish(r,c,s,d,z);
 		}
 		//상어 다 넣음. 없는 칸은 null일걸
@@ -76,50 +78,6 @@ public class Main_BJ_17143_낚시왕_서울9반_김동주_끝_ {
 			//speed, dir
 			while(!q.isEmpty()) {
 				Fish F = q.poll(); //하나씩 꺼내서 이동
-/*				int speed = F.speed;
-				int dir = F.dir; //상하우좌 0123
-//				//이동거리
-//				int fdi = (speed * di[d]) % (R-1);
-//				int fdj = (speed * dj[d]) % (C-1);
-				//int fi = ((speed * di[dir]) / (R-1)) %2; //몫이 홀수인지 짝수 인지
-				//int fj = ((speed * dj[dir]) / (C-1)) %2; //홀수이면 toggle
-				
-				switch(F.dir) {
-				case 0: //상 //R-2기준
-					if(speed < R-2) {
-						
-					}else if((((speed-F.i-1) / (R-1)) & 1) ==0) { //짝수
-						F.i 
-					}else {
-						F.dir = 1;
-					}
-					break;
-				case 1: //하 /1기준
-					if(F.i ==0) {
-						
-					}
-					break;
-				case 2: //우 //1기준
-					if(((speed / (C-1)) & 1) ==0) { //짝수
-						
-					}else {
-						F.dir = 3;
-					}
-					break;
-				case 3: //좌 //C-2기준
-					if(((speed / (C-1)) & 1) ==0) { //짝수
-						
-					}else {
-						F.dir = 2;
-					}
-					break;
-				}*/
-//				if(fi ==0) {
-//					
-//				}else {
-//					
-//				}
-				//pool[F.i][F.j] = null;
 				
  				switch(F.dir) { //index를 0베이스로 바꾸면 다 바꿔주어야함. + 업데이트된 경우 클래스에 넣어야
 				case 0:
@@ -138,7 +96,7 @@ public class Main_BJ_17143_낚시왕_서울9반_김동주_끝_ {
 						else F.j += dj[F.dir];
 					}
 					break;
-				}//상어 좌표 이동
+				}//상어 좌표 이동(여기서 원래대로 돌아오는 숫자로 나누어서 mod만 이동해도됨!!)
 				
 				//int fi = speed * dj[d];
 				//int fj = speed * dj[d];
