@@ -15,7 +15,7 @@ public class Main_BJ_1194_달이차오른다가자_서울9반_김동주_미작�
 	public static char[][] map;
 	public static boolean v[][],key[];
 	public static final int[] di = {-1,1,0,0};
-	public static final int[] dj = {0,0,-1,1,}; //
+	public static final int[] dj = {0,0,-1,1}; //
 	public static void main(String[] args) throws Exception {
 		System.setIn(new java.io.FileInputStream("res/input_BJ_1194.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
