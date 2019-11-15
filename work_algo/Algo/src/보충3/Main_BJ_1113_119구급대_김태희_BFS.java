@@ -26,8 +26,8 @@ public class Main_BJ_1113_119구급대_김태희_BFS {
     static int[] dx ={-1,1,0,0};
     static int[] dy ={0,0,-1,1};
     public static void main(String[] args) throws IOException {
-//    	long start = System.nanoTime();
-//    	System.setIn(new FileInputStream("1113.txt"));    	
+    	long start = System.nanoTime();
+//    	System.setIn(new java.io.FileInputStream("1113.txt"));    	
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st=new StringTokenizer(br.readLine().trim());
         N=Integer.parseInt(st.nextToken());
@@ -50,7 +50,8 @@ public class Main_BJ_1113_119구급대_김태희_BFS {
             }
         }
         System.out.println(ambulance());
-//        System.out.println(System.nanoTime()-start);
+
+        System.out.println(System.nanoTime()-start);
     }
     
     static class Point{

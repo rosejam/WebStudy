@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+</head>
+<body>
+    <div id="app">
+        <my-compo1></my-compo1>
+        <my-compo2></my-compo2>
+    </div>
+
+    <script>
+        var cmp1 = {
+            template: '<div>first compo {{cmp1Data}}</div>',
+            data: function(){
+                return{
+                    cmp1Data: 100
+                }
+            }   //component에는 data를 그대로 집어넣으면 안되고 반드시 "함수로 만들어 return값에 data"를 넣어야 한다. 
+                //component가 여러번 사용될 때마다 독립된 값을 갖게 됨
+        }
+        var cmp2 = {
+            template: '<div>second compo{{cmp2Data}}</div>',
+            data:{
+                cmp2Data: cmp1.data.cmp1Data //다른 compo의 data를 바로 가져다 씀 -> 불가!
+            }
+        }
+
+        var vm = new Vue({
+            el: '#app',
+            data:{
+                num: 123
+            },
+            //기본적으로 component간에는 data나 method를 공유하지 않는다.
+            components:{
+                'my-compo1' : cmp1,
+                'my-compo2' : cmp2
+            }
+        })
+    </script>
+</body>
+</html>

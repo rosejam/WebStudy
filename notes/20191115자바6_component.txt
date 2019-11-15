@@ -11,7 +11,23 @@ js ES6문법 사용>
 	<Component> 재사용 가능한 객체. 화면이 꼭 있어야함!
  (Vue도 Component중의 하나. Vue에서 관리하는 대상안에 Component를 레고처럼 끼워넣어 완성)
 html 안에서 정의하고 "V"부분에서 가져다 사용
-	화면: 버튼 등
+	template(화면): 버튼 등
 	data:
 	method:
 	
+div안에서 component를 사용하게 되면 그 div를 관리하는 vm이 상위객체가 되고 component가 하위 객체가 된다.
+	Vue(vm)는 상위객체				
+	  |	      | 
+  관련 Component들(global 또는 local)이 하위 객체가됨
+
+객체간 전달>
+		상위(부모)객체
+                data  	  |       	    ^ emit();
+         [props속성]  v      	    |    event
+		하위(자식)객체
+
+EventBus객체를 통한 전달>
+		          		     (Vue객체)
+	A      --->          		     EventBus	   	      --->   B
+	     emit()발생		  		                  on()
+bus.$emit('발생할 이벤트이름', 전달할 데이터)	    bus.$on('처리할 이벤트이름', 실행할 함수(전달받은 데이터))

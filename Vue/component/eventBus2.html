@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+</head>
+<body>
+    <div id="app">
+        <compo-1></compo-1>
+        <compo-2></compo-2>
+    </div>
+
+    <script>
+        var bus = new Vue();
+
+        //버스를 통해 컴포넌트 2개 간 이벤트 전달
+        Vue.component('compo-1',{
+            template: '<button @click="showLog1">컴포넌트1</button>',
+            methods:{
+                showLog1: function(){
+                    bus.$emit('event-2', "hello");
+                }
+            },
+            created: function(){
+                bus.$on('event-1', function(value){
+                    console.log('2로부터 1를 전달 받음. 받은 값: ' + value);
+                });
+            }
+        });
+        Vue.component('compo-2',{
+            template: '<button @click="showLog2">컴포넌트2</button>',
+            methods:{
+                showLog2: function(){
+                    bus.$emit('event-1', "bye");
+                }
+            },
+            created: function(){
+                bus.$on('event-2', function(value){
+                    console.log('1로부터 2를 전달 받음. 받은 값: ' + value);
+                });
+            } 
+        });
+
+        var vm = new Vue({
+            el: '#app'
+        });
+    </script>
+</body>
+</html>

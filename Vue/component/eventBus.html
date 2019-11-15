@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+</head>
+<body>
+    <div id="app">
+        <child-compo></child-compo>
+    </div>
+
+    <script>
+        //Event Bus 생성
+        var bus = new Vue();
+
+        //아래 두 객체 사이 데이터 전달
+        Vue.component('child-compo',{ //전역 컴포넌트
+            template: '<button @click="showMessage">press</button>',
+            methods:{
+                showMessage: function(){
+                    //bus로 event 발생시킴
+                    bus.$emit('callBus', 100); // " bus.$emit('발생할 이벤트이름', 전달할 데이터) "
+                }
+            }
+        })
+        var vm = new Vue({ //뷰 객체
+            el: '#app',
+            
+            created: function(){ //"event받을 준비를 미리" 해놓는다(mounted 등 사용해도 됨)
+                //event 핸들러
+                bus.$on('callBus', function(value){ // " bus.$on('처리할 이벤트이름', 실행할 함수(전달받은 데이터)) "
+                    console.log('이벤트를 전달 받음. 받은 값: '+ value);
+                })
+            }
+        })
+    </script>
+</body>
+</html>
