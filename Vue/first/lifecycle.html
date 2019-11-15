@@ -18,16 +18,17 @@
             },
 
             //life cycle hooks
-            beforeCreate: function() {
+            beforeCreate: function() { //data는 아직 undefined
                 console.log('before create...');
             },
-            created: function() {
+            created: function() { //Vue객체가 생성된 후. data 생성됨
                 console.log('created...');
             },
-            mounted: function() {
+            mounted: function() { //data가 화면에 반영됨
                 console.log('mounted...');
             },
-            updated: function() { //웹console에 vm.message='hihihi'쳐서 데이터를 수정하여 log 확인 가능
+            updated: function() {   //mounted이후 data가 변동됨
+                                    //(웹console에 vm.message='hihihi'쳐서 데이터를 수정하여 log 확인 가능)
                 console.log('updated...');
             }
             
