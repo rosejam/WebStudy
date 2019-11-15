@@ -16,18 +16,19 @@
 <body>
     <div id="app">
         <p>{{msg}}</p>      <!-- 태그인식X -->
-        <p v-text="msg"></p><!-- 태그인식X. text()와 동일 -->
-        <p v-html="msg"></p><!-- 태그인식O. html()과 동일 -->
+        <p v-text="msg"></p><!-- msg의 내용을 태그인식X해서 태그 자식으로 넣어줌. text()와 동일 -->
+        <p v-html="msg"></p><!-- msg의 내용을 태그인식O해서 태그 자식으로 넣어줌. html()과 동일 -->
         <hr>
 
         <!-- flag가 true일 때만 태그가 보여진다 -->
         <a v-show="flag" href="#">show vue!</a> <!-- if와 다르게 false일 때 태그css의 "display속성이 none"이 되어서 안보이게 됨.(dom구조에는 이미 만들어져 있음 - 소스에서 보임) -->
         <a v-if="flag2" href="#">if vue!</a> <!-- false라면 "태그 자체가 주석으로" 바뀌어 버림(dom구조에 아얘 생성되지 않거나 빠짐 - 소스에 없음.. flag 변동이 많다면 show사용!) -->
-        
-        <a v-else href="#">else vue!</a> <!-- 위의 if의 조건이 false일 때 보여진다. true라면 dom구조에 없음 -->
 
-        <!-- v-bind : "태그의 속성과 Vue객체의 data"를 연결시킬 때 사용. -->
-        <!-- data가 바뀌면 화면이 바뀌지만 반대로는 X!! -->
+        <a v-else-if="flag3">else if vue!</a>
+        <a v-else href="#">else vue!</a> <!-- 위의 if와 ifelse의 조건이 false일 때 보여진다. true라면 dom구조에 없음 -->
+
+        <!-- v-bind : "원래 있던 태그의 속성과 Vue객체의 data"를 연결시킬 때 사용. " "안의 내용을 속성의 "값 자체"로 인식하지 않고 Vue객체의 "data안의 변수 이름"로 인식한다. -->
+        <!--            data가 바뀌면 화면이 바뀌지만 반대로는 X!! -->
         <img v-bind:src="src"/>
         <h3 v-bind:id="uid">test1</h3>
         <h5 :id="uid2">test2</h5>
@@ -47,6 +48,7 @@
             data: {
                 flag: true,
                 flag2: false,
+                flag3: true,
                 systems: ['android', 'ios', 'windows'],
                 uid: 10,
                 uid2: 25,

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       //es5문법
+        var j = 10;
+        for(var j = 0; j < 5; j++){
+            console.log(j);
+        }
+        console.log('----------');
+        console.log(j); //5
+        console.log('------------------------------------');
+        //es6문법
+        let i = 10;
+        for(let i = 0; i < 5; i++){ //i는 loop안에서만 사용되는 지역변수가 된다. 
+            console.log(i);
+        }
+        console.log('----------');
+        console.log(i); //10
+        
+        //변수 a, b를 파라메터로 입력받아 그 곱을 리턴하는 함수 mul
+        let mul = (a, b) => a * b; //익명함수에 이름을 붙이기 위해 변수에 함수를 담았다.
+        //문자열 1개를 입력받아 그 앞에 'hello '를 붙여 리턴하는 함수 hello
+        let hello = (str) => 'hello ' + str;
+
+        console.log(mul(10,20));
+        console.log(hello('bill'));
+    </script> 
+</body>
+</html>

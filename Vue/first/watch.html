@@ -24,13 +24,13 @@
             //비동기 호출 등에 적합
             //  computed와 다르게 호출되지 않아도 연결된 data의 변화를 감지해서 실행됨!!!
             watch:{
-                message: function(value){ //"데이터이름": 를 감시함!!! (여기서는 this.message의 변화를 감시함)
+                message: function(value){ //"data이름": 를 감시함!!! (여기서는 this.message의 변화를 감시함)
                     console.log('data changed...' + value);
                 }
             },
 
             //function 형식. cache기능, 간단한 계산 작업 수행
-            //반응형 getter
+            //반응형 getter(받은 값을 return해준다)
             //  처음 한번은 호출되어야 관련된 data의 변화를 감시해서 실행됨!!!
             computed:{
                 hello: function(){

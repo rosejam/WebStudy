@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+</head>
+<body>
+    <div id="app">
+        <!-- <form> -->
+        code: <input type="text" v-model="code" @keyup.enter="process2"> <!-- keyup중 enter가 일어나야만 실행되는 제한을 줌(form태그와 쓸 수 없다!) -->
+        <button v-on:click="process">press</button>
+        <!-- </form> --> <!-- 엔터를 치면 submit처리가 되어 화면이 다시 불려오게 된다. -->
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data:{
+                code: ''
+            },
+            methods:{
+                //입력한내용 로그찍기
+                process: function(){
+                    console.log(this.code);
+                    this.code = '';
+                },
+                process2(){
+                    console.log(this.code);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
