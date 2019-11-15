@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+</head>
+<body>
+    <div id="app">
+        <child-compo v-bind:code="message" v-bind:code2="num"></child-compo>   <!-- 부모의 data 중 message를 code에, num을 code2에 받아옴. -->
+            <!-- messge를 값이 아닌 data안의 변수명으로 가져와서 code에 넣는 것임 -->
+        <child-local v-bind:city="localmessage"></child-local>
+    </div>
+
+    <script>
+        //자식객체
+        Vue.component('child-compo', {
+            template: '<h1>{{code}} {{code2}}</h1>',
+            props:[
+                'code', //부모로부터 code라는 속성명으로 data를 받아올 것임
+                'code2'
+            ]
+        });
+
+        //부모객체
+        var vm = new Vue({
+            el: '#app',
+            data:{
+                message: 'data from parent!',
+                num: 999,
+                localmessage: 'city pop'
+            },
+            components:{
+                'child-local':{
+                    template: '<h2>{{city}}</h2>',
+                    props:[
+                        'city'
+                    ]
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -16,6 +16,7 @@ public class Main_BJ_1113_119구급대_김태희_DFS {
     static int minDrift=Integer.MAX_VALUE;
 
     public static void main(String[] args) throws IOException {
+    	long start = System.nanoTime();
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st=new StringTokenizer(br.readLine().trim());
         N=Integer.parseInt(st.nextToken());
@@ -44,7 +45,8 @@ public class Main_BJ_1113_119구급대_김태희_DFS {
         ambulance(0, 0, 1, 0); // 세로
         ambulance(0, 0, 3, 0); // 가로
         System.out.println(minDrift);
-         
+        
+        System.out.println(System.nanoTime()-start);
     }
      
     public static void ambulance(int x, int y, int dir, int drift){

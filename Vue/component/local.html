@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script><!-- vue 사용을 위한 cdn 표시 -->
+</head>
+<body>
+    <div id="app">
+        <local-compo></local-compo>
+        <local-compo></local-compo>
+        <local-compo2></local-compo2>
+        <global-compo></global-compo>
+    </div>
+    <hr>
+    <div id="other"> 
+        <!-- 등록이 안됬기 때문에 여기서는 local component 사용이 안됨 -->
+        <local-compo></local-compo>
+        <local-compo2></local-compo2>
+        <other-compo></other-compo>
+        <global-compo></global-compo>
+    </div>
+
+    <script>
+        var cmp = {
+            template:'<div @click="go">app component</div>',
+            methods:{
+                go(){
+                    alert('local2~~');
+                }
+            }
+        };
+
+        //global component 등록
+        Vue.component('global-compo',{
+            template: '<div @click="help">global component</div>',
+            methods:{
+                help(){
+                    alert('global~~');
+                }
+            }
+        });
+        
+        var vm = new Vue({
+            el: '#app',
+            //local component 등록. #app내에서만 사용가능
+            components:{
+                'local-compo':{
+                    template: '<button @click="process">press</button>',
+                    methods:{
+                        process: function(){
+                            alert('local~~');
+                        }
+                    }
+                },
+                'local-compo2':cmp //위의 var cmp가 여기에 들어간다!
+            }
+        });
+        var vm2 = new Vue({
+            el: '#other',
+            //local component 등록. #other내에서만 사용가능
+            components:{
+                'other-compo':{
+                    template: '<div>other component</div>'
+                }
+            }
+        });
+    </script>
+</body>
+</html>
