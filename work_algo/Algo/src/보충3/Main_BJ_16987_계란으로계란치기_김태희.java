@@ -1,7 +1,7 @@
 package 보충3;
 import java.util.Scanner;
 
-public class Main_BJ_16987_계란으로계란치기_김태희_백트래킹 {
+public class Main_BJ_16987_계란으로계란치기_김태희 {
 
 	static int N;
 	static int[] S, W;
@@ -21,7 +21,8 @@ public class Main_BJ_16987_계란으로계란치ᄀ�
 		int max = 0;
 		
 		if (order == N) return breakCount; // 마지막 계란까지 다 처리했다면 그 때까지 깬 갯수 리턴
-		if (S[order] <= 0 ) return bump(order + 1, breakCount); // 현계란이 깨졌거나, 현계란을 제외한 다른 계란이 다 깨져있다면 다음 계란으로
+		if (S[order] <= 0 ) return bump(order + 1, breakCount); 
+		// 현계란이 깨졌거나, 현계란을 제외한 다른 계란이 다 깨져있다면 다음 계란으로
         if (breakCount == N - 1) return breakCount;
 
 		for (int i = 0; i < N; ++i) {

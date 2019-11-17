@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
-
+ 
 /*
 5 5
 4 4
@@ -26,8 +26,8 @@ public class Main_BJ_1113_119구급대_김태희_BFS {
     static int[] dx ={-1,1,0,0};
     static int[] dy ={0,0,-1,1};
     public static void main(String[] args) throws IOException {
-    	long start = System.nanoTime();
-//    	System.setIn(new java.io.FileInputStream("1113.txt"));    	
+//    	long start = System.nanoTime();
+//    	System.setIn(new FileInputStream("1113.txt"));    	
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st=new StringTokenizer(br.readLine().trim());
         N=Integer.parseInt(st.nextToken());
@@ -37,7 +37,7 @@ public class Main_BJ_1113_119구급대_김태희_BFS {
         st=new StringTokenizer(br.readLine().trim());
         tx=Integer.parseInt(st.nextToken());
         ty=Integer.parseInt(st.nextToken());
-        
+         
         for (int i = 0; i < N; ++i) {
 			for (int j = 0; j < N; ++j) {
 				dMap[i][j] = Integer.MAX_VALUE;
@@ -50,10 +50,9 @@ public class Main_BJ_1113_119구급대_김태희_BFS {
             }
         }
         System.out.println(ambulance());
-
-        System.out.println(System.nanoTime()-start);
+//        System.out.println(System.nanoTime()-start);
     }
-    
+     
     static class Point{
     	int x,y,dir,drift;
 
@@ -104,6 +103,6 @@ public class Main_BJ_1113_119구급대_김태희_BFS {
 	        }
 		}
     	return minDrift;
-	}
-
+    }
+ 
 }
