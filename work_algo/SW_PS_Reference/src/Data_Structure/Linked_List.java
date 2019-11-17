@@ -4,18 +4,18 @@ import java.util.Scanner;
 
 
 class ListNode {
-	int data;
-	ListNode prev;
-	ListNode next;
+	int data; //값
+	ListNode prev; //링크
+	ListNode next; //링크
 	
 	public ListNode()
 	{
 		data = 0;
-		prev = this; //링크
-		next = this; //링크
+		prev = this;
+		next = this;
 	}
 
-	public static ListNode getListNode(ListNode head, int data) //select
+	public static ListNode searchListNode(ListNode head, int data) //get
 	{
 		return null;
 	}
@@ -49,19 +49,12 @@ class ListNode {
 		return null;
 	}
 
-	public static ListNode deleteListNode(ListNode head, ListNode node) //remove
+	public static void deleteListNode(ListNode head, ListNode node) //remove
 	{
-		if (head == head.next)
+		if (head != head.next)
 		{
-			return null;
-		}
-		else 
-		{
-			ListNode prevNode = node.prev;
-			ListNode nextNode = node.next;
-			prevNode.next = nextNode;
-			nextNode.prev = prevNode;
-			return (head == node) ? nextNode : head;
+			node.prev.next = node.next;
+			node.next.prev = node.prev;
 		}
 		
 	}
@@ -87,7 +80,7 @@ class Solution_Linked_List
 			while(head != head.next)
 			{
 				ListNode nextNode = node.next;
-				head = ListNode.deleteListNode(head, node);
+				//head = ListNode.deleteListNode(head, node);
 				node = nextNode.next.next;
 			}
 			System.out.printf("#%d %d\n", test_case, head.data);

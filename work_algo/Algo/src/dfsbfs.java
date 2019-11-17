@@ -22,14 +22,15 @@ public class dfsbfs {
 			int v2 = sc.nextInt();
 			graph[v1][v2] = graph[v2][v1] = 1; //왼쪽으로 한단계씩 대입(양방향이므로)
 		}
-		
-		
+		visit = new boolean[V];
+		dfsr(0);
+		System.out.println();
 		dfs(0);
 		System.out.println();
 		bfs(0);
 	}
 	public static void dfs(int node) {
-		stack = new Stack<Integer>();
+		stack = new Stack<>();
 		visit = new boolean[V];
 		stack.push(node);
 		while(!stack.empty()) {
@@ -38,7 +39,8 @@ public class dfsbfs {
 				visit[temp] = true;
 				System.out.print(temp + " ");
 				
-				for(int next=0; next<V; next++) {
+				for(int next=V-1; next>=0; next--) {
+				//for(int next=0; next<V; next++) {
 					if(!visit[next] && graph[temp][next]==1) {
 						stack.push(next);
 					}

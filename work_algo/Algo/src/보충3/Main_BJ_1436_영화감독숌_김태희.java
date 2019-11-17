@@ -11,24 +11,24 @@ public class Main_BJ_1436_영화감독숌_김태희 {
 		System.out.println(getNumber());
 	}
 	private static int getNumber() {
-		int x = 666 ,n = 0;
+		int no = 666 ,target = 0;
 		do {
-			int y = x, m,cnt=0;
-			while(y>0) {
-				m = y % 10;
-				y /= 10;
+			int t = no, m,cnt=0;
+			while(t>0) {
+				m = t % 10;
+				t /= 10;
 				if(m==6) {
 					if(++cnt>2) {
-						n++;
+						target++;
 						break;
 					}
 				}else {
 					cnt = 0;
 				}
 			}
-			if(n == N) break;
-			x++;
+			if(target == N) break;
+			no++;
 		}while(true);
-		return x;
+		return no;
 	}
 }
