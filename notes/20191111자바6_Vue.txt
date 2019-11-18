@@ -27,8 +27,8 @@ IDE(에디터)는 이클립스 대신 'vscode stable버전'을 사용한다!(설치시 code어쩌구 모
 
 'node.js LTS버전' 받기(npm이라는 디펜던시 관리자/매니저 (이자 repository)를 사용하기 위해 설치)
 		      ㄴdos창에 직접 명령어를 쳐서 디펜던시 관리
-	yarn 매니저도 설치(npm이 이걸 가끔 필요로함) : 명령프롬프트에 npm install -g yarn  (-g : 글로벌 옵션으로 설치된 디펜던시는 모든 프로젝트에서 사용가능)
-	명령프롬프트에 npm install -g @vue/cli
+	-yarn 매니저도 설치(npm이 이걸 가끔 필요로함) : 명령프롬프트에 npm install -g yarn  (-g : 글로벌 옵션으로 설치된 디펜던시는 모든 프로젝트에서 사용가능)
+	-명령프롬프트에 npm install -g @vue/cli
 
 
 ///생성자에 지정안하면 널로 초기화

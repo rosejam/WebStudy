@@ -45,7 +45,8 @@
         
         var vm = new Vue({
             el: '#app',
-            //local component 등록. #app내에서만 사용가능
+
+            //local component 등록. el내에서만 사용가능 (#app)
             components:{
                 'local-compo':{
                     template: '<button @click="process">press</button>',
@@ -55,17 +56,21 @@
                         }
                     }
                 },
+                
                 'local-compo2':cmp //위의 var cmp가 여기에 들어간다!
             }
+
         });
         var vm2 = new Vue({
             el: '#other',
-            //local component 등록. #other내에서만 사용가능
+
+            //local component 등록. el내에서만 사용가능 (#other)
             components:{
                 'other-compo':{
                     template: '<div>other component</div>'
                 }
             }
+
         });
     </script>
 </body>

@@ -23,15 +23,15 @@
         //{} : component 내용
         //template : component가 가지는 화면
         Vue.component('my-compo',{ //이름
-            template: '<div>전역컴포넌트 입니다.</div>' //화면(이게 있어야 눈에 보인다.)
+            template: '<div>전역컴포넌트 입니다.</div>' //화면 정보(이게 있어야 눈에 보인다.)
         });
         //your-compo, template 지정(<h1>your compo</h1>)
         Vue.component('your-compo',{
-            template: '<h1>your compo</h1>'            
+            template: '<h1>your compo</h1>'
         });
 
         var vm = new Vue({
-            el: '#app'
+            el: '#app' //el 지정한 모든 곳에서 global component이름을 태그 이름으로 사용할 수 있다.
         });
     </script>
 </body>

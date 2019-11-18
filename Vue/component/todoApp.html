@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+<!-- STS의 vueboot_my_todolist 가 DB서버. but, axios 아직 적용 안함 -->
+<!-- todo-cli 프로젝트(SFC)로 만든다 -->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>todoList</title>
-    <!-- 공용 스타일 시작-->
+    <!-- 공용 스타일 시작(모든 component에 적용 -> App.vue에 넣기) -->
     <style>
     * {  box-sizing: border-box;  }
     .header {
@@ -22,6 +24,7 @@
 <!--***이벤트 버스 객체 시작-->
     <!-- input에서 list로 전달하는 역할 -->
 <script>
+    //var num = 6;
     var bus = new Vue();
 </script>
 <!--이벤트 버스 객체 끝-->
@@ -101,10 +104,10 @@
 <!-- list-component template -->
 <template id="list-template">
     <ul>
-        <li v-for="job in todolist" :class="checked(job.done)"> <!-- :class는 css를 적용할지 말지의 여부 -->
-            <span @click="doneToggle(job.id)">{{job.todo}}</span>
+        <li v-for="job in todolist" :class="checked(job.done)" @click="doneToggle(job.id)"> <!-- :class는 css를 적용할지 말지의 여부 -->
+            <span>{{job.todo}}</span> <!-- 위의 @click을 여기다가 옮기거나 아래 @click에 .stop을 붙인다. (삭제되면서 아래쪽 toggle되는 것 방지) -->
             <span v-if="job.done">(완료)</span>
-            <span class="close" @click="deleteTodo(job.id)">&#x00D7</span> <!-- &#x00D7 은 특수문자 x -->
+            <span class="close" @click.stop="deleteTodo(job.id)">&#x00D7</span> <!-- &#x00D7 은 특수문자 x -->
         </li>
     </ul>
 </template>
@@ -114,9 +117,9 @@ Vue.component('list-component', {
     template: '#list-template',
     created: function(){
         //이벤트 핸들러
-        bus.$on('add-todo', this.addTodo); 
+        bus.$on('add-todo', this.addTodo);
     },
-    data : function() {
+    data: function() {
         return {
             todolist : [
                 { id:1, todo : "영화보기", done:false },
@@ -127,7 +130,7 @@ Vue.component('list-component', {
             ] //jaon의 배열(동적으로 db에서 가져올 수 있다)
         }
     },
-    methods : {
+    methods: {
         checked : function(done) {
             if(done) return { checked:true };
             else return { checked:false };
@@ -135,7 +138,8 @@ Vue.component('list-component', {
         addTodo : function(todo) { //()에 아까 보냈던 todo를 받아옴
             if(todo != ''){
                 this.todolist.push({ id: this.todolist[this.todolist.length-1].id + 1, todo: todo, done:false}); //.push로 배열에 추가
-                                        //id: new Date().getTime()대신 마지막 id에 +1해준다.
+                                        //id: new Date().getTime() 대신 마지막 id에 +1해준다.
+                                        //위에서 num선언 후 id: num++ 도 가능 (어차피 DB쪽에서 auto increment)
             }
         },
         doneToggle : function(id) {
