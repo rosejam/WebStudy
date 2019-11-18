@@ -74,3 +74,22 @@ var x = eval("("+ {  JSON형식의 데이터 key:val, key:val } +")");  //배열형식인 �
 @ResponseBody : java vo 객체 -> xml/json (서버에서 클라이언트로 응답이 나갈 때 송신) HTTP Response body
 
 //클라이언트에서는 ajax통신으로 서비스 호출
+
+
+	<스웨거> Rest Api
+--postman대신 사용하는 swagger
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+-----
+@EnableSwagger2로 스웨거 설정 SwaggerConfig.java 클래스에 붙여서 활성화
+@ApiOperation("메서드 위에 붙어 설명")
+http://localhost:8080/swagger-ui.html 치면 지정 패키지에서 RestController찾아서 결과 뿌려줌
