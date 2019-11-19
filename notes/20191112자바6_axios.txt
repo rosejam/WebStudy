@@ -21,8 +21,8 @@ BootRestMVCProject의 @RestController위에
 	->원래는 그 server의 그 port에 Ajax요청을 해서 받아온다.(port가 달라도 다른것으로 인식)
 
 LiveServer(localhost:5500)에서 html을 받아오고 Rest의 TomcatServer(localhost:9090)에 데이터를 요청해 받아와서 뿌린다.
-	        ->	1. client쪽에서 다른서버에서 오더라도 뿌려주게 설정 
-		2. server쪽에서 어떤 client에서 요청이 들어와도 다 응답을 하게 보안 설정 -> @CrossOrigin("*") 사용
+	        ->	1. 기상청 말고 다른 서버에서 client를 위해서 proxy등을 만든다.
+		2. server쪽(기상청 등)에서 어떤 client에서 요청이 들어와도 다 응답을 하게 보안 설정 -> @CrossOrigin("*") 사용
 
 axios (js라이브러리)를 활용해서 Rest서버에 비동기요청을 보냄
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
