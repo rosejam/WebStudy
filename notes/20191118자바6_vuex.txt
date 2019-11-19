@@ -18,6 +18,7 @@ Vue File 1개(확장자 .vue) -> Component 1개
 파일 생성시 vue치고 탭
 	<template>(안에 한개의 태그만 허용!됨)는 html(화면), <script>는 js, <style>(이것만 한파일에 여러개 가능)는 css 요소 (style태그는 뷰파일간 공용. scoped 속성을 써야 이 파일에만 적용됨) 를 의미한다!!
 
+
 	<CLI 방식>
 cli(Command Line Interface)환경에서 node.js에서 지정된 명령어를 쳐서 프로젝트를 생성
 
@@ -47,13 +48,13 @@ vscode의 터미널에서 new Terminal을 켜서 한다.
 				
 	      		"비동기 로직"(axios 등 백엔드api)으로 rest서버에서 data받아옴. 
 	   		그 후 "Mutation을 호출"하는 메소드(동시에 접근이 안되도록)
-		  	|    "Actions"   	    
+		  	|    "Actions"
 		 -->	|	   	-->
-	          dispatch	|      		commit('mutation메서드', 데이터(json객체도 가능))꼴
+	          dispatch()	|      		commit('mutation메서드', 데이터(json객체도 가능))꼴
 "Vue Component"	  	|            			"Mutations"
 	           render	|		mutate	    	     "State값(data)을 수정"하는 메소드(직접 호출되지 않음, "동기 로직" devtools)
 		 <--	|	   	<--	 	      데이터는 보통 payload라는 이름으로 전달 받음
-		  	|     "State"    	   	   
+		  	|     "State"
 		    	공유 대상 "data"("상태")
 		   state에 변경이 일어나면 render로 화면 구성요소가 바뀜
 
