@@ -108,6 +108,7 @@
             <span>{{job.todo}}</span> <!-- 위의 @click을 여기다가 옮기거나 아래 @click에 .stop을 붙인다. (삭제되면서 아래쪽 toggle되는 것 방지) -->
             <span v-if="job.done">(완료)</span>
             <span class="close" @click.stop="deleteTodo(job.id)">&#x00D7</span> <!-- &#x00D7 은 특수문자 x -->
+            <!-- 돔방식은 이벤트가 발생했을 때 부모(상위객체)로 계속 전달됨(=이벤트 버블링) .stop을 이벤트핸들러에 달면 부모까지 이벤트를 보내지 않게함!(이벤트 버블링 stop) -->
         </li>
     </ul>
 </template>

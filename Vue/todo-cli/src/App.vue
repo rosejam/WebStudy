@@ -3,11 +3,14 @@
     <img alt="Vue logo" src="./assets/logo.png">
     {{this.$store.state.name}}
     <hr>
-    <h2>Todo List App</h2>
-    <InputTodo/>
-    <ListTodo/>
+    <div id="header" class="header">
+      <h2>Todo List App</h2>
+      <InputTodo/> <!-- div로 감싸주기 -->
+    </div>
+    <div>
+      <ListTodo/>
+    </div>
   </div>
-  
 </template>
 
 <script>

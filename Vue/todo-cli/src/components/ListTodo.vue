@@ -3,9 +3,10 @@
         <ul id="todolist">
             <!-- computed todolist를 한번 호출하고 그 리턴값으로 뿌린다. 값이 바뀔 때마다 반복한다. -->
             <!-- :key="one.id"를 넣어야 에러가 없어짐 -->
-            <li v-for="one in todolist" :key="one.id" :class="checked(one.done)" @click="doneToggle(one.id)">
+            <li v-for="one in todolist" :key="one.id" :class="checked(one.done)" @click.stop="getTodo(one.id)"><!-- getTodo는 상세정보 -->
+                <span class="check" @click.stop="completeTodo(one.id)">v</span>
                 <span>{{one.todo}}</span>
-                <span v-if="one.done">(완료)</span>
+                <span v-if="one.done==='Y'">(완료)</span>
                 <span class="close" @click.stop="deleteTodo(one.id)">&#x00D7;</span>
             </li>
         </ul>
@@ -16,8 +17,9 @@
 import Constant from '../js/Constant'
 export default {
     name: 'ListTodo',
-    created: function(){
-        this.$store.dispatch(Constant.ALL_TODO); //화면 로딩할 때 data get
+    created: function(){ //mounted도 가능!!(조금 더 나중 데이터를 가져오기)
+        this.$store.dispatch(Constant.ALL_TODO); //화면 로딩 할 때 data get하는 action call
+            //state에 todolist받아옴
     },
     computed: { //getter
         todolist(){
@@ -26,34 +28,28 @@ export default {
     },
     methods: {
         checked : function(done) {
-            if(done) return { checked:true };
+            if(done==='Y') return { checked:true };
             else return { checked:false };
         },
-        addTodo : function(todo) { //()에 아까 보냈던 todo를 받아옴
-            if(todo != ''){
-                this.todolist.push({ id: this.todolist[this.todolist.length-1].id + 1, todo: todo, done:false}); //.push로 배열에 추가
-                                        //id: new Date().getTime() 대신 마지막 id에 +1해준다.
-                                        //위에서 num선언 후 id: num++ 도 가능 (어차피 DB쪽에서 auto increment)
-            }
+        // addTodo : function(todo) { //()에 아까 보냈던 todo를 받아옴
+        //     if(todo != ''){
+        //         this.todolist.push({ id: this.todolist[this.todolist.length-1].id + 1, todo: todo, done:false});
+        //     }
+        // },
+        getTodo: function(payload){
+            this.$store.dispatch(Constant.GET_TODO, payload)
         },
-        doneToggle : function(id) {
-            var index = this.todolist.findIndex(function(item) { //todolist를 loop돌면서 하나씩 꺼낸 item이 함수에 들어가서
-                                                                    //true가 나온(id가 일치한) 인덱스가 index에 들어감
-                return item.id === id;
-            })
-            this.todolist[index].done = !this.todolist[index].done;
+        completeTodo : function(payload) {
+            this.$store.dispatch(Constant.COMPLETE_TODO, payload)
         },
-        deleteTodo : function(id) {
-            var index = this.todolist.findIndex(function(item) {
-                return item.id === id;
-            })
-            this.todolist.splice(index, 1); //.splice로 index에서 1개 삭제
+        deleteTodo : function(payload) {
+            this.$store.dispatch(Constant.DELETE_TODO, payload);
         }
     }
 }
 </script>
 
-<style>
+<style scoped>
     ul {  margin: 0; padding: 0; }
     ul li { 
         cursor: pointer; position: relative; padding: 8px 8px 8px 40px;
@@ -77,5 +73,12 @@ export default {
     }
     .close:hover {
         background-color: #f44336;  color: white;
+    }
+    .check {
+        position: absolute; left: 0; top: 0;
+        padding: 12px 16px 12px 16px
+    }
+    .check:hover {
+        background-color: blueviolet;  color: white;
     }
 </style>
