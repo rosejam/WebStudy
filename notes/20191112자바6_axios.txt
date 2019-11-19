@@ -1,5 +1,12 @@
+	<Vue의 directive>
 v-on:  은 @ 와 같다. (이벤트 핸들러 역할)
 v-bind: 은 : 와 같다.
+v-model:은 양방향 연결
+v-if와 v-show의 차이점은 소스에서 주석인지 display:none인지
+v-for="json in json_arr" 등으로 하나씩 꺼내서 반복적으로 생김!!
+
+//시험: v-pre:는 {{}}등을 데이터 치환하지 않고 그대로 출력하도록 만듬
+         v-cloak: js가 완전히 실행되기 전에 다른 출력값이 출력되는 것을 display:none등으로 가려서 방지함
 
 CSS>
 1. class="클래스이름" 속성으로 CSS에서 사용
@@ -8,7 +15,7 @@ CSS>
 
 
 BootRestMVCProject의 @RestController위에 
-@CrossOrigin("*") 어노테이션을 붙임
+@CrossOrigin("*") 어노테이션을 붙임 //(Cross Origin Resource Sharing에서 발생하는 문제를 해결하기 위해)
 
 일단 Server에서 html을 받아옴.
 	->원래는 그 server의 그 port에 Ajax요청을 해서 받아온다.(port가 달라도 다른것으로 인식)

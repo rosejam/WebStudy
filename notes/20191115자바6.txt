@@ -14,19 +14,23 @@ html 안에서 정의하고 "V"부분에서 가져다 사용
 	template(화면): 버튼 등
 	data:
 	method:
-	
+
+//components안의 data는 꼭 function리턴 형식으로 써야한다!!!!
+//컴포넌트 2가지 꼴 알아두기!
+	global은 Vue.component(이름,내용) local은 Vue객체 내부에 components:{이름 :{내용}}
+
 div안에서 component를 사용하게 되면 그 div를 관리하는 vm이 상위객체가 되고 component가 하위 객체가 된다.
 	Vue(vm)는 상위객체				
 	  |	      | 
-  관련 Component들(global 또는 local)이 하위 객체가됨
+  관련 Component들("global 또는 local" 2가지)이 하위 객체가됨
 
-객체간 전달>
+	<그냥 객체간 전달>
 		상위(부모)객체
-                data  	  |       	    ^ emit();
+                data  	  |       	    ^ this.$emit();
          [props속성]  v      	    |    event
 		하위(자식)객체
 
-EventBus객체를 통한 전달>
+	<EventBus객체를 통한 전달>
 		          		     (Vue객체)
 	A      --->          		     EventBus	   	      --->   B
 	     emit()발생		  		                  on()

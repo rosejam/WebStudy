@@ -6,13 +6,18 @@ MVC구조에서 이제 jsp대신, html(로직X, 결과 출력만)와 Vue를 구현한다.
 View(화면)     <-->           VM          <-->     Model(Data, Logic)
  html tag	                    Vue 객체		   json(DB에서 Rest방식으로 가져온 데이터)
   	        (양쪽의 변동사항을 반영해줌)
+		     속성들 중요**
+		----------------------
 		el: 화면정보 "View" (관리하는 태그 써놓기)
 {{ }}		data: 값 "Model"
 		----------------------아래는 메소드들
 		methods: 메소드
 		filters: 가공목적메소드
-		watch: data를 지정해서 감시(호출 안해도 됨, computed보다는 긴 작업->비동기 호출 등)
-		computed: data를 지정해서 감시(호출을 한번 해줘야 작동, 간단한 작업->결과가 캐싱됨)
+		watch: data를 지정해서 감시(호출 안해도 됨, computed보다는 긴 작업->"비동기 호출" 등) data명()
+		computed: data를 지정해서 감시(호출을 한번 해줘야 작동, 간단한 작업->"결과가 캐싱"됨) function명()
+		----------------------
+		components
+		life cycle 관련 메서드들
 
 	<환경설정>		          
 IDE(에디터)는 이클립스 대신 'vscode stable버전'을 사용한다!(설치시 code어쩌구 모두 체크)
@@ -31,8 +36,6 @@ IDE(에디터)는 이클립스 대신 'vscode stable버전'을 사용한다!(설치시 code어쩌구 모
 	-명령프롬프트에 npm install -g @vue/cli
 
 
-///생성자에 지정안하면 널로 초기화
-
 	<Vue 인스턴스 라이프 사이클>
 -new Vue() 후 호출되는 메서드
 	beforeCreate
@@ -40,7 +43,7 @@ IDE(에디터)는 이클립스 대신 'vscode stable버전'을 사용한다!(설치시 code어쩌구 모
 	"created"
 -el과 template속성 체크후 
 	beforeMount
--"data가 화면에 반영"된 후
+-"data가 화면에 반영"된 후 (mounted는 "비동기통신" 할 때 사용할 수 있다!!!)
 	"mounted"	--> "data에 변동사항"이 있으면 beforeUpdate와 updated가 호출되면서 화면에 다시 반영
 -화면닫을 때
 	beforeDestroy
