@@ -48,7 +48,7 @@ public class TodoController {
 			return new ResponseEntity<Result>(new Result(true, "새로운 todo가 등록되었습니다. : " + todo.getId()), HttpStatus.OK);
 		} 
 		return new ResponseEntity<Result>(new Result(false, "todo 등록에 실패하였습니다."), HttpStatus.INTERNAL_SERVER_ERROR);
-	}
+	}//
 
 	//http://localhost:9090/todolist/todo/id값
 	@ApiOperation(value="등록되어 있는 할일을 수정한다.", response=Result.class)
@@ -72,7 +72,7 @@ public class TodoController {
 		}
 		return new ResponseEntity<Result>(new Result(false, "todo 삭제에 실패하였습니다."), HttpStatus.INTERNAL_SERVER_ERROR);
 		
-	}
+	}//
 	
 	//http://localhost:9090/todolist/todo/id값
 	@ApiOperation(value="등록되어 있는 할일을 조회한다.", response=Todo.class) //id기준 1개 조회
@@ -106,7 +106,7 @@ public class TodoController {
 			return new ResponseEntity<List<Todo>>(todoList, HttpStatus.OK);
 		}
 		return new ResponseEntity<List<Todo>>(HttpStatus.NO_CONTENT);
-	}
+	}//
 
 	//http://localhost:9090/todolist/user/userid값
 	@ApiOperation(value="사용자의 모든 할일목록을 삭제한다.", response=List.class)
@@ -129,6 +129,6 @@ public class TodoController {
 		}
 		return new ResponseEntity<Result>(new Result(false, "todo 완료처리에 실패하였습니다."), HttpStatus.INTERNAL_SERVER_ERROR);
 		
-	}
+	}//
 	
 }

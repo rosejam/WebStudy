@@ -2,9 +2,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from '../js/axios-common'
-import Constant from '../js/Constant'
+import Constant from '../js/Constant' //상수 정의
 
-Vue.use(Vuex); //js파일 밖에서도 store를 사용할 수 있도록  global functionality 선언
+Vue.use(Vuex); //js파일 밖에서도 Vuex의 store를 사용할 수 있도록  global functionality 선언
 
 const store = new Vuex.Store({
 
@@ -27,12 +27,50 @@ const store = new Vuex.Store({
         },
         [Constant.ALL_TODO]: store => { //메소드 이름을 constant를 활용해서 표현. key인데 마침표가 포함되므로 []로 감싼다
             //all***axios 요청 후 결과가 오면 mutation(store.commit)에 지시해서 state 변경 요청
+            //console.log(store);
             axios
             .get("/todolist/all")
             .then(response => {
-                store.commit(Constant.ALL_TODO, { todolist: response.data });
-                console.log(response.data); }) //서버에서 받은 데이터로 todolist 세팅해줌
+                store.commit(Constant.ALL_TODO, { todolist: response.data }); //데이터를 todolist에 받아와서 뮤테이션으로 전달!!
+                console.log(response.data); 
+            }) //서버에서 받은 데이터로 todolist 세팅해줌
             .catch(exp => alert("getTodoList처리에 실패하였습니다. " + exp));
+        },
+        [Constant.GET_TODO]: (store, payload) => {
+            axios
+            .get("/todolist/todo/" + payload)
+            .then(response => {
+                alert("작성날짜:" + response.data.writeDate + " | 마감날짜:" + response.data.endDate + " | 완료여부:" +response.data.done);
+            })
+            .catch(exp => alert("getTodo처리에 실패하였습니다. " + exp));
+        },
+        [Constant.ADD_TODO]: (store, payload) => {
+            axios
+            .post("/todolist/todo", { todo: payload.todo } ) //db insert
+            .then(() => {
+                store.dispatch(Constant.ALL_TODO); //다시 위 액션을 요청
+                //store.commit(Constant.ALL_TODO, { todolist: response.data }); //todolist라는 이름으로 데이터 받아옴
+                //console.log(response.data); 
+            })
+            .catch(exp => alert("삽입 처리에 실패하였습니다. " + exp));
+        },
+        [Constant.DELETE_TODO]: (store, payload) => {
+            axios
+            .delete("/todolist/todo/" + payload) //db delete
+            .then(() => {
+                store.dispatch(Constant.ALL_TODO); //다시 위 액션을 요청
+                //console.log(response.data);
+            })
+            .catch(exp => alert("삭제 처리에 실패하였습니다. " + exp));
+        },
+        [Constant.COMPLETE_TODO]: (store, payload) => {
+            axios
+            .put("/todolist/todo/done/" + payload) //db delete
+            .then(() => {
+                store.dispatch(Constant.ALL_TODO); //다시 위 액션을 요청
+                //console.log(response.data);
+            })
+            .catch(exp => alert("체크 처리에 실패하였습니다. " + exp));
         }
     },
     

@@ -1,3 +1,4 @@
+프로젝트는 
 .js (ES6문법 사용. 프로젝트에 babel 컴파일러 포함되어 있음)
 .html
 .css
@@ -9,13 +10,15 @@
 	<SFC> Single File Component 구조
 Vue File 1개(확장자 .vue) -> Component 1개
 	(components 폴더 아래) vue파일은 html, css, js의 모든 요소를 들고 있다. 
-		ㄴ-> 모든 component를 App.vue파일로 모은다.(=import) -> main.js로 모인다. (App.vue로 Vue객체를 생성, store도 여기로) -> modul bundler를 통해 build.js로 한번에 묶인다 -> public폴더의 index.html로 모인다. (#app)
-			App.vue는 vue파일들의 부모!!가된다
-							
+		ㄴ-> "모든 component를 App.vue파일로" 모은다.(=import) App.vue는 vue파일들의 부모!!가된다 -> main.js로 모인다. ("App.vue로 Vue객체를 생성"하고 el에 지정(화면에 붙임 - mount), store도 여기로) 
+			-> file bundler(=module bundler : babel, vue loader, css loader 등)를 통해 build.js로 한번에 묶인다 -> 이것이 public폴더의 index.html에 포함되어 npm run serve할 때 보여진다 (#app가 여기)
+			
+		ㄴ-> 모든 component를 css, js, html폴더에 각각 모은 배포용 파일을 서버에 올려놓으면 됨
+					
 파일 생성시 vue치고 탭
-	template태그(안에 한개의 태그만 허용!됨)는 html(화면), script태그는 js, style태그(이것만 한파일에 여러개 가능)는 css 요소 (style태그는 뷰파일간 공용. scoped 속성을 써야 이 파일에만 적용됨)
+	<template>(안에 한개의 태그만 허용!됨)는 html(화면), <script>는 js, <style>(이것만 한파일에 여러개 가능)는 css 요소 (style태그는 뷰파일간 공용. scoped 속성을 써야 이 파일에만 적용됨) 를 의미한다!!
 
-	<CLI>
+	<CLI 방식>
 cli(Command Line Interface)환경에서 node.js에서 지정된 명령어를 쳐서 프로젝트를 생성
 
 vscode의 터미널에서 new Terminal을 켜서 한다. 
@@ -36,23 +39,25 @@ vscode의 터미널에서 new Terminal을 켜서 한다.
 	원래는 props, emit을 사용해서 직접 전달하거나 eventBus를 통해(명시적인 표현이 어려움) 전달
 컴포넌트 간 데이터 전달 명시가 가능해짐.
 	
-구조> 한방향이므로 접근이 어떻게 되었는지 이력을 볼 수 있음(브라우저 Vue의 Vuex)
+구조> 한방향이므로 state가 어떻게 바뀌었는지 이력을 볼 수 있음(브라우저 Vue의 Vuex)
 				
-			    <Vuex Store 3가지> 별도의 js파일에서 작성 this.$store.actions/mutations/store으로 접근
+			    <Vuex Store 3가지> 별도의 js파일에서 작성 -> main.js에서 꼭 import 및 vue속성에 추가해줌!!!!
+			          this.$store.actions/mutations/store으로 접근
 			          vuex에서 제공해주는 공유 저장 공간
 				
-	      "비동기 로직"(axios 등)으로 rest서버에서 data받아옴. 
-	   그 후 "Mutation을 호출"하는 메소드(동시에 접근이 안되도록)
-		  	Actions   	    
-		-->		   -->
-	        dispatch	      commit('mutation메서드', 데이터)
-Vue Component	  	            	Mutations
-	          render		mutate	     "State값(data)을 수정"하는 메소드(직접 호출되지 않음. "동기 로직")
-		<--		   <--	 	데이터는 보통 payload로 전달 받음
-		  	State    	   	   
-		    공유 대상 "data"("상태")
+	      		"비동기 로직"(axios 등 백엔드api)으로 rest서버에서 data받아옴. 
+	   		그 후 "Mutation을 호출"하는 메소드(동시에 접근이 안되도록)
+		  	|    "Actions"   	    
+		 -->	|	   	-->
+	          dispatch	|      		commit('mutation메서드', 데이터(json객체도 가능))꼴
+"Vue Component"	  	|            			"Mutations"
+	           render	|		mutate	    	     "State값(data)을 수정"하는 메소드(직접 호출되지 않음, "동기 로직" devtools)
+		 <--	|	   	<--	 	      데이터는 보통 payload라는 이름으로 전달 받음
+		  	|     "State"    	   	   
+		    	공유 대상 "data"("상태")
 		   state에 변경이 일어나면 render로 화면 구성요소가 바뀜
-state : 여러 컴포넌트 간 공유할 데이터 - 상태
+
+state: {} 여러 컴포넌트 간 공유할 데이터 - 상태
 	ㄴ {{this.$store.state.데이터이름}}으로 접근 할 수 있다.
 
 

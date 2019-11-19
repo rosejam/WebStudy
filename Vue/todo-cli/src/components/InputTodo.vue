@@ -9,10 +9,11 @@
 </template>
 
 <script>
+import Constant from '../js/Constant'
 export default {
     data: function(){
         return {
-            todo:'' //template의 v-model에서 양방향으로 연결되어 있음
+            todo:"" //template의 v-model에서 양방향으로 연결되어 있음
         }
     },
     methods:{
@@ -22,26 +23,24 @@ export default {
         go2(){
             this.$store.dispatch("test2");
         },
-        addTodo(){ 
-            //list-compo에게 사건 발생 알리고 데이터 전달
-            //bus.$emit('add-todo', this.todo); //this.을 빼먹으면 안됨!! 이 객체의 data의 todo이므로!
-            
+        addTodo(){
+            this.$store.dispatch(Constant.ADD_TODO, {todo: this.todo});
             //input칸 비우기
-            this.todo = '';
+            this.todo = "";
         }
     }
 }
 </script>
 
-<style>
-.input {
-    border: none; width: 75%; height:35px; padding: 10px;
-    float: left; font-size: 16px;
-}
-.addbutton {
-    padding: 10px; width: 25%; height:35px; background: #d9d9d9; 
-    color: #555; float: left; text-align: center;
-    font-size: 13px; cursor: pointer; transition: 0.3s;
-}
-.addbutton:hover { background-color: #bbb; }
+<style scoped>
+    .input {
+        border: none; width: 75%; height:35px; padding: 10px;
+        float: left; font-size: 16px;
+    }
+    .addbutton {
+        padding: 10px; width: 25%; height:35px; background: #d9d9d9; 
+        color: #555; float: left; text-align: center;
+        font-size: 13px; cursor: pointer; transition: 0.3s;
+    }
+    .addbutton:hover { background-color: #bbb; }
 </style>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- router-link(<a href=""></a>), router-view(선택된 링크의 내용이 보이는 영역) -->
+        <router-link to="/login">Login</router-link>
+        <router-link to="/main">Main</router-link>
+        <router-view></router-view>
+    </div>
+
+    <!-- vue cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- router cdn-->
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script> <!-- 꼭 vue cdn 뒤에 써야한다. -->
+
+    <script>
+        
+        //링크 눌렀을 때 사용될 컴포넌트 
+        var loginCompo = {
+            template: '<div><h1>Login</h1></div>'
+        }
+        var mainCompo = {
+            template: '<div><h1>Main</h1></div>'
+        }
+        
+        var router = new VueRouter({
+            //mode: 'history', //이거 막으면 #이 router.html뒤에 붙음
+            routes: [
+                {
+                    path: '/login', //url
+                    component: loginCompo //compo by url
+                },
+                {
+                    path: '/main',
+                    component: mainCompo
+                }
+            ]
+        });
+
+        var vm = new Vue({
+            el: '#app',
+            router //router: router를 간단히 한 표현
+        })
+    
+    </script>
+</body>
+</html>

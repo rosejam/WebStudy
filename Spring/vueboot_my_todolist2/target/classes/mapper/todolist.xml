@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.todolist.dao.TodoMapper">
+	<insert id="insertTodo" parameterType="Todo"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		todolist(todo,userid,write_date,end_date,done)
+		values(#{todo},'dada',curdate(),#{endDate},'N')
+	</insert> <!-- 지정된 날짜를 받는 것으로 수정!!!! Todo.getEndDate!해서 db에 넣는다. -->
+	
+	<update id="updateTodo" parameterType="Todo">
+		update todolist
+		set todo = #{todo},
+		end_date = #{endDate}
+		where id = #{id}
+	</update>
+	
+	<delete id="deleteTodo" parameterType="int">
+		delete from todolist
+		where
+		id = #{id}
+	</delete>
+	
+	<select id="selectTodo" parameterType="int" resultType="Todo">
+		select
+		id,todo,userid as userId, write_date as writeDate, end_date as endDate, done
+		from todolist
+		where
+		id = #{id}
+	</select>
+
+	<select id="allTodoList" resultType="Todo">
+		select id,todo,userid as
+		userId, write_date as writeDate, 
+		end_date as endDate, done
+		from todolist
+		order by id desc
+	</select>
+
+	<select id="selectTodoList" parameterType="string"
+		resultType="Todo">
+		select id,todo,userid as userId,write_date as writeDate,
+		end_date as endDate, done
+		from
+		todolist
+		where userid = #{userId}
+	</select>
+
+	<delete id="deleteTodoList" parameterType="string">
+		delete from todolist
+		where userid = #{userId}
+	</delete>
+
+	<delete id="allDeleteTodoList">
+		delete from todolist		
+	</delete>
+	
+	<update id="updateTodoDone" parameterType="int">
+		update todolist
+		set done = 'Y'
+		where id = #{id}
+	</update>
+</mapper>
