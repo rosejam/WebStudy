@@ -23,6 +23,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 //vue-cli-router와 같이 도는 서버
+//버전1과 변수명빼고 거의 똑같다
+
 @CrossOrigin(origins = { "*" }, maxAge = 6000)
 @RequestMapping("/todolist")
 @RestController
