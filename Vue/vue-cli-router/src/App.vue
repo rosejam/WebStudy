@@ -1,4 +1,5 @@
 <template>
+  <!-- vueboot_my_todolist2 서버와 같이 돌린다. -->
   <div id="app">
     <h3>{{this.$store.state.message}}</h3><!-- 삽입 메시지 그냥 여기다 넣어봄 -->
     <TodoHeader></TodoHeader>
@@ -31,7 +32,7 @@ const router = new VueRouter({
     },
     {
       path: '/list', 
-      component: TodoList  
+      component: TodoList
     },
     {
       path: '/input', 

@@ -30,7 +30,7 @@
           <td>완료여부</td>
           <td>
             <span v-if="todo.done == 'Y'">완료</span>
-            <span else>미완료</span>
+            <span v-else>미완료</span> <!-- 여기도 v-붙여야 세트가 됨 -->
           </td>
         </tr>
        </tbody>

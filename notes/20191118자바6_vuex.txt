@@ -27,7 +27,7 @@ vscode의 터미널에서 new Terminal을 켜서 한다.
 - cd cli-project , npm run serve
 - 컨트롤키 누르고 local 링크를 누르면 Vue.js App이 켜진다.
 
-- "이제 컨트롤 C로 끄고 npm run serve로 킨다."
+- "이제 컨트롤 C로 끄고 npm run serve로 킨다." (--open 옵션은 브라우저도 켜짐)
 	
 - npm install --save vuex그리고 axios 로 프로젝트의 package.json에서 "vuex, axios 디펜던시"가 추가된 것을 볼 수 있다. (-s 또는 --save는 이 프로젝트에서만 추가하는 것) - 디펜던시 2개
 	node_modules폴더에 라이브러리가 용량이 크게 들어있으므로 이 부분을 빼고 나중에 터미널에서 npm install만 하면 라이브러리가 받아진다
