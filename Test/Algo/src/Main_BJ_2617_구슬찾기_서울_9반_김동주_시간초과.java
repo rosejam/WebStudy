@@ -11,7 +11,7 @@ public class Main_BJ_2617_구슬찾기_서울_9반_김동주_시간초과 { //�
 	public static int[] lr;
 	
 	public static void main(String[] args) throws Exception { 
-		System.setIn(new FileInputStream("res/input_JO_2617.txt"));
+		System.setIn(new FileInputStream("res/input_BJ_2617.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		StringTokenizer nm = new StringTokenizer(br.readLine());//

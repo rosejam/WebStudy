@@ -14,7 +14,7 @@ public class Main_BJ_2628_종이자르기_서울_9반_김동주_끝_ { //Algo2
 	public static ArrayList<Integer> clens;
 	//public static int[][] map;
 	public static void main(String[] args) throws Exception {
-		System.setIn(new FileInputStream("res/input2.txt"));
+		System.setIn(new FileInputStream("res/input_BJ_2628.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		StringTokenizer nm = new StringTokenizer(br.readLine());//
