@@ -1,5 +1,5 @@
 import java.util.Scanner;
-//아쉽게도 제한시간은 캡처못함 나중에라도 구하기
+//아쉽게도 제한시간은 캡처못함 나중에라도 있다면 넣기
 interface Field 
 {
 	public final static int NAME     = 0;
