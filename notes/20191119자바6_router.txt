@@ -1,22 +1,25 @@
 	<SPA> Single Page Application
-ÇÑ ÆäÀÌÁö¿¡ SFCµéÀÌ ¿©·¯°³ ¸ð¿©¼­ ÇÏ³ªÀÇ ¾îÇÃ¸®ÄÉÀÌ¼ÇÀÌ µÇ´Â °Í
-È­¸éÀÌ refreshµÇ¸é¼­ ¹Ù²î´Â°Ô ¾øÀ½(¸Þ´º´©¸£¸é ¹Ù²î´Â ´À³¦)
+í•œ íŽ˜ì´ì§€ì— SFCë“¤ì´ ì—¬ëŸ¬ê°œ ëª¨ì—¬ì„œ í•˜ë‚˜ì˜ ì–´í”Œë¦¬ì¼€ì´ì…˜ì´ ë˜ëŠ” ê²ƒ
+í™”ë©´ì´ refreshë˜ë©´ì„œ ë°”ë€ŒëŠ”ê²Œ ì—†ìŒ(ë©”ë‰´ëˆ„ë¥´ë©´ ë°”ë€ŒëŠ” ëŠë‚Œ)
 
-	<¶ó¿ìÆÃ(routing)>
-"SPA"¿¡¼­ ¿äÃ» °æ·Î¿¡ µû¶ó ´Ù¸¥ ÅÆÇÃ¸´À» º¸¿©ÁÙ ¶§ »ç¿ë. router.html¸¸ µ¹¸®¸é µÊ
-Vue Router ¼³Ä¡ ¶Ç´Â cdn ÇÊ¿ä
-	µðÆæ´ø½Ã 3°¡Áö : npm install --save vue-router(±×¸®°í axios¿Í vuex)
-	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script> <!-- ²À vue cdn µÚ¿¡ ½á¾ßÇÑ´Ù. -->
+	<ë¼ìš°íŒ…(routing)>
+"SPA"ì—ì„œ ìš”ì²­ ê²½ë¡œì— ë”°ë¼ ë‹¤ë¥¸ íƒ¬í”Œë¦¿ì„ ë³´ì—¬ì¤„ ë•Œ ì‚¬ìš©. router.htmlë§Œ ëŒë¦¬ë©´ ë¨
+Vue Router ì„¤ì¹˜ ë˜ëŠ” cdn í•„ìš”
+	ë””íŽœë˜ì‹œ 3ê°€ì§€ : npm install --save vue-router(ê·¸ë¦¬ê³  axiosì™€ vuex)
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script> <!-- ê¼­ vue cdn ë’¤ì— ì¨ì•¼í•œë‹¤. -->
 
-<router-link>(³ªÁß¿¡ <a>¾ÞÄ¿ÅÂ±×·Î ¹Ù²ï´Ù.) ´©¸£¸é ÆäÀÌÁö°¡ ´Ù¸£°Ô ¶°¼­ ÆäÀÌÁö°¡ ¿©·¯°³ ÀÖ´Â °ÍÃ³·³ »ç¿ë
-<router-view> ¶ó¿ìÅÍ ¸µÅ©¸¦ ´­·¶À» ¶§ ´Ù¸£°Ô º¸ÀÌ´Â ¿µ¿ªÀÌ Ç¥½ÃµÇ´Â °÷
+<router-link>(ë‚˜ì¤‘ì— <a>ì•µì»¤íƒœê·¸ë¡œ ë°”ë€ë‹¤.) ëˆ„ë¥´ë©´ íŽ˜ì´ì§€ê°€ ë‹¤ë¥´ê²Œ ë– ì„œ íŽ˜ì´ì§€ê°€ ì—¬ëŸ¬ê°œ ìžˆëŠ” ê²ƒì²˜ëŸ¼ ì‚¬ìš©
+<router-view> ë¼ìš°í„° ë§í¬ë¥¼ ëˆŒë €ì„ ë•Œ ë‹¤ë¥´ê²Œ ë³´ì´ëŠ” ì˜ì—­ì´ í‘œì‹œë˜ëŠ” ê³³
 
 <template> == <script type="text/x-template">
-	¤¤ °¢ x-template¿¡ ºä ÄÄÆ÷³ÍÆ®({template : ¾ÆÀÌµð Àû±â})¸¦ ¼±¾ð
-	¤¤ const router = new VueRouter°´Ã¼ »ý¼º(routes ¼Ó¼º : ¾î¶² path¸¦ ´­·¶À» ¶§ ¾î¶² component°¡ È­¸é¿¡ º¸¿©Áö´ÂÁö ¸ÅÇÎ°ü°èµéÀ» json ¹è¿­·Î Ç¥½Ã)
-		ºä°´Ã¼¿¡¼­ router¼Ó¼º¿¡ ½áÁà¾ßÇÔ!
+	ã„´ ê° x-templateì— ë·° ì»´í¬ë„ŒíŠ¸({template : ì•„ì´ë”” ì ê¸°})ë¥¼ ì„ ì–¸
+	ã„´ const router = new VueRouterê°ì²´ ìƒì„±(routes ì†ì„± : ì–´ë–¤ pathë¥¼ ëˆŒë €ì„ ë•Œ ì–´ë–¤ componentê°€ í™”ë©´ì— ë³´ì—¬ì§€ëŠ”ì§€ ë§¤í•‘ê´€ê³„ë“¤ì„ json ë°°ì—´ë¡œ í‘œì‹œ)
+		ë·°ê°ì²´ì—ì„œ routerì†ì„±ì— ì¨ì¤˜ì•¼í•¨!
 
-//SPA, SFC±¸ºÐ
+//SPA, SFCêµ¬ë¶„
 
 
-///»ý¼ºÀÚ¿¡ ÁöÁ¤¾ÈÇÏ¸é ³Î·Î ÃÊ±âÈ­ ÀÌ°Ç ±×³É ÀÚ¹Ù
+///ìƒì„±ìžì— ì§€ì •ì•ˆí•˜ë©´ ë„ë¡œ ì´ˆê¸°í™” ì´ê±´ ê·¸ëƒ¥ ìžë°”
+
+
+//Vue.jsë¥¼ ìŠ¤í”„ë§ ì„œë²„ì— ë¶™ì´ëŠ” ë°©ë²• ì•Œì•„ë‚´ê¸°!
