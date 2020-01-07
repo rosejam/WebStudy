@@ -8,3 +8,7 @@ axios의 null처리
 fizz buzz http://wiki.c2.com/?FizzBuzzTest
 
 정처기 빼기
+
+Vue.js에서 스프링에 합치는 방법!!!!
+
+AWS에 프로젝트 한것 올리는 방법!!!!(rest 방식은 RDS?)
