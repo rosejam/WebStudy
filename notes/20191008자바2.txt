@@ -58,3 +58,5 @@ group by는 그룹 안 각각의 개수를, distinct는 중복을 제외한 값 
 
 select name, count(name) from table group by name;
 select count(distinct name) from table;
+-------
+count(*)는 null 포함, count(표현식)은 null이 아닌값만
