@@ -69,7 +69,7 @@ IF(조건문, 참/not null인 경우 값, 거짓/null일 경우 값)
 CASE 	
 	WHEN 조건 THEN 값 
 	WHEN 조건 THEN 값
-	ELSE
+	ELSE 값
 END
 ------
 COALESCE ~= IFNULL ~= 오라클의 NVL 
