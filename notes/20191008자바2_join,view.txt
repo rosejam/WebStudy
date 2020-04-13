@@ -72,4 +72,5 @@ CASE
 	ELSE
 END
 ------
-COALESCE ~= IFNULL (컬럼, NULL인경우 대체할 값)
+COALESCE ~= IFNULL ~= 오라클의 NVL 
+COALESCE(컬럼, NULL인경우 대체할 값) 
