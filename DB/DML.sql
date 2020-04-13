@@ -26,7 +26,7 @@ select empid 사번, fname 이름, salary 연봉, round(salary*0.3,0) 보너스
 from emp
 order by 보너스 desc;
 
--- in, between, is null/not null, like
+-- in, between, is null/is not null, like
 -- 연봉이 15000~ 25000 사이인 레코드
 select *
 from emp
