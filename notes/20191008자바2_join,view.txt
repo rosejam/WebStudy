@@ -54,7 +54,7 @@ sub query는 먼저 실행 되어 main query의 조건으로 사용됨
 ---------------
 Group By와 Distinct의 차이> 
 count()시 
-group by는 그룹 안 각각의 개수를, distinct는 중복을 제외한 값 전체의 개수를 뽑아올수 있게된다!!!!!
+group by는 그룹 안 각각의 개수를, distinct는 중복을 제외한 값 전체의 종류 가짓수를 뽑아올수 있게된다!!!!!
 
 select name, count(name) from table group by name;
 select count(distinct name) from table;
