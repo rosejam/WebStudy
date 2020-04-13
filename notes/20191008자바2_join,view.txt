@@ -60,3 +60,16 @@ select name, count(name) from table group by name;
 select count(distinct name) from table;
 -------
 count(*)는 null 포함, count(표현식)은 null이 아닌값만
+
+
+---------------
+IF나 CASE문도 알아두자
+IF(조건문, 참/not null인 경우 값, 거짓/null일 경우 값)
+
+CASE 	
+	WHEN 조건 THEN 값 
+	WHEN 조건 THEN 값
+	ELSE
+END
+------
+COALESCE ~= IFNULL (컬럼, NULL인경우 대체할 값)
